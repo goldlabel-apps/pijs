@@ -1,0 +1,9 @@
+{
+  "name": "pi",
+  "version": "0.0.1",
+  "description": "Raspberry Pi Firmware",
+  "main": "index.js",
+  "repository": "https://github.com/listingslab-hardware/pi.git",
+  "author": "listingslab",
+  "license": "MIT"
+}
