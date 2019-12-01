@@ -1,10 +1,13 @@
-## Raspberry Pi Firmware vn
+## Listingslab Raspberry Pi Firmware
 
-Grab an SD card,
-clone this repo onto it and fire up your Pi
-to some seriously wicked shee-it
+Grab an SD card, clone this repo onto it and fire up your Pi
+to see some seriously wicked shee-it
 
-### How to Run a NodeJS Web Server on a Raspberry Pi
+### Instructions
+
+- [python](./python)
+
+#### How to Run a NodeJS Web Server on a Raspberry Pi
 
 Once you’re all set up with your OS, it’s time to install Node.
 From what I’ve read, Rasbian comes with node out of the box,
