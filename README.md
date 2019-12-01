@@ -1,7 +1,7 @@
-## Raspberry Pi Firmware
+## Raspberry Pi Firmware vn
 
-Grab an SD card, 
-clone this repo onto it and fire up your Pi 
+Grab an SD card,
+clone this repo onto it and fire up your Pi
 to some seriously wicked shee-it
 
 ### How to Run a NodeJS Web Server on a Raspberry Pi
@@ -12,7 +12,6 @@ but we’ll want to make sure we have the most recent build.
 To install the latest version of Node, make sure you’re
 online and fire up the terminal
 
-
 ```bash
 sudo su;
 wget -O - https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/Install-Node.sh | bash;
@@ -21,26 +20,25 @@ node -v;
 ```
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
-const chalk = require('chalk');
-const morgan = require('morgan');
+const path = require("path");
+const chalk = require("chalk");
+const morgan = require("morgan");
 
 const port = 1337;
 
-app.use('/dist', express.static(path.join(__dirname, 'dist')));
+app.use("/dist", express.static(path.join(__dirname, "dist")));
 
-app.use(morgan('dev')) // logging
+app.use(morgan("dev")); // logging
 
-app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get("/", (req, res, next) =>
+  res.sendFile(path.join(__dirname, "index.html"))
+);
 
-app.listen(process.env.PORT || port, () => console.log(chalk.blue(`http://localhost:${port}`)));
-
+app.listen(process.env.PORT || port, () =>
+  console.log(chalk.blue(`http://localhost:${port}`))
+);
 ```
 
-
-
 [source](https://blog.cloudboost.io/how-to-run-a-nodejs-web-server-on-a-raspberry-pi-for-development-3ef9ac0fc02c)
-
-
