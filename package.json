@@ -1,9 +1,8 @@
 {
   "name": "pi-firmware",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Raspberry Pi Firmware",
-  "main": "index.js",
-  "repository": "https://github.com/listingslab-hardware/pi.git",
+  "repository": "https://github.com/listingslab-hardware/pi-firmware.git",
   "author": "listingslab",
   "license": "MIT"
 }
