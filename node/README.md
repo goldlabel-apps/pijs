@@ -1,6 +1,47 @@
 ## Node
 
+### What is Node JS?
+
 As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep.
+
+### What is this directory for?
+
+This is a little Node/express server designed to be exposed  to the big. scary, wide world on port 1337 mapped to the url  pi.listingslab.io](https://pi.listingslab.io).
+
+### Creating a Node Server for Rasberry Pi
+
+Create a folder called `node` on your Pi desktop and clone this directory into it,
+
+```
+cd ~/Desktop
+mkdir node && cd node
+git clone https://github.com/listingslab-hardware/pi-firmware.git
+cd pi-firmware
+yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && ls -la
+```
+
+Once you have everything set up on your pi you can run little server. 
+
+```
+node ~/Desktop/node/pi-firmware/node/server.js
+```
+
+
+
+Of course, you'll want the server to start everytime the pi boots and we do that like this...
+
+```bash
+sudo nano /etc/rc.local
+```
+
+Then add this line about the exit line and reboot
+
+```bash
+su pi -c 'node ~/Desktop/node/pi-firmware/node/server.js < /dev/null &'
+sudo reboot
+```
+
+Once your machine is up and running again, you should be able to navigate to `localhost:1337` and see the site without needing the terminal. 
 
 ### How to Run a NodeJS Web Server on a Raspberry Pi
 
@@ -17,7 +58,9 @@ exit;
 node -v;
 ```
 
-### Express Server
+### Create Express Server
+
+`/node/server.js`
 
 ```javascript
 const express = require("express");
@@ -41,6 +84,10 @@ app.listen(process.env.PORT || port, () =>
 );
 ```
 
-[source](https://blog.cloudboost.io/how-to-run-a-nodejs-web-server-on-a-raspberry-pi-for-development-3ef9ac0fc02c)
+## SSL
+
+Google displays sites not protected by SSL Certificates as ‘Not Secure’. They also rank websites with SSL higher in search results over those that don’t have them. With this in mind, ‘cheap SSL’ means so much more, because the cost of losing customers is high.
+
+[source: cloudboost.io](https://blog.cloudboost.io/how-to-run-a-nodejs-web-server-on-a-raspberry-pi-for-development-3ef9ac0fc02c)
 
 [UP](../)
