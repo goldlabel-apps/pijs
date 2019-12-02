@@ -8,3 +8,7 @@ to see some seriously wicked shee-it
 - [Node](./node)
 - [React](./react)
 - [Python](./python)
+
+```bash
+sudo sh -c 'echo 0 > /sys/class/leds/led1/brightness'
+```
