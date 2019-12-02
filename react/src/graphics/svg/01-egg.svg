@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="91px" viewBox="0 0 76 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>egg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 -0.0002 75.393 -0.0002 75.393 90.8525 0 90.8525"></polygon>
+    </defs>
+    <g id="chucken" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="egg">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M0,52.1318 C0,77.2198 16.877,90.8528 37.696,90.8528 C58.516,90.8528 75.393,77.2198 75.393,52.1318 C75.393,30.7798 58.516,-0.0002 37.696,-0.0002 C16.877,-0.0002 0,30.7798 0,52.1318" id="Fill-1" fill="#FFFAD4" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>
