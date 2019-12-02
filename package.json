@@ -2,7 +2,27 @@
   "name": "pi-firmware",
   "version": "0.0.6",
   "description": "Raspberry Pi Firmware",
-  "repository": "https://github.com/listingslab-hardware/pi-firmware.git",
-  "author": "listingslab",
-  "license": "MIT"
+  "scripts": {
+    "setup": "clear && yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && clear && ls -la",
+    "start": "clear && cd ./react && yarn start",
+    "build": "clear && cd ./react && yarn build",
+    "serve": "clear && cd ./node && node server.js"
+  },
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/listingslab-hardware/pi-firmware.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Raspberry Pi",
+    "JavaScript",
+    "Node",
+    "React",
+    "PWA",
+    "Firebase"
+  ]
 }
