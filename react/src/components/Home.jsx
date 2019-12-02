@@ -7,12 +7,10 @@ import {
     Avatar,
     Card,
     CardHeader,
-    CardContent,
     CardMedia,
-    Typography,
 } from '@material-ui/core/';
 import { Icon } from './';
-const imgSrc = `/png/og_image/OG_Image.png`;
+const imgSrc = `/jpg/brisvegas.jpg`;
 
 class Home extends Component {
     render() {
@@ -24,8 +22,8 @@ class Home extends Component {
                 <div className={cn(classes.pad)}>
                     <Card className={cn(classes.card)}>
                         <CardHeader
-                            title={`Secure Node server running on a Raspberry Pi`}
-                            subheader={`https://pi.listingslab.io`}
+                            title={`Listingslab Raspberry Pi Firmware`}
+                            subheader={`github.com/listingslab-hardware/pi-firmware`}
 
                             avatar={(
                                 <Avatar alt={`home`} className={classes.avatar}>
@@ -41,22 +39,7 @@ class Home extends Component {
                             image={imgSrc}
                             title={`Home`}
                         />
-                        <CardContent>
-                            <Typography variant={`h6`}>
-                                What is a Raspberry Pi?
-                            </Typography>
-                            <Typography variant={`body1`}>
-                                The Raspberry Pi is a very low cost, credit-card sized computer.
-                                It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Python.
-                            </Typography>
-                            <Typography variant={`h6`}>
-                                What is it used for?
-                            </Typography>
 
-                            <Typography variant={`body1`}>
-                                It also give more experienced developers a chance to do some mad cool shit. We're going to turn our Pi into a node server connected to Firebase in the cloud
-                            </Typography>
-                        </CardContent>
                     </Card>
                 </div>
             </div>
