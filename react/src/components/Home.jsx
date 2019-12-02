@@ -12,7 +12,7 @@ import {
     Typography,
 } from '@material-ui/core/';
 import { Icon } from './';
-const imgSrc = `/png/OG_Image.png`;
+const imgSrc = `/png/og_image/OG_Image.png`;
 
 class Home extends Component {
     render() {
