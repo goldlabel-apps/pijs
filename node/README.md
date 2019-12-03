@@ -1,15 +1,23 @@
 ## Node
 
+```bash
+# Takes a photo and save it to the server
+~/Desktop/node/pi-firmware/bin/create_current_photo.sh
+```
+
 ### What is Node JS?
 
 As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep.
 
 ### What is this directory for?
 
-This is a little Node/express server designed to be exposed  to the big. scary, wide world on port 1337 mapped to the url  pi.listingslab.io](https://pi.listingslab.io). Once you have everything set up on your pi you can run this server. 
+This is a little Node/express server designed to be exposed to the big. scary, wide world on port 1337 mapped to the url pi.listingslab.io](https://pi.listingslab.io). Once you have everything set up on your pi you can run this server.
 
-```
+```bash
 node ~/Desktop/node/pi-firmware/node/server.js
+
+# Takes a photo and save it to the server
+~/Desktop/node/pi-firmware/bin/create_current_photo.sh
 ```
 
 Of course, you'll want the server to start everytime the pi boots and we do that like this...
@@ -25,7 +33,7 @@ su pi -c 'node ~/Desktop/node/pi-firmware/node/server.js < /dev/null &'
 sudo reboot
 ```
 
-Once your machine is up and running again, you should be able to navigate to `localhost:1337` and see the site without needing the terminal. 
+Once your machine is up and running again, you should be able to navigate to `localhost:1337` and see the site without needing the terminal.
 
 ### How to Run a NodeJS Web Server on a Raspberry Pi
 
