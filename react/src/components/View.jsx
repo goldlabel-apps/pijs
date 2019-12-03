@@ -48,15 +48,14 @@ class View extends Component {
             classes,
         } = this.props;
         const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
-        //console.log('currentPhotoUrl', currentPhotoUrl);
 
         return (
             <div className={cn(classes.view)}>
                 <div className={cn(classes.pad)}>
                     <Card className={cn(classes.card)}>
                         <CardHeader
-                            title={`Listingslab Raspberry Pi Server`}
-                            subheader={`Current Photo`}
+                            title={`Node Pi Server`}
+                            subheader={`Now...`}
                             avatar={(
                                 <Avatar alt={`home`} className={classes.avatar}>
                                     <Icon icon={`pi`} />
