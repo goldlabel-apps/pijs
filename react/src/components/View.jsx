@@ -19,7 +19,7 @@ class View extends Component {
     state = {
         updated: Date.now(),
         timer: null,
-        timerDelay: 5000,
+        timerDelay: 10,
     }
 
     componentDidMount() {
@@ -28,7 +28,7 @@ class View extends Component {
             timerDelay
         } = this.state;
         if (!timer) {
-            this.setState({ timer: setInterval(this.update, timerDelay) });
+            this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
         }
     }
 
@@ -47,9 +47,9 @@ class View extends Component {
         const {
             classes,
         } = this.props;
-
         const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
-        console.log('currentPhotoUrl', currentPhotoUrl);
+        //console.log('currentPhotoUrl', currentPhotoUrl);
+
         return (
             <div className={cn(classes.view)}>
                 <div className={cn(classes.pad)}>
