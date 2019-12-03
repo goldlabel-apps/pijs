@@ -8,28 +8,55 @@ import {
     Card,
     CardHeader,
     CardMedia,
-    CardActions,
-    IconButton,
 } from '@material-ui/core/';
 import {
     Icon,
     ViewActions
 } from './';
 
-const imgSrc = `/jpg/current-photo.jpg`;
+class View extends Component {
 
-class Home extends Component {
+    state = {
+        updated: Date.now(),
+        timer: null,
+        timerDelay: 5000,
+    }
+
+    componentDidMount() {
+        const {
+            timer,
+            timerDelay
+        } = this.state;
+        if (!timer) {
+            this.setState({ timer: setInterval(this.update, timerDelay) });
+        }
+    }
+
+    componentWillUnmount() {
+        const {
+            timer
+        } = this.state;
+        clearInterval(timer);
+    }
+
+    update = () => {
+        this.setState({ updated: Date.now() })
+    }
+
     render() {
         const {
             classes,
         } = this.props;
+
+        const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
+        console.log('currentPhotoUrl', currentPhotoUrl);
         return (
             <div className={cn(classes.view)}>
                 <div className={cn(classes.pad)}>
                     <Card className={cn(classes.card)}>
                         <CardHeader
                             title={`Listingslab Raspberry Pi Server`}
-                            // subheader={`github.com/listingslab-hardware/pi-firmware`}
+                            subheader={`Current Photo`}
                             avatar={(
                                 <Avatar alt={`home`} className={classes.avatar}>
                                     <Icon icon={`pi`} />
@@ -41,24 +68,9 @@ class Home extends Component {
                         />
                         <CardMedia
                             className={classes.media}
-                            image={imgSrc}
-                            title={`Home`}
+                            image={currentPhotoUrl}
+                            alt={`Current Photo`}
                         />
-                        <CardActions disableSpacing>
-                            <div className={cn(classes.grow)} />
-                            <IconButton
-                                color={`primary`}
-                                aria-label="share">
-                                <Icon icon={`share`} />
-                            </IconButton>
-                            <IconButton
-                                color={`primary`}
-                                aria-label={`Settings`}
-                                onClick={() => { }}>
-                                <Icon icon={`settings`} />
-                            </IconButton>
-                        </CardActions>
-
                     </Card>
                 </div>
             </div>
@@ -67,5 +79,5 @@ class Home extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(Home))
+    withStyles(styles, { withTheme: true })(withRouter(View))
 );
