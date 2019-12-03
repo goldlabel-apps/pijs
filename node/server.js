@@ -21,7 +21,6 @@ app.get("/ping", (req, res, next) => {
   });
 });
 
-s
 app.listen(process.env.PORT || port, () =>
   console.log(chalk.yellow(`http://localhost:${port}`))
 );
