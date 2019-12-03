@@ -16,7 +16,7 @@ import {
     ViewActions
 } from './';
 
-const imgSrc = `/jpg/camera/deck.jpg`;
+const imgSrc = `/jpg/current-photo.jpg`;
 
 class Home extends Component {
     render() {
