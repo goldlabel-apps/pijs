@@ -1,29 +1,29 @@
-const express = require('express');
-const forceSSL = require('express-force-ssl');
-const fs = require('fs');
-const path = require('path');
-const http = require('http');
-const https = require('https');
-const chalk = require('chalk');
-const morgan = require('morgan');
+const express = require("express");
+const app = express();
+const path = require("path");
+const chalk = require("chalk");
+const morgan = require("morgan");
 
 const port = 1337;
 
+app.use(express.static(path.join(__dirname + "/build")));
 
-const ssl_options = {
-  key: fs.readFileSync(path.join(__dirname + '/pi_listingslab_io.key')),
-  cert: fs.readFileSync(path.join(__dirname + '/pi_listingslab_io.crt')),
-};
+app.use(morgan("dev"));
 
-const app = express();
-const server = http.createServer(app);
-const secureServer = https.createServer(ssl_options, app);
+app.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname + "/build/index.html"));
+});
 
-app.use(express.static(path.join(__dirname + '/build')))
-app.use(forceSSL);
-app.use(morgan('dev'));
+app.get("/ping", (req, res, next) => {
+  res.json({
+    location: {},
+    environment: {},
+    pi: {}
+  });
+});
 
-secureServer.listen(443)
-server.listen(port)
-
-app.listen(80);
+app.listen(process.env.PORT || port, () =>
+  console.log(
+    chalk.yellow(`\nNode server running on http://localhost:${port}\n`)
+  )
+);
