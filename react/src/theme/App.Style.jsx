@@ -11,6 +11,6 @@ export const styles = theme => ({
         margin: theme.spacing(),
     },
     media: {
-        height: 200,
+        height: 280,
     }
 });

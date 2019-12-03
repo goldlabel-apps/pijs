@@ -7,7 +7,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './theme/mui';
 import styles from './theme/commonStyles';
 import {
-    Home,
+    View,
     NotFound,
 } from './components';
 
@@ -25,7 +25,7 @@ class ReactRouter extends Component {
                         <Router>
                             <Switch>
                                 <Route exact path="/" render={props => {
-                                    return (<Home />);
+                                    return (<View />);
                                 }} />
                                 <Route component={NotFound} />
                             </Switch>

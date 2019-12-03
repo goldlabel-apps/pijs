@@ -12,6 +12,8 @@ import IconApi from '@material-ui/icons/PhonelinkSetupOutlined';
 import IconBack from '@material-ui/icons/ArrowBack';
 import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
+import IconShare from '@material-ui/icons/Share';
+
 import {
     GithubSVG,
     PiSVG,
@@ -47,37 +49,43 @@ class Icon extends Component {
                 return (<PiSVG className={classes.navIcon} />);
 
             case `home`:
-                return (<IconHome className={cn(classes.white)} />);
+                return (<IconHome className={cn()} />);
+
+            case `share`:
+                return (<IconShare className={cn()} />);
 
             case `contact`:
-                return (<IconContact className={classes.white} />);
+                return (<IconContact className={cn()} />);
 
             case `docs`:
-                return (<IconDocs className={classes.white} />);
+                return (<IconDocs className={cn()} />);
 
             case `reset`:
-                return (<IconReset className={classes.white} />);
+                return (<IconReset className={cn()} />);
+
+            case `refresh`:
+                return (<IconReset className={cn()} />);
 
             case `go`:
-                return (<IconGo className={classes.white} />);
+                return (<IconGo className={cn()} />);
 
             case `settings`:
-                return (<IconSettings className={classes.white} />);
+                return (<IconSettings className={cn()} />);
 
             case `social`:
-                return (<IconSocial className={classes.white} />);
+                return (<IconSocial className={cn()} />);
 
             case `back`:
-                return (<IconBack className={classes.white} />);
+                return (<IconBack className={cn()} />);
 
             case `menu`:
-                return (<IconMenu className={classes.white} />);
+                return (<IconMenu className={cn()} />);
 
             case `privacy`:
-                return (<IconPrivacy className={classes.white} />);
+                return (<IconPrivacy className={cn()} />);
 
             case `api`:
-                return (<IconApi className={classes.white} />);
+                return (<IconApi className={cn()} />);
 
             default: {
                 return null;

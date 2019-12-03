@@ -1,6 +1,6 @@
 {
   "name": "pi-firmware",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Raspberry Pi Firmware",
   "scripts": {
     "setup": "clear && yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && clear && ls -la",
