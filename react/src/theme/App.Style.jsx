@@ -9,9 +9,5 @@ export const styles = theme => ({
     },
     pad: {
         margin: theme.spacing(),
-    },
-    media: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
     }
 });
