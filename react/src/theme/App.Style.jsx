@@ -4,7 +4,7 @@ import commonStyles from "./commonStyles";
 export const styles = theme => ({
     ...commonStyles(theme),
     view: {
-        maxWidth: 800,
+        maxWidth: 400,
         margin: 'auto'
     },
     pad: {

@@ -1,6 +1,6 @@
 {
   "name": "react-app",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",

@@ -13,6 +13,7 @@ import IconBack from '@material-ui/icons/ArrowBack';
 import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
+import IconHelp from '@material-ui/icons/Help';
 
 import {
     GithubSVG,
@@ -41,6 +42,9 @@ class Icon extends Component {
         } = this.props;
 
         switch (icon) {
+
+            case `help`:
+                return (<IconHelp className={cn()} />);
 
             case `github`:
                 return (<GithubSVG className={classes.navIcon} />);

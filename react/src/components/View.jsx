@@ -17,18 +17,13 @@ import {
     Location,
     ViewActions
 } from './';
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-
-const Map = ReactMapboxGl({
-    accessToken: process.env.REACT_APP_MAPBOX
-});
 
 class View extends Component {
 
     state = {
         updated: Date.now(),
         timer: null,
-        timerDelay: 60,
+        timerDelay: 30,
     }
 
     componentDidMount() {
@@ -57,7 +52,8 @@ class View extends Component {
             classes,
         } = this.props;
         const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
-        const momented = moment(Date.now()).format(`dddd, MMMM Do YYYY, h:mm:ss a`);
+        // const localDate = `${moment(Date.now()).format(`dddd, MMMM Do, h:mm:ss a`)}`;
+        const piDate = `${moment(Date.now()).format(`dddd, MMMM Do, h:mm:ss a`)}`;
 
         return (
             <div className={cn(classes.view)}>
@@ -65,10 +61,10 @@ class View extends Component {
                     <Card className={cn(classes.card)}>
                         <CardHeader
                             title={`Pi Node Server`}
-                            subheader={`Your local time :${momented}`}
+                            subheader={piDate}
                             avatar={(
                                 <Avatar
-                                    alt={`Pi Serer`}
+                                    alt={`Pi Node Serevr`}
                                     className={classes.avatar}>
                                     <Icon icon={`pi`} />
                                 </Avatar>
@@ -79,28 +75,20 @@ class View extends Component {
                         />
 
                         <CardContent>
-                            <Location />
-
-                            <Map
-                                // eslint-disable-next-line react/style-prop-object
-                                style="mapbox://styles/mapbox/streets-v9"
-                                containerStyle={{
-                                    height: '250px',
-                                    width: '100%'
+                            <Typography
+                                style={{
+                                    marginBottom: 8,
+                                    marginLeft: 8
                                 }}
-                            >
-                                <Feature coordinates={[-0.13235092163085938, 51.518250335096376]} />
-                            </Map>
-
-                            <Typography variant={`h5`}>
+                                variant={`h6`}>
                                 Live Image
                             </Typography>
-
                             <CardMedia
                                 className={classes.media}
                                 image={currentPhotoUrl}
                                 alt={`Current Photo`}
                             />
+                            <Location />
                         </CardContent>
                     </Card>
                 </div>
