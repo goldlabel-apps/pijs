@@ -1,0 +1,38 @@
+[
+  {
+    "label": `Raspberry Pi`,
+    "description": ``,
+    "path": `https://listingslab.com/pi`,
+    "icon": `pi`
+  },
+  {
+    "label": `Storybook`,
+    "description": ``,
+    "path": `https://listingslab.com/storybook`,
+    "icon": `storybook`
+  },
+  {
+    "label": `GitHub`,
+    "description": `Where work lives`,
+    "icon": `github`,
+    "path": `https://listingslab.com/github`
+  },
+  {
+    "label": `WordPress`,
+    "description": `The world's CMS`,
+    "icon": `wordpress`,
+    "path": `https://listingslab.com/wordpress`
+  },
+  {
+    "label": `Privacy`,
+    "description": `Privacy === Respect`,
+    "path": `https://listingslab.com/privacy`,
+    "icon": `privacy`
+  },
+  {
+    "label": `Contact`,
+    "description": `Get in touch`,
+    "path": `https://listingslab.com/contact`,
+    "icon": `contact`
+  }
+]

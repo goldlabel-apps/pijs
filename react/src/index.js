@@ -8,6 +8,6 @@ console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
-ReactDOM.render(<ReactRouter />, document.getElementById("root"));
+ReactDOM.render(<ReactRouter />, document.getElementById("pi"));
 
 serviceWorker.register();

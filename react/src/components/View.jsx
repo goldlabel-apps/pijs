@@ -10,13 +10,18 @@ import {
     CardHeader,
     CardMedia,
     CardContent,
-    // Typography
+    Typography
 } from '@material-ui/core/';
 import {
     Icon,
     Location,
     ViewActions
 } from './';
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+
+const Map = ReactMapboxGl({
+    accessToken: process.env.REACT_APP_MAPBOX
+});
 
 class View extends Component {
 
@@ -72,13 +77,30 @@ class View extends Component {
                                 <ViewActions />
                             }
                         />
-                        <CardMedia
-                            className={classes.media}
-                            image={currentPhotoUrl}
-                            alt={`Current Photo`}
-                        />
+
                         <CardContent>
                             <Location />
+
+                            <Map
+                                // eslint-disable-next-line react/style-prop-object
+                                style="mapbox://styles/mapbox/streets-v9"
+                                containerStyle={{
+                                    height: '250px',
+                                    width: '100%'
+                                }}
+                            >
+                                <Feature coordinates={[-0.13235092163085938, 51.518250335096376]} />
+                            </Map>
+
+                            <Typography variant={`h5`}>
+                                Live Image
+                            </Typography>
+
+                            <CardMedia
+                                className={classes.media}
+                                image={currentPhotoUrl}
+                                alt={`Current Photo`}
+                            />
                         </CardContent>
                     </Card>
                 </div>
