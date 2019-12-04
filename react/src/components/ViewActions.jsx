@@ -24,6 +24,7 @@ class ViewActions extends Component {
                     aria-label="Refresh"
                     onClick={(e) => {
                         e.preventDefault();
+                        window.location.assign(`/?reset=${Date.now()}`);
                     }}>
                     <Icon icon={`refresh`} />
                 </IconButton>
