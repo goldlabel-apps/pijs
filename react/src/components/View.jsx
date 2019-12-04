@@ -9,8 +9,8 @@ import {
     Card,
     CardHeader,
     CardMedia,
-    CardContent,
-    Typography
+    // CardContent,
+    // Typography
 } from '@material-ui/core/';
 import {
     Icon,
@@ -74,22 +74,13 @@ class View extends Component {
                             }
                         />
 
-                        <CardContent>
-                            <Typography
-                                style={{
-                                    marginBottom: 8,
-                                    marginLeft: 8
-                                }}
-                                variant={`h6`}>
-                                Live Image
-                            </Typography>
-                            <CardMedia
-                                className={classes.media}
-                                image={currentPhotoUrl}
-                                alt={`Current Photo`}
-                            />
-                            <Location />
-                        </CardContent>
+
+                        <CardMedia
+                            className={classes.media}
+                            image={currentPhotoUrl}
+                            alt={`Current Photo`}
+                        />
+                        <Location />
                     </Card>
                 </div>
             </div>

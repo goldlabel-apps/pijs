@@ -8,6 +8,7 @@ export default theme => ({
         flexGrow: 1,
     },
     avatar: {
-        background: 'rgba(188,17,66, 0.125)'
+        // background: 'rgba(188,17,66, 0.125)'
+        background: 'rgba(255,255,255, 0.125)'
     }
 });

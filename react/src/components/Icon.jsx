@@ -14,6 +14,9 @@ import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
+import IconLocation from '@material-ui/icons/LocationCity';
+import IconLink from '@material-ui/icons/Link';
+
 
 import {
     GithubSVG,
@@ -42,6 +45,12 @@ class Icon extends Component {
         } = this.props;
 
         switch (icon) {
+
+            case `location`:
+                return (<IconLocation className={cn()} />);
+
+            case `link`:
+                return (<IconLink className={cn()} />);
 
             case `help`:
                 return (<IconHelp className={cn()} />);

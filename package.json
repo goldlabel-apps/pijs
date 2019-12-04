@@ -1,12 +1,34 @@
 {
   "name": "pi-firmware",
-  "version": "0.0.7",
-  "description": "Raspberry Pi Firmware",
+  "version": "0.0.9",
+  "description": "Raspberry Pi Firmware 臧偉的小黃瓜談話",
   "scripts": {
     "setup": "clear && yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && clear && ls -la",
     "start": "clear && cd ./react && yarn start",
     "build": "clear && cd ./react && yarn build",
-    "serve": "clear && cd ./node && node server.js"
+    "serve": "clear && cd ./node && node server.js",
+    "deploy": "echo \n\nnix mv react/build node/build \ndon't use gulp. It's shit.\n\n",
+    "e2e": "clear && BROWSER=none NODE_ENV=test start-server-and-test e2e:_webdriver:start http-get://localhost:4444/status e2e:_run",
+    "e2e:_ci": "BROWSER=none NODE_ENV=test start-server-and-test start http-get://localhost:3000 e2e:_webdriver",
+    "e2e:_run": "cucumber-js --require='e2e/setupTests.js' --require='e2e/createWorld.js' --require='e2e/Features/**/*.step.js' --format='node_modules/cucumber-pretty' -- 'e2e/Features/**/*.feature'",
+    "e2e:_webdriver:start": "node e2e/startWebDriver.js",
+    "e2e:start": "run-s start e2e:_webdriver",
+    "test": "clear && yarn e2e"
+  },
+  "devDependencies": {
+    "@types/nightwatch": "^0.9.8",
+    "@types/react": "^16.7.6",
+    "@types/react-dom": "^16.0.9",
+    "chromedriver": "2.43.1",
+    "cucumber": "5.0.2",
+    "cucumber-pretty": "^1.5.0",
+    "gulp": "^4.0.2",
+    "gulp-color": "^0.0.2",
+    "gulp-rename": "^1.4.0",
+    "nightwatch": "1.0.11",
+    "nightwatch-api": "latest",
+    "selenium-server": "^3.141.0",
+    "start-server-and-test": "1.7.9"
   },
   "author": {
     "name": "listingslab",
