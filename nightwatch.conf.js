@@ -1,6 +1,5 @@
 const chromedriver = require(`chromedriver`);
 
-/** @type {NightwatchOptions} */
 const options = {
   test_settings: {
     CHROME_ENV: {
