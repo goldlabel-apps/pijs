@@ -5,14 +5,14 @@ import cn from 'classnames';
 import { styles } from '../theme/App.Style';
 import ReactMapboxGl, { /*Layer, */Feature } from 'react-mapbox-gl';
 import {
-    CardHeader,
+    // CardHeader,
     CardContent,
-    IconButton,
+    // IconButton,
     Typography
 } from '@material-ui/core/';
-import {
-    Icon
-} from './';
+// import {
+//     Icon
+// } from './';
 
 const MapLocation = ReactMapboxGl({
     accessToken: process.env.REACT_APP_MAPBOX
@@ -40,7 +40,7 @@ class Location extends Component {
                 <div className={cn(classes.pad)}>
 
 
-                    <CardHeader
+                    {/* <CardHeader
                         title={`Geo Location`}
                         avatar={<IconButton disabled color={`primary`}>
                             <Icon icon={`location`} />
@@ -53,12 +53,11 @@ class Location extends Component {
                             }}>
                             <Icon icon={`link`} />
                         </IconButton>}
-                    />
+                    /> */}
 
                     <CardContent>
                         <Typography variant={`body1`}>
-                            Australia, Queensland <br />
-                            Fortitude Valley <br />
+                            Fortitude Valley, Queensland, Australia<br />
                             <strong>Latitude</strong> -27.4571 <br />
                             <strong>Longitude</strong> -27.4571 <br />
                             <strong>IP</strong> 141.168.211.166 <br />

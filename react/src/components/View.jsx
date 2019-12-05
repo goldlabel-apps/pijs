@@ -9,6 +9,7 @@ import {
     Card,
     CardHeader,
     CardMedia,
+    Grid,
     // CardContent,
     // Typography
 } from '@material-ui/core/';
@@ -53,7 +54,7 @@ class View extends Component {
         } = this.props;
         const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
         // const localDate = `${moment(Date.now()).format(`dddd, MMMM Do, h:mm:ss a`)}`;
-        const piDate = `${moment(Date.now()).format(`dddd, MMMM Do, h:mm:ss a`)}`;
+        const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
 
         return (
             <div className={cn(classes.view)}>
@@ -73,14 +74,26 @@ class View extends Component {
                                 <ViewActions />
                             }
                         />
+                        <Grid container>
+                            <Grid
+                                item
+                                xs={12} md={9}
+                                className={cn(classes.gridItem)}>
+                                <CardMedia
+                                    className={classes.media}
+                                    image={currentPhotoUrl}
+                                    alt={`Current Photo`}
+                                />
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12} md={3}
+                                className={cn(classes.gridItem)}>
+                                <Location />
+                            </Grid>
+                        </Grid>
 
 
-                        <CardMedia
-                            className={classes.media}
-                            image={currentPhotoUrl}
-                            alt={`Current Photo`}
-                        />
-                        <Location />
                     </Card>
                 </div>
             </div>
