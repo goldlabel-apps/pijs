@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Content">
+        <g id="Adaptive">
+            <g id="Background">
+                <rect id="Solid" x="0" y="0" width="108" height="108" style="fill:rgb(213,65,92);stroke:black;stroke-width:0.1px;"/>
+                <g id="Behind-icon" serif:id="Behind icon" transform="matrix(0.0718345,0,0,0.0718345,18.2712,28.2284)">
+                    <path d="M545.689,-2.105C607.961,0.259 651.285,92.996 588.633,138.67C588.633,138.67 658.134,175.238 644.943,232.4C640.677,250.889 629.411,267.399 613.959,278.674C613.959,278.674 613.308,340.618 613.308,340.618L723.918,523.308L725.952,527.073C757.807,592.403 709.97,683.523 629.3,685.514C543.653,686.22 458,685.527 372.349,685.527C298.349,684.917 235.078,598.431 275.031,525.148C275.375,524.516 275.748,523.901 276.107,523.277L386.713,340.597L386.713,279.136C380.919,275.116 380.182,274.188 377.381,271.515C340.26,236.098 349.125,163.668 402.359,141.909C402.359,141.909 398.709,114.027 411.029,92.59C422.838,72.042 444.923,58.038 468.627,55.934C468.627,55.934 472.085,43.929 477.399,35.182C491.737,11.584 514.232,-2.504 545.689,-2.105Z" style="fill:rgb(213,139,65);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
