@@ -1,6 +1,6 @@
 {
-  "background_color": "#D5415C",
-  "description": "A build system for web application icon and image assets",
+  "background_color": "#336699",
+  "description": "Raspberry Pi Firmware 臧偉的小黃瓜談話",
   "display": "standalone",
   "icons": [
     {
@@ -38,7 +38,7 @@
     }
   ],
   "lang": "en-US",
-  "name": "Iconduit",
+  "name": "Pi Node Server",
   "related_applications": [
     {
       "id": "915056765",
@@ -56,7 +56,7 @@
       "url": "https://microsoft.com/p/app/9wzdncrdtbvb"
     }
   ],
-  "short_name": "Iconduit",
+  "short_name": "Pi Node Server",
   "start_url": ".",
-  "theme_color": "#D5415C"
+  "theme_color": "#336699"
 }

@@ -41,13 +41,13 @@
   "categories": [
   ],
   "color": {
-    "background": "#D5415C",
-    "brand": "#D5415C",
-    "mask": "#D5415C",
-    "theme": "#D5415C",
-    "tile": "#D5415C"
+    "background": "#336699",
+    "brand": "#336699",
+    "mask": "#336699",
+    "theme": "#336699",
+    "tile": "#336699"
   },
-  "description": "A build system for web application icon and image assets",
+  "description": "Raspberry Pi Firmware 臧偉的小黃瓜談話",
   "determiner": "",
   "displayMode": "standalone",
   "extra": {
@@ -61,7 +61,7 @@
     },
     "primary": "iconMaskAndroidSquircle"
   },
-  "name": "Iconduit",
+  "name": "Pi Node Server",
   "orientation": "any",
   "os": {
     "ios": {
@@ -894,7 +894,7 @@
     }
   },
   "outputPath": ".",
-  "shortName": "Iconduit",
+  "shortName": "Pi Node Server",
   "tag": {
     "appleTouchStartup": [
       {
@@ -1665,7 +1665,7 @@
   },
   "textDirection": "auto",
   "urls": {
-    "base": "https://iconduit.github.io/",
+    "base": "http://pi.listingslab.io/",
     "output": ".",
     "scope": ".",
     "start": "."
