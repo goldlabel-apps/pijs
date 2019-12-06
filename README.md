@@ -3,23 +3,6 @@
 Grab an SD card, clone this repo onto it and fire up your Pi
 to see some seriously wicked shee-it. [GitHub](https://github.com/listingslab-hardware/pi-firmware)
 
-```bash
-# Takes a photo and saves it to the server
-~/Desktop/node/pi-firmware/bin/create_current_photo.sh
-```
-
-### Install
-
-Create a folder called `node` on your Pi's `~/Desktop` and clone this directory into it,
-
-```bash
-cd ~/Desktop
-mkdir node && cd node
-git clone https://github.com/listingslab-hardware/pi-firmware.git
-cd pi-firmware
-yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && ls -la
-```
-
 ## What is a Pi?
 
 The Raspberry Pi is a very low cost, credit-card sized computer.
@@ -28,27 +11,3 @@ computing, and to learn how to program in languages like Python.
 
 It also give more experienced developers a chance to do some mad cool shit.
 We're going to turn our Pi into a node server connected to Firebase in the cloud
-
-### Docs
-
-#### Isomorphic JavaScript
-
-- Progressive Web App
-- [Node](./node)
-- [React](./react)
-- Firebase
-  - Firestore
-  - Cloud functions
-
-#### Other
-
-- [Python](./python)
-- Docker
-- Heroku
-- Git
-
-```bash
-
-sudo sh -c 'echo 0 > /sys/class/leds/led1/brightness'
-sudo nano /etc/rc.local
-```
