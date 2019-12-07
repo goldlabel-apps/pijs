@@ -1,9 +1,9 @@
 import Icon from "./Icon";
 import Location from "./Location";
 import NotFound from "./NotFound";
-import PaneLocation from "./PaneLocation";
-import PaneTitle from "./PaneTitle";
-import PaneWebcam from "./PaneWebcam";
+import PaneLocation from "./panes/PaneLocation";
+import PaneTitle from "./panes/PaneTitle";
+import PaneWebcam from "./panes/PaneWebcam";
 import View from "./View";
 import ViewActions from "./ViewActions";
 

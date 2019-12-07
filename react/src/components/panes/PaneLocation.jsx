@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
-import { styles } from '../theme/App.Style';
+import { styles } from '../../theme/App.Style';
 import {
     Avatar,
     Card,
@@ -11,7 +11,7 @@ import {
     Typography,
     // IconButton,
 } from '@material-ui/core/';
-import Icon from './Icon';
+import Icon from '../Icon';
 
 class PaneLocation extends Component {
 
@@ -35,10 +35,13 @@ class PaneLocation extends Component {
                     action={null}
                 />
                 <CardContent>
+
                     <Typography variant={`body1`}>
                         From an IP address it's a simple
-                        request to a public API like this one
+                        request to a public API like
+                        <a href={`https://www.iplocation.net/`}>iplocation</a>
                         to magically reveal your <b>geo-location</b>.
+                        This is what our Raspberry Pi's reveals about it.
                     </Typography>
 
                     <Typography variant={`body2`}>
