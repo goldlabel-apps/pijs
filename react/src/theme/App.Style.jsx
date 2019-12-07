@@ -8,6 +8,6 @@ export const styles = theme => ({
         margin: 'auto'
     },
     pad: {
-        margin: theme.spacing(),
+        // margin: theme.spacing(),
     }
 });

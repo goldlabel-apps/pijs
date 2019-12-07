@@ -13,5 +13,6 @@ export default theme => ({
     },
     gridItem: {
         // border: '1px solid yellow',
+        padding: theme.spacing()
     }
 });

@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../theme/App.Style';
 import {
-    Avatar,
-    Card,
-    CardHeader,
-    CardMedia,
+    // Card,
+    // CardMedia,
     Grid,
-    // CardContent,
-    // Typography
 } from '@material-ui/core/';
 import {
-    Icon,
+    // Icon,
     // Location,
-    ViewActions
+    PaneLocation,
+    PaneTitle,
+    PaneWebcam,
+    // ViewActions,
 } from './';
 
 class View extends Component {
@@ -25,7 +23,6 @@ class View extends Component {
         updated: Date.now(),
         timer: null,
         timerDelay: 30,
-        showCurrentPhoto: false,
     }
 
     componentDidMount() {
@@ -53,58 +50,29 @@ class View extends Component {
         const {
             classes,
         } = this.props;
-        const { showCurrentPhoto } = this.state;
-        const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
-        // const localDate = `${moment(Date.now()).format(`dddd, MMMM Do, h:mm:ss a`)}`;
-        const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
 
         return (
             <div className={cn(classes.view)}>
-                <div className={cn(classes.pad)}>
-                    <Card className={cn(classes.card)}>
-                        <CardHeader
-                            title={`Pi Node Server`}
-                            subheader={piDate}
-                            avatar={(
-                                <Avatar
-                                    alt={`Pi Node Serevr`}
-                                    className={classes.avatar}>
-                                    <Icon icon={`pi`} />
-                                </Avatar>
-                            )}
-                            action={
-                                <ViewActions />
-                            }
-                        />
-                        <Grid container>
-                            <Grid
-                                item
-                                xs={12} md={9}
-                                className={cn(classes.gridItem)}>
-                                <CardMedia
-                                    className={classes.media}
-                                    image={currentPhotoUrl}
-                                    alt={`Current Photo`}
-                                />
-                            </Grid>
-                            <Grid
-                                item
-                                xs={12} md={3}
-                                className={cn(classes.gridItem)}>
-                                <Location />
-                            </Grid>
-                        </Grid>
-
-                        {showCurrentPhoto ? (
-                            <CardMedia
-                                className={classes.media}
-                                image={currentPhotoUrl}
-                                alt={`Current Photo`}
-                            />
-                        ) : null}
-
-                    </Card>
-                </div>
+                <Grid container>
+                    <Grid
+                        item
+                        xs={12} md={12}
+                        className={cn(classes.gridItem)}>
+                        <PaneTitle />
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12} md={6}
+                        className={cn(classes.gridItem)}>
+                        <PaneWebcam />
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12} md={6}
+                        className={cn(classes.gridItem)}>
+                        <PaneLocation />
+                    </Grid>
+                </Grid>
             </div>
         );
     }

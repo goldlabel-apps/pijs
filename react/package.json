@@ -1,6 +1,6 @@
 {
-  "name": "react-app",
-  "version": "0.0.9",
+  "name": "pi-node-server",
+  "version": "0.1.0",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
