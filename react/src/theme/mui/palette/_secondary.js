@@ -1,7 +1,5 @@
-/* http://mcg.mbitson.com */
-
 export const secondary = {
-    main: '#FFFFFF',
+    main: '#FFF',
 }
 
 export default secondary;

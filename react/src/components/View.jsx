@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core/';
 import {
     Icon,
-    Location,
+    // Location,
     ViewActions
 } from './';
 
@@ -25,6 +25,7 @@ class View extends Component {
         updated: Date.now(),
         timer: null,
         timerDelay: 30,
+        showCurrentPhoto: false,
     }
 
     componentDidMount() {
@@ -52,6 +53,7 @@ class View extends Component {
         const {
             classes,
         } = this.props;
+        const { showCurrentPhoto } = this.state;
         const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
         // const localDate = `${moment(Date.now()).format(`dddd, MMMM Do, h:mm:ss a`)}`;
         const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
@@ -93,6 +95,13 @@ class View extends Component {
                             </Grid>
                         </Grid>
 
+                        {showCurrentPhoto ? (
+                            <CardMedia
+                                className={classes.media}
+                                image={currentPhotoUrl}
+                                alt={`Current Photo`}
+                            />
+                        ) : null}
 
                     </Card>
                 </div>

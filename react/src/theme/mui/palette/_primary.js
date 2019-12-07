@@ -1,8 +1,5 @@
-
-/* http://mcg.mbitson.com */
-
 export const primary = {
-    main: '#BC1142',
+    main: '#333',
 };
 
 export default primary;
