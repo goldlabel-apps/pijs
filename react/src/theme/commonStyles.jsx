@@ -13,6 +13,16 @@ export default theme => ({
     },
     gridItem: {
         // border: '1px solid yellow',
-        padding: theme.spacing()
+        padding: theme.spacing(0.5)
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+    padTop: {
+        marginTop: theme.spacing()
+    },
+    centered: {
+        textAlign: 'center',
     }
 });

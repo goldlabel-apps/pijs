@@ -1,17 +1,23 @@
 import Icon from "./Icon";
-import Location from "./Location";
 import NotFound from "./NotFound";
-import PaneLocation from "./PaneLocation";
-import PaneTitle from "./PaneTitle";
-import PaneWebcam from "./PaneWebcam";
+import PaneAirQuality from "./panes/PaneAirQuality";
+import PaneHumidity from "./panes/PaneHumidity";
+import PaneLocation from "./panes/PaneLocation";
+import PanePressure from "./panes/PanePressure";
+import PaneTemperature from "./panes/PaneTemperature";
+import PaneTitle from "./panes/PaneTitle";
+import PaneWebcam from "./panes/PaneWebcam";
 import View from "./View";
 import ViewActions from "./ViewActions";
 
 export {
   Icon,
-  Location,
   NotFound,
+  PaneAirQuality,
+  PaneHumidity,
   PaneLocation,
+  PanePressure,
+  PaneTemperature,
   PaneTitle,
   PaneWebcam,
   View,

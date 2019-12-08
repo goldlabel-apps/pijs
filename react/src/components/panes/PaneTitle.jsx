@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
-import { styles } from '../theme/App.Style';
+import { styles } from '../../theme/App.Style';
 import moment from 'moment';
 import {
     Avatar,
@@ -10,7 +10,7 @@ import {
     CardHeader,
     // IconButton,
 } from '@material-ui/core/';
-import Icon from './Icon';
+import Icon from '../Icon';
 
 class PaneTitle extends Component {
 
@@ -28,7 +28,7 @@ class PaneTitle extends Component {
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}
                             className={classes.avatar}>
-                            <Icon icon={'settings'} />
+                            <Icon icon={'home'} />
                         </Avatar>
                     )}
                     action={null}

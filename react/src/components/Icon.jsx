@@ -14,9 +14,13 @@ import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
-import IconLocation from '@material-ui/icons/LocationCity';
+import IconLocation from '@material-ui/icons/MyLocation';
 import IconLink from '@material-ui/icons/Link';
-
+import IconWebcam from '@material-ui/icons/Camera';
+import IconTemperature from '@material-ui/icons/BeachAccess';
+import IconAirQuality from '@material-ui/icons/Person';
+import IconPressure from '@material-ui/icons/Security';
+import IconHumidity from '@material-ui/icons/CenterFocusWeak';
 
 import {
     GithubSVG,
@@ -45,6 +49,21 @@ class Icon extends Component {
         } = this.props;
 
         switch (icon) {
+
+            case `humidity`:
+                return (<IconHumidity className={cn()} />);
+
+            case `pressure`:
+                return (<IconPressure className={cn()} />);
+
+            case `airquality`:
+                return (<IconAirQuality className={cn()} />);
+
+            case `temperature`:
+                return (<IconTemperature className={cn()} />);
+
+            case `webcam`:
+                return (<IconWebcam className={cn()} />);
 
             case `location`:
                 return (<IconLocation className={cn()} />);

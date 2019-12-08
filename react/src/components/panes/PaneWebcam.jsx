@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
-import { styles } from '../theme/App.Style';
+import { styles } from '../../theme/App.Style';
 import {
     Avatar,
     Card,
@@ -10,7 +10,7 @@ import {
     CardMedia,
     // IconButton,
 } from '@material-ui/core/';
-import Icon from './Icon';
+import Icon from '../Icon';
 
 class PaneWebcam extends Component {
 
@@ -30,7 +30,7 @@ class PaneWebcam extends Component {
                         <Avatar
                             className={classes.avatar}
                             alt={`Webcam`}>
-                            <Icon icon={'settings'} />
+                            <Icon icon={'webcam'} />
                         </Avatar>
                     )}
                     action={null}
