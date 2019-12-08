@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
+import ReactMapboxGl, { /*Layer, */Feature } from 'react-mapbox-gl';
 import {
     Avatar,
     Card,
@@ -12,6 +13,10 @@ import {
     // IconButton,
 } from '@material-ui/core/';
 import Icon from '../Icon';
+
+const MapLocation = ReactMapboxGl({
+    accessToken: process.env.REACT_APP_MAPBOX
+});
 
 class PaneLocation extends Component {
 
@@ -51,6 +56,17 @@ class PaneLocation extends Component {
                         <strong>Longitude</strong> -27.4571 <br />
                         <strong>ISP</strong> Telstra Internet <br />
                     </Typography>
+
+                    <MapLocation
+                        // eslint-disable-next-line react/style-prop-object
+                        style="mapbox://styles/mapbox/streets-v9"
+                        containerStyle={{
+                            height: '180px',
+                            width: '100%'
+                        }}
+                    >
+                        <Feature coordinates={[-0.13235092163085938, 153.0318]} />
+                    </MapLocation>
                 </CardContent>
             </Card>
         );
