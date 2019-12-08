@@ -6,9 +6,10 @@ import { styles } from '../../theme/App.Style';
 import {
     Avatar,
     Card,
+    CardActions,
     CardHeader,
     CardMedia,
-    // IconButton,
+    IconButton,
 } from '@material-ui/core/';
 import Icon from '../Icon';
 
@@ -40,6 +41,20 @@ class PaneWebcam extends Component {
                     image={currentPhotoUrl}
                     alt={`Webcam`}
                 />
+                <CardActions disableSpacing>
+                    <div className={cn(classes.grow)} />
+                    <IconButton
+                        color={`primary`}
+                        aria-label="share">
+                        <Icon icon={`share`} />
+                    </IconButton>
+                    <IconButton
+                        color={`primary`}
+                        aria-label={`Settings`}
+                        onClick={() => { }}>
+                        <Icon icon={`settings`} />
+                    </IconButton>
+                </CardActions>
             </Card>
         );
     }

@@ -7,13 +7,13 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
-    PaneAirQuality,
-    PaneHumidity,
+    // PaneAirQuality,
+    // PaneHumidity,
     PaneLocation,
-    PanePressure,
+    // PanePressure,
     PaneTitle,
     PaneWebcam,
-    PaneTemperature,
+    // PaneTemperature,
 } from './';
 
 class View extends Component {
@@ -71,7 +71,7 @@ class View extends Component {
                         className={cn(classes.gridItem)}>
                         <PaneLocation />
                     </Grid>
-                    <Grid
+                    {/* <Grid
                         item
                         xs={12} sm={6} md={3} lg={3} xl={2}
                         className={cn(classes.gridItem)}>
@@ -96,7 +96,7 @@ class View extends Component {
                         xs={12} sm={6} md={3} lg={3} xl={2}
                         className={cn(classes.gridItem)}>
                         <PaneHumidity />
-                    </Grid>
+                    </Grid> */}
 
 
 
