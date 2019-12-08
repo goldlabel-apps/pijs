@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
-import moment from 'moment';
 import {
     Avatar,
     Card,
@@ -12,23 +11,23 @@ import {
 } from '@material-ui/core/';
 import Icon from '../Icon';
 
-class PaneTitle extends Component {
+class PaneTemperature extends Component {
 
     render() {
         const {
             classes,
         } = this.props;
-        const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
+        const temperature = `${30.27} &#176; C`;
         return (
             <Card className={cn(classes.card)}>
                 <CardHeader
-                    title={`Scarborough`}
-                    subheader={piDate}
+                    title={`Temperature`}
+                    subheader={temperature}
                     avatar={(
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}
                             className={classes.avatar}>
-                            <Icon icon={'home'} />
+                            <Icon icon={'temperature'} />
                         </Avatar>
                     )}
                     action={null}
@@ -39,5 +38,5 @@ class PaneTitle extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneTitle))
+    withStyles(styles, { withTheme: true })(withRouter(PaneTemperature))
 );

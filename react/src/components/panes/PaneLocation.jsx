@@ -9,9 +9,12 @@ import {
     Card,
     CardHeader,
     CardContent,
+    ExpansionPanel,
+    ExpansionPanelDetails,
+    ExpansionPanelSummary,
     Typography,
-    // IconButton,
 } from '@material-ui/core/';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Icon from '../Icon';
 
 const MapLocation = ReactMapboxGl({
@@ -34,39 +37,53 @@ class PaneLocation extends Component {
                         <Avatar
                             alt={`Webcam`}
                             className={classes.avatar}>
-                            <Icon icon={'settings'} />
+                            <Icon icon={'location'} />
                         </Avatar>
                     )}
                     action={null}
                 />
                 <CardContent>
 
-                    <Typography variant={`body1`}>
-                        From an IP address it's a simple
-                        request to a public API like
-                        <a href={`https://www.iplocation.net/`}>iplocation</a>
-                        to magically reveal your <b>geo-location</b>.
-                        This is what our Raspberry Pi's reveals about it.
-                    </Typography>
+
 
                     <Typography variant={`body2`}>
                         <strong>IP</strong> 141.168.211.166 <br />
                         Scarborough, Queensland, Australia<br />
                         <strong>Latitude</strong> -27.4571 <br />
                         <strong>Longitude</strong> -27.4571 <br />
-                        <strong>ISP</strong> Telstra Internet <br />
+                        <strong>ISP</strong> Telstra Internet <br /><br />
                     </Typography>
 
                     <MapLocation
                         // eslint-disable-next-line react/style-prop-object
                         style="mapbox://styles/mapbox/streets-v9"
                         containerStyle={{
-                            height: '180px',
+                            height: '125px',
                             width: '100%'
                         }}
                     >
-                        <Feature coordinates={[-0.13235092163085938, 153.0318]} />
+                        <Feature coordinates={[0, 0]} />
                     </MapLocation>
+
+                    <ExpansionPanel className={classes.padTop}>
+                        <ExpansionPanelSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                        >
+                            <Typography className={classes.heading}>
+                                About IP addresses
+                            </Typography>
+                        </ExpansionPanelSummary>
+                        <ExpansionPanelDetails>
+                            <Typography variant={`body1`}>
+                                From your IP address it's easy to find information
+                                about your real wold loction by using a service like
+                                &nbsp;<a style={{ color: 'black' }} target="_blank" href={`https://www.iplocation.net/`}>iplocation</a> which magically reveal your <b>geo-location</b>.
+                                This is what our Raspberry Pi's IP reveal.
+                            </Typography>
+                        </ExpansionPanelDetails>
+                    </ExpansionPanel>
                 </CardContent>
             </Card>
         );

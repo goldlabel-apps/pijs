@@ -4,17 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../theme/App.Style';
 import {
-    // Card,
-    // CardMedia,
     Grid,
 } from '@material-ui/core/';
 import {
-    // Icon,
-    // Location,
     PaneLocation,
     PaneTitle,
     PaneWebcam,
-    // ViewActions,
+    PaneTemperature,
 } from './';
 
 class View extends Component {
@@ -56,21 +52,27 @@ class View extends Component {
                 <Grid container>
                     <Grid
                         item
-                        xs={12} md={12}
+                        xs={12} sm={12} md={12} lg={12} xl={12}
                         className={cn(classes.gridItem)}>
                         <PaneTitle />
                     </Grid>
                     <Grid
                         item
-                        xs={12} md={6}
+                        xs={12} sm={12} md={4} lg={4} xl={4}
                         className={cn(classes.gridItem)}>
                         <PaneWebcam />
                     </Grid>
                     <Grid
                         item
-                        xs={12} md={6}
+                        xs={12} sm={12} md={3} lg={3} xl={3}
                         className={cn(classes.gridItem)}>
                         <PaneLocation />
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12} sm={12} md={3} lg={3} xl={3}
+                        className={cn(classes.gridItem)}>
+                        <PaneTemperature />
                     </Grid>
                 </Grid>
             </div>

@@ -30,7 +30,7 @@ class PaneWebcam extends Component {
                         <Avatar
                             className={classes.avatar}
                             alt={`Webcam`}>
-                            <Icon icon={'settings'} />
+                            <Icon icon={'webcam'} />
                         </Avatar>
                     )}
                     action={null}

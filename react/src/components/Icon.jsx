@@ -14,9 +14,10 @@ import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
-import IconLocation from '@material-ui/icons/LocationCity';
+import IconLocation from '@material-ui/icons/MyLocation';
 import IconLink from '@material-ui/icons/Link';
-
+import IconWebcam from '@material-ui/icons/Camera';
+import IconTemperature from '@material-ui/icons/BeachAccess';
 
 import {
     GithubSVG,
@@ -45,6 +46,11 @@ class Icon extends Component {
         } = this.props;
 
         switch (icon) {
+            case `temperature`:
+                return (<IconTemperature className={cn()} />);
+
+            case `webcam`:
+                return (<IconWebcam className={cn()} />);
 
             case `location`:
                 return (<IconLocation className={cn()} />);
