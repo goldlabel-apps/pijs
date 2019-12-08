@@ -1,6 +1,6 @@
 {
   "name": "pi-node-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",

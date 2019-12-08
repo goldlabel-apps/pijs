@@ -9,34 +9,33 @@ import {
     CardHeader,
     CardContent,
     Typography,
-    // IconButton,
 } from '@material-ui/core/';
 import Icon from '../Icon';
 
-class PaneTemperature extends Component {
+class PaneAirQuality extends Component {
 
     render() {
         const {
             classes,
         } = this.props;
-        const temperature = `${30.27} C`;
+        const airQuality = `${87} %`;
         return (
             <Card className={cn(classes.card)}>
                 <CardHeader
-                    title={`Temperature`}
-                    subheader={`It's stinkin' blimmin' hot`}
+                    title={`Air Quality`}
+                    subheader={`As a percentage of best`}
                     avatar={(
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}
                             className={classes.avatar}>
-                            <Icon icon={'temperature'} />
+                            <Icon icon={'airquality'} />
                         </Avatar>
                     )}
                     action={null}
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>
-                        {temperature}
+                        {airQuality}
                     </Typography>
                 </CardContent>
             </Card>
@@ -45,5 +44,5 @@ class PaneTemperature extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneTemperature))
+    withStyles(styles, { withTheme: true })(withRouter(PaneAirQuality))
 );

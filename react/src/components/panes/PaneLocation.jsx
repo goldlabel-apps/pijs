@@ -49,9 +49,8 @@ class PaneLocation extends Component {
                     <Typography variant={`body2`}>
                         <strong>IP</strong> 141.168.211.166 <br />
                         Scarborough, Queensland, Australia<br />
-                        <strong>Latitude</strong> -27.4571 <br />
-                        <strong>Longitude</strong> -27.4571 <br />
-                        <strong>ISP</strong> Telstra Internet <br /><br />
+                        <strong>Latitude</strong> -27.4571 <strong>Longitude</strong> -27.4571 <br /><br />
+                        {/* <strong>ISP</strong> Telstra Internet <br /><br /> */}
                     </Typography>
 
                     <MapLocation

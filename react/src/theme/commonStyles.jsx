@@ -21,5 +21,8 @@ export default theme => ({
     },
     padTop: {
         marginTop: theme.spacing()
+    },
+    centered: {
+        textAlign: 'center',
     }
 });
