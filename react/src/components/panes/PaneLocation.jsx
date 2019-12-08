@@ -79,8 +79,12 @@ class PaneLocation extends Component {
                             <Typography variant={`body1`}>
                                 From your IP address it's easy to find information
                                 about your real wold loction by using a service like
-                                &nbsp;<a style={{ color: 'black' }} target="_blank" href={`https://www.iplocation.net/`}>iplocation</a> which magically reveal your <b>geo-location</b>.
-                                This is what our Raspberry Pi's IP reveal.
+                                &nbsp;<a
+                                    style={{ color: 'black' }}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href={`https://www.iplocation.net/`}>
+                                    iplocation</a> which magically reveal your <b>geo-location</b>. Above is what our Raspberry Pi's IP reveal.
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
