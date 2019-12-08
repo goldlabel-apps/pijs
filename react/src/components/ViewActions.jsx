@@ -18,7 +18,7 @@ class ViewActions extends Component {
 
         return (
             <React.Fragment>
-                <Tooltip title={`Refresh`}>
+                {/* <Tooltip title={`Refresh`}>
                     <IconButton
                         className={cn(classes.none)}
                         color={`primary`}
@@ -29,7 +29,7 @@ class ViewActions extends Component {
                         }}>
                         <Icon icon={`refresh`} />
                     </IconButton>
-                </Tooltip>
+                </Tooltip> */}
                 <Tooltip title={`GitHub`}>
                     <IconButton
                         className={cn(classes.none)}

@@ -32,7 +32,7 @@ class PaneLocation extends Component {
             <Card className={cn(classes.card)}>
                 <CardHeader
                     title={`Geo Location`}
-                    subheader={`Where actually is this?`}
+                    subheader={`Where is this?`}
                     avatar={(
                         <Avatar
                             alt={`Webcam`}
@@ -45,26 +45,25 @@ class PaneLocation extends Component {
                 <CardContent>
 
 
-
-                    <Typography variant={`body2`}>
-                        <strong>IP</strong> 141.168.211.166 <br />
-                        Scarborough, Queensland, Australia<br />
-                        <strong>Latitude</strong> -27.4571 <strong>Longitude</strong> -27.4571 <br /><br />
-                        {/* <strong>ISP</strong> Telstra Internet <br /><br /> */}
-                    </Typography>
-
                     <MapLocation
                         // eslint-disable-next-line react/style-prop-object
                         style="mapbox://styles/mapbox/streets-v9"
                         containerStyle={{
-                            height: '125px',
+                            height: '218px',
                             width: '100%'
                         }}
                     >
                         <Feature coordinates={[0, 0]} />
                     </MapLocation>
 
-                    <ExpansionPanel className={classes.padTop}>
+                    <Typography variant={`body2`} className={classes.padTop}>
+                        Scarborough, Queensland, Australia<br />
+                        <strong>IP</strong> 141.168.211.166
+                        <strong>Latitude</strong> -27.4571 <strong>Longitude</strong> -27.4571 <br /><br />
+                        {/* <strong>ISP</strong> Telstra Internet <br /><br /> */}
+                    </Typography>
+
+                    <ExpansionPanel>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2a-content"

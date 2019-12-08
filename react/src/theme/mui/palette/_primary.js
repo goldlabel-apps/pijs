@@ -1,5 +1,5 @@
 export const primary = {
-  main: "#336699"
+  main: "#BC1142"
 };
 
 export default primary;

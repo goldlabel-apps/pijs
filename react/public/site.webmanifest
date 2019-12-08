@@ -3,7 +3,7 @@
   "name": "Pi Scarborough",
   "description": "Raspberry Pi Firmware 臧偉的小黃瓜談話",
   "start_url": ".",
-  "theme_color": "#336699",
+  "theme_color": "#BC1142",
   "background_color": "#FFFFFF",
   "display": "standalone",
   "lang": "en-US",

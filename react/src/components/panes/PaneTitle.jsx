@@ -10,6 +10,7 @@ import {
     CardHeader,
     // IconButton,
 } from '@material-ui/core/';
+import ViewActions from '../ViewActions';
 import Icon from '../Icon';
 
 class PaneTitle extends Component {
@@ -28,10 +29,12 @@ class PaneTitle extends Component {
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}
                             className={classes.avatar}>
-                            <Icon icon={'home'} />
+                            <Icon icon={'pi'} />
                         </Avatar>
                     )}
-                    action={null}
+                    action={
+                        <ViewActions />
+                    }
                 />
             </Card>
         );

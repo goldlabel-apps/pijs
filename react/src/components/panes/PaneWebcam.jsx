@@ -10,6 +10,7 @@ import {
     CardHeader,
     CardMedia,
     IconButton,
+    Tooltip,
 } from '@material-ui/core/';
 import Icon from '../Icon';
 
@@ -25,8 +26,8 @@ class PaneWebcam extends Component {
         return (
             <Card className={cn(classes.card)}>
                 <CardHeader
-                    title={`Webcam`}
-                    subheader={`The last photo the camera too was this`}
+                    title={`Chicken Cam`}
+                    subheader={`real time chuckens`}
                     avatar={(
                         <Avatar
                             className={classes.avatar}
@@ -43,17 +44,17 @@ class PaneWebcam extends Component {
                 />
                 <CardActions disableSpacing>
                     <div className={cn(classes.grow)} />
-                    <IconButton
-                        color={`primary`}
-                        aria-label="share">
-                        <Icon icon={`share`} />
-                    </IconButton>
-                    <IconButton
-                        color={`primary`}
-                        aria-label={`Settings`}
-                        onClick={() => { }}>
-                        <Icon icon={`settings`} />
-                    </IconButton>
+                    <Tooltip title={`Share`}>
+                        <IconButton
+                            color={`primary`}
+                            aria-label="Share"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                console.log('share')
+                            }}>
+                            <Icon icon={`share`} />
+                        </IconButton>
+                    </Tooltip>
                 </CardActions>
             </Card>
         );
