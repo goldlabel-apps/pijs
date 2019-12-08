@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
-import ReactMapboxGl, { /*Layer, */Feature } from 'react-mapbox-gl';
 import {
     Avatar,
     Card,
@@ -16,10 +15,7 @@ import {
 } from '@material-ui/core/';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Icon from '../Icon';
-
-const MapLocation = ReactMapboxGl({
-    accessToken: process.env.REACT_APP_MAPBOX
-});
+import Mapbox from '../Mapbox';
 
 class PaneLocation extends Component {
 
@@ -43,32 +39,20 @@ class PaneLocation extends Component {
                     action={null}
                 />
                 <CardContent>
-
-
-                    <MapLocation
-                        // eslint-disable-next-line react/style-prop-object
-                        style="mapbox://styles/mapbox/streets-v9"
-                        containerStyle={{
-                            height: '218px',
-                            width: '100%'
-                        }}
-                    >
-                        <Feature coordinates={[0, 0]} />
-                    </MapLocation>
+                    <Mapbox />
 
                     <Typography variant={`body2`} className={classes.padTop}>
                         Scarborough, Queensland, Australia<br />
-                        <strong>IP</strong> 141.168.211.166
-                        <strong>Latitude</strong> -27.4571 <strong>Longitude</strong> -27.4571 <br /><br />
-                        {/* <strong>ISP</strong> Telstra Internet <br /><br /> */}
+                        <strong>IP</strong> 141.168.211.166&nbsp;
+                        <strong>Latitude </strong>-27.199699<strong>
+                            Longitude</strong> 153.114990
                     </Typography>
 
-                    <ExpansionPanel>
+                    <ExpansionPanel className={classes.padTop}>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2a-content"
-                            id="panel2a-header"
-                        >
+                            id="panel2a-header">
                             <Typography className={classes.heading}>
                                 About IP addresses
                             </Typography>
