@@ -58,18 +58,17 @@ class View extends Component {
 
                     <Grid
                         item
-                        xs={12} sm={6} md={6} lg={6} xl={6}
+                        xs={12} sm={8} md={8} lg={8} xl={8}
                         className={cn(classes.gridItem)}>
                         <PaneWebcam />
                     </Grid>
 
                     <Grid
                         item
-                        xs={12} sm={6} md={6} lg={6} xl={6}
+                        xs={12} sm={4} md={4} lg={4} xl={4}
                         className={cn(classes.gridItem)}>
                         <PaneLocation />
                     </Grid>
-
 
 
                     {/* <Grid

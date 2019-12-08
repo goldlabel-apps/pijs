@@ -1,8 +1,9 @@
 
 export default theme => ({
     media: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
+        // height: 0,
+        // paddingTop: '56.25%', // 16:9
+        height: 350,
     },
     grow: {
         flexGrow: 1,

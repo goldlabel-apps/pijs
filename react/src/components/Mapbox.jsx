@@ -7,7 +7,7 @@ class Mapbox extends Component {
         viewport: {
             mapboxApiAccessToken: process.env.REACT_APP_MAPBOX,
             width: '100%',
-            height: 230,
+            height: 280,
             latitude: -27.199699,
             longitude: 153.114990,
             zoom: 7,

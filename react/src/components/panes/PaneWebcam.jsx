@@ -7,6 +7,7 @@ import {
     Avatar,
     Card,
     CardActions,
+    CardContent,
     CardHeader,
     CardMedia,
     IconButton,
@@ -37,11 +38,13 @@ class PaneWebcam extends Component {
                     )}
                     action={null}
                 />
-                <CardMedia
-                    className={classes.media}
-                    image={currentPhotoUrl}
-                    alt={`Webcam`}
-                />
+                <CardContent>
+                    <CardMedia
+                        className={classes.media}
+                        image={currentPhotoUrl}
+                        alt={`Webcam`}
+                    />
+                </CardContent>
                 <CardActions disableSpacing>
                     <div className={cn(classes.grow)} />
                     <Tooltip title={`Share`}>

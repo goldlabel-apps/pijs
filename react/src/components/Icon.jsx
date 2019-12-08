@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import cn from 'classnames';
 import IconPrivacy from '@material-ui/icons/Accessibility';
 import IconHome from '@material-ui/icons/HomeOutlined';
 import IconGo from '@material-ui/icons/PlayCircleOutline';
@@ -51,28 +50,28 @@ class Icon extends Component {
         switch (icon) {
 
             case `humidity`:
-                return (<IconHumidity className={cn()} />);
+                return (<IconHumidity color={`primary`} />);
 
             case `pressure`:
-                return (<IconPressure className={cn()} />);
+                return (<IconPressure color={`primary`} />);
 
             case `airquality`:
-                return (<IconAirQuality className={cn()} />);
+                return (<IconAirQuality color={`primary`} />);
 
             case `temperature`:
-                return (<IconTemperature className={cn()} />);
+                return (<IconTemperature color={`primary`} />);
 
             case `webcam`:
-                return (<IconWebcam className={cn()} />);
+                return (<IconWebcam color={`primary`} />);
 
             case `location`:
-                return (<IconLocation className={cn()} />);
+                return (<IconLocation color={`primary`} />);
 
             case `link`:
-                return (<IconLink className={cn()} />);
+                return (<IconLink color={`primary`} />);
 
             case `help`:
-                return (<IconHelp className={cn()} />);
+                return (<IconHelp color={`primary`} />);
 
             case `github`:
                 return (<GithubSVG className={classes.navIcon} />);
@@ -81,43 +80,43 @@ class Icon extends Component {
                 return (<PiSVG className={classes.navIcon} />);
 
             case `home`:
-                return (<IconHome className={cn()} />);
+                return (<IconHome color={`primary`} />);
 
             case `share`:
-                return (<IconShare className={cn()} />);
+                return (<IconShare color={`primary`} />);
 
             case `contact`:
-                return (<IconContact className={cn()} />);
+                return (<IconContact color={`primary`} />);
 
             case `docs`:
-                return (<IconDocs className={cn()} />);
+                return (<IconDocs color={`primary`} />);
 
             case `reset`:
-                return (<IconReset className={cn()} />);
+                return (<IconReset color={`primary`} />);
 
             case `refresh`:
-                return (<IconReset className={cn()} />);
+                return (<IconReset color={`primary`} />);
 
             case `go`:
-                return (<IconGo className={cn()} />);
+                return (<IconGo color={`primary`} />);
 
             case `settings`:
-                return (<IconSettings className={cn()} />);
+                return (<IconSettings color={`primary`} />);
 
             case `social`:
-                return (<IconSocial className={cn()} />);
+                return (<IconSocial color={`primary`} />);
 
             case `back`:
-                return (<IconBack className={cn()} />);
+                return (<IconBack color={`primary`} />);
 
             case `menu`:
-                return (<IconMenu className={cn()} />);
+                return (<IconMenu color={`primary`} />);
 
             case `privacy`:
-                return (<IconPrivacy className={cn()} />);
+                return (<IconPrivacy color={`primary`} />);
 
             case `api`:
-                return (<IconApi className={cn()} />);
+                return (<IconApi color={`primary`} />);
 
             default: {
                 return null;

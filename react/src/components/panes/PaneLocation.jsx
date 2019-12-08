@@ -43,7 +43,7 @@ class PaneLocation extends Component {
 
                     <Typography variant={`body2`} className={classes.padTop}>
                         Scarborough, Queensland, Australia<br />
-                        <strong>IP</strong> 141.168.211.166&nbsp;
+                        <strong>IP</strong> 141.168.211.166 <br />
                         <strong>Latitude </strong>-27.199699<strong>
                             Longitude</strong> 153.114990
                     </Typography>
