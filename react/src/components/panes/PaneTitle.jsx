@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
-import moment from 'moment';
+// import moment from 'moment';
 import {
     Avatar,
     Card,
@@ -19,12 +19,12 @@ class PaneTitle extends Component {
         const {
             classes,
         } = this.props;
-        const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
+        // const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
         return (
             <Card className={cn(classes.cardTitle)}>
                 <CardHeader
-                    title={`Scarborough`}
-                    subheader={piDate}
+                    title={`Pi Node Server`}
+                    subheader={'Scarborough, Queensland, Australia'}
                     avatar={(
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}

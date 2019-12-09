@@ -20,6 +20,8 @@ import IconTemperature from '@material-ui/icons/AcUnit';
 import IconAirQuality from '@material-ui/icons/ErrorOutline';
 import IconPressure from '@material-ui/icons/FormatLineSpacing';
 import IconHumidity from '@material-ui/icons/Whatshot';
+import IconZoomIn from '@material-ui/icons/ZoomIn';
+import IconZoomOut from '@material-ui/icons/ZoomOut';
 
 import {
     GithubSVG,
@@ -48,6 +50,12 @@ class Icon extends Component {
         } = this.props;
 
         switch (icon) {
+
+            case `zoomout`:
+                return (<IconZoomOut color={`primary`} />);
+
+            case `zoomin`:
+                return (<IconZoomIn color={`primary`} />);
 
             case `humidity`:
                 return (<IconHumidity color={`primary`} />);

@@ -12,8 +12,8 @@ import {
     // PaneTemperature,
     // PaneHumidity,
     PaneLocation,
-    // PaneTitle,
-    // PaneWebcam,
+    PaneTitle,
+    PaneWebcam,
 } from './';
 
 class View extends Component {
@@ -21,7 +21,7 @@ class View extends Component {
     state = {
         updated: Date.now(),
         timer: null,
-        timerDelay: 60,
+        timerDelay: 10,
     }
 
     componentDidMount() {
@@ -53,23 +53,25 @@ class View extends Component {
         return (
             <div className={cn(classes.view)}>
                 <Grid container>
-                    {/* <Grid
+
+                    <Grid
                         item
                         xs={12} sm={12} md={12} lg={12} xl={12}
                         className={cn(classes.gridItem)}>
                         <PaneTitle />
                     </Grid>
 
+
                     <Grid
                         item
                         xs={12} sm={8} md={8} lg={8} xl={8}
                         className={cn(classes.gridItem)}>
                         <PaneWebcam />
-                    </Grid> */}
+                    </Grid>
 
                     <Grid
                         item
-                        xs={12} sm={4} md={12} lg={4} xl={4}
+                        xs={12} sm={4} md={4} lg={4} xl={4}
                         className={cn(classes.gridItem)}>
                         <PaneLocation />
                     </Grid>

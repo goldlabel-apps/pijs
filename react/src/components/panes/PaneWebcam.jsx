@@ -6,8 +6,6 @@ import { styles } from '../../theme/App.Style';
 import {
     Avatar,
     Card,
-    CardActions,
-    CardContent,
     CardHeader,
     CardMedia,
     IconButton,
@@ -36,16 +34,22 @@ class PaneWebcam extends Component {
                             <Icon icon={'webcam'} />
                         </Avatar>
                     )}
-                    action={null}
+                    action={
+                        <Tooltip title={`More about webcam`}>
+                            <IconButton>
+                                <Icon icon={`menu`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
-                <CardContent>
-                    <CardMedia
-                        className={classes.media}
-                        image={currentPhotoUrl}
-                        alt={`Webcam`}
-                    />
-                </CardContent>
-                <CardActions disableSpacing>
+
+                <CardMedia
+                    className={classes.media}
+                    image={currentPhotoUrl}
+                    alt={`Webcam`}
+                />
+
+                {/* <CardActions disableSpacing>
                     <div className={cn(classes.grow)} />
                     <Tooltip title={`Share`}>
                         <IconButton
@@ -58,7 +62,7 @@ class PaneWebcam extends Component {
                             <Icon icon={`share`} />
                         </IconButton>
                     </Tooltip>
-                </CardActions>
+                </CardActions> */}
             </Card>
         );
     }

@@ -7,15 +7,9 @@ import {
     Avatar,
     Card,
     CardHeader,
-    CardContent,
-    ExpansionPanel,
-    ExpansionPanelDetails,
-    ExpansionPanelSummary,
     IconButton,
     Tooltip,
-    Typography,
 } from '@material-ui/core/';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Icon from '../Icon';
 import Mapbox from '../Mapbox';
 
@@ -39,47 +33,14 @@ class PaneLocation extends Component {
                         </Avatar>
                     )}
                     action={
-                        <Tooltip title={`About IP addresses`}>
+                        <Tooltip title={`More about Geo location`}>
                             <IconButton>
-                                <Icon icon={`help`} />
+                                <Icon icon={`menu`} />
                             </IconButton>
                         </Tooltip>
                     }
                 />
-                <CardContent>
-
-                    <Mapbox />
-
-                    <Typography variant={`body2`} className={classes.padTop}>
-                        Scarborough, Queensland, Australia<br />
-                        <strong>IP</strong> 141.168.211.166 <br />
-                        <strong>Latitude </strong>-27.199699<strong>
-                            Longitude</strong> 153.114990
-                    </Typography>
-
-                    <ExpansionPanel className={classes.padTop}>
-                        <ExpansionPanelSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel2a-content"
-                            id="panel2a-header">
-                            <Typography className={classes.heading}>
-
-                            </Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <Typography variant={`body1`}>
-                                From your IP address it's easy to find information
-                                about your real wold loction by using a service like
-                                &nbsp;<a
-                                    style={{ color: 'black' }}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    href={`https://www.iplocation.net/`}>
-                                    iplocation</a> which magically reveal your <b>geo-location</b>. Above is what our Raspberry Pi's IP reveal.
-                            </Typography>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </CardContent>
+                <Mapbox />
             </Card>
         );
     }
@@ -88,3 +49,39 @@ class PaneLocation extends Component {
 export default (
     withStyles(styles, { withTheme: true })(withRouter(PaneLocation))
 );
+
+
+/*
+
+                    <Typography variant={`body2`} className={classes.padTop}>
+                        Scarborough, Queensland, Australia<br />
+                        <strong>IP</strong> 141.168.211.166 <br />
+                        <strong>Latitude </strong>-27.199699<strong>
+                            Longitude</strong> 153.114990
+                    </Typography>
+
+
+<ExpansionPanel className={classes.padTop}>
+    <ExpansionPanelSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel2a-content"
+        id="panel2a-header">
+        <Typography className={classes.heading}>
+
+        </Typography>
+    </ExpansionPanelSummary>
+    <ExpansionPanelDetails>
+        <Typography variant={`body1`}>
+            From your IP address it's easy to find information
+            about your real wold loction by using a service like
+            &nbsp;<a
+                style={{ color: 'black' }}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://www.iplocation.net/`}>
+                iplocation</a> which magically reveal your <b>geo-location</b>. Above is what our Raspberry Pi's IP reveal.
+        </Typography>
+    </ExpansionPanelDetails>
+</ExpansionPanel>
+
+*/
