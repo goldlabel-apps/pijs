@@ -24,7 +24,7 @@ class PaneLocation extends Component {
             <Card className={cn(classes.location)}>
                 <CardHeader
                     title={`Geo Location`}
-                    subheader={`Where is this?`}
+                    subheader={`Lat -27.19 Lng 153.11`}
                     avatar={(
                         <Avatar
                             alt={`Webcam`}
@@ -56,8 +56,7 @@ export default (
                     <Typography variant={`body2`} className={classes.padTop}>
                         Scarborough, Queensland, Australia<br />
                         <strong>IP</strong> 141.168.211.166 <br />
-                        <strong>Latitude </strong>-27.199699<strong>
-                            Longitude</strong> 153.114990
+
                     </Typography>
 
 
