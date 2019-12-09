@@ -11,8 +11,8 @@ class Mapbox extends Component {
 
     state = {
         viewport: {
-            // style: mapboxStyle,
             mapboxApiAccessToken: process.env.REACT_APP_MAPBOX,
+            // style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
             width: '100%',
             height: 302,
             latitude: -27.199699,
