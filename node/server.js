@@ -1,29 +1,43 @@
-const express = require("express");
-const app = express();
+const fs = require("fs");
 const path = require("path");
-const chalk = require("chalk");
-const morgan = require("morgan");
+const http = require("http");
+const https = require("https");
+const express = require("express");
 
-const port = 1337;
-
+const app = express();
 app.use(express.static(path.join(__dirname + "/build")));
 
-app.use(morgan("dev"));
+const privateKey = fs.readFileSync(
+  "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
+  "utf8"
+);
+const certificate = fs.readFileSync(
+  "/etc/letsencrypt/live/pi.listingslab.io/cert.pem",
+  "utf8"
+);
+const ca = fs.readFileSync(
+  "/etc/letsencrypt/live/pi.listingslab.io/chain.pem",
+  "utf8"
+);
 
-app.get("/", (req, res, next) => {
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
+
+app.use((req, res) => {
   res.sendFile(path.join(__dirname + "/build/index.html"));
 });
 
-app.get("/ping", (req, res, next) => {
-  res.json({
-    location: {},
-    environment: {},
-    pi: {}
-  });
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(80, () => {
+  console.log("HTTP Server running on port 80");
 });
 
-app.listen(process.env.PORT || port, () =>
-  console.log(
-    chalk.yellow(`\nNode server running on http://localhost:${port}\n`)
-  )
-);
+httpsServer.listen(443, () => {
+  console.log("HTTPS Server running on port 443");
+});
+
