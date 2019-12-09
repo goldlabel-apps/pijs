@@ -1,6 +1,6 @@
 {
   "name": "pi-firmware",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
