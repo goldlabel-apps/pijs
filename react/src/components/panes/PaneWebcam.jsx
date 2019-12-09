@@ -20,7 +20,7 @@ class PaneWebcam extends Component {
             classes,
         } = this.props;
 
-        const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
+        const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
 
         return (
             <Card className={cn(classes.webcam)}>
@@ -49,20 +49,6 @@ class PaneWebcam extends Component {
                     alt={`Webcam`}
                 />
 
-                {/* <CardActions disableSpacing>
-                    <div className={cn(classes.grow)} />
-                    <Tooltip title={`Share`}>
-                        <IconButton
-                            color={`primary`}
-                            aria-label="Share"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                console.log('share')
-                            }}>
-                            <Icon icon={`share`} />
-                        </IconButton>
-                    </Tooltip>
-                </CardActions> */}
             </Card>
         );
     }
