@@ -5,6 +5,9 @@ export default theme => ({
         // paddingTop: '56.25%', // 16:9
         height: 350,
     },
+    cardMinHeight: {
+        minHeight: 175
+    },
     grow: {
         flexGrow: 1,
     },

@@ -20,10 +20,10 @@ class PanePressure extends Component {
         } = this.props;
         const pressure = `${1084} mBar`;
         return (
-            <Card className={cn(classes.card)}>
+            <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Pressure`}
-                    subheader={`Rain and storms`}
+                    subheader={`Sunny with sudden storms`}
                     avatar={(
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}

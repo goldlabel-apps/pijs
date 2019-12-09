@@ -20,10 +20,10 @@ class PaneAirQuality extends Component {
         } = this.props;
         const airQuality = `${87} %`;
         return (
-            <Card className={cn(classes.card)}>
+            <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Air Quality`}
-                    subheader={`As a percentage of best`}
+                    subheader={`(Percentage of best)`}
                     avatar={(
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}

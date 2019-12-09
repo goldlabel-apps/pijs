@@ -13,13 +13,13 @@ import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
-import IconLocation from '@material-ui/icons/MyLocation';
+import IconLocation from '@material-ui/icons/PersonPin';
 import IconLink from '@material-ui/icons/Link';
-import IconWebcam from '@material-ui/icons/Camera';
-import IconTemperature from '@material-ui/icons/BeachAccess';
-import IconAirQuality from '@material-ui/icons/Person';
-import IconPressure from '@material-ui/icons/Security';
-import IconHumidity from '@material-ui/icons/CenterFocusWeak';
+import IconWebcam from '@material-ui/icons/CameraAlt';
+import IconTemperature from '@material-ui/icons/AcUnit';
+import IconAirQuality from '@material-ui/icons/ErrorOutline';
+import IconPressure from '@material-ui/icons/FormatLineSpacing';
+import IconHumidity from '@material-ui/icons/Whatshot';
 
 import {
     GithubSVG,

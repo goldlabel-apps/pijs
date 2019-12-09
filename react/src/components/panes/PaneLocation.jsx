@@ -11,6 +11,8 @@ import {
     ExpansionPanel,
     ExpansionPanelDetails,
     ExpansionPanelSummary,
+    IconButton,
+    Tooltip,
     Typography,
 } from '@material-ui/core/';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -25,7 +27,7 @@ class PaneLocation extends Component {
         } = this.props;
 
         return (
-            <Card className={cn(classes.card)}>
+            <Card className={cn(classes.location)}>
                 <CardHeader
                     title={`Geo Location`}
                     subheader={`Where is this?`}
@@ -36,9 +38,16 @@ class PaneLocation extends Component {
                             <Icon icon={'location'} />
                         </Avatar>
                     )}
-                    action={null}
+                    action={
+                        <Tooltip title={`About IP addresses`}>
+                            <IconButton>
+                                <Icon icon={`help`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
                 <CardContent>
+
                     <Mapbox />
 
                     <Typography variant={`body2`} className={classes.padTop}>
@@ -54,7 +63,7 @@ class PaneLocation extends Component {
                             aria-controls="panel2a-content"
                             id="panel2a-header">
                             <Typography className={classes.heading}>
-                                About IP addresses
+
                             </Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>

@@ -25,10 +25,10 @@ class PaneWebcam extends Component {
         const currentPhotoUrl = `http://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
 
         return (
-            <Card className={cn(classes.card)}>
+            <Card className={cn(classes.webcam)}>
                 <CardHeader
                     title={`Chicken Cam`}
-                    subheader={`real time chuckens`}
+                    subheader={`Real time chuckens`}
                     avatar={(
                         <Avatar
                             className={classes.avatar}

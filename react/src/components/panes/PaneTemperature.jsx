@@ -21,7 +21,7 @@ class PaneTemperature extends Component {
         } = this.props;
         const temperature = `${30.27} C`;
         return (
-            <Card className={cn(classes.card)}>
+            <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Temperature`}
                     subheader={`It's stinkin' blimmin' hot`}

@@ -21,7 +21,7 @@ class PaneTitle extends Component {
         } = this.props;
         const piDate = `${moment(Date.now()).format(`ddd, MMM Do, h:mm:ss a`)}`;
         return (
-            <Card className={cn(classes.card)}>
+            <Card className={cn(classes.cardTitle)}>
                 <CardHeader
                     title={`Scarborough`}
                     subheader={piDate}
