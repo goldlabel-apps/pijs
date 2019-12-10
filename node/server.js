@@ -28,7 +28,8 @@ const app = express();
 app.use(express.static(path.join(__dirname + "/build")));
 
 app.use((req, res) => {
-  if (!req.secure) {
+  const yeh = true;
+  if (yeh) {
     res.send('redirect')
   }
   res.sendFile(path.join(__dirname + "/build/index.html"));
