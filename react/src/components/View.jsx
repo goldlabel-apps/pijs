@@ -21,7 +21,7 @@ class View extends Component {
     state = {
         updated: Date.now(),
         timer: null,
-        timerDelay: 10,
+        timerDelay: 5,
     }
 
     componentDidMount() {

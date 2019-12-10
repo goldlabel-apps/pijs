@@ -23,8 +23,8 @@ class PaneTitle extends Component {
         return (
             <Card className={cn(classes.cardTitle)}>
                 <CardHeader
-                    title={`Pi Node Server`}
-                    subheader={'Scarborough, Queensland, Australia'}
+                    title={`ChuckenGotchi`}
+                    subheader={`Remember Tamagotchi? It's kind of like that, but with chickens`}
                     avatar={(
                         <Avatar
                             alt={`Listingslab's Open Source Raspberry Pi Node Server`}

@@ -23,7 +23,7 @@ class PaneLocation extends Component {
         return (
             <Card className={cn(classes.location)}>
                 <CardHeader
-                    title={`Geo Location`}
+                    title={`Scarborough, Queensland, Australia`}
                     subheader={`Lat -27.19 Lng 153.11`}
                     avatar={(
                         <Avatar
