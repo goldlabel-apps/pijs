@@ -24,17 +24,14 @@ const credentials = {
 };
 
 const app = express();
-app.use(express.static(path.join(__dirname + "/build")));
-
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-http.all('*', function (req, res) {
-  return res.redirect("https://" + req.headers["host"] + req.url);
-});
+app.use(express.static(path.join(__dirname + "/build")));
 
-https.all('*', function (req, res) {
-  return res.send("Hello, World!");
+app.all('*', function (req, res) {
+  res.send('dslkjbduuo')
+  // return res.redirect("https://" + req.headers["host"] + req.url);
 });
 
 httpServer.listen(1337, () => {
