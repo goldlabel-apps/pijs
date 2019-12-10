@@ -30,7 +30,7 @@ const httpsServer = https.createServer(credentials, app);
 app.use(express.static(path.join(__dirname + "/build")));
 
 app.all('*', function (req, res) {
-  res.send('dslkjbduuo')
+  res.send('dslkjbduuo', req.secure)
   // return res.redirect("https://" + req.headers["host"] + req.url);
 });
 
