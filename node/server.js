@@ -32,7 +32,6 @@ app.use(express.static(path.join(__dirname + "/build")));
 app.all('*', function (req, res) {
   if (req.secure) {
     // request was via https, so do no special handling
-    next();
     res.send('locked DOWN.');
   } else {
     // request was via http, so redirect to https
