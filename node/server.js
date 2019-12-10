@@ -4,9 +4,6 @@ const http = require("http");
 const https = require("https");
 const express = require("express");
 
-const app = express();
-app.use(express.static(path.join(__dirname + "/build")));
-
 const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
   "utf8"
@@ -25,6 +22,18 @@ const credentials = {
   cert: certificate,
   ca: ca
 };
+
+const app = express();
+
+app.use(express.static(path.join(__dirname + "/build")));
+
+app.use(function (req, res, next) {
+  if (!/https/.test(req.protocol)) {
+    res.redirect("https://" + req.headers.host + req.url);
+  } else {
+    return next();
+  }
+});
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname + "/build/index.html"));
