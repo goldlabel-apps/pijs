@@ -3,7 +3,7 @@ const path = require("path");
 const http = require("http");
 const https = require("https");
 const express = require("express");
-const forceSSL = require('express-force-ssl');
+const forceSSL = require('express-force-https');
 
 const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
