@@ -31,14 +31,10 @@ app.use(express.static(path.join(__dirname + "/build")));
 
 app.all('*', function (req, res) {
   if (req.secure) {
-    // request was via https, so do no special handling
-    res.send('locked DOWN.');
+    res.sendFile(path.join(__dirname + "/build/react.html"));
   } else {
-    // request was via http, so redirect to https
     res.redirect('https://' + req.headers.host + req.url);
   }
-  // res.send('locked DOWN.');
-  // return res.redirect("https://" + req.headers["host"] + req.url);
 });
 
 httpServer.listen(1337, () => {
