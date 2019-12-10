@@ -41,5 +41,8 @@
     "React",
     "PWA",
     "Firebase"
-  ]
+  ],
+  "dependencies": {
+    "react-map-gl": "^5.1.3"
+  }
 }
