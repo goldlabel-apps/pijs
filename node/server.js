@@ -3,6 +3,7 @@ const path = require("path");
 const http = require("http");
 const https = require("https");
 const express = require("express");
+const forceSSL = require('express-force-ssl');
 
 const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
@@ -26,15 +27,7 @@ const credentials = {
 const app = express();
 
 app.use(express.static(path.join(__dirname + "/build")));
-
-app.use(function (req, res, next) {
-  if (!/https/.test(req.protocol)) {
-    res.redirect("https://" + req.headers.host + req.url);
-  } else {
-    return next();
-  }
-});
-
+app.use(forceSSL);
 app.use((req, res) => {
   res.sendFile(path.join(__dirname + "/build/index.html"));
 });

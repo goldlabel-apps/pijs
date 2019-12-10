@@ -11,7 +11,7 @@ As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
 
 ### What is this directory for?
 
-This is a little Node/express server designed to be exposed to the big. scary, wide world on port 1337 mapped to the url pi.listingslab.io](http://pi.listingslab.io). Once you have everything set up on your pi you can run this server.
+This is a little Node/express server designed to be exposed to the big. scary, wide world on port 1337 mapped to the url pi.listingslab.io](https://pi.listingslab.io). Once you have everything set up on your pi you can run this server.
 
 ```bash
 node ~/Desktop/node/pi-firmware/node/server.js

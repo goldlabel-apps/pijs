@@ -1,7 +1,7 @@
 const packageJSON = require("../package.json");
 
 const pi = {
-  // url: `http://pi.listingslab.io`,
+  // url: `https://pi.listingslab.io`,
   repository: packageJSON.repository,
   server: {
     name: packageJSON.name,
