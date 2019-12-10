@@ -24,16 +24,7 @@ const credentials = {
 };
 
 const app = express();
-
 app.use(express.static(path.join(__dirname + "/build")));
-
-app.use((req, res) => {
-  const yeh = true;
-  if (yeh) {
-    res.send('redirect')
-  }
-  res.sendFile(path.join(__dirname + "/build/index.html"));
-});
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
