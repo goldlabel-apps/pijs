@@ -29,11 +29,11 @@ app.use(express.static(path.join(__dirname + "/build")));
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-httpServer.all('*', function (req, res) {
+http.all('*', function (req, res) {
   return res.redirect("https://" + req.headers["host"] + req.url);
 });
 
-httpsServer.all('*', function (req, res) {
+https.all('*', function (req, res) {
   return res.send("Hello, World!");
 });
 
