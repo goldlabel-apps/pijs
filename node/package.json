@@ -1,6 +1,6 @@
 {
   "name": "node-server",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Secured Node/Express server for Raspberry Pi 4",
   "license": "MIT",
   "repository": {
