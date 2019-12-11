@@ -1,6 +1,6 @@
 ## Listingslab Raspberry Pi Firmware
 
-Grab an SD card, clone this repo onto it and fire up your Pi to see some seriously wicked shee-it. [GitHub](https://github.com/listingslab-hardware/pi-firmware)
+Grab an SD card, clone this repo onto it and fire up your Pi to see some seriously wicked shee-it.
 
 ### What is a Pi?
 
