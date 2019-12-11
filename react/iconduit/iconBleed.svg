@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="106px" viewBox="0 0 95 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>iconBleed</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="27.7506449%" y1="0%" x2="98.7074719%" y2="30.7194044%" id="linearGradient-1">
+            <stop stop-color="#EBDDDD" offset="0%"></stop>
+            <stop stop-color="#DD7979" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="27.8047138%" y1="0%" x2="98.5891062%" y2="30.7194044%" id="linearGradient-2">
+            <stop stop-color="#EBDDDD" offset="0%"></stop>
+            <stop stop-color="#DD7979" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="27.0370599%" y1="0%" x2="100.269626%" y2="30.7194044%" id="linearGradient-3">
+            <stop stop-color="#EBDDDD" offset="0%"></stop>
+            <stop stop-color="#DD7979" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1">
+        <g id="iconBleed" transform="translate(0.000000, -1.000000)" fill="url(#linearGradient-3)" fill-rule="nonzero" stroke="#E2CBCB">
+            <g id="Page-1">
+                <g id="iconBleed" transform="translate(0.111111, 0.925926)">
+                    <g id="Group" transform="translate(0.829981, 0.877157)">
+                        <polygon id="Path" points="61.9252813 104.281531 0.058908 42.4151578 16.5396609 25.9344049 5.20886842 14.6027328 19.6146842 0.196917 92.8118501 73.3940828"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
