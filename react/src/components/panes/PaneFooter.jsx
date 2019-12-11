@@ -7,8 +7,9 @@ import {
     Card,
     CardHeader,
 } from '@material-ui/core/';
+import ViewActions from '../ViewActions';
 
-class PaneTitle extends Component {
+class PaneFooter extends Component {
 
     render() {
         const {
@@ -18,8 +19,11 @@ class PaneTitle extends Component {
         return (
             <Card className={cn(classes.cardTitle)}>
                 <CardHeader
-                    title={`ChuckenGotchi`}
-                    subheader={`Remember Tamagotchi? It's kind of like that, but with chickens`}
+                    title={`Footer`}
+                    subheader={`Lere are links & stuff`}
+                    action={
+                        <ViewActions />
+                    }
                 />
             </Card>
         );
@@ -27,5 +31,5 @@ class PaneTitle extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneTitle))
+    withStyles(styles, { withTheme: true })(withRouter(PaneFooter))
 );

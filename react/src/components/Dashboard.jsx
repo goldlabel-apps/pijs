@@ -7,16 +7,13 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
-    // PaneAirQuality,
-    // PanePressure,
-    // PaneTemperature,
-    // PaneHumidity,
-    PaneLocation,
+    PaneFooter,
+    // PaneMap,
     PaneTitle,
     PaneWebcam,
 } from './';
 
-class View extends Component {
+class Dashboard extends Component {
 
     state = {
         updated: Date.now(),
@@ -69,11 +66,18 @@ class View extends Component {
                         <PaneWebcam />
                     </Grid>
 
-                    <Grid
+                    {/* <Grid
                         item
                         xs={12} sm={4} md={4} lg={4} xl={4}
                         className={cn(classes.gridItem)}>
-                        <PaneLocation />
+                        <PaneMap />
+                    </Grid> */}
+
+                    <Grid
+                        item
+                        xs={12} sm={12} md={12} lg={12} xl={12}
+                        className={cn(classes.gridItem)}>
+                        <PaneFooter />
                     </Grid>
 
 
@@ -113,5 +117,5 @@ class View extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(View))
+    withStyles(styles, { withTheme: true })(withRouter(Dashboard))
 );

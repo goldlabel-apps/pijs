@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core/';
 import Icon from '../Icon';
 
-class PaneLocation extends Component {
+class PaneMap extends Component {
 
     render() {
         const {
@@ -45,40 +45,5 @@ class PaneLocation extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneLocation))
+    withStyles(styles, { withTheme: true })(withRouter(PaneMap))
 );
-
-
-/*
-
-                    <Typography variant={`body2`} className={classes.padTop}>
-                        Scarborough, Queensland, Australia<br />
-                        <strong>IP</strong> 141.168.211.166 <br />
-
-                    </Typography>
-
-
-<ExpansionPanel className={classes.padTop}>
-    <ExpansionPanelSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel2a-content"
-        id="panel2a-header">
-        <Typography className={classes.heading}>
-
-        </Typography>
-    </ExpansionPanelSummary>
-    <ExpansionPanelDetails>
-        <Typography variant={`body1`}>
-            From your IP address it's easy to find information
-            about your real wold loction by using a service like
-            &nbsp;<a
-                style={{ color: 'black' }}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={`https://www.iplocation.net/`}>
-                iplocation</a> which magically reveal your <b>geo-location</b>. Above is what our Raspberry Pi's IP reveal.
-        </Typography>
-    </ExpansionPanelDetails>
-</ExpansionPanel>
-
-*/
