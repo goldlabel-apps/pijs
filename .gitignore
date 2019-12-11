@@ -1,8 +1,4 @@
 
-# SSL
-node/pi_listingslab_io.crt
-node/pi_listingslab_io.key
-
 # Current Photo
 node/build/jpg/current-photo.jpg
 
