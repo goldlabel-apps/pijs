@@ -1,5 +1,5 @@
 export const secondary = {
-  main: "#EC3167"
+  main: "#FFFFFF"
 };
 
 export default secondary;
