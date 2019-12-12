@@ -4,13 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
 import {
-    // Avatar,
     Card,
     CardHeader,
-    // IconButton,
-    // Tooltip,
+    IconButton,
+    Tooltip,
 } from '@material-ui/core/';
-// import Icon from '../Icon';
+import { Icon } from '../';
 
 class PaneMap extends Component {
 
@@ -23,23 +22,22 @@ class PaneMap extends Component {
             <Card className={cn(classes.location)}>
                 <CardHeader
                     title={`Map`}
-                    // subheader={`Lat -27.19 Lng 153.11`}
-                    // avatar={(
-                    //     <Avatar
-                    //         alt={`Webcam`}
-                    //         className={classes.avatar}>
-                    //         <Icon icon={'location'} />
-                    //     </Avatar>
-                    // )}
-                    // action={
-                    //     <Tooltip title={`More about Geo location`}>
-                    //         <IconButton>
-                    //             <Icon icon={`menu`} />
-                    //         </IconButton>
-                    //     </Tooltip>
-                    // }
+                    action={
+                        <Tooltip title={`Full screen`}>
+                            <IconButton
+                                size={`small`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log ('redux action -> PaneMap/fullscreen')
+                                }}
+                            >
+                                <Icon icon={`fullscreen`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
-                mapbox
+                <div id={`map`} className={cn(classes.map)} />
+                
             </Card>
         );
     }

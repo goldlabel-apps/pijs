@@ -4,13 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
 import {
-    // Avatar,
     Card,
     CardHeader,
     CardContent,
+    IconButton,
+    Tooltip,
     Typography,
 } from '@material-ui/core/';
-// import Icon from '../Icon';
+import { Icon } from '../';
 
 class PaneCloud extends Component {
 
@@ -23,15 +24,19 @@ class PaneCloud extends Component {
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Cloud`}
-                    // subheader={`(Percentage of best)`}
-                    // avatar={(
-                    //     <Avatar
-                    //         alt={`Listingslab's Open Source Raspberry Pi Node Server`}
-                    //         className={classes.avatar}>
-                    //         <Icon icon={'airquality'} />
-                    //     </Avatar>
-                    // )}
-                    // action={null}
+                    action={
+                        <Tooltip title={`Full screen`}>
+                            <IconButton
+                                size={`small`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log ('redux action -> PaneCloud/fullscreen')
+                                }}
+                            >
+                                <Icon icon={`fullscreen`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>

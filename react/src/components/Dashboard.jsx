@@ -20,40 +20,40 @@ import {
 
 class Dashboard extends Component {
 
-    state = {
-        updated: Date.now(),
-        timer: null,
-        timerDelay: 15,
-    }
+    // state = {
+    //     updated: Date.now(),
+    //     timer: null,
+    //     timerDelay: 15,
+    // }
 
-    componentDidMount() {
-        const {
-            timer,
-            timerDelay
-        } = this.state;
-        if (!timer) {
-            this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
-        }
+    // componentDidMount() {
+        // const {
+        //     timer,
+        //     timerDelay
+        // } = this.state;
+        // if (!timer) {
+        //     this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
+        // }
 
 
-        let lat = -27.19;
-        let lon = 153.11;
-        let baseURL = `https://api.openweathermap.org/data/2.5/weather`;
-        let endpoint = `${baseURL}?lat=${lat}&lon=${lon}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`;
-        console.log(endpoint);
+        // let lat = -27.19;
+        // let lon = 153.11;
+        // let baseURL = `https://api.openweathermap.org/data/2.5/weather`;
+        // let endpoint = `${baseURL}?lat=${lat}&lon=${lon}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`;
+        // console.log(endpoint);
 
-    }
+    // }
 
-    componentWillUnmount() {
-        const {
-            timer
-        } = this.state;
-        clearInterval(timer);
-    }
+    // componentWillUnmount() {
+    //     const {
+    //         timer
+    //     } = this.state;
+    //     clearInterval(timer);
+    // }
 
-    update = () => {
-        this.setState({ updated: Date.now() })
-    }
+    // update = () => {
+    //     this.setState({ updated: Date.now() })
+    // }
 
     render() {
         const {

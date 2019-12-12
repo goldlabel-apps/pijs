@@ -4,14 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
 import {
-    Avatar,
     Card,
     CardHeader,
     CardContent,
+    IconButton,
+    Tooltip,
     Typography,
-    // IconButton,
 } from '@material-ui/core/';
-import Icon from '../Icon';
+import { Icon } from '../';
 
 class PaneTemperature extends Component {
 
@@ -20,20 +20,25 @@ class PaneTemperature extends Component {
             classes,
         } = this.props;
         // const temperature = `${30.27} C`;
+        // Temperature in Kelvin. Subtracted 273.15 from this figure to convert to Celsius.
         const temperature = `...`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Temperature`}
-                    // subheader={`It's stinkin' blimmin' hot`}
-                    // avatar={(
-                    //     <Avatar
-                    //         alt={`Listingslab's Open Source Raspberry Pi Node Server`}
-                    //         className={classes.avatar}>
-                    //         <Icon icon={'temperature'} />
-                    //     </Avatar>
-                    // )}
-                    // action={null}
+                    action={
+                        <Tooltip title={`Full screen`}>
+                            <IconButton
+                                size={`small`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log ('redux action -> map/fullscreen')
+                                }}
+                            >
+                                <Icon icon={`fullscreen`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>

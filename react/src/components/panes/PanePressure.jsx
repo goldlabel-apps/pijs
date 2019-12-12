@@ -4,13 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
 import {
-    // Avatar,
     Card,
     CardHeader,
     CardContent,
+    IconButton,
+    Tooltip,
     Typography,
 } from '@material-ui/core/';
-// import Icon from '../Icon';
+import { Icon } from '../';
 
 class PanePressure extends Component {
 
@@ -23,15 +24,19 @@ class PanePressure extends Component {
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Pressure`}
-                    // subheader={`Sunny with sudden storms`}
-                    // avatar={(
-                    //     <Avatar
-                    //         alt={`Listingslab's Open Source Raspberry Pi Node Server`}
-                    //         className={classes.avatar}>
-                    //         <Icon icon={'pressure'} />
-                    //     </Avatar>
-                    // )}
-                    // action={null}
+                    action={
+                        <Tooltip title={`Full screen`}>
+                            <IconButton
+                                size={`small`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log ('redux action -> PanePressure/fullscreen')
+                                }}
+                            >
+                                <Icon icon={`fullscreen`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
                 <CardContent>
                     <Typography variant={`h4`} className={cn(classes.centered)}>

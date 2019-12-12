@@ -22,6 +22,7 @@ import IconPressure from '@material-ui/icons/FormatLineSpacing';
 import IconHumidity from '@material-ui/icons/Whatshot';
 import IconZoomIn from '@material-ui/icons/ZoomIn';
 import IconZoomOut from '@material-ui/icons/ZoomOut';
+import IconFullscreen from '@material-ui/icons/Fullscreen';
 
 import {
     GithubSVG,
@@ -50,6 +51,9 @@ class Icon extends Component {
         } = this.props;
 
         switch (icon) {
+
+            case `fullscreen`:
+                return (<IconFullscreen color={`primary`} />);
 
             case `zoomout`:
                 return (<IconZoomOut color={`primary`} />);

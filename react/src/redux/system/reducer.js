@@ -8,6 +8,7 @@ import { first } from './actions';
 export const systemSlice = {
     webcam: {
         open: true,
+        running: false,
     },
     temperature: {
         open: true,

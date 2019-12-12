@@ -7,7 +7,10 @@ import {
     Card,
     CardHeader,
     CardMedia,
+    IconButton,
+    Tooltip,
 } from '@material-ui/core/';
+import { Icon } from '../';
 
 class PaneWebcam extends Component {
 
@@ -22,7 +25,19 @@ class PaneWebcam extends Component {
             <Card className={cn(classes.webcam)}>
                 <CardHeader
                     title={`Webcam`}
-                    // subheader={`Real time chuckens`}
+                    action={
+                        <Tooltip title={`Full screen`}>
+                            <IconButton
+                                size={`small`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log ('redux action -> PaneWebcam/fullscreen')
+                                }}
+                            >
+                                <Icon icon={`fullscreen`} />
+                            </IconButton>
+                        </Tooltip>
+                    }
                 />
                 <CardMedia
                     className={classes.media}
