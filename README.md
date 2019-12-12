@@ -1,6 +1,6 @@
-## Listingslab Raspberry Pi Firmware
+## PiJS
 
-Grab an SD card, clone this repo onto it and fire up your Pi to see some seriously wicked shee-it.
+PiJS is fullstack, isomorphic JavaScript for the Raspberry Pi. A React PWA and Secure SSL Node/Express server.
 
 ### What is a Pi?
 

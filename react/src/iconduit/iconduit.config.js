@@ -2,7 +2,7 @@ module.exports = () => {
   return {
     name: "Pi JS",
     description:
-      "Secure SSL Node/Express server for Raspberry Pi 4",
+      "A React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4",
     urls: {
       base: "https://pi.listingslab.io"
     },
