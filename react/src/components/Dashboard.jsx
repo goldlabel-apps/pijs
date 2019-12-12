@@ -3,14 +3,15 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../theme/App.Style';
+import axios from 'axios';
 import {
     Grid,
 } from '@material-ui/core/';
 import {
-    PaneFooter,
+    // PaneFooter,
     // PaneMap,
-    PaneTitle,
-    PaneWebcam,
+    // PaneTitle,
+    // PaneWebcam,
 } from './';
 
 class Dashboard extends Component {
@@ -29,10 +30,24 @@ class Dashboard extends Component {
         if (!timer) {
             this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
         }
+        
+        let lat = -27.19;
+        let lon = 153.11;
+        let baseURL = `https://api.openweathermap.org/data/2.5/weather`;
+        let endpoint = `${baseURL}?lat=${lat}&lon=${lon}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`;
 
-
-        console.log('get weather from Open Weather', process.env.REACT_APP_OPEN_WEATHER);
-
+        // window.open(endpoint, '_blank')
+        
+        axios.get(endpoint)
+            .then(function (response) {
+            console.log(response);
+            })
+            .catch(function (error) {
+            console.log(error);
+            })
+            .finally(function () {
+            console.log('finally');
+            });
 
 
     }
@@ -57,20 +72,20 @@ class Dashboard extends Component {
             <div className={cn(classes.view)}>
                 <Grid container>
 
-                    <Grid
+                    {/* <Grid
                         item
                         xs={12} sm={12} md={12} lg={12} xl={12}
                         className={cn(classes.gridItem)}>
                         <PaneTitle />
-                    </Grid>
+                    </Grid> */}
 
 
-                    <Grid
+                    {/* <Grid
                         item
                         xs={12} sm={8} md={8} lg={8} xl={8}
                         className={cn(classes.gridItem)}>
                         <PaneWebcam />
-                    </Grid>
+                    </Grid> */}
 
                     {/* <Grid
                         item
@@ -79,12 +94,12 @@ class Dashboard extends Component {
                         <PaneMap />
                     </Grid> */}
 
-                    <Grid
+                    {/* <Grid
                         item
                         xs={12} sm={12} md={12} lg={12} xl={12}
                         className={cn(classes.gridItem)}>
                         <PaneFooter />
-                    </Grid>
+                    </Grid> */}
 
 
                     {/* <Grid
