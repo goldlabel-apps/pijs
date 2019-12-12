@@ -18,6 +18,10 @@ import {
     openWeather,
     openWeatherSlice
 } from './openWeather/reducer';
+import {
+    mapbox,
+    mapboxSlice
+} from './mapbox/reducer';
 
 const initRedux = () => {
 
@@ -27,8 +31,9 @@ const initRedux = () => {
     }
 
     const reducers = combineReducers({
+        mapbox,
+        openWeather,
         system,
-        openWeather
     })
 
     const persistedReducer = persistReducer(persistConfig, reducers);
@@ -40,6 +45,7 @@ const initRedux = () => {
     const preloadedState = {
         system: systemSlice,
         openWeather: openWeatherSlice,
+        mapbox: mapboxSlice,
     }
     
     const store = configureStore({
