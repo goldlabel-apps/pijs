@@ -15,9 +15,9 @@ import {
     systemSlice
 } from './system/reducer';
 import {
-    openWeather,
-    openWeatherSlice
-} from './openWeather/reducer';
+    weather,
+    weatherSlice
+} from './weather/reducer';
 import {
     mapbox,
     mapboxSlice
@@ -32,7 +32,7 @@ const initRedux = () => {
 
     const reducers = combineReducers({
         mapbox,
-        openWeather,
+        weather,
         system,
     })
 
@@ -44,7 +44,7 @@ const initRedux = () => {
 
     const preloadedState = {
         system: systemSlice,
-        openWeather: openWeatherSlice,
+        weather: weatherSlice,
         mapbox: mapboxSlice,
     }
     

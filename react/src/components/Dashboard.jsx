@@ -15,34 +15,21 @@ import {
     PanePressure,
     PaneCloud,
 } from './';
-import { getWeather } from '../redux/openWeather/actions'
+import { initWeather } from '../redux/weather/actions'
 
 // var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
 class Dashboard extends Component {
 
+    componentDidMount() {
+        initWeather()
+    }
+
+
     // state = {
     //     updated: Date.now(),
     //     timer: null,
     //     timerDelay: 15,
-    // }
-
-    // componentDidMount() {
-        // const {
-        //     timer,
-        //     timerDelay
-        // } = this.state;
-        // if (!timer) {
-        //     this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
-        // }
-
-
-        // let lat = -27.19;
-        // let lon = 153.11;
-        // let baseURL = `https://api.openweathermap.org/data/2.5/weather`;
-        // let endpoint = `${baseURL}?lat=${lat}&lon=${lon}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`;
-        // console.log(endpoint);
-
     // }
 
     // componentWillUnmount() {
@@ -65,7 +52,10 @@ class Dashboard extends Component {
             pressure,
             temperature,
             webcam,
+            // weather,
         } = this.props;
+
+        // console.log('weather', weather)
         
         return (
             <div className={cn(classes.view)}>
@@ -114,6 +104,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        weather: store.weather,
         webcam: store.system.webcam,
         temperature: store.system.temperature,
         humidity: store.system.humidity,

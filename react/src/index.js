@@ -21,6 +21,10 @@ if (disablePersitance) {
 }
 
 const persistedRedux = initRedux();
+const getStore = () => {
+  return persistedRedux.store;
+};
+export { getStore };
 
 ReactDOM.render(
     <Provider store={persistedRedux.store}>

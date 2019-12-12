@@ -9,8 +9,8 @@ import {
 
 export const mapboxSlice = {
     updated: Date.now(),
-    lat: -27.199699,
-    lng: 153.114990,
+    lat: -27.211579,
+    lng: 153.107658,
     zoom: 12
 }
 
