@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../theme/App.Style';
-import axios from 'axios';
 import {
     Grid,
 } from '@material-ui/core/';
@@ -30,26 +30,6 @@ class Dashboard extends Component {
         if (!timer) {
             this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
         }
-        
-        let lat = -27.19;
-        let lon = 153.11;
-        let baseURL = `https://api.openweathermap.org/data/2.5/weather`;
-        let endpoint = `${baseURL}?lat=${lat}&lon=${lon}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`;
-
-        // window.open(endpoint, '_blank')
-        
-        axios.get(endpoint)
-            .then(function (response) {
-            console.log(response);
-            })
-            .catch(function (error) {
-            console.log(error);
-            })
-            .finally(function () {
-            console.log('finally');
-            });
-
-
     }
 
     componentWillUnmount() {
@@ -66,8 +46,9 @@ class Dashboard extends Component {
     render() {
         const {
             classes,
+            store
         } = this.props;
-
+        console.log ('store', store)
         return (
             <div className={cn(classes.view)}>
                 <Grid container>
@@ -137,6 +118,20 @@ class Dashboard extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(withRouter(Dashboard))
-);
+const mapStateToProps = (store) => {
+    return {
+      store,
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      // systemOpenMessage: (params) => dispatch(systemOpenMessage(params)),
+    };
+  };
+  
+  export default (
+    connect(
+      mapStateToProps,
+      mapDispatchToProps
+    )(withStyles(styles, { withTheme: true })(withRouter(Dashboard))));
