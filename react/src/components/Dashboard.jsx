@@ -15,6 +15,7 @@ import {
     PanePressure,
     PaneCloud,
 } from './';
+import { getWeather } from '../redux/openWeather/actions'
 
 // var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 

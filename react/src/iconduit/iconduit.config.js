@@ -1,10 +1,10 @@
 module.exports = () => {
   return {
-    name: "ChuckenGotchi",
+    name: "Pi JS",
     description:
-      "Remember the 1990's classic Tamagotchi? It's like that but with real life chuckens.",
+      "Secure SSL Node/Express server for Raspberry Pi 4",
     urls: {
-      base: "https://chuckengotchi.com/"
+      base: "https://pi.listingslab.io"
     },
     colors: {
       brand: "#212121"
@@ -36,25 +36,6 @@ module.exports = () => {
     outputs: {
       include: ["appleTouchIconMasked"],
       exclude: ["serviceWorker"]
-    },
-    applications: {
-      native: [
-        {
-          platform: "itunes",
-          id: "915056765",
-          launchUrl: "iconduit://dashboard"
-        },
-        {
-          platform: "play",
-          id: "com.google.android.apps.maps",
-          launchUrl: "https://iconduit.app/dashboard"
-        },
-        {
-          platform: "windows",
-          id: "9wzdncrdtbvb",
-          launchUrl: "iconduit://dashboard"
-        }
-      ]
     },
     extra: {
       license: "MIT"

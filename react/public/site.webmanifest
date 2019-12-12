@@ -1,7 +1,7 @@
 {
-  "short_name": "pi.io",
-  "name": "ChuckenGotchi",
-  "description": "Remember the 1990's classic Tamagotchi? It's like that but with real life chuckens.",
+  "short_name": "Pi JS",
+  "name": "Pi Node Server",
+  "description": "Secure SSL Node/Express server for Raspberry Pi 4",
   "start_url": ".",
   "theme_color": "#212121",
   "background_color": "#FFFFFF",

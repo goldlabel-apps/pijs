@@ -7,7 +7,7 @@ import { first } from './actions';
 
 export const systemSlice = {
     webcam: {
-        open: true,
+        open: false,
         running: false,
     },
     temperature: {
@@ -17,7 +17,7 @@ export const systemSlice = {
         open: true,
     },
     map: {
-        open: true,
+        open: false,
     },
     pressure: {
         open: true,

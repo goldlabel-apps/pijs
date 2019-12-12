@@ -1,7 +1,7 @@
 {
   "name": "pi-firmware",
   "version": "0.3.2",
-  "description": "Listingslab Raspberry Pi Firmware with a Node Server 臧偉的小黃瓜談話",
+  "description": "Secure SSL Node/Express server for Raspberry Pi 4",
   "author": {
     "name": "listingslab",
     "email": "listingslab@gmail.com"
