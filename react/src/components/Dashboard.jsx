@@ -29,6 +29,12 @@ class Dashboard extends Component {
         if (!timer) {
             this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
         }
+
+
+        console.log('get weather from Open Weather', process.env.REACT_APP_OPEN_WEATHER);
+
+
+
     }
 
     componentWillUnmount() {
