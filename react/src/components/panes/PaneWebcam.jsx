@@ -21,8 +21,8 @@ class PaneWebcam extends Component {
         return (
             <Card className={cn(classes.webcam)}>
                 <CardHeader
-                    title={`Chicken Cam`}
-                    subheader={`Real time chuckens`}
+                    title={`Webcam`}
+                    // subheader={`Real time chuckens`}
                 />
                 <CardMedia
                     className={classes.media}

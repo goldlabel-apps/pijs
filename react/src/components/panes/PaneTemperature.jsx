@@ -19,20 +19,21 @@ class PaneTemperature extends Component {
         const {
             classes,
         } = this.props;
-        const temperature = `${30.27} C`;
+        // const temperature = `${30.27} C`;
+        const temperature = `...`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Temperature`}
-                    subheader={`It's stinkin' blimmin' hot`}
-                    avatar={(
-                        <Avatar
-                            alt={`Listingslab's Open Source Raspberry Pi Node Server`}
-                            className={classes.avatar}>
-                            <Icon icon={'temperature'} />
-                        </Avatar>
-                    )}
-                    action={null}
+                    // subheader={`It's stinkin' blimmin' hot`}
+                    // avatar={(
+                    //     <Avatar
+                    //         alt={`Listingslab's Open Source Raspberry Pi Node Server`}
+                    //         className={classes.avatar}>
+                    //         <Icon icon={'temperature'} />
+                    //     </Avatar>
+                    // )}
+                    // action={null}
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>

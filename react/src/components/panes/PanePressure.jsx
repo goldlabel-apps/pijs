@@ -4,13 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import { styles } from '../../theme/App.Style';
 import {
-    Avatar,
+    // Avatar,
     Card,
     CardHeader,
     CardContent,
     Typography,
 } from '@material-ui/core/';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 
 class PanePressure extends Component {
 
@@ -18,20 +18,20 @@ class PanePressure extends Component {
         const {
             classes,
         } = this.props;
-        const pressure = `${1084} mBar`;
+        const pressure = `...`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Pressure`}
-                    subheader={`Sunny with sudden storms`}
-                    avatar={(
-                        <Avatar
-                            alt={`Listingslab's Open Source Raspberry Pi Node Server`}
-                            className={classes.avatar}>
-                            <Icon icon={'pressure'} />
-                        </Avatar>
-                    )}
-                    action={null}
+                    // subheader={`Sunny with sudden storms`}
+                    // avatar={(
+                    //     <Avatar
+                    //         alt={`Listingslab's Open Source Raspberry Pi Node Server`}
+                    //         className={classes.avatar}>
+                    //         <Icon icon={'pressure'} />
+                    //     </Avatar>
+                    // )}
+                    // action={null}
                 />
                 <CardContent>
                     <Typography variant={`h4`} className={cn(classes.centered)}>

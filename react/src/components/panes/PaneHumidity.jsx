@@ -18,20 +18,20 @@ class PaneHumidity extends Component {
         const {
             classes,
         } = this.props;
-        const humidity = `${78} %`;
+        const humidity = `...`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
                     title={`Humidity`}
-                    subheader={`Very sticky`}
-                    avatar={(
-                        <Avatar
-                            alt={`Listingslab's Open Source Raspberry Pi Node Server`}
-                            className={classes.avatar}>
-                            <Icon icon={'humidity'} />
-                        </Avatar>
-                    )}
-                    action={null}
+                    // subheader={`Very sticky`}
+                    // avatar={(
+                    //     <Avatar
+                    //         alt={`Listingslab's Open Source Raspberry Pi Node Server`}
+                    //         className={classes.avatar}>
+                    //         <Icon icon={'humidity'} />
+                    //     </Avatar>
+                    // )}
+                    // action={null}
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>

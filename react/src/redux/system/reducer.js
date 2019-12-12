@@ -6,6 +6,24 @@ import {
 import { first } from './actions';
 
 export const systemSlice = {
+    webcam: {
+        open: true,
+    },
+    temperature: {
+        open: true,
+    },
+    humidity: {
+        open: true,
+    },
+    map: {
+        open: true,
+    },
+    pressure: {
+        open: true,
+    },
+    cloud: {
+        open: true,
+    },
 }
 
 const system = createReducer(systemSlice, {

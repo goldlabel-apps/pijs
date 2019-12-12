@@ -11,8 +11,17 @@ console.log(
     `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
-// console.log('initRedux', initRedux())
+const disablePersitance = true;
+const purgeStore = () => {
+  console.log(`Persitance Disabled.`);
+  localStorage.clear();
+};
+if (disablePersitance) {
+  purgeStore();
+}
+
 const persistedRedux = initRedux();
+
 ReactDOM.render(
     <Provider store={persistedRedux.store}>
         <PersistGate loading={null} persistor={persistedRedux.persistor}>

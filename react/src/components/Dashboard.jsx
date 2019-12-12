@@ -8,11 +8,15 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
-    // PaneFooter,
-    // PaneMap,
-    // PaneTitle,
-    // PaneWebcam,
+    PaneMap,
+    PaneWebcam,
+    PaneTemperature,
+    PaneHumidity,
+    PanePressure,
+    PaneCloud,
 } from './';
+
+// var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
 class Dashboard extends Component {
 
@@ -30,6 +34,14 @@ class Dashboard extends Component {
         if (!timer) {
             this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
         }
+
+
+        let lat = -27.19;
+        let lon = 153.11;
+        let baseURL = `https://api.openweathermap.org/data/2.5/weather`;
+        let endpoint = `${baseURL}?lat=${lat}&lon=${lon}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`;
+        console.log(endpoint);
+
     }
 
     componentWillUnmount() {
@@ -46,72 +58,53 @@ class Dashboard extends Component {
     render() {
         const {
             classes,
-            store
+            cloud,
+            humidity,
+            map,
+            pressure,
+            temperature,
+            webcam,
         } = this.props;
-        console.log ('store', store)
+        
         return (
             <div className={cn(classes.view)}>
                 <Grid container>
-
-                    {/* <Grid
-                        item
-                        xs={12} sm={12} md={12} lg={12} xl={12}
-                        className={cn(classes.gridItem)}>
-                        <PaneTitle />
-                    </Grid> */}
-
-
-                    {/* <Grid
+                    {webcam.open ? <Grid
                         item
                         xs={12} sm={8} md={8} lg={8} xl={8}
                         className={cn(classes.gridItem)}>
                         <PaneWebcam />
-                    </Grid> */}
-
-                    {/* <Grid
+                    </Grid> : null}
+                    {map.open ? <Grid
                         item
                         xs={12} sm={4} md={4} lg={4} xl={4}
                         className={cn(classes.gridItem)}>
                         <PaneMap />
-                    </Grid> */}
-
-                    {/* <Grid
-                        item
-                        xs={12} sm={12} md={12} lg={12} xl={12}
-                        className={cn(classes.gridItem)}>
-                        <PaneFooter />
-                    </Grid> */}
-
-
-                    {/* <Grid
+                    </Grid> : null}
+                    {temperature.open ? <Grid
                         item
                         xs={12} sm={6} md={3} lg={3} xl={2}
                         className={cn(classes.gridItem)}>
                         <PaneTemperature />
-                    </Grid>
-
-                    <Grid
-                        item
-                        xs={12} sm={6} md={3} lg={3} xl={2}
-                        className={cn(classes.gridItem)}>
-                        <PaneAirQuality />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12} sm={6} md={3} lg={3} xl={2}
-                        className={cn(classes.gridItem)}>
-                        <PanePressure />
-                    </Grid>
-
-                    <Grid
+                    </Grid> : null}
+                    {humidity.open ? <Grid
                         item
                         xs={12} sm={6} md={3} lg={3} xl={2}
                         className={cn(classes.gridItem)}>
                         <PaneHumidity />
-                    </Grid> */}
-
-
-
+                    </Grid> : null}
+                    {pressure.open ? <Grid
+                        item
+                        xs={12} sm={6} md={3} lg={3} xl={2}
+                        className={cn(classes.gridItem)}>
+                        <PanePressure />
+                    </Grid> : null}
+                    {cloud.open ? <Grid
+                        item
+                        xs={12} sm={6} md={3} lg={3} xl={2}
+                        className={cn(classes.gridItem)}>
+                        <PaneCloud />
+                    </Grid>: null}
                 </Grid>
             </div>
         );
@@ -120,18 +113,22 @@ class Dashboard extends Component {
 
 const mapStateToProps = (store) => {
     return {
-      store,
+        webcam: store.system.webcam,
+        temperature: store.system.temperature,
+        humidity: store.system.humidity,
+        map: store.system.map,
+        pressure: store.system.pressure,
+        cloud: store.system.cloud,
     };
   };
   
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      // systemOpenMessage: (params) => dispatch(systemOpenMessage(params)),
-    };
-  };
+//   const mapDispatchToProps = (dispatch) => {
+//     return {
+//      systemOpenMessage: (params) => dispatch(systemOpenMessage(params)),
+//     };
+//   };
   
-  export default (
-    connect(
+  export default (connect(
       mapStateToProps,
-      mapDispatchToProps
+      null
     )(withStyles(styles, { withTheme: true })(withRouter(Dashboard))));

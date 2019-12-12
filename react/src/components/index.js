@@ -1,7 +1,7 @@
 import Dashboard from "./Dashboard";
 import Icon from "./Icon";
 import NotFound from "./NotFound";
-import PaneAirQuality from "./panes/PaneAirQuality";
+import PaneCloud from "./panes/PaneCloud";
 import PaneFooter from "./panes/PaneFooter";
 import PaneHumidity from "./panes/PaneHumidity";
 import PaneMap from "./panes/PaneMap";
@@ -15,7 +15,7 @@ export {
   Dashboard,
   Icon,
   NotFound,
-  PaneAirQuality,
+  PaneCloud,
   PaneFooter,
   PaneHumidity,
   PaneMap,
