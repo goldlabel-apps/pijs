@@ -3,10 +3,10 @@ const theme = {
     palette: {
         "type": "light",
         primary: {
-            main: 'rgb(255,102,0)',
+            main: '#F1DD3F',
         },
         secondary: {
-            main: '#FFFFFF',
+            main: '#333333',
         },
         background: {
             default: "#126970",
