@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
@@ -18,12 +19,19 @@ class PaneCloud extends Component {
     render() {
         const {
             classes,
+            weather,
         } = this.props;
-        const cloud = `...`;
+        if (!weather.data) {
+            return null;
+        }
+        const { description, icon } = weather.data.weather[0];
+        const outlookDisplay = `${description}`;
+        const iconurl = `http://openweathermap.org/img/w/${icon}.png`;
+        
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
-                    title={`Cloud`}
+                    title={`Outlook`}
                     action={
                         <Tooltip title={`Full screen`}>
                             <IconButton
@@ -39,8 +47,9 @@ class PaneCloud extends Component {
                     }
                 />
                 <CardContent>
-                    <Typography variant={`h3`} className={cn(classes.centered)}>
-                        {cloud}
+                    <img align={`left`} valign={'middle'} src={iconurl} alt={`weather icon`} />    
+                    <Typography variant={`body1`} className={cn(classes.centered)}>
+                        {outlookDisplay}
                     </Typography>
                 </CardContent>
             </Card>
@@ -48,6 +57,13 @@ class PaneCloud extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneCloud))
-);
+const mapStateToProps = (store) => {
+    return {
+        weather: store.weather,
+    };
+  };
+  
+  export default (connect(
+      mapStateToProps,
+      null
+)(withStyles(styles, { withTheme: true })(withRouter(PaneCloud))));

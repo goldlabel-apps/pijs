@@ -13,11 +13,9 @@ import {
     PaneTemperature,
     PaneHumidity,
     PanePressure,
-    PaneCloud,
+    PaneOutlook,
 } from './';
 import { initWeather } from '../redux/weather/actions'
-
-// var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
 class Dashboard extends Component {
 
@@ -72,6 +70,12 @@ class Dashboard extends Component {
                         className={cn(classes.gridItem)}>
                         <PaneMap />
                     </Grid> : null}
+                    {cloud.open ? <Grid
+                        item
+                        xs={12} sm={6} md={3} lg={3} xl={2}
+                        className={cn(classes.gridItem)}>
+                        <PaneOutlook />
+                    </Grid>: null}
                     {temperature.open ? <Grid
                         item
                         xs={12} sm={6} md={3} lg={3} xl={2}
@@ -90,12 +94,7 @@ class Dashboard extends Component {
                         className={cn(classes.gridItem)}>
                         <PanePressure />
                     </Grid> : null}
-                    {cloud.open ? <Grid
-                        item
-                        xs={12} sm={6} md={3} lg={3} xl={2}
-                        className={cn(classes.gridItem)}>
-                        <PaneCloud />
-                    </Grid>: null}
+                    
                 </Grid>
             </div>
         );

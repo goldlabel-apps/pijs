@@ -24,7 +24,6 @@ class PanePressure extends Component {
         if (!weather.data) {
             return null;
         }
-        console.log(weather.data)
         const { pressure } = weather.data.main;
         const pressureDisplay = `${pressure} hpa`;
         return (
