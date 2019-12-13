@@ -10,20 +10,21 @@ export const systemSlice = {
         open: false,
         running: false,
     },
-    temperature: {
-        open: false,
-    },
-    humidity: {
-        open: false,
-    },
     map: {
         open: false,
     },
+    temperature: {
+        open: true,
+    },
+    humidity: {
+        open: true,
+    },
+
     pressure: {
-        open: false,
+        open: true,
     },
     cloud: {
-        open: false,
+        open: true,
     },
 }
 

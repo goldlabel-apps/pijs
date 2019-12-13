@@ -113,11 +113,13 @@
         text-decoration: none;
       }
 
+      #pi .centered {
+        text-align: center;
+      }
+
       #pi .temp {
         margin: auto;
-        text-align: center;
-        border: 1px solit pink;
-        max-width: 1024px;
+        max-width: 600px;
       }
 
       #pi .temp ul,
@@ -225,18 +227,23 @@
   <body>
     <div id="pi">
       <div id="pi" class="temp">
-        <img src="/icon.png" alt="PiJS" />
-        <h2>PiJS</h2>
+        <div id="pi" class="centered">
+            <img src="/icon.png" alt="PiJS" />
+            
+            
+        </div>
 
-        <h4>Overview</h4>
+        <h2 class="centered">PiJS</h2>
 
-        <p>A React Progressive Web App and Secure SSL Node/Express server running on a Raspberry Pi 4</p>
+        <p>A React Progressive Web App and Secure SSL Node/Express server running on a Raspberry Pi 4.</p>
+
+        <h3>Backstory</h3>
         
         <p>After 20 years in the software industry <a href="https://listingslab.com" target="_blank">listingslab</a> are getting involved with hardware. Specifically the Raspberry Pi.</p>
 
-        <h4>About Raspberry Pi</h4>
+        <h3>About Raspberry Pi</h3>
 
-        <p>Raspberry Pis are very low cost, credit-card sized computers. It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Python. It can also give more experienced developers a chance to do some mad cool stuff they wouldn’t normally do. We’ve turned our Pi into a Node server, connected to the interweb through an everyday broadband connection.</p>T
+        <p>Raspberry Pis are very low cost, credit-card sized computers. It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Python. It can also give more experienced developers a chance to do some mad cool stuff they wouldn’t normally do. We’ve turned our Pi into a Node server, connected to the interweb through an everyday broadband connection.</p>
 
         <p>The current iteration (which we are using) is the Pi4, or to giv it it’s full title, Raspberry Pi 4 Model B (4 GB) which you can buy from [littlebird](https://www.littlebird.com.au/) for **\$AU 100** if you're in Australia. There will no doubt be an easily Googleable supplier in your country.</p>
         

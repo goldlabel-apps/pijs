@@ -114,12 +114,6 @@ const mapStateToProps = (store) => {
     };
   };
   
-//   const mapDispatchToProps = (dispatch) => {
-//     return {
-//      systemOpenMessage: (params) => dispatch(systemOpenMessage(params)),
-//     };
-//   };
-  
   export default (connect(
       mapStateToProps,
       null

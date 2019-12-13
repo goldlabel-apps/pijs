@@ -12,7 +12,6 @@ import {
     Tooltip,
 } from '@material-ui/core/';
 import { Icon } from '../';
-
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 

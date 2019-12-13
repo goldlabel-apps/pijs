@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
@@ -18,10 +19,13 @@ class PaneTemperature extends Component {
     render() {
         const {
             classes,
+            weather,
         } = this.props;
-        // const temperature = `${30.27} C`;
-        // Temperature in Kelvin. Subtracted 273.15 from this figure to convert to Celsius.
-        const temperature = `...`;
+        if (!weather.data) {
+            return null;
+        }
+        const { temp } = weather.data.main;
+        const temperatureDisplay = `${Math.round((temp - 273.15) * 10 ) / 10} °C`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
@@ -42,7 +46,7 @@ class PaneTemperature extends Component {
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>
-                        {temperature}
+                        {temperatureDisplay}
                     </Typography>
                 </CardContent>
             </Card>
@@ -50,6 +54,14 @@ class PaneTemperature extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneTemperature))
-);
+const mapStateToProps = (store) => {
+    return {
+        weather: store.weather,
+    };
+  };
+  
+  export default (connect(
+      mapStateToProps,
+      null
+)(withStyles(styles, { withTheme: true })(withRouter(PaneTemperature))));
+    

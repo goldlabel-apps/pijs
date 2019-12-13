@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
@@ -17,8 +18,14 @@ class PaneHumidity extends Component {
     render() {
         const {
             classes,
+            weather,
         } = this.props;
-        const humidity = `...`;
+        if (!weather.data) {
+            return null;
+        }
+        // console.log (weather.data)
+        const { humidity } = weather.data.main;
+        const humidityDisplay = `${humidity} %`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
@@ -39,7 +46,7 @@ class PaneHumidity extends Component {
                 />
                 <CardContent>
                     <Typography variant={`h3`} className={cn(classes.centered)}>
-                        {humidity}
+                        {humidityDisplay}
                     </Typography>
                 </CardContent>
             </Card>
@@ -47,6 +54,13 @@ class PaneHumidity extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(withRouter(PaneHumidity))
-);
+const mapStateToProps = (store) => {
+    return {
+        weather: store.weather,
+    };
+  };
+  
+  export default (connect(
+      mapStateToProps,
+      null
+)(withStyles(styles, { withTheme: true })(withRouter(PaneHumidity))));

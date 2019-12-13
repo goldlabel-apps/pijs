@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
@@ -18,8 +19,14 @@ class PanePressure extends Component {
     render() {
         const {
             classes,
+            weather
         } = this.props;
-        const pressure = `...`;
+        if (!weather.data) {
+            return null;
+        }
+        console.log(weather.data)
+        const { pressure } = weather.data.main;
+        const pressureDisplay = `${pressure} hpa`;
         return (
             <Card className={cn(classes.cardMinHeight)}>
                 <CardHeader
@@ -39,8 +46,8 @@ class PanePressure extends Component {
                     }
                 />
                 <CardContent>
-                    <Typography variant={`h4`} className={cn(classes.centered)}>
-                        {pressure}
+                    <Typography variant={`h3`} className={cn(classes.centered)}>
+                        {pressureDisplay}
                     </Typography>
                 </CardContent>
             </Card>
@@ -48,6 +55,13 @@ class PanePressure extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(withRouter(PanePressure))
-);
+const mapStateToProps = (store) => {
+    return {
+        weather: store.weather,
+    };
+  };
+  
+  export default (connect(
+      mapStateToProps,
+      null
+)(withStyles(styles, { withTheme: true })(withRouter(PanePressure))));
