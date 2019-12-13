@@ -1,7 +1,6 @@
 ---
 name: "Story "
 about: Everything starts with a story
-assignees: 'listingslab'
 
 ---
 ## Story
