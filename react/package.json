@@ -1,6 +1,6 @@
 {
   "name": "pi-firmware",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4",
   "dependencies": {
     "@manaflair/redux-batch": "^1.0.0",

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -29,6 +30,13 @@ class ReactRouter extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(ReactRouter)
-);
+const mapStateToProps = (store) => {
+    return {
+        store
+    };
+  };
+  
+  export default (connect(
+      mapStateToProps,
+      null
+)(withStyles(styles, { withTheme: true })(ReactRouter)));

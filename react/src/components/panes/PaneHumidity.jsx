@@ -13,6 +13,7 @@ import {
     Typography,
 } from '@material-ui/core/';
 import { Icon } from '../';
+
 class PaneHumidity extends Component {
 
     render() {

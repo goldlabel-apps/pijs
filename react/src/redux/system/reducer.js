@@ -3,35 +3,40 @@
 import {
     createReducer
 } from '@reduxjs/toolkit';
-import { first } from './actions';
+import {
+    systemWebcamUpdate
+} from './actions';
 
 export const systemSlice = {
     webcam: {
+        updated: Date.now(),
         open: true,
-        running: false,
+        running: true,
+        timerDelay: 60,
     },
     map: {
-        open: true,
+        open: false,
     },
     temperature: {
-        open: true,
+        open: false,
     },
     humidity: {
-        open: true,
+        open: false,
     },
     pressure: {
-        open: true,
+        open: false,
     },
     cloud: {
-        open: true,
+        open: false,
     },
 }
 
 const system = createReducer(systemSlice, {
-    [first]: (state, action) => {
-        console.log ('systemSlice first', action)
+    [systemWebcamUpdate]: (state) => {
+        console.log ('SYSTEM/WEBCAM/UPDATE')
+        state.webcam.updated = Date.now();
         return state;
-    }
+    },
 })
 
 export {system};
