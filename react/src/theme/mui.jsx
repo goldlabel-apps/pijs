@@ -1,18 +1,22 @@
 
+// light yellow #fff1bb
+// javascript yellow #F1DD3F
+// javascript grey #333333
+
 const theme = {
     palette: {
         "type": "light",
         primary: {
-            main: '#F1DD3F',
-        },
-        secondary: {
             main: '#333333',
         },
+        secondary: {
+            main: '#F1DD3F',
+        },
         background: {
-            default: "#126970",
-            paper: "rgba(255, 255, 255, 1)",
-            appBar: "#f5f5f5",
-            contentFrame: "#eeeeee"
+            default: "#F1DD3F",
+            paper: "#F1DD3F",
+            appBar: "#F1DD3F",
+            contentFrame: "#F1DD3F"
         },
         text: {
             primary: "rgba(0, 0, 0, 0.87)",
