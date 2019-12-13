@@ -20,11 +20,8 @@ import { initWeather } from '../redux/weather/actions'
 class Dashboard extends Component {
 
     componentDidMount() {
-        initWeather()
+        initWeather();
     }
-
-
-
 
     render() {
         const {
