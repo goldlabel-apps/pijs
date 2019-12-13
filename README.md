@@ -2,6 +2,20 @@
 
 PiJS is fullstack, isomorphic JavaScript for the Raspberry Pi. A React PWA and Secure SSL Node/Express server.
 
+### Features
+- [ ] Isomorphic JavaScript
+
+- [ ] Frontend
+    - [ ] React 
+        - [ ] Material UI
+
+- [ ] Backend
+    - [ ] Node 
+    - [ ] Firebase
+
+- [ ] Hardware
+    - [ ] RPi
+
 ### What is a Pi?
 
 The Raspberry Pi is a very low cost, credit-card sized computer. It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Python.
