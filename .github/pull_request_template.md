@@ -62,3 +62,9 @@ also be replaced with a new one that has gained significant traction.
 
 - issue/dev#111
 -->
+
+## Checklist
+
+- [ ] Yes
+- [ ] No
+- [ ] Maybe
