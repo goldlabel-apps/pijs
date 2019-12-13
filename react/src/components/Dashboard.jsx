@@ -24,22 +24,7 @@ class Dashboard extends Component {
     }
 
 
-    // state = {
-    //     updated: Date.now(),
-    //     timer: null,
-    //     timerDelay: 15,
-    // }
 
-    // componentWillUnmount() {
-    //     const {
-    //         timer
-    //     } = this.state;
-    //     clearInterval(timer);
-    // }
-
-    // update = () => {
-    //     this.setState({ updated: Date.now() })
-    // }
 
     render() {
         const {
