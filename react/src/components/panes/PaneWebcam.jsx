@@ -18,8 +18,6 @@ import { Icon } from '../';
 
 class PaneWebcam extends Component {
 
-    // make the webcam on a timer interval in state
-
     state = {
         timer: null,
     }
@@ -33,7 +31,6 @@ class PaneWebcam extends Component {
     }
 
     shouldComponentUpdate(e) {
-        // only update if there has been a short time since the last update
         return true;
     }
 
@@ -70,7 +67,6 @@ class PaneWebcam extends Component {
             classes,
         } = this.props;
         const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`; 
-        // console.log ('render', currentPhotoUrl)
         return (
             <Card className={cn(classes.webcam)}>
                 <CardHeader
