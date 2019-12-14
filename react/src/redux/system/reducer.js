@@ -12,9 +12,10 @@ export const systemSlice = {
         updated: Date.now(),
         open: true,
         running: true,
-        timerDelay: 60,
+        timerDelay: 10,
     },
     map: {
+        mapboxStyle: `mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5`,
         open: true,
     },
     temperature: {
@@ -33,7 +34,7 @@ export const systemSlice = {
 
 const system = createReducer(systemSlice, {
     [systemWebcamUpdate]: (state) => {
-        console.log ('SYSTEM/WEBCAM/UPDATE')
+        // console.log ('SYSTEM/WEBCAM/UPDATE')
         state.webcam.updated = Date.now();
         return state;
     },
