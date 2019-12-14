@@ -15,19 +15,19 @@ export const systemSlice = {
         timerDelay: 60,
     },
     map: {
-        open: false,
+        open: true,
     },
     temperature: {
-        open: false,
+        open: true,
     },
     humidity: {
-        open: false,
+        open: true,
     },
     pressure: {
-        open: false,
+        open: true,
     },
     cloud: {
-        open: false,
+        open: true,
     },
 }
 
@@ -39,4 +39,4 @@ const system = createReducer(systemSlice, {
     },
 })
 
-export {system};
+export { system };
