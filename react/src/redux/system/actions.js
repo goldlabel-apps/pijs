@@ -8,7 +8,7 @@ import { getStore } from '../../';
 export const systemWebcamUpdate = createAction('SYSTEM/WEBCAM/UPDATE')
 
 export const updateWebcam = () => {
-    console.log ('updateWebcam')
+    // console.log ('updateWebcam')
     const store = getStore();
     store.dispatch({ type: 'SYSTEM/WEBCAM/UPDATE' })
 }

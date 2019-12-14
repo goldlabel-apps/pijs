@@ -25,7 +25,7 @@ class PaneMap extends Component {
 
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-          style: 'mapbox://styles/listingslab/ck3xppo6t0qok1clju8b462lu',
+          style: 'mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5',
           center: [lng, lat],
           zoom
         });
