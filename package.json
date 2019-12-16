@@ -1,6 +1,6 @@
 {
   "name": "pi-firmware",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Secure SSL Node/Express server for Raspberry Pi 4",
   "author": {
     "name": "listingslab",

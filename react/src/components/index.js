@@ -1,23 +1,17 @@
-import Dashboard from "./Dashboard";
 import Icon from "./Icon";
-import NotFound from "./NotFound";
-import PaneOutlook from "./panes/PaneOutlook";
-import PaneHumidity from "./panes/PaneHumidity";
-import PaneMap from "./panes/PaneMap";
-import PanePressure from "./panes/PanePressure";
-import PaneTemperature from "./panes/PaneTemperature";
-import PaneWebcam from "./panes/PaneWebcam";
-import ViewActions from "./ViewActions";
+import Nav from "./Nav";
+import Dashboard from "./screens/Dashboard";
+import Map from "./screens/Map";
+import NotFound from "./screens/NotFound";
+import Weather from "./screens/Weather";
+import Webcam from "./screens/Webcam";
 
 export {
   Dashboard,
   Icon,
+  Nav,
+  Map,
   NotFound,
-  PaneOutlook,
-  PaneHumidity,
-  PaneMap,
-  PanePressure,
-  PaneTemperature,
-  PaneWebcam,
-  ViewActions
+  Weather,
+  Webcam,
 };

@@ -13,7 +13,6 @@ import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
-import IconLocation from '@material-ui/icons/PersonPin';
 import IconLink from '@material-ui/icons/Link';
 import IconWebcam from '@material-ui/icons/CameraAlt';
 import IconTemperature from '@material-ui/icons/AcUnit';
@@ -24,10 +23,12 @@ import IconZoomIn from '@material-ui/icons/ZoomIn';
 import IconZoomOut from '@material-ui/icons/ZoomOut';
 import IconFullscreen from '@material-ui/icons/Fullscreen';
 import IconClose from '@material-ui/icons/Close';
+import IconWeather from '@material-ui/icons/AcUnit';
+import IconMap from '@material-ui/icons/Explore';
 
 import {
     GithubSVG,
-    PiSVG,
+    // PiSVG,
 } from '../graphics';
 
 const styles = theme => ({
@@ -53,6 +54,9 @@ class Icon extends Component {
 
         switch (icon) {
 
+            case `weather`:
+                return (<IconWeather color={`primary`} />);
+            
             case `close`:
                 return (<IconClose color={`primary`} />);
 
@@ -80,8 +84,8 @@ class Icon extends Component {
             case `webcam`:
                 return (<IconWebcam color={`primary`} />);
 
-            case `location`:
-                return (<IconLocation color={`primary`} />);
+            case `map`:
+                return (<IconMap color={`primary`} />);
 
             case `link`:
                 return (<IconLink color={`primary`} />);
@@ -92,8 +96,8 @@ class Icon extends Component {
             case `github`:
                 return (<GithubSVG className={classes.navIcon} />);
 
-            case `pi`:
-                return (<PiSVG className={classes.navIcon} />);
+            // case `pi`:
+            //     return (<PiSVG className={classes.navIcon} />);
 
             case `home`:
                 return (<IconHome color={`primary`} />);

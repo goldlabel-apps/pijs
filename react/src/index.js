@@ -1,14 +1,14 @@
 import packageJSON from "../package.json";
 import React from "react";
 import ReactDOM from "react-dom";
-import ReactRouter from "./ReactRouter";
+import initRedux from "./redux/initRedux";
+import { PersistGate } from "redux-persist/integration/react";
+import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
-import initRedux from './redux/initRedux';
-import { PersistGate } from 'redux-persist/integration/react'
-import { Provider } from 'react-redux'
+import AppShell from "./AppShell";
 
 console.log(
-    `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
+  `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
 const disablePersitance = false;
@@ -27,11 +27,12 @@ const getStore = () => {
 export { getStore };
 
 ReactDOM.render(
-    <Provider store={persistedRedux.store}>
-        <PersistGate loading={null} persistor={persistedRedux.persistor}>
-            <ReactRouter />
-        </PersistGate>
-    </Provider>
-    , document.getElementById("pi"));
+  <Provider store={persistedRedux.store}>
+    <PersistGate loading={null} persistor={persistedRedux.persistor}>
+      <AppShell />
+    </PersistGate>
+  </Provider>,
+  document.getElementById("pi")
+);
 
 serviceWorker.register();
