@@ -13,19 +13,19 @@ const theme = {
             main: '#F1DD3F',
         },
         background: {
-            default: "#F1DD3F",
-            paper: "#F1DD3F",
+            default: "#333333",
+            paper: "#333333",
             appBar: "#F1DD3F",
             contentFrame: "#F1DD3F"
         },
         text: {
-            primary: "#333333",
-            secondary: "#333333",
-            disabled: "#333333",
-            hint: "#333333",
-            icon: "#333333",
-            divider: "#333333",
-            lightDivider: "#333333",
+            primary: "#FFFFFF",
+            secondary: "#FFFFFF",
+            disabled: "#FFFFFF",
+            hint: "#FFFFFF",
+            icon: "#FFFFFF",
+            divider: "#FFFFFF",
+            lightDivider: "#FFFFFF",
         },
         input: {
             "helperText": "#333333",

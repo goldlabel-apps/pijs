@@ -3,8 +3,8 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    // Card,
-    Typography,
+    Card,
+    CardHeader,
 } from '@material-ui/core/';
 
 class Map extends Component {
@@ -14,12 +14,12 @@ class Map extends Component {
         } = this.props;
         return (
             <div className={cn(classes.screenCentered)}>
-                <Typography
-                    variant={`h4`}
-                    className={cn(classes.secondary)}
-                >
-                    Map
-                </Typography>
+                <Card className={cn(classes.screenCard)}>
+                    <CardHeader
+                        title={`Map`}
+                        subheader={`Lorem ipsum dolor sit amet,`}
+                    />
+                </Card>
             </div>
         );
     }

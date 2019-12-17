@@ -51,13 +51,13 @@ class AppShell extends Component {
                                     return (<Home />);
                                 }} />
                                 <Route exact path="/webcam" render={props => {
-                                    return (<Webcam />);
+                                    return (<Webcam mode={`full`} />);
                                 }} />
                                 <Route exact path="/map" render={props => {
-                                    return (<Map />);
+                                    return (<Map mode={`full`} />);
                                 }} />
                                 <Route exact path="/weather" render={props => {
-                                    return (<Weather />);
+                                    return (<Weather mode={`full`} />);
                                 }} />
                                 <Route component={NotFound} />
                             </Switch>
