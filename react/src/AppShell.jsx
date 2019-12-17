@@ -13,7 +13,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './theme/mui';
 import { PiJSSVG } from './graphics';
 import {
-    Dashboard,
+    Home,
     Map,
     Nav,
     NotFound,
@@ -32,7 +32,6 @@ class AppShell extends Component {
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <div className={cn(classes.appShell)}>
                     <CssBaseline />
-                    <Nav />
                     <Button
                         fullWidth
                         color={`secondary`}
@@ -44,12 +43,12 @@ class AppShell extends Component {
                     >
                         <PiJSSVG className={cn(classes.piJSLogo)} />
                     </Button>
-
                     <main>
                         <Router>
+                            <Nav />
                             <Switch>
                                 <Route exact path="/" render={props => {
-                                    return (<Dashboard />);
+                                    return (<Home />);
                                 }} />
                                 <Route exact path="/webcam" render={props => {
                                     return (<Webcam />);

@@ -3,11 +3,11 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    Card,
+    // Card,
     Typography,
 } from '@material-ui/core/';
 
-class Dashboard extends Component {
+class Home extends Component {
     render() {
         const {
             classes,
@@ -18,7 +18,7 @@ class Dashboard extends Component {
                     variant={`h4`}
                     className={cn(classes.secondary)}
                 >
-                    Dashboard
+                    Home
                 </Typography>
             </div>
         );
@@ -26,5 +26,5 @@ class Dashboard extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(Dashboard)
+    withStyles(styles, { withTheme: true })(Home)
 );

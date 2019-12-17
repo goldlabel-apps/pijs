@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
@@ -17,10 +18,19 @@ import { getStore } from "../";
 
 class Nav extends Component {
 
+    navClick = (path) => {
+        const {
+            history
+        } = this.props;
+        const store = getStore();
+        history.push(path);
+        store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
+    }
+
     render() {
         const {
             classes,
-            nav
+            nav,
         } = this.props;
         const { open } = nav
         const store = getStore();
@@ -45,25 +55,40 @@ class Nav extends Component {
                         <PiJSSVG className={cn(classes.piJSLogo)} />
                     </Button>
                     <List>
-                        <ListItem button>
+                        <ListItem button
+                            onClick={(e) => {
+                                this.navClick(`/`)
+                        }}>
                             <ListItemIcon>
                                 <Icon icon={`home`} />
                             </ListItemIcon>
-                            <ListItemText primary={`Dashboard`} />
+                            <ListItemText primary={`Home`} />
                         </ListItem>
-                        <ListItem button>
+                        
+                        <ListItem button
+                            onClick={(e) => {
+                                this.navClick(`/webcam`)
+                            }}>
                             <ListItemIcon>
                                 <Icon icon={`webcam`} />
                             </ListItemIcon>
                             <ListItemText primary={`Webcam`} />
                         </ListItem>
-                        <ListItem button>
+                        
+                        <ListItem button
+                            onClick={(e) => {
+                                this.navClick(`/map`)
+                            }}>
                             <ListItemIcon>
                                 <Icon icon={`map`} />
                             </ListItemIcon>
                             <ListItemText primary={`Map`} />
                         </ListItem>
-                        <ListItem button>
+                        
+                        <ListItem button
+                            onClick={(e) => {
+                                this.navClick(`/weather`)
+                            }}>
                             <ListItemIcon>
                                 <Icon icon={`weather`} />
                             </ListItemIcon>
@@ -87,4 +112,4 @@ const mapStateToProps = (store) => {
 export default (connect(
     mapStateToProps,
     null
-)(withStyles(styles, { withTheme: true })(Nav)));
+)(withStyles(styles, { withTheme: true })(withRouter(Nav))));
