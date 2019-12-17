@@ -1,7 +1,7 @@
 {
   "name": "pi-firmware",
-  "version": "0.3.4",
-  "description": "Secure SSL Node/Express server for Raspberry Pi 4",
+  "version": "0.3.6",
+  "description": "PiJS is a React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4",
   "license": "MIT",
   "repository": {
     "type": "git",

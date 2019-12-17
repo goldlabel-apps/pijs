@@ -13,7 +13,6 @@ import IconContact from '@material-ui/icons/MailOutline';
 import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
-import IconLocation from '@material-ui/icons/PersonPin';
 import IconLink from '@material-ui/icons/Link';
 import IconWebcam from '@material-ui/icons/CameraAlt';
 import IconTemperature from '@material-ui/icons/AcUnit';
@@ -24,10 +23,12 @@ import IconZoomIn from '@material-ui/icons/ZoomIn';
 import IconZoomOut from '@material-ui/icons/ZoomOut';
 import IconFullscreen from '@material-ui/icons/Fullscreen';
 import IconClose from '@material-ui/icons/Close';
+import IconWeather from '@material-ui/icons/AcUnit';
+import IconMap from '@material-ui/icons/Explore';
 
 import {
     GithubSVG,
-    PiSVG,
+    // PiSVG,
 } from '../graphics';
 
 const styles = theme => ({
@@ -53,86 +54,89 @@ class Icon extends Component {
 
         switch (icon) {
 
+            case `weather`:
+                return (<IconWeather color={`secondary`} />);
+
             case `close`:
-                return (<IconClose color={`primary`} />);
+                return (<IconClose color={`secondary`} />);
 
             case `fullscreen`:
-                return (<IconFullscreen color={`primary`} />);
+                return (<IconFullscreen color={`secondary`} />);
 
             case `zoomout`:
-                return (<IconZoomOut color={`primary`} />);
+                return (<IconZoomOut color={`secondary`} />);
 
             case `zoomin`:
-                return (<IconZoomIn color={`primary`} />);
+                return (<IconZoomIn color={`secondary`} />);
 
             case `humidity`:
-                return (<IconHumidity color={`primary`} />);
+                return (<IconHumidity color={`secondary`} />);
 
             case `pressure`:
-                return (<IconPressure color={`primary`} />);
+                return (<IconPressure color={`secondary`} />);
 
             case `airquality`:
-                return (<IconAirQuality color={`primary`} />);
+                return (<IconAirQuality color={`secondary`} />);
 
             case `temperature`:
-                return (<IconTemperature color={`primary`} />);
+                return (<IconTemperature color={`secondary`} />);
 
             case `webcam`:
-                return (<IconWebcam color={`primary`} />);
+                return (<IconWebcam color={`secondary`} />);
 
-            case `location`:
-                return (<IconLocation color={`primary`} />);
+            case `map`:
+                return (<IconMap color={`secondary`} />);
 
             case `link`:
-                return (<IconLink color={`primary`} />);
+                return (<IconLink color={`secondary`} />);
 
             case `help`:
-                return (<IconHelp color={`primary`} />);
+                return (<IconHelp color={`secondary`} />);
 
             case `github`:
                 return (<GithubSVG className={classes.navIcon} />);
 
-            case `pi`:
-                return (<PiSVG className={classes.navIcon} />);
+            // case `pi`:
+            //     return (<PiSVG className={classes.navIcon} />);
 
             case `home`:
-                return (<IconHome color={`primary`} />);
+                return (<IconHome color={`secondary`} />);
 
             case `share`:
-                return (<IconShare color={`primary`} />);
+                return (<IconShare color={`secondary`} />);
 
             case `contact`:
-                return (<IconContact color={`primary`} />);
+                return (<IconContact color={`secondary`} />);
 
             case `docs`:
-                return (<IconDocs color={`primary`} />);
+                return (<IconDocs color={`secondary`} />);
 
             case `reset`:
-                return (<IconReset color={`primary`} />);
+                return (<IconReset color={`secondary`} />);
 
             case `refresh`:
-                return (<IconReset color={`primary`} />);
+                return (<IconReset color={`secondary`} />);
 
             case `go`:
-                return (<IconGo color={`primary`} />);
+                return (<IconGo color={`secondary`} />);
 
             case `settings`:
-                return (<IconSettings color={`primary`} />);
+                return (<IconSettings color={`secondary`} />);
 
             case `social`:
-                return (<IconSocial color={`primary`} />);
+                return (<IconSocial color={`secondary`} />);
 
             case `back`:
-                return (<IconBack color={`primary`} />);
+                return (<IconBack color={`secondary`} />);
 
             case `menu`:
-                return (<IconMenu color={`primary`} />);
+                return (<IconMenu color={`secondary`} />);
 
             case `privacy`:
-                return (<IconPrivacy color={`primary`} />);
+                return (<IconPrivacy color={`secondary`} />);
 
             case `api`:
-                return (<IconApi color={`primary`} />);
+                return (<IconApi color={`secondary`} />);
 
             default: {
                 return null;

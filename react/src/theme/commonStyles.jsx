@@ -1,43 +1,25 @@
 
 export default theme => ({
-    view: {
-        margin: 'auto',
-        maxWidth: 1200,
+    white: {
+        color: 'white',
     },
-    gridItem: {
-        // border: '1px solid yellow',
-        padding: theme.spacing(0.5)
+    screenCentered: {
+        // height: 'calc(100vh - 70px)',
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
-    map: {
-        // border: '1px solid red',
-        height: 350,
+    primary: {
+        color: theme.palette.primary.main
+    },
+    secondary: {
+        color: theme.palette.secondary.main
     },
     media: {
-        // height: 0,
-        // paddingTop: '56.25%', // 16:9
-        height: 350,
-    },
-    pad: {
-        // margin: theme.spacing(),
-    },
-    cardMinHeight: {
-        minHeight: 175
+        height: 0,
+        paddingTop: '25%', // 16:9
     },
     grow: {
         flexGrow: 1,
-    },
-    avatar: {
-        background: 'rgba(255,255,255, 0.125)'
-    },
-
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
-    },
-    padTop: {
-        marginTop: theme.spacing()
-    },
-    centered: {
-        textAlign: 'center',
     }
 });

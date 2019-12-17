@@ -3,8 +3,8 @@
   "name": "PiJS",
   "description": "A React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4",
   "start_url": ".",
-  "theme_color": "#212121",
-  "background_color": "#FFFFFF",
+  "theme_color": "#F1DD3F",
+  "background_color": "#333333",
   "display": "standalone",
   "lang": "en-US",
   "icons": [
