@@ -46,7 +46,7 @@ class Nav extends Component {
                     }}>
                     <Button
                         fullWidth
-                        color={`primary`}
+                        color={`secondary`}
                         variant={`contained`}
                         onClick={(e) => {
                             e.preventDefault();

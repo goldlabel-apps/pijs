@@ -34,7 +34,7 @@ class AppShell extends Component {
                     <CssBaseline />
                     <Button
                         fullWidth
-                        color={`secondary`}
+                        color={`primary`}
                         variant={`contained`}
                         onClick={(e) => {
                             e.preventDefault();

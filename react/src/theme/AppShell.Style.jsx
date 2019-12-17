@@ -11,19 +11,17 @@ export const styles = theme => ({
     mapFull: {
         height: 'calc(100vh - 140px)'
     },
-    webcamImage: {
-        height: 'calc(100vh - 140px)'
+    webcamFull: {
+        height: 'calc(100vh - 140px)',
     },
-    webcamImagePreview: {
+    webcamPreview: {
         height: 300,
-        objectFit: 'cover',
-    },
-    screenCardHeader: {
-        // background: 'yellow'
+        // objectFit: 'cover',
     },
     screenCard: {
         margin: theme.spacing(),
         width: 'calc(100% - 8px)',
+        background: '#a89a2c'
         // border: '1px solid ' + theme.palette.secondary.main,
     },
     piJSLogo: {

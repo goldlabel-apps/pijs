@@ -17,6 +17,7 @@ class Weather extends Component {
             classes,
             mode,
             history,
+            weather,
         } = this.props;
         let screenMode = `full`;
         if (mode) {
@@ -25,6 +26,13 @@ class Weather extends Component {
             alert('Weather mode not specified');
             return null;
         }
+
+        // if (weather.data) {
+        //     const { temp } = weather.data.main;
+        //     const temperatureDisplay = `${Math.round((temp - 273.15) * 10) / 10} °C`;
+        // }
+
+        console.log('weather', weather)
 
         return (
             <div className={cn(classes.screenCentered)}>
@@ -73,7 +81,7 @@ class Weather extends Component {
 
 const mapStateToProps = (store) => {
     return {
-        mapbox: store.mapbox
+        weather: store.weather
     };
 };
 

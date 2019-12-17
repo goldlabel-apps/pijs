@@ -19,13 +19,13 @@ class Home extends Component {
         return (
             <div className={cn(classes.screenCentered)}>
                 <Grid container>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={8}>
                         <Webcam mode={`preview`} />
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Map mode={`preview`} />
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12}>
                         <Weather mode={`preview`} />
                     </Grid>
                 </Grid>

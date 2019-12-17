@@ -6,12 +6,6 @@ export default theme => ({
     padIcon: {
         padding: theme.spacing(),
     },
-    screenCentered: {
-        // height: 'calc(100vh - 70px)',
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-    },
     primary: {
         color: theme.palette.primary.main
     },

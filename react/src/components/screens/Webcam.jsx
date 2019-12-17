@@ -74,57 +74,55 @@ class Webcam extends Component {
             alert('Webcam mode not specified');
             return null;
         }
-        let webcamImageClass = classes.webcamImage;
+        let webcamClass = classes.webcamFull;
         if (screenMode === `preview`) {
-            webcamImageClass = classes.webcamImagePreview;
+            webcamClass = classes.webcamPreview;
         }
         const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
         return (
-            <div className={cn(classes.screenCentered)}>
-                <Card className={cn(classes.screenCard)}>
-                    <CardHeader
-                        className={cn(classes.screenCardHeader)}
-                        title={`Webcam`}
-                        avatar={
-                            screenMode === 'preview' ?
-                                <IconButton
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/webcam`)
-                                    }}
-                                >
-                                    <Icon
-                                        icon={`webcam`}
-                                        color={`secondary`}
-                                    />
-                                </IconButton>
-                                : <Icon
-                                    className={cn(classes.padIcon)}
+            <Card className={cn(classes.screenCard)}>
+                <CardHeader
+                    title={`Webcam`}
+                    avatar={
+                        screenMode === 'preview' ?
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/webcam`)
+                                }}
+                            >
+                                <Icon
                                     icon={`webcam`}
                                     color={`secondary`}
                                 />
-                        }
+                            </IconButton>
+                            : <Icon
+                                className={cn(classes.padIcon)}
+                                icon={`webcam`}
+                                color={`secondary`}
+                            />
+                    }
 
-                        action={
-                            screenMode === 'full' ?
-                                <IconButton
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/`)
-                                    }}
-                                >
-                                    <Icon icon={`home`} />
-                                </IconButton>
-                                : null
-                        }
-                    />
-                    <CardMedia
-                        className={webcamImageClass}
-                        image={currentPhotoUrl}
-                        alt={`Webcam`}
-                    />
-                </Card>
-            </div >
+                    action={
+                        screenMode === 'full' ?
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/`)
+                                }}
+                            >
+                                <Icon icon={`home`} />
+                            </IconButton>
+                            : null
+                    }
+                />
+                <CardMedia
+                    className={webcamClass}
+                    style={{ background: '#333333' }}
+                    image={currentPhotoUrl}
+                    alt={`Webcam`}
+                />
+            </Card>
         );
     }
 }

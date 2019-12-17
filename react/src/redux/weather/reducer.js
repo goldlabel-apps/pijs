@@ -1,23 +1,19 @@
 // Open Weather Reducer
 
-import {
-    createReducer
-} from '@reduxjs/toolkit';
-import {
-    saveWeather
-} from './actions';
+import { createReducer } from "@reduxjs/toolkit";
+import { saveWeather } from "./actions";
 
 export const weatherSlice = {
-    updated: Date.now(),
-    data: null
-}
+  updated: null,
+  data: null
+};
 
 const weather = createReducer(weatherSlice, {
-    [saveWeather]: (state, action) => {
-        state.updated = Date.now();
-        state.data = action.data;
-        return state;
-    }
-})
+  [saveWeather]: (state, action) => {
+    state.updated = Date.now();
+    state.data = action.data;
+    return state;
+  }
+});
 
-export {weather};
+export { weather };
