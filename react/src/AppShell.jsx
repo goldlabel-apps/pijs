@@ -34,6 +34,7 @@ class AppShell extends Component {
                     <CssBaseline />
                     <Button
                         fullWidth
+                        className={cn(classes.navCallout)}
                         color={`primary`}
                         variant={`contained`}
                         onClick={(e) => {

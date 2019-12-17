@@ -4,29 +4,36 @@ import commonStyles from "./commonStyles";
 export const styles = theme => ({
     ...commonStyles(theme),
     appShell: {
+        margin: 'auto',
+        maxWidth: 800,
     },
-    mapPreview: {
-        height: 300,
+    navCallout: {
+        // margin: theme.spacing(),
     },
-    mapFull: {
-        height: 'calc(100vh - 140px)'
+    navDrawer: {
+    },
+    screenCard: {
+        margin: theme.spacing(),
+        // width: 'calc(100% - 8px)',
+        background: '#a89a2c',
     },
     webcamFull: {
-        height: 'calc(100vh - 140px)',
+        height: 450,
     },
     webcamPreview: {
         height: 300,
         // objectFit: 'cover',
     },
-    screenCard: {
-        margin: theme.spacing(),
-        width: 'calc(100% - 8px)',
-        background: '#a89a2c'
-        // border: '1px solid ' + theme.palette.secondary.main,
+    mapFull: {
+        height: 'calc(100vh - 180px)',
+        outline: 'none',
+    },
+    mapPreview: {
+        height: 300,
+        outline: 'none',
     },
     piJSLogo: {
         height: 45,
         margin: theme.spacing(0.5),
     },
-
 });

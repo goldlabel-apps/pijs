@@ -4,6 +4,13 @@
     <meta charset="utf-8" />
     <title>PiJS</title>
     <link rel="shortcut icon" href="/favicon.ico" />
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
     <meta
       name="description"
       content="PiJS is a React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4"
@@ -183,7 +190,8 @@
         text-align: center;
       }
       #pi .header {
-        background: #f1dd3f;
+        /* background: #f1dd3f; */
+        /* margin: 8px; */
       }
       #pi .header img {
         height: 45px;
@@ -195,7 +203,7 @@
       }
       #pi .temp {
         margin: auto;
-        max-width: 500px;
+        max-width: 800px;
         padding: 8px;
         opacity: 0.75;
       }

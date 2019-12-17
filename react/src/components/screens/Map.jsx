@@ -20,7 +20,7 @@ class Map extends Component {
             mapbox
         } = this.props;
         const { lng, lat, zoom } = mapbox;
-
+        // eslint-disable-next-line no-unused-vars
         const map = new mapboxgl.Map({
             container: this.mapContainer,
             style: 'mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5',

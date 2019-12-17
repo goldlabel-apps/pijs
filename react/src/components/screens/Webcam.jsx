@@ -78,30 +78,23 @@ class Webcam extends Component {
         if (screenMode === `preview`) {
             webcamClass = classes.webcamPreview;
         }
+
         const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
         return (
             <Card className={cn(classes.screenCard)}>
                 <CardHeader
                     title={`Webcam`}
-                    avatar={
-                        screenMode === 'preview' ?
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/webcam`)
-                                }}
-                            >
-                                <Icon
-                                    icon={`webcam`}
-                                    color={`secondary`}
-                                />
-                            </IconButton>
-                            : <Icon
-                                className={cn(classes.padIcon)}
-                                icon={`webcam`}
-                                color={`secondary`}
-                            />
-                    }
+                    avatar={<IconButton
+                        onClick={(e) => {
+                            e.preventDefault();
+                            history.push(`/webcam`)
+                        }}
+                    >
+                        <Icon
+                            icon={`webcam`}
+                            color={`secondary`}
+                        />
+                    </IconButton>}
 
                     action={
                         screenMode === 'full' ?

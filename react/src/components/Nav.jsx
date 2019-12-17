@@ -36,9 +36,8 @@ class Nav extends Component {
         const { open } = nav
         const store = getStore();
         return (
-            <React.Fragment>
+            <nav className={cn(classes.navDrawer)} aria-label="Nav">
                 <Drawer
-                    className={cn(classes.nav)}
                     anchor="top"
                     open={open}
                     onClose={() => {
@@ -108,7 +107,7 @@ class Nav extends Component {
                         </ListItem>
                     </List>
                 </Drawer>
-            </React.Fragment>
+            </nav>
         );
     }
 }
