@@ -83,6 +83,8 @@ class Webcam extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
+                        className={cn(classes.screenCardHeader)}
+                        title={`Webcam`}
                         avatar={
                             screenMode === 'preview' ?
                                 <IconButton
@@ -102,15 +104,19 @@ class Webcam extends Component {
                                     color={`secondary`}
                                 />
                         }
-                        title={`Webcam`}
-                    // action={
-                    //     <IconButton
-                    //         variant={`outlined`}
-                    //         color={`secondary`}
-                    //     >
-                    //         <Icon icon={`settings`} />
-                    //     </IconButton>
-                    // }
+
+                        action={
+                            screenMode === 'full' ?
+                                <IconButton
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        history.push(`/`)
+                                    }}
+                                >
+                                    <Icon icon={`home`} />
+                                </IconButton>
+                                : null
+                        }
                     />
                     <CardMedia
                         className={webcamImageClass}
