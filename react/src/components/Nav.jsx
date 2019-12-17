@@ -6,6 +6,7 @@ import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
     Button,
+    Divider,
     Drawer,
     List,
     ListItem,
@@ -58,13 +59,13 @@ class Nav extends Component {
                         <ListItem button
                             onClick={(e) => {
                                 this.navClick(`/`)
-                        }}>
+                            }}>
                             <ListItemIcon>
                                 <Icon icon={`home`} />
                             </ListItemIcon>
                             <ListItemText primary={`Home`} />
                         </ListItem>
-                        
+
                         <ListItem button
                             onClick={(e) => {
                                 this.navClick(`/webcam`)
@@ -74,7 +75,7 @@ class Nav extends Component {
                             </ListItemIcon>
                             <ListItemText primary={`Webcam`} />
                         </ListItem>
-                        
+
                         <ListItem button
                             onClick={(e) => {
                                 this.navClick(`/map`)
@@ -84,7 +85,7 @@ class Nav extends Component {
                             </ListItemIcon>
                             <ListItemText primary={`Map`} />
                         </ListItem>
-                        
+
                         <ListItem button
                             onClick={(e) => {
                                 this.navClick(`/weather`)
@@ -93,6 +94,17 @@ class Nav extends Component {
                                 <Icon icon={`weather`} />
                             </ListItemIcon>
                             <ListItemText primary={`Weather`} />
+                        </ListItem>
+                        <Divider />
+
+                        <ListItem button
+                            onClick={(e) => {
+                                window.open(`https://github.com/listingslab-hardware/pijs`, `_blank`)
+                            }}>
+                            <ListItemIcon>
+                                <Icon icon={`github`} color={`#F1DD3F`} />
+                            </ListItemIcon>
+                            <ListItemText primary={`Github`} />
                         </ListItem>
                     </List>
                 </Drawer>

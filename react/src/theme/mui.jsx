@@ -13,8 +13,8 @@ const theme = {
             main: '#F1DD3F',
         },
         background: {
-            default: "#333333",
-            paper: "#333333",
+            default: "#212121",
+            paper: "#212121",
             appBar: "#F1DD3F",
             contentFrame: "#F1DD3F"
         },
@@ -28,15 +28,11 @@ const theme = {
             lightDivider: "#FFFFFF",
         },
         input: {
-            "helperText": "#333333",
-            "labelText": "#333333",
-            "inputText": "#333333",
-            "disabled": "#333333"
-        },
-        action: {
-            "active": "#333333",
-            "disabled": "#333333"
-        },
+            "helperText": "#F1DD3F",
+            "labelText": "#F1DD3F",
+            "inputText": "#F1DD3F",
+            "disabled": "#F1DD3F"
+        }
     }
 }
 

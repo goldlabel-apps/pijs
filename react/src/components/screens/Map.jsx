@@ -6,6 +6,7 @@ import {
     Card,
     CardHeader,
 } from '@material-ui/core/';
+import { Icon } from '../'
 
 class Map extends Component {
     render() {
@@ -16,8 +17,8 @@ class Map extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
+                        avatar={<Icon icon={`map`} color={`secondary`} />}
                         title={`Map`}
-                        subheader={`Lorem ipsum dolor sit amet,`}
                     />
                 </Card>
             </div>

@@ -6,6 +6,7 @@ import {
     Card,
     CardHeader,
 } from '@material-ui/core/';
+import { Icon } from '../'
 
 class Weather extends Component {
     render() {
@@ -16,8 +17,8 @@ class Weather extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
+                        avatar={<Icon icon={`weather`} color={`secondary`} />}
                         title={`Weather`}
-                        subheader={`Lorem ipsum dolor sit amet,`}
                     />
                 </Card>
             </div>
