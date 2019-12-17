@@ -1,7 +1,11 @@
 {
-  "name": "pi-firmware",
+  "name": "pijs",
   "version": "0.3.6",
-  "description": "PiJS is a React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4",
+  "description": "PiJS is a React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/listingslab-hardware/pijs.git"
+  },
   "dependencies": {
     "@manaflair/redux-batch": "^1.0.0",
     "@material-ui/core": "^4.6.1",
