@@ -34,6 +34,7 @@ class Map extends Component {
             classes,
             mode,
             history,
+            weather,
         } = this.props;
 
         let screenMode = `full`;
@@ -49,6 +50,10 @@ class Map extends Component {
         if (screenMode === `preview`) {
             mapClass = classes.mapPreview;
         }
+        let placeName = `...`;
+        if (weather) {
+            placeName = `${weather.data.name}, ${weather.data.sys.country}`
+        }
 
         return (
             <div className={cn(classes.screenCentered)}>
@@ -56,6 +61,7 @@ class Map extends Component {
                     <CardHeader
                         className={cn(classes.screenCardHeader)}
                         title={`Map`}
+                        subheader={placeName}
                         avatar={
                             screenMode === 'preview' ?
                                 <IconButton
@@ -101,7 +107,8 @@ class Map extends Component {
 
 const mapStateToProps = (store) => {
     return {
-        mapbox: store.mapbox
+        mapbox: store.mapbox,
+        weather: store.weather,
     };
 };
 
