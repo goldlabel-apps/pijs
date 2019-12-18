@@ -28,10 +28,9 @@ class Weather extends Component {
             weather,
         } = this.props;
         let screenMode = `full`;
-        let shouldUpdate = false;
         if (mode) { screenMode = mode }
-        if (!weather.updated) { shouldUpdate = true }
-        if (shouldUpdate) {
+        const sinceLastUpdate = (Date.now() - weather.updated) / 1000 / 60;
+        if (!weather.updated || sinceLastUpdate > 15) {
             getWeather();
         }
         const lastUpdated = moment.unix(weather.updated / 1000).fromNow() || `never`;
@@ -47,13 +46,9 @@ class Weather extends Component {
             return arr[Math.abs(val)];
         }
 
-        // const name = `${data.name}, ${data.sys.country}`;
         const windSpeed = `${Math.round((data.wind.speed * 3.6) * 10) / 10} km/h`;
         const windDirection = `${degToCompass(data.wind.deg)}`;
         const temperature = `${Math.round((data.main.temp - 273.15) * 10) / 10} °C`;
-        // const feelsLike = `${Math.round((data.main.feels_like - 273.15) * 10) / 10} °C`;
-        // const tempMin = `${Math.round((data.main.temp_min - 273.15) * 10) / 10} °C`;
-        // const tempMax = `${Math.round((data.main.temp_max - 273.15) * 10) / 10} °C`;
         const pressure = `${data.main.pressure} hPa`;
         const humidity = `${data.main.humidity} %`;
         const overview = `${data.weather[0].main} (${data.weather[0].description})`;
@@ -160,3 +155,11 @@ export default (connect(
     mapStateToProps,
     null
 )(withStyles(styles, { withTheme: true })(withRouter(Weather))));
+
+
+
+/*
+// const feelsLike = `${Math.round((data.main.feels_like - 273.15) * 10) / 10} °C`;
+// const tempMin = `${Math.round((data.main.temp_min - 273.15) * 10) / 10} °C`;
+// const tempMax = `${Math.round((data.main.temp_max - 273.15) * 10) / 10} °C`;
+*/
