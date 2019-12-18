@@ -7,13 +7,13 @@ const theme = {
     palette: {
         "type": "light",
         primary: {
-            main: '#333333',
+            main: '#212121',
         },
         secondary: {
             main: '#F1DD3F',
         },
         background: {
-            default: "#212121",
+            default: "none",
             paper: "#212121",
             appBar: "#F1DD3F",
             contentFrame: "#F1DD3F"

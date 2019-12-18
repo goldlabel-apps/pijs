@@ -13,9 +13,10 @@ export const styles = theme => ({
     navDrawer: {
     },
     screenCard: {
-        margin: theme.spacing(),
+        // margin: theme.spacing(),
         // width: 'calc(100% - 8px)',
         // background: '#a89a2c',
+        // border: '1px solid #a89a2c',
     },
     webcamFull: {
         height: 450,
