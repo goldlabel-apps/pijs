@@ -11,7 +11,7 @@ export const systemSlice = {
     updated: Date.now(),
     open: true,
     running: true,
-    timerDelay: 120
+    timerDelay: 10
   },
   map: {
     mapboxStyle: `mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5`,
