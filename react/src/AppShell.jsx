@@ -10,7 +10,7 @@ import {
     CssBaseline,
 } from '@material-ui/core/';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import muiTheme from './theme/mui';
+import muiTheme from './theme/muiWhitelabel';
 import { PiJSSVG } from './graphics';
 import {
     Home,
@@ -28,22 +28,26 @@ class AppShell extends Component {
             classes,
         } = this.props;
         const store = getStore();
+        const bHg = true;
         return (
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <div className={cn(classes.appShell)}>
                     <CssBaseline />
-                    <Button
-                        fullWidth
-                        className={cn(classes.navCallout)}
-                        color={`primary`}
-                        variant={`contained`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/NAV/OPEN" });
-                        }}
-                    >
-                        <PiJSSVG className={cn(classes.piJSLogo)} />
-                    </Button>
+                    {!bHg ?
+
+                        <Button
+                            fullWidth
+                            className={cn(classes.navCallout)}
+                            color={`primary`}
+                            variant={`contained`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                store.dispatch({ type: "SYSTEM/NAV/OPEN" });
+                            }}
+                        >
+                            <PiJSSVG className={cn(classes.piJSLogo)} />
+                        </Button>
+                        : null}
                     <main>
                         <Router>
                             <Nav />

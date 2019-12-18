@@ -1,10 +1,18 @@
 {
   "name": "pijs",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "PiJS is a React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
   "repository": {
     "type": "git",
     "url": "https://github.com/listingslab-hardware/pijs.git"
+  },
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "dependencies": {
     "@manaflair/redux-batch": "^1.0.0",
@@ -23,14 +31,6 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "author": {
-    "name": "listingslab",
-    "email": "listingslab@gmail.com"
   },
   "license": "MIT",
   "eslintConfig": {

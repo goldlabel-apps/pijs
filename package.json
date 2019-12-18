@@ -1,14 +1,14 @@
 {
   "name": "pijs",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "PiJS is a React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
-  "author": {
-    "name": "listingslab",
-    "email": "listingslab@gmail.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/listingslab-hardware/pijs.git"
+  },
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
   },
   "scripts": {
     "setup": "clear && yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && clear && ls -la",

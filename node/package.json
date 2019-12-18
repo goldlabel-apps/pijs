@@ -1,11 +1,14 @@
 {
   "name": "pijs",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "PiJS is a React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/listingslab-hardware/pijs.git"
+  },
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
   },
   "main": "index.js",
   "dependencies": {
@@ -15,6 +18,7 @@
     "morgan": "^1.9.1",
     "path": "^0.12.7"
   },
+  "license": "MIT",
   "keywords": [
     "Raspberry Pi",
     "Node",

@@ -15,7 +15,7 @@ export const styles = theme => ({
     screenCard: {
         margin: theme.spacing(),
         // width: 'calc(100% - 8px)',
-        background: '#a89a2c',
+        // background: '#a89a2c',
     },
     webcamFull: {
         height: 450,
