@@ -25,7 +25,7 @@ export const styles = theme => ({
     webcamPreview: {
         height: 0,
         paddingTop: '56.25%',
-        border: '1px solid red',
+        // border: '1px solid red',
     },
     mapFull: {
         height: 'calc(100vh - 180px)',
