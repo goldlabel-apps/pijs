@@ -19,18 +19,20 @@ export const styles = theme => ({
         // border: '1px solid #a89a2c',
     },
     webcamFull: {
-        height: 450,
+        height: 0,
+        paddingTop: '56.25%', // 16:9
     },
     webcamPreview: {
-        height: 300,
-        // objectFit: 'cover',
+        height: 0,
+        paddingTop: '56.25%',
+        border: '1px solid red',
     },
     mapFull: {
         height: 'calc(100vh - 180px)',
         outline: 'none',
     },
     mapPreview: {
-        height: 300,
+        height: 200,
         outline: 'none',
     },
     piJSLogo: {

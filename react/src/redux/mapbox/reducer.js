@@ -7,7 +7,7 @@ export const mapboxSlice = {
   updated: Date.now(),
   lat: -27.211579,
   lng: 153.107658,
-  zoom: 12
+  zoom: 2
 };
 
 const mapbox = createReducer(mapboxSlice, {
