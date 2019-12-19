@@ -11,9 +11,8 @@ import {
     Card,
     CardHeader,
     IconButton,
-    CardMedia,
 } from '@material-ui/core/';
-import { Icon } from '../'
+import { Icon, PiPlayer } from '../'
 
 class Webcam extends Component {
 
@@ -74,28 +73,10 @@ class Webcam extends Component {
             alert('Webcam mode not specified');
             return null;
         }
-        let webcamClass = classes.webcamFull;
-        if (screenMode === `preview`) {
-            webcamClass = classes.webcamPreview;
-        }
-
-        const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
         return (
             <Card className={cn(classes.screenCard)}>
                 <CardHeader
                     title={`Webcam`}
-                    avatar={<IconButton
-                        onClick={(e) => {
-                            e.preventDefault();
-                            history.push(`/webcam`)
-                        }}
-                    >
-                        <Icon
-                            icon={`webcam`}
-                            color={`secondary`}
-                        />
-                    </IconButton>}
-
                     action={
                         screenMode === 'full' ?
                             <IconButton
@@ -106,15 +87,15 @@ class Webcam extends Component {
                             >
                                 <Icon icon={`home`} />
                             </IconButton>
-                            : null
+                            : <Icon
+                                icon={`webcam`}
+                                color={`secondary`}
+                            />
                     }
                 />
-                <CardMedia
-                    className={webcamClass}
-                    style={{ background: '#333333' }}
-                    image={currentPhotoUrl}
-                    alt={`Webcam`}
-                />
+
+                <PiPlayer />
+
             </Card>
         );
     }
