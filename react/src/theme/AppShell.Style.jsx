@@ -4,6 +4,19 @@ import commonStyles from "./commonStyles";
 export const styles = theme => ({
     ...commonStyles(theme),
     appShell: {
+        maxWidth: 800,
+        margin: 'auto',
+    },
+    menuOpenerBtn: {
+        position: 'absolute',
+        top: theme.spacing(),
+        right: theme.spacing(),
+    },
+    navDrawer: {
+        width: 300,
+    },
+    navDrawerWidth: {
+        width: 300,
     },
     piPlayer: {
         // border: '1px solid #a89a2c',
@@ -41,13 +54,6 @@ export const styles = theme => ({
         right: 0,
         margin: '0 auto',
     },
-
-
-    navCallout: {
-        // margin: theme.spacing(),
-    },
-    navDrawer: {
-    },
     screenCard: {
         // margin: theme.spacing(),
         // width: 'calc(100% - 8px)',
@@ -72,7 +78,7 @@ export const styles = theme => ({
         outline: 'none',
     },
     piJSLogo: {
-        height: 45,
-        margin: theme.spacing(0.5),
+        height: 30,
+        // margin: theme.spacing(0.5),
     },
 });
