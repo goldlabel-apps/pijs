@@ -6,6 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import AppShell from "./AppShell";
+import "./theme/mapbox-gl.css";
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`

@@ -6,9 +6,14 @@ export const styles = theme => ({
     appShell: {
     },
     piPlayer: {
-        border: '1px solid #a89a2c',
+        // border: '1px solid #a89a2c',
+        margin: 'auto',
+        textAlign: 'center',
     },
-
+    piPlayerImg: {
+        // border: '1px solid red',
+        maxWidth: '100%',
+    },
     text: {
         padding: theme.spacing(2, 2, 0),
     },
