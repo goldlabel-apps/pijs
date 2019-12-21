@@ -5,12 +5,9 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    IconButton,
     Card,
     CardHeader,
 } from '@material-ui/core/';
-import { Icon } from '../';
-
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
@@ -33,8 +30,8 @@ class Map extends Component {
         const {
             classes,
             mode,
-            history,
-            weather,
+            // history,
+            // weather,
         } = this.props;
 
         let screenMode = `full`;
@@ -50,49 +47,16 @@ class Map extends Component {
         if (screenMode === `preview`) {
             mapClass = classes.mapPreview;
         }
-        let placeName = `...`;
-        if (weather.data !== null) {
-            placeName = `${weather.data.name}, ${weather.data.sys.country}`
-        }
+        // let placeName = `...`;
+        // if (weather.data !== null) {
+        //     placeName = `${weather.data.name}, ${weather.data.sys.country}`
+        // }
 
         return (
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
-                        className={cn(classes.screenCardHeader)}
                         title={`Map`}
-                        subheader={placeName}
-                        avatar={
-                            screenMode === 'preview' ?
-                                <IconButton
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/map`)
-                                    }}
-                                >
-                                    <Icon
-                                        icon={`map`}
-                                        color={`secondary`}
-                                    />
-                                </IconButton>
-                                : <Icon
-                                    className={cn(classes.padIcon)}
-                                    icon={`map`}
-                                    color={`secondary`}
-                                />
-                        }
-                        action={
-                            screenMode === 'full' ?
-                                <IconButton
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/`)
-                                    }}
-                                >
-                                    <Icon icon={`home`} />
-                                </IconButton>
-                                : null
-                        }
                     />
                     <div
                         ref={el => this.mapContainer = el}

@@ -6,7 +6,7 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './theme/AppShell.Style';
 import {
-    Button,
+    Fab,
     CssBaseline,
 } from '@material-ui/core/';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -32,18 +32,16 @@ class AppShell extends Component {
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <div className={cn(classes.appShell)}>
                     <CssBaseline />
-                    <Button
-                        fullWidth
-                        className={cn(classes.navCallout)}
+                    <Fab
+                        className={cn(classes.menuOpenerBtn)}
                         color={`primary`}
-                        variant={`contained`}
                         onClick={(e) => {
                             e.preventDefault();
                             store.dispatch({ type: "SYSTEM/NAV/OPEN" });
                         }}
                     >
                         <PiJSSVG className={cn(classes.piJSLogo)} />
-                    </Button>
+                    </Fab>
                     <main>
                         <Router>
                             <Nav />

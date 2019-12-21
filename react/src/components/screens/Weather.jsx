@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+// import moment from 'moment';
 import { connect } from 'react-redux';
 import {
     getWeather
@@ -10,30 +10,24 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
     Avatar,
-    IconButton,
     Card,
     CardContent,
     CardHeader,
     Grid,
     Typography,
 } from '@material-ui/core/';
-import { Icon } from '../';
 
 class Weather extends Component {
     render() {
         const {
             classes,
-            mode,
-            history,
             weather,
         } = this.props;
-        let screenMode = `full`;
-        if (mode) { screenMode = mode }
         const sinceLastUpdate = (Date.now() - weather.updated) / 1000 / 60;
         if (!weather.updated || sinceLastUpdate > 15) {
             getWeather();
         }
-        const lastUpdated = moment.unix(weather.updated / 1000).fromNow() || `never`;
+        // const lastUpdated = moment.unix(weather.updated / 1000).fromNow() || `never`;
         const { data } = weather;
         if (!data) { return null }
 
@@ -58,45 +52,10 @@ class Weather extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
-                        className={cn(classes.screenCardHeader)}
                         title={`Weather`}
-                        subheader={`Updated ${lastUpdated}`}
-                        avatar={
-                            screenMode === 'preview' ?
-                                <IconButton
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/weather`)
-                                    }}
-                                >
-                                    <Icon
-                                        icon={`weather`}
-                                        color={`secondary`}
-                                    />
-                                </IconButton>
-                                : <Icon
-                                    className={cn(classes.padIcon)}
-                                    icon={`weather`}
-                                    color={`secondary`}
-                                />
-                        }
-                        action={
-                            screenMode === 'full' ?
-                                <IconButton
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        history.push(`/`)
-                                    }}
-                                >
-                                    <Icon icon={`home`} />
-                                </IconButton>
-                                : null
-                        }
                     />
                     <CardContent>
-
                         <Grid container>
-
                             <Grid item xs={12} sm={6}>
                                 <Typography variant={`h5`}>
                                     Overview

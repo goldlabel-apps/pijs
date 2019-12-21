@@ -14,18 +14,18 @@ const theme = {
         },
         background: {
             default: "none",
-            paper: "#212121",
+            paper: "#F1DD3F", // 212121
             appBar: "#F1DD3F",
             contentFrame: "#F1DD3F"
         },
         text: {
-            primary: "#FFFFFF",
-            secondary: "#FFFFFF",
-            disabled: "#FFFFFF",
-            hint: "#FFFFFF",
-            icon: "#FFFFFF",
-            divider: "#FFFFFF",
-            lightDivider: "#FFFFFF",
+            primary: "#212121",
+            secondary: "#212121",
+            disabled: "#212121",
+            hint: "#212121",
+            icon: "#212121",
+            divider: "#212121",
+            lightDivider: "#212121",
         },
         input: {
             "helperText": "#F1DD3F",

@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
-    Button,
     Divider,
     Drawer,
     List,
@@ -14,7 +13,7 @@ import {
     ListItemText
 } from '@material-ui/core/';
 import { Icon } from './';
-import { PiJSSVG } from '../graphics';
+// import { PiJSSVG } from '../graphics';
 import { getStore } from "../";
 
 class Nav extends Component {
@@ -38,29 +37,20 @@ class Nav extends Component {
         return (
             <nav className={cn(classes.navDrawer)} aria-label="Nav">
                 <Drawer
-                    anchor="top"
+                    className={cn(classes.navDrawerWidth)}
+                    anchor="right"
                     open={open}
                     onClose={() => {
                         store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
                     }}>
-                    <Button
-                        fullWidth
-                        color={`secondary`}
-                        variant={`contained`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
-                        }}
-                    >
-                        <PiJSSVG className={cn(classes.piJSLogo)} />
-                    </Button>
+
                     <List>
                         <ListItem button
                             onClick={(e) => {
                                 this.navClick(`/`)
                             }}>
                             <ListItemIcon>
-                                <Icon icon={`home`} />
+                                <Icon icon={`home`} color={`primary`} />
                             </ListItemIcon>
                             <ListItemText primary={`Home`} />
                         </ListItem>
@@ -70,7 +60,7 @@ class Nav extends Component {
                                 this.navClick(`/webcam`)
                             }}>
                             <ListItemIcon>
-                                <Icon icon={`webcam`} />
+                                <Icon icon={`webcam`} color={`primary`} />
                             </ListItemIcon>
                             <ListItemText primary={`Webcam`} />
                         </ListItem>
@@ -80,7 +70,7 @@ class Nav extends Component {
                                 this.navClick(`/map`)
                             }}>
                             <ListItemIcon>
-                                <Icon icon={`map`} />
+                                <Icon icon={`map`} color={`primary`} />
                             </ListItemIcon>
                             <ListItemText primary={`Map`} />
                         </ListItem>
@@ -90,7 +80,7 @@ class Nav extends Component {
                                 this.navClick(`/weather`)
                             }}>
                             <ListItemIcon>
-                                <Icon icon={`weather`} />
+                                <Icon icon={`weather`} color={`primary`} />
                             </ListItemIcon>
                             <ListItemText primary={`Weather`} />
                         </ListItem>
@@ -101,7 +91,7 @@ class Nav extends Component {
                                 window.open(`https://github.com/listingslab-hardware/pijs`, `_blank`)
                             }}>
                             <ListItemIcon>
-                                <Icon icon={`github`} color={`#F1DD3F`} />
+                                <Icon icon={`github`} color={`#333333`} />
                             </ListItemIcon>
                             <ListItemText primary={`Github`} />
                         </ListItem>

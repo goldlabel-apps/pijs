@@ -24,7 +24,6 @@ class NotFound extends Component {
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
                         title={`Not Found`}
-                        subheader={`Lorem ipsum dolor sit amet,`}
                     />
                     <CardMedia
                         className={cn(classes.media)}

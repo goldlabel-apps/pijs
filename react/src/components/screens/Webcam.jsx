@@ -10,9 +10,8 @@ import { styles } from '../../theme/AppShell.Style';
 import {
     Card,
     CardHeader,
-    IconButton,
 } from '@material-ui/core/';
-import { Icon, PiPlayer } from '../'
+import { PiPlayer } from '../'
 
 class Webcam extends Component {
 
@@ -63,39 +62,22 @@ class Webcam extends Component {
     render() {
         const {
             classes,
-            mode,
-            history,
+            // mode,
+            // history,
         } = this.props;
-        let screenMode = `full`;
-        if (mode) {
-            screenMode = mode;
-        } else {
-            alert('Webcam mode not specified');
-            return null;
-        }
+        // let screenMode = `full`;
+        // if (mode) {
+        //     screenMode = mode;
+        // } else {
+        //     alert('Webcam mode not specified');
+        //     return null;
+        // }
         return (
             <Card className={cn(classes.screenCard)}>
                 <CardHeader
                     title={`Webcam`}
-                    action={
-                        screenMode === 'full' ?
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`)
-                                }}
-                            >
-                                <Icon icon={`home`} />
-                            </IconButton>
-                            : <Icon
-                                icon={`webcam`}
-                                color={`secondary`}
-                            />
-                    }
                 />
-
                 <PiPlayer />
-
             </Card>
         );
     }
