@@ -5,13 +5,13 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import { getStore } from "../";
 import cn from 'classnames';
-import {
-    AppBar, Toolbar, IconButton, Fab
-} from '@material-ui/core/';
-import MenuIcon from '@material-ui/icons/Menu';
-import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
+// import {
+//     AppBar, Toolbar, IconButton, Fab
+// } from '@material-ui/core/';
+// import MenuIcon from '@material-ui/icons/Menu';
+// import AddIcon from '@material-ui/icons/Add';
+// import SearchIcon from '@material-ui/icons/Search';
+// import MoreIcon from '@material-ui/icons/MoreVert';
 
 class PiPlayer extends Component {
 
@@ -28,11 +28,17 @@ class PiPlayer extends Component {
         const {
             classes,
         } = this.props;
+        const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
         return (
 
             <div className={cn(classes.piPlayer)} id="pi-player" >
-                Image
-                <AppBar position="fixed" color="primary" className={classes.appBar}>
+
+                <img
+                    className={cn(classes.piPlayerImg)}
+                    src={currentPhotoUrl}
+                    alt={`piPlayer`} />
+
+                {/* <AppBar position="fixed" color="primary" className={classes.appBar}>
                     <Toolbar>
                         <IconButton edge="start" color="inherit" aria-label="open drawer">
                             <MenuIcon />
@@ -48,7 +54,7 @@ class PiPlayer extends Component {
                             <MoreIcon />
                         </IconButton>
                     </Toolbar>
-                </AppBar>
+                </AppBar> */}
 
             </div >
         );
@@ -83,6 +89,6 @@ if (screenMode === `preview`) {
     webcamClass = classes.webcamPreview;
 }
 
-const currentPhotoUrl = `https://pi.listingslab.io/jpg/current-photo.jpg?cb=${Date.now()}`;
+
 
 */
