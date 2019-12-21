@@ -4,15 +4,15 @@ PiJS is fullstack, isomorphic JavaScript for the Raspberry Pi. It's also a React
 
 ### Features
 
-- [ ] Isomorphic JavaScript
-- [ ] Frontend
-  - [ ] React
-    - [ ] Material UI
-- [ ] Backend
-  - [ ] Node
-  - [ ] Firebase
-- [ ] Hardware
-  - [ ] RPi
+- [x] Isomorphic JavaScript
+- [x] Frontend
+  - [x] React
+    - [x] Material UI
+- [x] Backend
+  - [x] Node
+  - [x] Firebase
+- [x] Hardware
+  - [x] RPi
 
 ![PiJS](react/public/png/twitter-card.png "PiJS")
 
