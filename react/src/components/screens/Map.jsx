@@ -23,7 +23,8 @@ class Map extends Component {
             container: this.mapContainer,
             style: 'mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563',
             center: [lng, lat],
-            zoom
+            zoom,
+            interactive: false,
         });
     }
     render() {

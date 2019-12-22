@@ -46,7 +46,7 @@ class Weather extends Component {
         const pressure = `${data.main.pressure} hPa`;
         const humidity = `${data.main.humidity} %`;
         const overview = `${data.weather[0].main} (${data.weather[0].description})`;
-        const outlookIcon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+        const outlookIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
         return (
             <div className={cn(classes.screenCentered)}>

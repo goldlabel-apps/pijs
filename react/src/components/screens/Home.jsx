@@ -6,9 +6,7 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
-    Map,
-    Weather,
-    Webcam,
+    About,
 } from '../';
 
 class Home extends Component {
@@ -19,16 +17,7 @@ class Home extends Component {
         return (
             <div className={cn(classes.screenCentered)}>
                 <Grid container>
-                    <Grid item xs={12}>
-                        <Webcam mode={`preview`} />
-                    </Grid>
-                   
-                    <Grid item xs={12} md={6}>
-                        <Weather mode={`preview`} />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Map mode={`preview`} />
-                    </Grid>
+                    <About />
                 </Grid>
             </div>
         );
@@ -38,3 +27,18 @@ class Home extends Component {
 export default (
     withStyles(styles, { withTheme: true })(Home)
 );
+
+
+/*
+<Grid item xs={12} md={6}>
+    <Map mode={`preview`} />
+</Grid>
+
+<Grid item xs={12}>
+    <Webcam mode={`preview`} />
+</Grid>
+
+<Grid item xs={12} md={6}>
+    <Weather mode={`preview`} />
+</Grid>
+*/

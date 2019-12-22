@@ -7,6 +7,10 @@ export const styles = theme => ({
         maxWidth: 800,
         margin: 'auto',
     },
+    screenCard: {
+        boxShadow: 'none',
+        marginBottom: 100,
+    },
     menuOpenerBtn: {
         position: 'absolute',
         top: theme.spacing(),
@@ -54,21 +58,7 @@ export const styles = theme => ({
         right: 0,
         margin: '0 auto',
     },
-    screenCard: {
-        // margin: theme.spacing(),
-        // width: 'calc(100% - 8px)',
-        // background: '#a89a2c',
-        // border: '1px solid #a89a2c',
-    },
-    webcamFull: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
-    },
-    webcamPreview: {
-        height: 0,
-        paddingTop: '56.25%',
-        // border: '1px solid red',
-    },
+
     mapFull: {
         height: 'calc(100vh - 180px)',
         outline: 'none',
