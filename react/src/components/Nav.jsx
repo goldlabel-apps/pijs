@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
-    Divider,
     Drawer,
     List,
     ListItem,
@@ -38,7 +37,7 @@ class Nav extends Component {
             <nav className={cn(classes.navDrawer)} aria-label="Nav">
                 <Drawer
                     className={cn(classes.navDrawerWidth)}
-                    anchor="right"
+                    anchor={`bottom`}
                     open={open}
                     onClose={() => {
                         store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
@@ -54,6 +53,17 @@ class Nav extends Component {
                             </ListItemIcon>
                             <ListItemText primary={`Home`} />
                         </ListItem>
+
+                        <ListItem button
+                            onClick={(e) => {
+                                this.navClick(`/about`)
+                            }}>
+                            <ListItemIcon>
+                                <Icon icon={`docs`} color={`primary`} />
+                            </ListItemIcon>
+                            <ListItemText primary={`About`} />
+                        </ListItem>
+
 
                         <ListItem button
                             onClick={(e) => {
@@ -84,17 +94,8 @@ class Nav extends Component {
                             </ListItemIcon>
                             <ListItemText primary={`Weather`} />
                         </ListItem>
-                        <Divider />
 
-                        <ListItem button
-                            onClick={(e) => {
-                                window.open(`https://github.com/listingslab-hardware/pijs`, `_blank`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`github`} color={`#333333`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`Github`} />
-                        </ListItem>
+
                     </List>
                 </Drawer>
             </nav>

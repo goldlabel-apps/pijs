@@ -1,5 +1,13 @@
 
 export default theme => ({
+    btnIconPadRight: {
+        marginLeft: theme.spacing()
+    },
+
+    media: {
+        height: 0,
+        paddingTop: '30%', // 16:9
+    },
     white: {
         color: 'white',
     },

@@ -28,7 +28,7 @@ import IconMap from '@material-ui/icons/Explore';
 
 import {
     GithubSVG,
-    // PiSVG,
+    PiJSSVG,
 } from '../graphics';
 
 const styles = theme => ({
@@ -59,7 +59,7 @@ class Icon extends Component {
         switch (icon) {
 
             case `github`:
-                return (<GithubSVG color={color} className={classes.navIcon} />);
+                return (<GithubSVG color={`#000`} className={classes.navIcon} />);
 
             case `weather`:
                 return (<IconWeather color={iconColor} />);
@@ -100,8 +100,8 @@ class Icon extends Component {
             case `help`:
                 return (<IconHelp color={iconColor} />);
 
-            // case `pi`:
-            //     return (<PiSVG className={classes.navIcon} />);
+            case `pi`:
+                return (<PiJSSVG className={classes.navIcon} />);
 
             case `home`:
                 return (<IconHome color={iconColor} />);
