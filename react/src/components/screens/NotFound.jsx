@@ -23,7 +23,7 @@ class NotFound extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
-                        title={`Not Found`}
+                        title={`404. Not Found`}
                     />
                     <CardMedia
                         className={cn(classes.media)}
@@ -34,20 +34,21 @@ class NotFound extends Component {
                         <Typography
                             variant={`body1`}
                         >
-                            Vestibulum vitae mauris neque. In accumsan, lorem vel sagittis bibendum, nunc mauris egestas enim, ut sodales odio metus sed felis. Aliquam vestibulum tellus lectus, a pharetra turpis gravida nec. Nunc ut odio non erat egestas fringilla. Proin sem velit, sagittis non nisl sed, tempor tempor ipsum. In quis eros at tellus rutrum iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur vestibulum elementum ligula at fringilla. Suspendisse at purus posuere nisl rhoncus semper a sit amet purus. Nulla sit amet odio ut eros rhoncus fermentum sed vel sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eleifend nibh in velit viverra tempor.
-                    </Typography>
+
+                        </Typography>
                     </CardContent>
                     <CardActions>
-                        <div className={cn(classes.grow)} />
+
                         <Button
-                            variant={`contained`}
+                            fullWidth
+                            variant={`outlined`}
                             color={`primary`}
                             onClick={() => {
                                 history.push(`/`);
                             }}
                         >
                             Home
-                            </Button>
+                        </Button>
                     </CardActions>
                 </Card>
             </div>
