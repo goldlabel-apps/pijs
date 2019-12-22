@@ -32,8 +32,6 @@ class AppShell extends Component {
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <div className={cn(classes.appShell)}>
                     <CssBaseline />
-
-
                     <main>
                         <Router>
                             <Nav />

@@ -54,15 +54,7 @@ class Nav extends Component {
                             <ListItemText primary={`Home`} />
                         </ListItem>
 
-                        <ListItem button
-                            onClick={(e) => {
-                                this.navClick(`/about`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`docs`} color={`primary`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`About`} />
-                        </ListItem>
+
 
 
                         <ListItem button
@@ -95,7 +87,15 @@ class Nav extends Component {
                             <ListItemText primary={`Weather`} />
                         </ListItem>
 
-
+                        <ListItem button
+                            onClick={(e) => {
+                                this.navClick(`/about`)
+                            }}>
+                            <ListItemIcon>
+                                <Icon icon={`docs`} color={`primary`} />
+                            </ListItemIcon>
+                            <ListItemText primary={`About`} />
+                        </ListItem>
                     </List>
                 </Drawer>
             </nav>
