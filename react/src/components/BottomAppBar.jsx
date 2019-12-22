@@ -29,15 +29,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function BottomAppBar() {
     const classes = useStyles();
-
     const store = getStore();
-
     return (
         <AppBar
             position="fixed"
             color={`secondary`}
-            className={classes.appBar}
-        >
+            className={classes.appBar}>
             <Toolbar>
                 <Fab
                     color="primary"
@@ -46,14 +43,18 @@ export default function BottomAppBar() {
                     onClick={(e) => {
                         e.preventDefault();
                         store.dispatch({ type: "SYSTEM/NAV/OPEN" });
-                    }}
-                >
+                    }}>
                     <Icon icon={`pi`} />
                 </Fab>
                 <div className={classes.grow} />
                 <IconButton
                     edge="end"
-                    color="inherit">
+                    color="inherit"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        store.dispatch({ type: "SYSTEM/SETTINGS/OPEN" });
+                    }}
+                >
                     <Icon
                         icon={`settings`}
                         color={`primary`}

@@ -1,9 +1,18 @@
 // System Reducer
 
 import { createReducer } from "@reduxjs/toolkit";
-import { systemWebcamUpdate, systemOpenNav, systemCloseNav } from "./actions";
+import {
+  systemWebcamUpdate,
+  systemOpenNav,
+  systemCloseNav,
+  systemOpenSettings,
+  systemCloseSettings
+} from "./actions";
 
 export const systemSlice = {
+  settings: {
+    open: false
+  },
   nav: {
     open: false
   },
@@ -32,16 +41,26 @@ export const systemSlice = {
 };
 
 const system = createReducer(systemSlice, {
+  [systemOpenSettings]: state => {
+    state.settings.open = true;
+    return state;
+  },
+
+  [systemCloseSettings]: state => {
+    state.settings.open = false;
+    return state;
+  },
+
   [systemWebcamUpdate]: state => {
-    // console.log ('SYSTEM/WEBCAM/UPDATE')
     state.webcam.updated = Date.now();
     return state;
   },
+
   [systemOpenNav]: state => {
-    // console.log("SYSTEM/NAV/OPEN");
     state.nav.open = true;
     return state;
   },
+
   [systemCloseNav]: state => {
     // console.log("SYSTEM/NAV/CLOSE");
     state.nav.open = false;

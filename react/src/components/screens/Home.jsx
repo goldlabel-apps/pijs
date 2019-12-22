@@ -3,11 +3,12 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    Grid,
+    Card,
+    CardHeader
 } from '@material-ui/core/';
-import {
-    About,
-} from '../';
+// import {
+//     About,
+// } from '../';
 
 class Home extends Component {
     render() {
@@ -16,9 +17,13 @@ class Home extends Component {
         } = this.props;
         return (
             <div className={cn(classes.screenCentered)}>
-                <Grid container>
-                    <About />
-                </Grid>
+                <Card className={cn(classes.screenCard)}>
+                    <CardHeader
+                        title={`PiJS`}
+                        subheader={`Welcome to the project`}
+                    // avatar={<Icon icon={`docs`} color={`primary`} />}
+                    />
+                </Card>
             </div>
         );
     }
