@@ -6,11 +6,16 @@ import {
   systemOpenNav,
   systemCloseNav,
   systemOpenSettings,
-  systemCloseSettings
+  systemCloseSettings,
+  systemPijsSave,
+  systemPijsToggleFetching
 } from "./actions";
 
 export const systemSlice = {
-  pijs: null,
+  pijs: {
+    data: null,
+    fetching: false
+  },
   settings: {
     open: false
   },
@@ -42,6 +47,17 @@ export const systemSlice = {
 };
 
 const system = createReducer(systemSlice, {
+  [systemPijsToggleFetching]: (state, action) => {
+    // console.log("reduce SYSTEM/PIJS/TOGGLE_FETCH", action);
+    state.pijs.fetching = action.bool;
+    return state;
+  },
+  [systemPijsSave]: (state, action) => {
+    // console.log("reduce SYSTEM/PIJS/SAVE", action);
+    state.pijs.data = action.data;
+    return state;
+  },
+
   [systemOpenSettings]: state => {
     state.settings.open = true;
     return state;

@@ -11,6 +11,11 @@ export const systemCloseNav = createAction("SYSTEM/NAV/CLOSE");
 export const systemOpenSettings = createAction("SYSTEM/SETTINGS/OPEN");
 export const systemCloseSettings = createAction("SYSTEM/SETTINGS/CLOSE");
 
+export const systemPijsSave = createAction("SYSTEM/PIJS/SAVE");
+export const systemPijsToggleFetching = createAction(
+  "SYSTEM/PIJS/TOGGLE_FETCH"
+);
+
 export const updateWebcam = () => {
   const store = getStore();
   store.dispatch({ type: "SYSTEM/WEBCAM/UPDATE" });
@@ -18,21 +23,29 @@ export const updateWebcam = () => {
 
 export const pingPi = () => {
   console.log("Pinging the pi...");
-  //   const store = getStore();
+  const store = getStore();
+  store.dispatch({
+    type: "SYSTEM/PIJS/TOGGLE_FETCH",
+    bool: true
+  });
   axios
     .get(`https://pi.listingslab.io/pijs`)
     .then(function(response) {
-      console.log(response);
-      //   store.dispatch({
-      //     type: "WEATHER/SAVE",
-      //     data: response.data
-      //   });
+      store.dispatch({
+        type: "SYSTEM/PIJS/SAVE",
+        data: response.data
+      });
     })
     .catch(function(error) {
-      console.log(error);
-      //   store.dispatch({
-      //     type: "WEATHER/ERROR",
-      //     error
-      //   });
+      store.dispatch({
+        type: "SYSTEM/PIJS/ERROR",
+        error
+      });
+    })
+    .finally(function() {
+      store.dispatch({
+        type: "SYSTEM/PIJS/TOGGLE_FETCH",
+        bool: false
+      });
     });
 };

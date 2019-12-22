@@ -21,9 +21,8 @@ import moment from 'moment';
 class Home extends Component {
 
     componentDidMount() {
-        const { pijs } = this.props;
-
-        if (pijs === null) {
+        const { data, fetching } = this.props.pijs;
+        if (data === null && !fetching) {
             pingPi();
         }
     }
@@ -32,11 +31,23 @@ class Home extends Component {
         const {
             classes,
         } = this.props;
-        const deviceTime = moment.unix(Date.now() / 1000).format(`dddd, MMMM Do YYYY, h:mm:ss a`);
-        const piTime = `...`;
-        const region = `...`;
-        const state = `...`;
-        const country = `...`;
+        let time = 0;
+        let region = `...`;
+        let state = `...`;
+        let country = `...`;
+        if (this.props.pijs !== null) {
+            const { pijs } = this.props;
+            if (this.props.pijs.data !== null) {
+                const { location } = pijs.data.pijs
+                time = moment.unix(location.time / 1000).format(`dddd, MMMM Do YYYY, h: mm: ss a`);;
+                region = location.region;
+                state = location.state;
+                country = location.country;
+            }
+        }
+
+        const deviceTime = moment.unix(Date.now() / 1000).format(`dddd, MMMM Do YYYY, h: mm: ss a`);
+
         return (
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
@@ -48,11 +59,19 @@ class Home extends Component {
                     <CardContent>
 
                         <Typography gutterBottom>
-                            Time on your device is {deviceTime}
+                            The time on your device is
+                        </Typography>
+
+                        <Typography gutterBottom variant={`h4`}>
+                            {deviceTime}
                         </Typography>
 
                         <Typography gutterBottom>
-                            Time in {region}, {state}, {country} is now {piTime}
+                            Time in {region}, {state}, {country} is now
+                        </Typography>
+
+                        <Typography gutterBottom variant={`h4`}>
+                            {time}
                         </Typography>
 
                         {/* <Typography gutterBottom>
