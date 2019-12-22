@@ -1,3 +1,4 @@
+const packageJSON = require("./package.json");
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
