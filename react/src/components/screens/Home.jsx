@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+    pingPi
+} from '../../redux/system/actions';
+import { withRouter } from "react-router";
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
@@ -11,12 +16,27 @@ import {
 import {
     Icon,
 } from '../';
+import moment from 'moment';
 
 class Home extends Component {
+
+    componentDidMount() {
+        const { pijs } = this.props;
+
+        if (pijs === null) {
+            pingPi();
+        }
+    }
+
     render() {
         const {
             classes,
         } = this.props;
+        const deviceTime = moment.unix(Date.now() / 1000).format(`dddd, MMMM Do YYYY, h:mm:ss a`);
+        const piTime = `...`;
+        const region = `...`;
+        const state = `...`;
+        const country = `...`;
         return (
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
@@ -26,17 +46,18 @@ class Home extends Component {
                         subheader={`Welcome to Scarborough, QLD`}
                     />
                     <CardContent>
+
                         <Typography gutterBottom>
-                            Current pi time is:
+                            Time on your device is {deviceTime}
                         </Typography>
 
                         <Typography gutterBottom>
+                            Time in {region}, {state}, {country} is now {piTime}
+                        </Typography>
+
+                        {/* <Typography gutterBottom>
                             Current pi evironment: light | dark
-                        </Typography>
-
-                        <Typography gutterBottom>
-                            Your system time is:
-                        </Typography>
+                        </Typography> */}
 
                     </CardContent>
                 </Card>
@@ -45,21 +66,14 @@ class Home extends Component {
     }
 }
 
-export default (
-    withStyles(styles, { withTheme: true })(Home)
-);
+const mapStateToProps = (store) => {
+    return {
+        store,
+        pijs: store.system.pijs
+    };
+};
 
-
-/*
-<Grid item xs={12} md={6}>
-    <Map mode={`preview`} />
-</Grid>
-
-<Grid item xs={12}>
-    <Webcam mode={`preview`} />
-</Grid>
-
-<Grid item xs={12} md={6}>
-    <Weather mode={`preview`} />
-</Grid>
-*/
+export default (connect(
+    mapStateToProps,
+    null
+)(withStyles(styles, { withTheme: true })(withRouter(Home))));

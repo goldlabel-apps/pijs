@@ -10,6 +10,7 @@ import {
 } from "./actions";
 
 export const systemSlice = {
+  pijs: null,
   settings: {
     open: false
   },
