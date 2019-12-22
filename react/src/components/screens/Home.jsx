@@ -4,11 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
     Card,
-    CardHeader
+    CardHeader,
+    CardContent,
+    Typography
 } from '@material-ui/core/';
-// import {
-//     About,
-// } from '../';
+import {
+    Icon,
+} from '../';
 
 class Home extends Component {
     render() {
@@ -20,9 +22,23 @@ class Home extends Component {
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
                         title={`PiJS`}
-                        subheader={`Welcome to the project`}
-                    // avatar={<Icon icon={`docs`} color={`primary`} />}
+                        avatar={<Icon icon={`pi`} color={`primary`} />}
+                        subheader={`Welcome to Scarborough, QLD`}
                     />
+                    <CardContent>
+                        <Typography gutterBottom>
+                            Current pi time is:
+                        </Typography>
+
+                        <Typography gutterBottom>
+                            Current pi evironment: light | dark
+                        </Typography>
+
+                        <Typography gutterBottom>
+                            Your system time is:
+                        </Typography>
+
+                    </CardContent>
                 </Card>
             </div>
         );
