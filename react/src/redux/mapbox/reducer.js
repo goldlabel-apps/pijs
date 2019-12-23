@@ -5,9 +5,10 @@ import { doSomething } from "./actions";
 
 export const mapboxSlice = {
   updated: Date.now(),
-  lat: -27.211579,
-  lng: 153.107658,
-  zoom: 2
+  lat: 0,
+  lng: 0,
+  zoom: 1,
+  hasZoomed: false
 };
 
 const mapbox = createReducer(mapboxSlice, {

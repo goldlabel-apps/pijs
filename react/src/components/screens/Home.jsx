@@ -55,6 +55,7 @@ class Home extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
+                        className={cn(classes.screenHeader)}
                         title={`PiJS`}
                         avatar={
                             <IconButton

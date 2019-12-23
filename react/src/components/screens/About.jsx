@@ -25,7 +25,8 @@ class About extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
-                        title={`About this project`}
+                        className={cn(classes.screenHeader)}
+                        title={`About PiJS`}
                         avatar={
                             <IconButton
                                 onClick={(e) => {

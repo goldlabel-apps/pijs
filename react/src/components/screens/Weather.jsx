@@ -54,7 +54,8 @@ class Weather extends Component {
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
-                        title={`Weather`}
+                        className={cn(classes.screenHeader)}
+                        title={`PiJS Weather`}
                         avatar={
                             <IconButton
                                 onClick={(e) => {

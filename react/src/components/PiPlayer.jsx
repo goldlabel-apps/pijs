@@ -5,13 +5,11 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import { getStore } from "../";
 import cn from 'classnames';
-// import {
-//     AppBar, Toolbar, IconButton, Fab
-// } from '@material-ui/core/';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import AddIcon from '@material-ui/icons/Add';
-// import SearchIcon from '@material-ui/icons/Search';
-// import MoreIcon from '@material-ui/icons/MoreVert';
+import {
+    Button,
+    // IconButton,
+} from '@material-ui/core/';
+import { Icon } from './';
 
 class PiPlayer extends Component {
 
@@ -38,23 +36,44 @@ class PiPlayer extends Component {
                     src={currentPhotoUrl}
                     alt={`piPlayer`} />
 
-                {/* <AppBar position="fixed" color="primary" className={classes.appBar}>
-                    <Toolbar>
-                        <IconButton edge="start" color="inherit" aria-label="open drawer">
-                            <MenuIcon />
-                        </IconButton>
-                        <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-                            <AddIcon />
-                        </Fab>
-                        <div className={classes.grow} />
-                        <IconButton color="inherit">
-                            <SearchIcon />
-                        </IconButton>
-                        <IconButton edge="end" color="inherit">
-                            <MoreIcon />
-                        </IconButton>
-                    </Toolbar>
-                </AppBar> */}
+                <Button
+                    edge={`end`}
+                    variant={`text`}
+                    color={`primary`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        console.log('Go Back in Time')
+                    }}>
+                    <Icon icon={`time`} color={`primary`} />
+                    <span className={cn(classes.btnIconPadRight)}>
+                        Go Back in Time</span>
+                </Button>
+
+                <Button
+                    edge={`end`}
+                    variant={`text`}
+                    color={`primary`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        console.log('zoom in')
+                    }}>
+                    <Icon icon={`zoomin`} color={`primary`} />
+                    <span className={cn(classes.btnIconPadRight)}>
+                        Zoom In</span>
+                </Button>
+
+                <Button
+                    edge={`end`}
+                    variant={`text`}
+                    color={`primary`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        console.log('zoom Out')
+                    }}>
+                    <Icon icon={`zoomout`} color={`primary`} />
+                    <span className={cn(classes.btnIconPadRight)}>
+                        Zoom Out</span>
+                </Button>
 
             </div >
         );

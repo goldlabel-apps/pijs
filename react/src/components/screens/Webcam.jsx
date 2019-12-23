@@ -71,7 +71,8 @@ class Webcam extends Component {
         return (
             <Card className={cn(classes.screenCard)}>
                 <CardHeader
-                    title={`Webcam`}
+                    className={cn(classes.screenHeader)}
+                    title={`PiJS Webcam`}
                     avatar={
                         <IconButton
                             onClick={(e) => {

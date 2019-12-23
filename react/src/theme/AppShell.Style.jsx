@@ -7,22 +7,28 @@ export const styles = theme => ({
         maxWidth: 800,
         margin: 'auto',
     },
-    mapFullSize: {
-        height: 'calc(100vh - 180px)',
-        outline: 'none',
-    },
     piPlayerImg: {
-        border: '1px solid ' + theme.palette.primary.main,
-        borderRadius: theme.spacing(0.5),
+        // marginTop: theme.spacing(),
+        // borderRadius: theme.spacing(0.5),
         maxWidth: '100%',
-    },
-    navList: {
-        padding: theme.spacing(),
     },
     screenCard: {
         boxShadow: 'none',
         marginBottom: 100,
     },
+    screenHeader: {
+        background: theme.palette.primary.main,
+        color: theme.palette.secondary.main
+    },
+    mapFullSize: {
+        height: 'calc(100vh - 180px)',
+        outline: 'none',
+    },
+
+    navList: {
+        padding: theme.spacing(),
+    },
+
     menuOpenerBtn: {
         position: 'absolute',
         top: theme.spacing(),
