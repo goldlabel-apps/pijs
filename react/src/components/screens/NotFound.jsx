@@ -10,8 +10,10 @@ import {
     CardContent,
     CardMedia,
     CardHeader,
+    IconButton,
     Typography,
 } from '@material-ui/core/';
+import { Icon } from '../';
 
 class NotFound extends Component {
     render() {
@@ -24,6 +26,15 @@ class NotFound extends Component {
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
                         title={`404. Not Found`}
+                        avatar={
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/`);
+                                }}>
+                                <Icon icon={`pi`} color={`primary`} />
+                            </IconButton>
+                        }
                     />
                     <CardMedia
                         className={cn(classes.media)}

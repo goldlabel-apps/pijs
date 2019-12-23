@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
-    Drawer,
     List,
     ListItem,
     ListItemIcon,
@@ -29,76 +28,64 @@ class Nav extends Component {
     render() {
         const {
             classes,
-            nav,
+            isHome
         } = this.props;
-        const { open } = nav
-        const store = getStore();
         return (
-            <nav className={cn(classes.navDrawer)} aria-label="Nav">
-                <Drawer
-                    className={cn(classes.navDrawerWidth)}
-                    anchor={`bottom`}
-                    open={open}
-                    onClose={() => {
-                        store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
+            <List className={cn(classes.navList)}>
+
+                {!isHome ?
+                    <ListItem button
+                        onClick={(e) => {
+                            this.navClick(`/`)
+                        }}>
+                        <ListItemIcon>
+                            <Icon icon={`home`} color={`primary`} />
+                        </ListItemIcon>
+                        <ListItemText primary={`Home`} />
+                    </ListItem>
+                    : null}
+
+
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`/webcam`)
                     }}>
+                    <ListItemIcon>
+                        <Icon icon={`webcam`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`Webcam`} />
+                </ListItem>
 
-                    <List>
-                        <ListItem button
-                            onClick={(e) => {
-                                this.navClick(`/`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`home`} color={`primary`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`Home`} />
-                        </ListItem>
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`/map`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`map`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`Map`} />
+                </ListItem>
 
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`/weather`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`weather`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`Weather`} />
+                </ListItem>
 
-
-
-                        <ListItem button
-                            onClick={(e) => {
-                                this.navClick(`/webcam`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`webcam`} color={`primary`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`Webcam`} />
-                        </ListItem>
-
-                        <ListItem button
-                            onClick={(e) => {
-                                this.navClick(`/map`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`map`} color={`primary`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`Map`} />
-                        </ListItem>
-
-                        <ListItem button
-                            onClick={(e) => {
-                                this.navClick(`/weather`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`weather`} color={`primary`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`Weather`} />
-                        </ListItem>
-
-                        <ListItem button
-                            onClick={(e) => {
-                                this.navClick(`/about`)
-                            }}>
-                            <ListItemIcon>
-                                <Icon icon={`docs`} color={`primary`} />
-                            </ListItemIcon>
-                            <ListItemText primary={`About`} />
-                        </ListItem>
-                    </List>
-                </Drawer>
-            </nav>
+                {/* <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`/about`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`docs`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`About`} />
+                </ListItem> */}
+            </List>
         );
     }
 }
@@ -106,7 +93,6 @@ class Nav extends Component {
 
 const mapStateToProps = (store) => {
     return {
-        store,
         nav: store.system.nav,
     };
 };

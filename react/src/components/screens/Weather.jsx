@@ -13,14 +13,17 @@ import {
     CardContent,
     CardHeader,
     Grid,
+    IconButton,
     Typography,
 } from '@material-ui/core/';
+import { Icon } from '../';
 
 class Weather extends Component {
     render() {
         const {
             classes,
             weather,
+            history,
         } = this.props;
         const sinceLastUpdate = (Date.now() - weather.updated) / 1000 / 60;
         if (!weather.updated || sinceLastUpdate > 15) {
@@ -52,6 +55,15 @@ class Weather extends Component {
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
                         title={`Weather`}
+                        avatar={
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/`);
+                                }}>
+                                <Icon icon={`pi`} color={`primary`} />
+                            </IconButton>
+                        }
                     />
                     <CardContent>
                         <Grid container>

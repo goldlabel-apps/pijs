@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getStore } from "./";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './theme/AppShell.Style';
 import {
     CssBaseline,
+    Drawer,
 } from '@material-ui/core/';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './theme/mui';
 import {
-    BottomAppBar,
     About,
+    BottomAppBar,
     Home,
     Map,
     Nav,
@@ -26,7 +28,10 @@ class AppShell extends Component {
     render() {
         const {
             classes,
+            nav,
         } = this.props;
+        const { open } = nav
+        const store = getStore();
 
         return (
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
@@ -34,7 +39,17 @@ class AppShell extends Component {
                     <CssBaseline />
                     <main>
                         <Router>
-                            <Nav />
+                            <nav className={cn(classes.navDrawer)} aria-label="Nav">
+                                <Drawer
+                                    className={cn(classes.navDrawerWidth)}
+                                    anchor={`bottom`}
+                                    open={open}
+                                    onClose={() => {
+                                        store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
+                                    }}>
+                                    <Nav />
+                                </Drawer >
+                            </nav >
                             <Settings />
                             <Switch>
                                 <Route exact path="/" render={props => {
@@ -65,8 +80,7 @@ class AppShell extends Component {
 
 const mapStateToProps = (store) => {
     return {
-        // store
-        // nav: store.system.systemState.nav,
+        nav: store.system.nav,
     };
 };
 

@@ -7,7 +7,9 @@ import { styles } from '../../theme/AppShell.Style';
 import {
     Card,
     CardHeader,
+    IconButton,
 } from '@material-ui/core/';
+import { Icon } from '../';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
@@ -30,38 +32,27 @@ class Map extends Component {
     render() {
         const {
             classes,
-            mode,
-            // history,
-            // weather,
+            history,
         } = this.props;
-
-        let screenMode = `full`;
-        if (mode) {
-            screenMode = mode;
-        } else {
-            alert('Map mode not specified');
-            return null;
-        }
-
-
-        let mapClass = classes.mapFull;
-        if (screenMode === `preview`) {
-            mapClass = classes.mapPreview;
-        }
-        // let placeName = `...`;
-        // if (weather.data !== null) {
-        //     placeName = `${weather.data.name}, ${weather.data.sys.country}`
-        // }
 
         return (
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
                         title={`Map`}
+                        avatar={
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/`);
+                                }}>
+                                <Icon icon={`pi`} color={`primary`} />
+                            </IconButton>
+                        }
                     />
                     <div
                         ref={el => this.mapContainer = el}
-                        className={mapClass}
+                        className={cn(classes.mapFullSize)}
                     />
                 </Card>
             </div>

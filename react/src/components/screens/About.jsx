@@ -10,22 +10,31 @@ import {
     CardContent,
     CardMedia,
     CardHeader,
+    IconButton,
     Typography,
 } from '@material-ui/core/';
-import { Icon } from '../'
+import { Icon } from '../';
 
 class About extends Component {
     render() {
         const {
             classes,
+            history,
         } = this.props;
         return (
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
                     <CardHeader
                         title={`About this project`}
-                        subheader={`What is a Raspberry Pi?`}
-                    // avatar={<Icon icon={`docs`} color={`primary`} />}
+                        avatar={
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/`);
+                                }}>
+                                <Icon icon={`pi`} color={`primary`} />
+                            </IconButton>
+                        }
                     />
                     <CardMedia
                         className={cn(classes.media)}
