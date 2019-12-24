@@ -1,10 +1,12 @@
 
 export default theme => ({
     btnIconPadRight: {
-        marginLeft: theme.spacing()
+        marginLeft: theme.spacing(),
+        paddingRight: theme.spacing()
     },
     inPageBtn: {
-        paddingRight: theme.spacing()
+        paddingRight: theme.spacing(),
+        marginRight: theme.spacing(),
     },
     media: {
         height: 0,
