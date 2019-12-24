@@ -6,8 +6,8 @@ import { styles } from '../theme/AppShell.Style';
 import { getStore } from "../";
 import cn from 'classnames';
 import {
-    Button,
-    // IconButton,
+    Tooltip,
+    IconButton,
 } from '@material-ui/core/';
 import { Icon } from './';
 
@@ -36,44 +36,36 @@ class PiPlayer extends Component {
                     src={currentPhotoUrl}
                     alt={`piPlayer`} />
 
-                <Button
-                    edge={`end`}
-                    variant={`text`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        console.log('Go Back in Time')
-                    }}>
-                    <Icon icon={`time`} color={`primary`} />
-                    <span className={cn(classes.btnIconPadRight)}>
-                        Go Back in Time</span>
-                </Button>
+                <Tooltip title={`Go Back in Time`}
+                    color={`primary`}>
+                    <IconButton
+                        onClick={(e) => {
+                            e.preventDefault();
+                            console.log('')
+                        }}>
+                        <Icon icon={`time`} color={`primary`} />
+                    </IconButton>
+                </Tooltip>
 
-                <Button
-                    edge={`end`}
-                    variant={`text`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        console.log('zoom in')
-                    }}>
-                    <Icon icon={`zoomin`} color={`primary`} />
-                    <span className={cn(classes.btnIconPadRight)}>
-                        Zoom In</span>
-                </Button>
+                <Tooltip title={`Zoom In`}>
+                    <IconButton
+                        onClick={(e) => {
+                            e.preventDefault();
+                            console.log('zoom in')
+                        }}>
+                        <Icon icon={`zoomin`} color={`primary`} />
+                    </IconButton>
+                </Tooltip>
 
-                <Button
-                    edge={`end`}
-                    variant={`text`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        console.log('zoom Out')
-                    }}>
-                    <Icon icon={`zoomout`} color={`primary`} />
-                    <span className={cn(classes.btnIconPadRight)}>
-                        Zoom Out</span>
-                </Button>
+                <Tooltip title={`Zoom Out`}>
+                    <IconButton
+                        onClick={(e) => {
+                            e.preventDefault();
+                            console.log('zoom Out')
+                        }}>
+                        <Icon icon={`zoomout`} color={`primary`} />
+                    </IconButton>
+                </Tooltip>
 
             </div >
         );

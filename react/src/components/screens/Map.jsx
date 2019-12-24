@@ -23,7 +23,8 @@ class Map extends Component {
             country: `Australia`,
             lat: -27.211579,
             lng: 153.107658,
-            zoom: 12,
+            zoom: 15,
+            flySpeed: 0.35,
         }
     }
 
@@ -33,7 +34,6 @@ class Map extends Component {
         } = this.props;
         const { lng, lat, zoom } = mapbox;
         const { defaultLocation } = this.state;
-
         const map = new mapboxgl.Map({
             container: this.mapContainer,
             style: 'mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563',
@@ -54,8 +54,8 @@ class Map extends Component {
         const { map } = this.state;
         map.flyTo({
             center: [location.lng, location.lat],
-            zoom: 12,
-            speed: 0.4,
+            zoom: location.zoom,
+            speed: location.flySpeed,
             essential: true
         });
     }

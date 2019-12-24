@@ -8,6 +8,7 @@ export const mapboxSlice = {
   lat: 0,
   lng: 0,
   zoom: 1,
+  flySpeed: 0.5,
   hasZoomed: false
 };
 

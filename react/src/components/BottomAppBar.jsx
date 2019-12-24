@@ -33,18 +33,20 @@ export default function BottomAppBar() {
     return (
         <AppBar
             position="fixed"
-            color={`secondary`}
+            color={`primary`}
             className={classes.appBar}>
             <Toolbar>
                 <Fab
-                    color="primary"
+                    color={`secondary`}
                     aria-label="Navigation"
                     className={classes.fabButton}
                     onClick={(e) => {
                         e.preventDefault();
                         store.dispatch({ type: "SYSTEM/NAV/OPEN" });
                     }}>
-                    <Icon icon={`pi`} />
+                    <Icon icon={`pi`}
+                        color={`primary`}
+                    />
                 </Fab>
                 <div className={classes.grow} />
                 <IconButton
@@ -57,7 +59,7 @@ export default function BottomAppBar() {
                 >
                     <Icon
                         icon={`settings`}
-                        color={`primary`}
+                        color={`secondary`}
                     />
                 </IconButton>
             </Toolbar>

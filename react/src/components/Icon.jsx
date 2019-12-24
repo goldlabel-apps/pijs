@@ -25,10 +25,12 @@ import IconFullscreen from '@material-ui/icons/Fullscreen';
 import IconClose from '@material-ui/icons/Close';
 import IconWeather from '@material-ui/icons/AcUnit';
 import IconMap from '@material-ui/icons/Explore';
+import IconTime from '@material-ui/icons/Restore';
 
 import {
     GithubSVG,
     PiJSSVG,
+    // TimeSVG,
 } from '../graphics';
 
 const styles = theme => ({
@@ -57,6 +59,10 @@ class Icon extends Component {
             iconColor = color
         }
         switch (icon) {
+
+
+            case `time`:
+                return (<IconTime color={iconColor} />);
 
             case `github`:
                 return (<GithubSVG color={`#000`} className={classes.navIcon} />);

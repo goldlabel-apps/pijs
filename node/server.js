@@ -66,6 +66,14 @@ app.all("/", function(req, res) {
   }
 });
 
+app.all("/webcam", function(req, res) {
+  if (req.secure) {
+    res.sendFile(path.join(__dirname + "/build/react.html"));
+  } else {
+    res.redirect("https://" + req.headers.host + req.url);
+  }
+});
+
 httpServer.listen(1337, () => {
   console.log("HTTP Server running on port 1337");
 });

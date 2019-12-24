@@ -7,6 +7,9 @@ export const styles = theme => ({
         maxWidth: 800,
         margin: 'auto',
     },
+    tooltipStyle: {
+        background: 'red',
+    },
     piPlayerImg: {
         // marginTop: theme.spacing(),
         // borderRadius: theme.spacing(0.5),
@@ -21,7 +24,7 @@ export const styles = theme => ({
         color: theme.palette.secondary.main
     },
     mapFullSize: {
-        height: 'calc(100vh - 180px)',
+        height: 'calc(100vh - 130px)',
         outline: 'none',
     },
 

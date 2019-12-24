@@ -49,7 +49,7 @@ class Webcam extends Component {
     }
 
     stopTimer = () => {
-        console.log('stopTimer');
+        // console.log('stopTimer');
         const {
             timer
         } = this.state;
