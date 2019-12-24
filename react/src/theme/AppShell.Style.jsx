@@ -20,11 +20,11 @@ export const styles = theme => ({
         marginBottom: 100,
     },
     screenHeader: {
-        background: theme.palette.primary.main,
-        color: theme.palette.secondary.main
+        // background: theme.palette.primary.main,
+        // color: theme.palette.secondary.main
     },
     mapFullSize: {
-        height: 'calc(100vh - 130px)',
+        height: 'calc(100vh - 75px)',
         outline: 'none',
     },
 

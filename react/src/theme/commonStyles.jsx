@@ -2,7 +2,8 @@
 export default theme => ({
     btnIconPadRight: {
         marginLeft: theme.spacing(),
-        paddingRight: theme.spacing()
+        paddingRight: theme.spacing(),
+        border: '1px solid red'
     },
     inPageBtn: {
         paddingRight: theme.spacing(),
