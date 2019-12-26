@@ -9,17 +9,13 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
     Card,
-    CardHeader,
     CardContent,
     Grid,
-    IconButton,
 } from '@material-ui/core/';
 import {
-    Icon,
     Nav,
     OpenSource,
     PiJS,
-    // Mapbox,
 } from '../';
 
 class Home extends Component {
@@ -34,24 +30,11 @@ class Home extends Component {
     render() {
         const {
             classes,
-            history,
         } = this.props;
         return (
             <div className={cn(classes.screenCentered)}>
                 <Card className={cn(classes.screenCard)}>
-                    <CardHeader
-                        className={cn(classes.screenHeader)}
-                        title={`PiJS`}
-                        avatar={
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`);
-                                }}>
-                                <Icon icon={`pi`} color={`primary`} />
-                            </IconButton>
-                        }
-                    />
+
                     <CardContent>
                         <Grid container>
 
