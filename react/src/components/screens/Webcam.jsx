@@ -1,12 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-// import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
-// import {
-//     Card,
-// } from '@material-ui/core/';
 import {
     PiPlayer,
     ScreenHeader
@@ -14,14 +10,10 @@ import {
 
 class Webcam extends React.Component {
 
-
     render() {
-        // const {
-        //     classes,
-        // } = this.props;
         return (
             <React.Fragment>
-                <ScreenHeader title={`Webcam`} />
+                <ScreenHeader title={`Webcam`} icon={`webcam`} />
                 <PiPlayer />
             </React.Fragment>
         );

@@ -37,13 +37,15 @@ class Home extends Component {
                     <CardContent>
                         <Grid container>
 
-                            <Grid item xs={12} md={4}>
-                                <Nav isHome={true} />
-                            </Grid>
+
                             <Grid item xs={12} md={8}>
-                                <Typography variant={`h2`}>
+                                <Typography variant={`h4`}>
                                     PiJS is an Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4
                                 </Typography>
+                            </Grid>
+
+                            <Grid item xs={12} md={4}>
+                                <Nav isHome={true} />
                             </Grid>
 
                         </Grid>

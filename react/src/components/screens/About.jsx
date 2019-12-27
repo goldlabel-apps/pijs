@@ -1,79 +1,63 @@
-import React, { Component } from 'react';
-import { withRouter } from "react-router";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../../theme/AppShell.Style';
 import {
-    Card,
-    CardContent,
-    CardMedia,
-    CardHeader,
-    Grid,
-    IconButton,
+    List,
+    ListItem,
+    Paper,
     Typography,
 } from '@material-ui/core/';
-import { Icon, OpenSource } from '../';
+import {
+    Icon,
+    ScreenHeader,
+} from '../';
 
-class About extends Component {
-    render() {
-        const {
-            classes,
-            history,
-        } = this.props;
-        return (
-            <div className={cn(classes.screenCentered)}>
-                <Card className={cn(classes.screenCard)}>
-                    <CardHeader
-                        className={cn(classes.screenHeader)}
-                        title={`About PiJS`}
-                        avatar={
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`);
-                                }}>
-                                <Icon icon={`pi`} color={`primary`} />
-                            </IconButton>
-                        }
-                    />
+const useStyles = makeStyles(theme => ({
+    btnIconPadRight: {
+        marginLeft: theme.spacing(),
+        paddingRight: theme.spacing(),
+    },
+    infoPaper: {
+        marginRight: theme.spacing(),
+        marginLeft: theme.spacing(),
+        boxShadow: 'none',
+    },
+    root: {
+        display: 'flex',
+        '& > *': {
+            margin: theme.spacing(1),
+            padding: theme.spacing(1),
+            width: '100%',
+        },
+    },
+}));
 
-                    <CardContent>
-                        <Grid container>
-                            <Grid item xs={12}>
-                                <CardMedia
-                                    className={cn(classes.media)}
-                                    title={`What is a Raspberry Pi?`}
-                                    image={`/jpg/pi4.jpg`}
-                                />
-                            </Grid>
-                            <Grid item xs={12} md={6}>
+export default function About() {
+    const classes = useStyles();
 
+    return (
+        <Paper variant="outlined" className={classes.infoPaper}>
 
+            <ScreenHeader icon={`docs`} title={`About PiJS`} />
 
-                                <Typography variant={`body1`} gutterBottom >
-                                    The Raspberry Pi is a very low cost, credit-card sized computer. It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Python.
-                                </Typography>
+            <Typography gutterBottom variant={`body1`}>
+                PiJS is a Open Source, meaning that everything you see here is available to download and use for free from github.
+            </Typography>
 
-                                <Typography variant={`body1`} gutterBottom >
-                                    It can also give more experienced developers a chance to do some mad cool stuff they wouldn’t normally do. We’re going to turn our Pi into a Node server, connected to the interweb through an everyday broadband connection.
-                                </Typography>
+            <List>
+                <ListItem button
+                    onClick={(e) => {
+                        // window.open(`https://github.com/listingslab-hardware/pijs`, `_blank`)
+                    }}
+                >
+                    <Icon
+                        icon={`github`}
+                        color={`primary`} />
+                    <span className={cn(classes.btnIconPadRight)}>
+                        Open Source</span>
+                </ListItem>
+            </List>
 
-                            </Grid>
-
-                            <Grid item xs={12} md={6}>
-                                <OpenSource />
-                            </Grid>
-
-                        </Grid>
-
-                    </CardContent>
-
-                </Card>
-            </div>
-        );
-    }
+        </Paper>
+    );
 }
-
-export default (
-    withStyles(styles, { withTheme: true })(withRouter(About))
-);

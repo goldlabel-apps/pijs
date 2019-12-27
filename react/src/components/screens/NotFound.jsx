@@ -5,15 +5,15 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
     Button,
-    Card,
     CardActions,
     CardContent,
     CardMedia,
-    CardHeader,
-    IconButton,
     Typography,
 } from '@material-ui/core/';
-import { Icon } from '../';
+import {
+    Icon,
+    ScreenHeader,
+} from '../';
 
 class NotFound extends Component {
     render() {
@@ -22,48 +22,31 @@ class NotFound extends Component {
             history,
         } = this.props;
         return (
-            <div className={cn(classes.screenCentered)}>
-                <Card className={cn(classes.screenCard)}>
-                    <CardHeader
-                        className={cn(classes.screenHeader)}
-                        title={`PiJS 404`}
-                        avatar={
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`);
-                                }}>
-                                <Icon icon={`pi`} color={`primary`} />
-                            </IconButton>
-                        }
-                    />
-                    <CardMedia
-                        className={cn(classes.media)}
-                        title={`Not Found`}
-                        image={`/png/open-graph.png`}
-                    />
-                    <CardContent>
-                        <Typography
-                            variant={`body1`}
-                        >
-
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-
-                        <Button
-                            fullWidth
-                            variant={`outlined`}
-                            color={`primary`}
-                            onClick={() => {
-                                history.push(`/`);
-                            }}
-                        >
-                            Home
-                        </Button>
-                    </CardActions>
-                </Card>
-            </div>
+            <React.Fragment>
+                <ScreenHeader title={`PiJS 404`} icon={`pi`} />
+                <CardMedia
+                    className={cn(classes.media)}
+                    title={`Not Found`}
+                    image={`/png/open-graph.png`}
+                />
+                <CardContent>
+                    <Typography variant={`body1`}>
+                        No content at that endpoint
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button
+                        variant={`contained`}
+                        color={`primary`}
+                        onClick={() => {
+                            history.push(`/`);
+                        }}>
+                        <Icon icon={`home`} color={`secondary`} />
+                        <span className={cn(classes.btnIconPadRight)}>
+                            Home</span>
+                    </Button>
+                </CardActions>
+            </React.Fragment>
         );
     }
 }

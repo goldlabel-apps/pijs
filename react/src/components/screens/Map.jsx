@@ -5,12 +5,12 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    Card,
-    CardHeader,
-    IconButton,
-    Tooltip,
+    Button,
 } from '@material-ui/core/';
-import { Icon } from '../';
+import {
+    Icon,
+    ScreenHeader,
+} from '../';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
@@ -73,66 +73,46 @@ class Map extends Component {
     render() {
         const {
             classes,
-            history,
+            // history,
             // mapbox,
         } = this.props;
         // console.log('mapbox', mapbox)
         return (
-            <div className={cn(classes.screenCentered)}>
-                <Card className={cn(classes.screenCard)}>
-                    <CardHeader
-                        className={cn(classes.screenHeader)}
-                        title={`PiJS Map`}
-                        avatar={
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`);
-                                }}>
-                                <Icon icon={`pi`} color={`primary`} />
-                            </IconButton>
-                        }
-                    />
-
-                    <div className={cn(classes.piPlayer)} >
-                        <Tooltip title={`Go Back in Time`}
-                            color={`primary`}>
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    console.log('')
-                                }}>
-                                <Icon icon={`time`} color={`primary`} />
-                            </IconButton>
-                        </Tooltip>
-                        <Tooltip title={`Zoom In`}>
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    console.log('zoom in')
-                                }}>
-                                <Icon icon={`zoomin`} color={`primary`} />
-                            </IconButton>
-                        </Tooltip>
-                        <Tooltip title={`Zoom Out`}>
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    console.log('zoom Out')
-                                }}>
-                                <Icon icon={`zoomout`} color={`primary`} />
-                            </IconButton>
-                        </Tooltip>
-
-                    </div >
+            <React.Fragment>
+                <ScreenHeader icon={`map`} title={`Map`} />
+                <div className={cn(classes.piPlayer)} >
 
 
-                    <div
-                        ref={el => this.mapContainer = el}
-                        className={cn(classes.mapFullSize)}
-                    />
-                </Card>
-            </div>
+                    <Button
+                        className={classes.mapBtn}
+                        variant={`contained`}
+                        color={`primary`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                        }}>
+                        <Icon icon={`zoomin`} color={`secondary`} />
+                        <span className={cn(classes.btnIconPadRight)}>
+                            Zoom In</span>
+                    </Button>
+
+                    <Button
+                        className={classes.mapBtn}
+                        variant={`contained`}
+                        color={`primary`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                        }}>
+                        <Icon icon={`zoomout`} color={`secondary`} />
+                        <span className={cn(classes.btnIconPadRight)}>
+                            Zoom Out</span>
+                    </Button>
+
+                </div >
+                <div
+                    ref={el => this.mapContainer = el}
+                    className={cn(classes.mapFullSize)}
+                />
+            </React.Fragment>
         );
     }
 }

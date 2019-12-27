@@ -7,6 +7,13 @@ export const styles = theme => ({
         maxWidth: 800,
         margin: 'auto',
     },
+    mapBtn: {
+        margin: theme.spacing(),
+    },
+    weather: {
+        // border: '1px solid white',
+        padding: theme.spacing(),
+    },
     tooltipStyle: {
         background: 'red',
     },
@@ -25,7 +32,7 @@ export const styles = theme => ({
     },
     mapFullSize: {
         // height: 'calc(100vh - 75px)',
-        height: 450,
+        height: 400,
         outline: 'none',
     },
 

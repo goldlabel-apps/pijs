@@ -18,6 +18,7 @@ import {
 class Weather extends Component {
     render() {
         const {
+            classes,
             weather,
         } = this.props;
         const sinceLastUpdate = (Date.now() - weather.updated) / 1000 / 60;
@@ -48,48 +49,60 @@ class Weather extends Component {
         return (
 
             <React.Fragment>
-                <ScreenHeader title={`Weather`} />
-                <Grid container>
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant={`h5`}>
-                            Overview
-                    </Typography>
-                        <Typography variant={`h4`}>
-                            {temperature}
-                        </Typography>
-                        <Typography variant={`body1`}>
-                            {overview}
-                        </Typography>
-                        <Avatar
-                            style={{
-                                width: 75,
-                                height: 75,
-                            }}
-                            src={outlookIcon} alt={``}
-                        />
-                    </Grid>
+                <ScreenHeader title={`Weather`} icon={`weather`} />
+                <div className={classes.weather}>
 
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant={`body2`}>
-                            Humidity
-                    </Typography>
-                        <Typography variant={`h6`}>
-                            {humidity}
-                        </Typography>
-                        <Typography variant={`body2`}>
-                            Pressure
-                    </Typography>
-                        <Typography variant={`h6`}>
-                            {pressure}
-                        </Typography>
-                        <Typography variant={`body2`}>
-                            Wind
-                    </Typography>
-                        <Typography variant={`h6`}>
-                            {windSpeed}, {windDirection}
-                        </Typography>
+                    <Grid container>
+                        <Grid item xs={12} md={8}>
+                            <Typography variant={`h6`}>
+                                In Scarborough, Queensland, Australia it is now
+                            </Typography>
+
+                            <Grid container>
+                                <Grid item>
+                                    <Avatar
+                                        style={{
+                                            width: 75,
+                                            height: 75,
+                                        }}
+                                        src={outlookIcon} alt={`outlook`}
+                                    />
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant={`h3`}
+                                        style={{
+                                            paddingLeft: 8,
+                                            paddingTop: 8
+                                        }}>
+                                        {temperature}
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
+
+
+
+
+                        </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Typography variant={`body1`}>
+                                {overview}
+                            </Typography>
+                            <Typography variant={`body1`}>
+                                Humidity {humidity}
+                            </Typography>
+
+                            <Typography variant={`body1`}>
+                                Pressure {pressure}
+                            </Typography>
+
+                            <Typography variant={`body1`}>
+                                Wind {windSpeed}, from {windDirection}
+                            </Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </div>
 
             </React.Fragment>
         );
