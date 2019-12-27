@@ -30,12 +30,6 @@ class PiPlayer extends Component {
         return (
 
             <div className={cn(classes.piPlayer)} id="pi-player" >
-
-                <img
-                    className={cn(classes.piPlayerImg)}
-                    src={currentPhotoUrl}
-                    alt={`piPlayer`} />
-
                 <Tooltip title={`Go Back in Time`}
                     color={`primary`}>
                     <IconButton
@@ -46,7 +40,6 @@ class PiPlayer extends Component {
                         <Icon icon={`time`} color={`primary`} />
                     </IconButton>
                 </Tooltip>
-
                 <Tooltip title={`Zoom In`}>
                     <IconButton
                         onClick={(e) => {
@@ -56,7 +49,6 @@ class PiPlayer extends Component {
                         <Icon icon={`zoomin`} color={`primary`} />
                     </IconButton>
                 </Tooltip>
-
                 <Tooltip title={`Zoom Out`}>
                     <IconButton
                         onClick={(e) => {
@@ -66,7 +58,10 @@ class PiPlayer extends Component {
                         <Icon icon={`zoomout`} color={`primary`} />
                     </IconButton>
                 </Tooltip>
-
+                <img
+                    className={cn(classes.piPlayerImg)}
+                    src={currentPhotoUrl}
+                    alt={`piPlayer`} />
             </div >
         );
     }

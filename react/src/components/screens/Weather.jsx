@@ -4,26 +4,21 @@ import {
     getWeather
 } from '../../redux/weather/actions';
 import { withRouter } from "react-router";
-import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
     Avatar,
-    Card,
-    CardContent,
-    CardHeader,
     Grid,
-    IconButton,
     Typography,
 } from '@material-ui/core/';
-import { Icon } from '../';
+import {
+    ScreenHeader
+} from '../';
 
 class Weather extends Component {
     render() {
         const {
-            classes,
             weather,
-            history,
         } = this.props;
         const sinceLastUpdate = (Date.now() - weather.updated) / 1000 / 60;
         if (!weather.updated || sinceLastUpdate > 15) {
@@ -51,67 +46,52 @@ class Weather extends Component {
         const outlookIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
         return (
-            <div className={cn(classes.screenCentered)}>
-                <Card className={cn(classes.screenCard)}>
-                    <CardHeader
-                        className={cn(classes.screenHeader)}
-                        title={`PiJS Weather`}
-                        avatar={
-                            <IconButton
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`);
-                                }}>
-                                <Icon icon={`pi`} color={`primary`} />
-                            </IconButton>
-                        }
-                    />
-                    <CardContent>
-                        <Grid container>
-                            <Grid item xs={12} sm={6}>
-                                <Typography variant={`h5`}>
-                                    Overview
-                                </Typography>
-                                <Typography variant={`h4`}>
-                                    {temperature}
-                                </Typography>
-                                <Typography variant={`body1`}>
-                                    {overview}
-                                </Typography>
-                                <Avatar
-                                    style={{
-                                        width: 75,
-                                        height: 75,
-                                    }}
-                                    src={outlookIcon} alt={``} />
-                            </Grid>
 
-                            <Grid item xs={12} sm={6}>
+            <React.Fragment>
+                <ScreenHeader title={`Weather`} />
+                <Grid container>
+                    <Grid item xs={12} sm={6}>
+                        <Typography variant={`h5`}>
+                            Overview
+                    </Typography>
+                        <Typography variant={`h4`}>
+                            {temperature}
+                        </Typography>
+                        <Typography variant={`body1`}>
+                            {overview}
+                        </Typography>
+                        <Avatar
+                            style={{
+                                width: 75,
+                                height: 75,
+                            }}
+                            src={outlookIcon} alt={``}
+                        />
+                    </Grid>
 
-                                <Typography variant={`body2`}>
-                                    Humidity
-                                </Typography>
-                                <Typography variant={`h6`}>
-                                    {humidity}
-                                </Typography>
-                                <Typography variant={`body2`}>
-                                    Pressure
-                                </Typography>
-                                <Typography variant={`h6`}>
-                                    {pressure}
-                                </Typography>
-                                <Typography variant={`body2`}>
-                                    Wind
-                                </Typography>
-                                <Typography variant={`h6`}>
-                                    {windSpeed}, {windDirection}
-                                </Typography>
-                            </Grid>
-                        </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Typography variant={`body2`}>
+                            Humidity
+                    </Typography>
+                        <Typography variant={`h6`}>
+                            {humidity}
+                        </Typography>
+                        <Typography variant={`body2`}>
+                            Pressure
+                    </Typography>
+                        <Typography variant={`h6`}>
+                            {pressure}
+                        </Typography>
+                        <Typography variant={`body2`}>
+                            Wind
+                    </Typography>
+                        <Typography variant={`h6`}>
+                            {windSpeed}, {windDirection}
+                        </Typography>
+                    </Grid>
+                </Grid>
 
-                    </CardContent>
-                </Card>
-            </div>
+            </React.Fragment>
         );
     }
 }
@@ -126,8 +106,6 @@ export default (connect(
     mapStateToProps,
     null
 )(withStyles(styles, { withTheme: true })(withRouter(Weather))));
-
-
 
 /*
 // const feelsLike = `${Math.round((data.main.feels_like - 273.15) * 10) / 10} °C`;

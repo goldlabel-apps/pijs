@@ -38,10 +38,6 @@ class Home extends Component {
                     <CardContent>
                         <Grid container>
 
-                            {/* <Grid item xs={12}>
-                                <Mapbox />
-                            </Grid> */}
-
                             <Grid item xs={12} md={4}>
                                 <Nav isHome={true} />
                             </Grid>
@@ -50,7 +46,6 @@ class Home extends Component {
                                 <PiJS />
                                 <OpenSource />
                             </Grid>
-
 
                         </Grid>
                     </CardContent>
