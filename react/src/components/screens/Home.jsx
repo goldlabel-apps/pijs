@@ -8,13 +8,14 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    Card,
     CardContent,
+    CardMedia,
     Grid,
     Typography,
 } from '@material-ui/core/';
 import {
     Nav,
+    ScreenHeader,
 } from '../';
 
 class Home extends Component {
@@ -31,27 +32,28 @@ class Home extends Component {
             classes,
         } = this.props;
         return (
-            <div className={cn(classes.screenCentered)}>
-                <Card className={cn(classes.screenCard)}>
+            
 
-                    <CardContent>
-                        <Grid container>
-
-
-                            <Grid item xs={12} md={8}>
-                                <Typography variant={`h4`}>
-                                    PiJS is an Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4
-                                </Typography>
-                            </Grid>
-
-                            <Grid item xs={12} md={4}>
-                                <Nav isHome={true} />
-                            </Grid>
-
+            <React.Fragment>
+                <ScreenHeader title={`PiJS.app`} icon={`home`} isHome={true} />
+                <CardContent>
+                    <Grid container>
+                        <Grid item xs={12} md={8}>                                
+                            <Typography variant={`body1`} gutterBottom>
+                                An Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4
+                            </Typography>
+                            <CardMedia
+                                className={cn(classes.mediaSq)}
+                                title={`What is a Raspberry Pi?`}
+                                image={`/jpg/pi.jpg`}
+                            />
                         </Grid>
-                    </CardContent>
-                </Card>
-            </div>
+                        <Grid item xs={12} md={4}>
+                            <Nav isHome={true} />
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </React.Fragment>
         );
     }
 }

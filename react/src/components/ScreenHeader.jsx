@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 export default function ScreenHeader(props) {
     const classes = useStyles();
     const history = useHistory();
-    const { title, icon } = props;
+    const { title, icon, isHome } = props;
     return (
         <div className={classes.screenHeader}>
             <Grid container>
@@ -43,20 +43,23 @@ export default function ScreenHeader(props) {
                         {title || `Title prop missing`}
                     </Typography>
                 </Grid>
-                <Grid item>
-                    <Tooltip title={`PiJS Home`}>
-                        <IconButton
-                            className={classes.homeBtn}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                history.push(`/`);
-                            }}>
-                            <Icon
-                                icon={`home`}
-                                color={`primary`} />
-                        </IconButton>
-                    </Tooltip>
-                </Grid>
+                {!isHome ? 
+                    <Grid item>
+                        <Tooltip title={`PiJS Home`}>
+                            <IconButton
+                                className={classes.homeBtn}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push(`/`);
+                                }}>
+                                <Icon
+                                    icon={`home`}
+                                    color={`primary`} />
+                            </IconButton>
+                        </Tooltip>
+                    </Grid>
+                : null}
+                
             </Grid>
 
 

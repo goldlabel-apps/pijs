@@ -13,6 +13,13 @@ export default theme => ({
         paddingTop: '30%', // 16:9
         marginBottom: theme.spacing(),
     },
+
+    mediaSq: {
+        height: 0,
+        paddingTop: '100%', // 16:9
+        marginBottom: theme.spacing(),
+    },
+    
     white: {
         color: 'white',
     },
