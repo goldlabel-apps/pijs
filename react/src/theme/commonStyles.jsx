@@ -3,7 +3,6 @@ export default theme => ({
     btnIconPadRight: {
         marginLeft: theme.spacing(),
         paddingRight: theme.spacing(),
-        border: '1px solid red'
     },
     inPageBtn: {
         paddingRight: theme.spacing(),
@@ -12,6 +11,7 @@ export default theme => ({
     media: {
         height: 0,
         paddingTop: '30%', // 16:9
+        marginBottom: theme.spacing(),
     },
     white: {
         color: 'white',

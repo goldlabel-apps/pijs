@@ -14,6 +14,7 @@ import muiTheme from './theme/mui';
 import {
     About,
     BottomAppBar,
+    EnviroPhat,
     Home,
     Map,
     Nav,
@@ -55,17 +56,20 @@ class AppShell extends Component {
                                 <Route exact path="/" render={props => {
                                     return (<Home />);
                                 }} />
+                                <Route exact path="/envirophat" render={props => {
+                                    return (<EnviroPhat />);
+                                }} />
                                 <Route exact path="/about" render={props => {
                                     return (<About />);
                                 }} />
                                 <Route exact path="/webcam" render={props => {
-                                    return (<Webcam mode={`full`} />);
+                                    return (<Webcam />);
                                 }} />
                                 <Route exact path="/map" render={props => {
-                                    return (<Map mode={`full`} />);
+                                    return (<Map />);
                                 }} />
                                 <Route exact path="/weather" render={props => {
-                                    return (<Weather mode={`full`} />);
+                                    return (<Weather />);
                                 }} />
                                 <Route component={NotFound} />
                             </Switch>

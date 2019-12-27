@@ -13,7 +13,7 @@ import {
 
 const useStyles = makeStyles(theme => ({
     screenHeader: {
-        textAlign: 'center',
+        textAlign: 'left',
     },
     homeBtn: {
         marginRight: theme.spacing(1)

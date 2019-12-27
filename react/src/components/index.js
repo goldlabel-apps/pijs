@@ -9,6 +9,7 @@ import Settings from "./Settings";
 import ScreenHeader from "./ScreenHeader";
 import About from "./screens/About";
 import Home from "./screens/Home";
+import EnviroPhat from "./screens/EnviroPhat";
 import Map from "./screens/Map";
 import NotFound from "./screens/NotFound";
 import Weather from "./screens/Weather";
@@ -22,6 +23,7 @@ export {
   About,
   BottomAppBar,
   ClockWork,
+  EnviroPhat,
   Home,
   Icon,
   Map,

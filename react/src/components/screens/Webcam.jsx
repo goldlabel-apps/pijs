@@ -16,9 +16,9 @@ class Webcam extends React.Component {
 
 
     render() {
-        const {
-            classes,
-        } = this.props;
+        // const {
+        //     classes,
+        // } = this.props;
         return (
             <React.Fragment>
                 <ScreenHeader title={`Webcam`} />

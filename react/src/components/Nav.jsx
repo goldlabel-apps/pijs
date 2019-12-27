@@ -45,6 +45,25 @@ class Nav extends Component {
                     </ListItem>
                     : null}
 
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`/about`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`docs`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`About`} />
+                </ListItem>
+
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`/envirophat`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`enviro`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`Enviro pHAT`} />
+                </ListItem>
 
                 <ListItem button
                     onClick={(e) => {
@@ -76,15 +95,7 @@ class Nav extends Component {
                     <ListItemText primary={`Weather`} />
                 </ListItem>
 
-                {/* <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/about`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`docs`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`About`} />
-                </ListItem> */}
+
             </List>
         );
     }

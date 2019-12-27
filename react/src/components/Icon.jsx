@@ -26,6 +26,7 @@ import IconClose from '@material-ui/icons/Close';
 import IconWeather from '@material-ui/icons/AcUnit';
 import IconMap from '@material-ui/icons/Explore';
 import IconTime from '@material-ui/icons/Restore';
+import IconEnviro from '@material-ui/icons/InsertChart';
 
 import {
     GithubSVG,
@@ -60,6 +61,8 @@ class Icon extends Component {
         }
         switch (icon) {
 
+            case `enviro`:
+                return (<IconEnviro color={iconColor} />);
 
             case `time`:
                 return (<IconTime color={iconColor} />);
