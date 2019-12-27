@@ -9,10 +9,12 @@ const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
   "utf8"
 );
+
 const certificate = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/cert.pem",
   "utf8"
 );
+
 const ca = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/chain.pem",
   "utf8"
@@ -39,36 +41,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.all("/pijs", function(req, res) {
-  const pijs = {
-    version: packageJSON.version,
-    description: packageJSON.description,
-    hardware: `Raspberry Pi 4 Model B (4 GB)`,
-    location: {
-      time: Date.now(),
-      region: `Scarborough`,
-      state: `QLD`,
-      country: `Australia`,
-      lat: -27.211579,
-      lng: 153.107658
-    },
-    mods: [`webcam`, `map`, `weather`],
-    repo: packageJSON.repository.url
-  };
-  res.send(JSON.stringify({ pijs }, null, 4));
-});
-
-app.all("/", function(req, res) {
+app.all("*", function(req, res) {
   if (req.secure) {
-    res.sendFile(path.join(__dirname + "/build/react.html"));
-  } else {
-    res.redirect("https://" + req.headers.host + req.url);
-  }
-});
-
-app.all("/webcam", function(req, res) {
-  if (req.secure) {
-    res.sendFile(path.join(__dirname + "/build/react.html"));
+    res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
     res.redirect("https://" + req.headers.host + req.url);
   }
