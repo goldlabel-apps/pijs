@@ -8,6 +8,7 @@ import {
     Card,
     CardHeader,
     IconButton,
+    Tooltip,
 } from '@material-ui/core/';
 import { Icon } from '../';
 import mapboxgl from 'mapbox-gl';
@@ -92,6 +93,40 @@ class Map extends Component {
                             </IconButton>
                         }
                     />
+
+                    <div className={cn(classes.piPlayer)} >
+                        <Tooltip title={`Go Back in Time`}
+                            color={`primary`}>
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log('')
+                                }}>
+                                <Icon icon={`time`} color={`primary`} />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title={`Zoom In`}>
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log('zoom in')
+                                }}>
+                                <Icon icon={`zoomin`} color={`primary`} />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title={`Zoom Out`}>
+                            <IconButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    console.log('zoom Out')
+                                }}>
+                                <Icon icon={`zoomout`} color={`primary`} />
+                            </IconButton>
+                        </Tooltip>
+
+                    </div >
+
+
                     <div
                         ref={el => this.mapContainer = el}
                         className={cn(classes.mapFullSize)}

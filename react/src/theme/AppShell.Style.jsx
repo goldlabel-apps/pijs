@@ -24,7 +24,8 @@ export const styles = theme => ({
         // color: theme.palette.secondary.main
     },
     mapFullSize: {
-        height: 'calc(100vh - 75px)',
+        // height: 'calc(100vh - 75px)',
+        height: 450,
         outline: 'none',
     },
 
