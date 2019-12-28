@@ -27,6 +27,9 @@ import IconWeather from '@material-ui/icons/AcUnit';
 import IconMap from '@material-ui/icons/Explore';
 import IconTime from '@material-ui/icons/Restore';
 import IconEnviro from '@material-ui/icons/InsertChart';
+import IconConnectionOn from '@material-ui/icons/Wifi';
+import IconConnectionOff from '@material-ui/icons/WifiOff';
+
 
 import {
     GithubSVG,
@@ -60,6 +63,12 @@ class Icon extends Component {
             iconColor = color
         }
         switch (icon) {
+
+            case `disconnected`:
+                return (<IconConnectionOff color={iconColor} />);
+
+            case `connected`:
+                return (<IconConnectionOn color={iconColor} />);
 
             case `enviro`:
                 return (<IconEnviro color={iconColor} />);

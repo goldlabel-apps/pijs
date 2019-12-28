@@ -3,8 +3,9 @@ import ClockWork from "./ClockWork";
 import Icon from "./Icon";
 import Nav from "./Nav";
 import BottomAppBar from "./BottomAppBar";
-import Settings from "./Settings";
 import SystemClock from "./SystemClock";
+import Settings from "./Settings";
+import ConnectionStatus from "./ConnectionStatus";
 // Buttons
 import Listingslab from "./buttons/Listingslab";
 // Screens
@@ -24,6 +25,7 @@ import PiJS from "./info/PiJS";
 export {
   About,
   BottomAppBar,
+  ConnectionStatus,
   ClockWork,
   EnviroPhat,
   Home,

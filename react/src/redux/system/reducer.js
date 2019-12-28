@@ -4,10 +4,16 @@ import {
   closeNav,
   openSettings,
   closeSettings,
-  updateClock
+  updateClock,
+  systemPijsToggleFetching,
+  systemPijsSave
 } from "./actions";
 
 export const systemSlice = {
+  pijs: {
+    data: null,
+    fetching: false
+  },
   settings: {
     updated: Date.now(),
     open: false
@@ -23,10 +29,23 @@ export const systemSlice = {
 };
 
 const system = createReducer(systemSlice, {
+  [systemPijsToggleFetching]: (state, action) => {
+    console.log("reduce SYSTEM/PIJS/TOGGLE_FETCH", action);
+    state.pijs.fetching = action.bool;
+    return state;
+  },
+
+  [systemPijsSave]: (state, action) => {
+    console.log("reduce SYSTEM/PIJS/SAVE", action);
+    state.pijs.data = action.data;
+    return state;
+  },
+
   [updateClock]: state => {
     state.clockwork.updated = Date.now();
     return state;
   },
+
   [openSettings]: state => {
     state.settings.open = true;
     return state;
@@ -43,7 +62,6 @@ const system = createReducer(systemSlice, {
   },
 
   [closeNav]: state => {
-    // console.log("SYSTEM/NAV/CLOSE");
     state.nav.open = false;
     return state;
   }

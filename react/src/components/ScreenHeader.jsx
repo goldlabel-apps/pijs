@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 import {
     Icon,
-    SystemClock,
+    ConnectionStatus,
 } from './';
 import {
     Grid,
@@ -48,9 +48,8 @@ export default function ScreenHeader(props) {
                 </Grid>
 
                 <Grid item>
-                    <SystemClock />
+                    <ConnectionStatus />
                 </Grid>
-
 
                 <Grid item>
 

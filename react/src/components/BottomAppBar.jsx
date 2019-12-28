@@ -37,16 +37,14 @@ export default function BottomAppBar() {
             className={classes.appBar}>
             <Toolbar>
                 <Fab
-                    color={`primary`}
+                    color={`secondary`}
                     aria-label="Navigation"
                     className={classes.fabButton}
                     onClick={(e) => {
                         e.preventDefault();
                         store.dispatch({ type: "SYSTEM/NAV/OPEN" });
                     }}>
-                    <Icon icon={`pi`}
-                        color={`secondary`}
-                    />
+                    <Icon icon={`pi`} color={`primary`} />
                 </Fab>
                 <div className={classes.grow} />
                 <IconButton
@@ -55,12 +53,8 @@ export default function BottomAppBar() {
                     onClick={(e) => {
                         e.preventDefault();
                         store.dispatch({ type: "SYSTEM/SETTINGS/OPEN" });
-                    }}
-                >
-                    <Icon
-                        icon={`settings`}
-                        color={`secondary`}
-                    />
+                    }}  >
+                    <Icon icon={`settings`} color={`secondary`} />
                 </IconButton>
             </Toolbar>
         </AppBar>

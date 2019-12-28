@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getStore } from "../";
 
-
 class ClockWork extends Component {
 
     state = {
@@ -45,6 +44,8 @@ class ClockWork extends Component {
     update = () => {
         const store = getStore();
         store.dispatch({ type: `SYSTEM/UPDATE/CLOCK` })
+
+
     }
 
     render() {

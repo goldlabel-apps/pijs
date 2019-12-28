@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
-    Divider,
     List,
     ListItem,
     ListItemIcon,
@@ -47,7 +46,7 @@ class Nav extends Component {
                     <ListItemText primary={`Webcam`} />
                 </ListItem>
 
-                <ListItem button
+                {/* <ListItem button
                     onClick={(e) => {
                         this.navClick(`/map`)
                     }}>
@@ -55,9 +54,9 @@ class Nav extends Component {
                         <Icon icon={`map`} color={`primary`} />
                     </ListItemIcon>
                     <ListItemText primary={`Map`} />
-                </ListItem>
+                </ListItem> */}
 
-                <ListItem button
+                {/* <ListItem button
                     onClick={(e) => {
                         this.navClick(`/weather`)
                     }}>
@@ -65,9 +64,9 @@ class Nav extends Component {
                         <Icon icon={`weather`} color={`primary`} />
                     </ListItemIcon>
                     <ListItemText primary={`Weather`} />
-                </ListItem>
+                </ListItem> */}
 
-                <ListItem button
+                {/* <ListItem button
                     onClick={(e) => {
                         this.navClick(`/envirophat`)
                     }}>
@@ -75,10 +74,10 @@ class Nav extends Component {
                         <Icon icon={`enviro`} color={`primary`} />
                     </ListItemIcon>
                     <ListItemText primary={`Enviro pHAT`} />
-                </ListItem>
+                </ListItem> */}
 
 
-                <ListItem button
+                {/* <ListItem button
                     onClick={(e) => {
                         this.navClick(`/about`)
                     }}>
@@ -86,9 +85,7 @@ class Nav extends Component {
                         <Icon icon={`docs`} color={`primary`} />
                     </ListItemIcon>
                     <ListItemText primary={`About PiJS`} />
-                </ListItem>
-
-                <Divider />
+                </ListItem> */}
 
                 <ListItem button
                     onClick={(e) => {

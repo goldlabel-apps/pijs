@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector/*, useDispatch*/ } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    IconButton,
+    // IconButton,
     CardMedia,
 } from '@material-ui/core/';
 import {
-    Icon,
+    // Icon,
     ScreenHeader,
 } from '../';
 
@@ -44,10 +44,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function Webcam() {
     const classes = useStyles();
-    const { webcam } = useSelector(state => state);
-    const dispatch = useDispatch();
-    const { zoomed } = webcam;
-    let dispatchType = zoomed === `out` ? `WEBCAM/ZOOM/IN` : `WEBCAM/ZOOM/OUT`;
+    // const { webcam } = useSelector(state => state);
+    // const dispatch = useDispatch();
+    // const { zoomed } = webcam;
+    // let dispatchType = zoomed === `out` ? `WEBCAM/ZOOM/IN` : `WEBCAM/ZOOM/OUT`;
 
     // let zoomClass = zoomed === `out` ? classes.webcamBoxZoomedOut : classes.webcamBoxZoomedIn;
 
@@ -55,7 +55,7 @@ export default function Webcam() {
         <React.Fragment>
             <ScreenHeader icon={`webcam`} title={`Webcam`} />
             <div className={classes.content}>
-                <IconButton
+                {/* <IconButton
                     className={classes.mapBtn}
                     variant={`contained`}
                     color={`primary`}
@@ -66,7 +66,7 @@ export default function Webcam() {
                     <Icon
                         icon={zoomed === `out` ? `zoomin` : `zoomout`}
                         color={`primary`} />
-                </IconButton>
+                </IconButton> */}
 
                 <CardMedia
                     className={classes.media}
