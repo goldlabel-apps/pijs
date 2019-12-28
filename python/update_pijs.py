@@ -31,9 +31,9 @@ camera = PiCamera()
 
 camera.resolution = (800, 450)
 camera.image_effect = 'colorswap'
-camera.annotate_background = Color('blue')
-camera.annotate_text = round(unix_epoch)
+camera.annotate_background = Color('#333333')
+camera.annotate_text = "Current Photo"
 camera.annotate_text_size = 50
 camera.capture('~/Desktop/node/pi-firmware/node/build/jpg/current-photo.jpg')
 
-print("pijs updated https://pi.listingslab.io/data/pijs.json")
+print("update success https://pi.listingslab.io/data/pijs.json")
