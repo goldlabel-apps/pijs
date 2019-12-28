@@ -38,17 +38,6 @@ class Nav extends Component {
         } = this.props;
         return (
             <List className={cn(classes.navList)}>
-                {!isHome ?
-                    <ListItem button
-                        onClick={(e) => {
-                            this.navClick(`/`)
-                        }}>
-                        <ListItemIcon>
-                            <Icon icon={`home`} color={`primary`} />
-                        </ListItemIcon>
-                        <ListItemText primary={`Home`} />
-                    </ListItem>
-                    : null}
 
                 <ListItem button
                     onClick={(e) => {
