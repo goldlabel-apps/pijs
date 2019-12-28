@@ -1,5 +1,3 @@
-#!/bin/bash
-
 import time
 from envirophat import light, motion, weather, leds
 
