@@ -5,6 +5,8 @@ import Nav from "./Nav";
 import PiPlayer from "./PiPlayer";
 import BottomAppBar from "./BottomAppBar";
 import Settings from "./Settings";
+// Buttons
+import Listingslab from "./buttons/Listingslab";
 // Screens
 import ScreenHeader from "./ScreenHeader";
 import About from "./screens/About";
@@ -26,6 +28,7 @@ export {
   EnviroPhat,
   Home,
   Icon,
+  Listingslab,
   Map,
   Mapbox,
   Nav,

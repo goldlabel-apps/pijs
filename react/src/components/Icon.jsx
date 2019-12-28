@@ -31,7 +31,7 @@ import IconEnviro from '@material-ui/icons/InsertChart';
 import {
     GithubSVG,
     PiJSSVG,
-    // TimeSVG,
+    TimeSVG,
 } from '../graphics';
 
 const styles = theme => ({
@@ -67,6 +67,9 @@ class Icon extends Component {
             case `time`:
                 return (<IconTime color={iconColor} />);
 
+            case `listingslab`:
+                return (<TimeSVG color={`#000`} className={classes.navIcon} />);
+            
             case `github`:
                 return (<GithubSVG color={`#000`} className={classes.navIcon} />);
 

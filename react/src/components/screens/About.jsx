@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import cn from 'classnames';
 import {
+    CardMedia,
     List,
     ListItem,
     Paper,
@@ -43,6 +44,12 @@ export default function About() {
             <Typography gutterBottom variant={`body1`}>
                 PiJS is a Open Source, meaning that everything you see here is available to download and use for free from github.
             </Typography>
+
+            <CardMedia
+                className={cn(classes.mediaSq)}
+                title={`What is a Raspberry Pi?`}
+                image={`/jpg/pi.jpg`}
+            />
 
             <List>
                 <ListItem button

@@ -16,6 +16,7 @@ import {
 import {
     Nav,
     ScreenHeader,
+    // Listingslab,
 } from '../';
 
 class Home extends Component {
@@ -40,13 +41,14 @@ class Home extends Component {
                     <Grid container>
                         <Grid item xs={12} md={8}>                                
                             <Typography variant={`body1`} gutterBottom>
-                                An Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4
+                                An Open Source React PWA by Listingslab with Secure SSL Node/Express server running on a Raspberry Pi 4
                             </Typography>
                             <CardMedia
-                                className={cn(classes.mediaSq)}
+                                className={cn(classes.media)}
                                 title={`What is a Raspberry Pi?`}
-                                image={`/jpg/pi.jpg`}
+                                image={`/jpg/envirophat.jpg`}
                             />
+                            
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Nav isHome={true} />

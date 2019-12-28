@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
+    Divider,
     List,
     ListItem,
     ListItemIcon,
@@ -16,12 +17,17 @@ import { getStore } from "../";
 
 class Nav extends Component {
 
-    navClick = (path) => {
+    navClick = (path, target) => {
         const {
             history
         } = this.props;
         const store = getStore();
-        history.push(path);
+        if (target) {
+            window.open(path, target)
+        } else {
+            history.push(path);
+        }
+        
         store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
     }
 
@@ -94,12 +100,34 @@ class Nav extends Component {
                     </ListItemIcon>
                     <ListItemText primary={`Enviro pHAT`} />
                 </ListItem>
+                
+                <Divider />    
 
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`https://listingslab.com`, `_blank`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`listingslab`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`listingslab`} />
+                </ListItem>
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`https://github.com/listingslab-hardware/pijs`, `_blank`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`github`} color={`primary`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`github`} />
+                </ListItem>
 
+                <Divider /> 
+                
             </List>
         );
     }
-}
+}   
 
 
 const mapStateToProps = (store) => {
