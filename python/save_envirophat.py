@@ -14,7 +14,7 @@ leds.on()
 data['rgb'] = str(light.rgb())[1:-1].replace(' ', '')
 leds.off()
 data['temperature'] = weather.temperature()
-data['pressure'] = weather.pressure()
+data['pressure'] = weather.pressure(unit='hPa'))
 
 with open('./node/build/data/envirophat.json', 'w') as outfile:
     json.dump(data, outfile)
