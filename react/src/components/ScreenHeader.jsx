@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 import {
     Icon,
+    SystemClock,
 } from './';
 import {
     Grid,
@@ -29,6 +30,8 @@ export default function ScreenHeader(props) {
     const classes = useStyles();
     const history = useHistory();
     const { title, icon, isHome } = props;
+
+
     return (
         <div className={classes.screenHeader}>
             <Grid container>
@@ -43,8 +46,14 @@ export default function ScreenHeader(props) {
                         {title || `Title prop missing`}
                     </Typography>
                 </Grid>
-                {!isHome ? 
+
+                <Grid item>
+                    <SystemClock />
+                </Grid>
+
+                {!isHome ?
                     <Grid item>
+
                         <Tooltip title={`PiJS Home`}>
                             <IconButton
                                 className={classes.homeBtn}
@@ -58,12 +67,8 @@ export default function ScreenHeader(props) {
                             </IconButton>
                         </Tooltip>
                     </Grid>
-                : null}
-                
+                    : null}
             </Grid>
-
-
-
         </div>
     );
 }

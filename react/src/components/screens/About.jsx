@@ -4,7 +4,6 @@ import {
     CardContent,
     CardMedia,
     Grid,
-    Paper,
     Typography,
 } from '@material-ui/core/';
 import {
@@ -13,10 +12,9 @@ import {
 } from '../';
 
 const useStyles = makeStyles(theme => ({
-    infoPaper: {
+    content: {
         marginRight: theme.spacing(),
         marginLeft: theme.spacing(),
-        boxShadow: 'none',
     },
     media: {
         height: 0,
@@ -29,7 +27,7 @@ export default function About() {
     const classes = useStyles();
 
     return (
-        <Paper variant="outlined" className={classes.infoPaper}>
+        <div className={classes.content}>
             <ScreenHeader icon={`docs`} title={`About PiJS`} />
             <CardContent>
                 <Grid container>
@@ -50,6 +48,6 @@ export default function About() {
                     </Grid>
                 </Grid>
             </CardContent>
-        </Paper>
+        </div>
     );
 }

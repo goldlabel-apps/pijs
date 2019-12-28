@@ -1,12 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-    updateWebcam
-} from '../redux/system/actions';
-import { withRouter } from "react-router";
+import { getStore } from "../";
 
-// ~/Desktop/node/pi-firmware/bin/create_current_photo.sh
 
 class ClockWork extends Component {
 
@@ -15,7 +11,7 @@ class ClockWork extends Component {
     }
 
     componentDidMount() {
-        // this.startTimer();
+        this.startTimer();
     }
 
     componentWillUnmount() {
@@ -27,15 +23,12 @@ class ClockWork extends Component {
     }
 
     startTimer = () => {
-        const {
-            webcam
-        } = this.props;
-        const { timerDelay } = webcam;
+        const timerDelay = 1;
         const {
             timer
         } = this.state;
         if (!timer) {
-            this.setState({ timer: setInterval(this.updateTimer, timerDelay * 1000) });
+            this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
         }
     }
 
@@ -49,8 +42,9 @@ class ClockWork extends Component {
         }
     }
 
-    updateTimer = () => {
-        updateWebcam();
+    update = () => {
+        const store = getStore();
+        store.dispatch({ type: `SYSTEM/UPDATE/CLOCK` })
     }
 
     render() {
@@ -64,4 +58,4 @@ const mapStateToProps = (store) => {
     };
 };
 
-export default (connect(mapStateToProps, null)(withRouter(ClockWork)));
+export default (connect(mapStateToProps, null)(ClockWork));

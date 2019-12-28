@@ -5,6 +5,7 @@ import { doSomething } from "./actions";
 
 export const mapboxSlice = {
   updated: Date.now(),
+  mapboxStyle: `mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5`,
   lat: 0,
   lng: 0,
   zoom: 1,
@@ -13,8 +14,7 @@ export const mapboxSlice = {
 };
 
 const mapbox = createReducer(mapboxSlice, {
-  [doSomething]: (state, action) => {
-    // console.log ('mapbox action', action)
+  [doSomething]: state => {
     return state;
   }
 });

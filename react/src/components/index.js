@@ -4,6 +4,7 @@ import Icon from "./Icon";
 import Nav from "./Nav";
 import BottomAppBar from "./BottomAppBar";
 import Settings from "./Settings";
+import SystemClock from "./SystemClock";
 // Buttons
 import Listingslab from "./buttons/Listingslab";
 // Screens
@@ -36,6 +37,7 @@ export {
   PiJS,
   ScreenHeader,
   Settings,
+  SystemClock,
   Weather,
   Webcam
 };
