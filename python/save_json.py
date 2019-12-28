@@ -10,5 +10,6 @@ data['people'].append({
     'time': datetime.datetime.now().isoformat()
 })
 
-with open('../node/build/data/envirophat.json', 'w') as outfile:
+with open('~/Desktop/node/pi-firmware/node/build/data/envirophat.json',
+          'w') as outfile:
     json.dump(data, outfile)
