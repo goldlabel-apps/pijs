@@ -37,7 +37,7 @@ export default function BottomAppBar() {
             className={classes.appBar}>
             <Toolbar>
                 <Fab
-                    color={`secondary`}
+                    color={`primary`}
                     aria-label="Navigation"
                     className={classes.fabButton}
                     onClick={(e) => {
@@ -45,7 +45,7 @@ export default function BottomAppBar() {
                         store.dispatch({ type: "SYSTEM/NAV/OPEN" });
                     }}>
                     <Icon icon={`pi`}
-                        color={`primary`}
+                        color={`secondary`}
                     />
                 </Fab>
                 <div className={classes.grow} />

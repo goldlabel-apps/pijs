@@ -54,7 +54,7 @@ class Weather extends Component {
                 <ScreenHeader title={`Weather`} icon={`weather`} />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} md={6}>
 
                             <Typography variant={`h6`} gutterBottom>
                                 In Scarborough, Queensland, Australia it is now
@@ -62,7 +62,7 @@ class Weather extends Component {
                             <div className={classes.weather}>
 
                                 <Grid container>
-                                    <Grid item xs={12} md={8}>
+                                    <Grid item xs={12} md={6}>
 
                                         <Grid container>
                                             <Grid item>
@@ -84,10 +84,8 @@ class Weather extends Component {
                                                 </Typography>
                                             </Grid>
                                         </Grid>
-
                                     </Grid>
-
-                                    <Grid item xs={12} md={4}>
+                                    <Grid item xs={12} md={6}>
                                         <Typography variant={`body1`}>
                                             {overview}
                                         </Typography>
@@ -109,7 +107,7 @@ class Weather extends Component {
 
 
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={6}>
                             <Nav isHome={true} />
                         </Grid>
                     </Grid>

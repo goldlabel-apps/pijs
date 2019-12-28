@@ -31,7 +31,7 @@ export default function About() {
             <ScreenHeader icon={`docs`} title={`About PiJS`} />
             <CardContent>
                 <Grid container>
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12} md={6}>
                         <CardMedia
                             className={classes.media}
                             title={`About PiJS`}
@@ -39,11 +39,9 @@ export default function About() {
                         />
                         <Typography variant={`body1`} gutterBottom>
                             PiJS is a Open Source, meaning that everything you see here is available to download and use for free from github.
-                            </Typography>
-
-
+                        </Typography>
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={6}>
                         <Nav />
                     </Grid>
                 </Grid>

@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Button,
+    IconButton,
+    CardMedia,
 } from '@material-ui/core/';
 import {
     Icon,
@@ -36,12 +37,8 @@ const useStyles = makeStyles(theme => ({
     },
     media: {
         height: 0,
-        paddingTop: '50%',
-    },
-    webcamImg: {
-        marginTop: theme.spacing(),
-        borderRadius: theme.spacing(0.5),
-        maxWidth: '100%',
+        paddingTop: '56.25%',
+        marginBottom: theme.spacing(),
     },
 }));
 
@@ -52,13 +49,13 @@ export default function Webcam() {
     const { zoomed } = webcam;
     let dispatchType = zoomed === `out` ? `WEBCAM/ZOOM/IN` : `WEBCAM/ZOOM/OUT`;
 
-    let zoomClass = zoomed === `out` ? classes.webcamBoxZoomedOut : classes.webcamBoxZoomedIn;
+    // let zoomClass = zoomed === `out` ? classes.webcamBoxZoomedOut : classes.webcamBoxZoomedIn;
 
     return (
         <React.Fragment>
             <ScreenHeader icon={`webcam`} title={`Webcam`} />
             <div className={classes.content}>
-                <Button
+                <IconButton
                     className={classes.mapBtn}
                     variant={`contained`}
                     color={`primary`}
@@ -66,15 +63,24 @@ export default function Webcam() {
                         dispatch({ type: dispatchType })
                         e.preventDefault();
                     }}>
-                    <Icon icon={zoomed === `out` ? `zoomin` : `zoomout`} color={`secondary`} />
-                    <span className={classes.btnIconPadRight}>
-                        {zoomed === `out` ? `Zoom In` : `Zoom Out`}</span>
-                </Button>
-                <div className={zoomClass}>
+                    <Icon
+                        icon={zoomed === `out` ? `zoomin` : `zoomout`}
+                        color={`primary`} />
+                </IconButton>
 
-                </div>
+                <CardMedia
+                    className={classes.media}
+                    title={`What is a Raspberry Pi?`}
+                    image={`https://pi.listingslab.io/jpg/current-photo.jpg`}
+                />
 
             </div>
         </React.Fragment>
     );
 }
+
+/*
+<span className={classes.btnIconPadRight}>
+    {zoomed === `out` ? `Zoom In` : `Zoom Out`}
+</span>
+*/

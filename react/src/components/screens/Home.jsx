@@ -27,20 +27,18 @@ class Home extends Component {
                 <ScreenHeader title={`PiJS.app`} icon={`home`} isHome={true} />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} md={6}>
                             <CardMedia
                                 className={cn(classes.media)}
                                 title={`What is a Raspberry Pi?`}
-                                image={`/jpg/envirophat.jpg`}
+                                image={`https://pi.listingslab.io/jpg/current-photo.jpg`}
                             />
                             <Typography variant={`body1`} gutterBottom>
-                                An Open Source React PWA by Listingslab with Secure SSL Node/Express server running on a Raspberry Pi 4
+                                Open Source React PWA by Listingslab with Secure SSL Node/Express server running on a Raspberry Pi 4
                             </Typography>
-
-
                         </Grid>
-                        <Grid item xs={12} md={4}>
-                            <Nav isHome={true} />
+                        <Grid item xs={12} md={6}>
+                            <Nav />
                         </Grid>
                     </Grid>
                 </CardContent>

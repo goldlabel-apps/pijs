@@ -14,10 +14,6 @@ import {
     DialogContent,
     DialogTitle,
     Grid,
-    FormControl,
-    RadioGroup,
-    FormControlLabel,
-    Radio,
     Switch,
     Typography,
     useMediaQuery,
@@ -27,6 +23,9 @@ import { Icon } from './';
 const useStyles = makeStyles(theme => ({
     myStyle: {
         minWidth: 450,
+    },
+    switchLabel: {
+        marginTop: theme.spacing(1),
     },
     dialogTitleText: {
         marginLeft: theme.spacing(2),
@@ -67,7 +66,7 @@ export default function Settings() {
             <DialogContent className={classes.myStyle}>
 
                 <Grid container>
-                    <Grid item xs={3}>
+                    <Grid item xs={2}>
                         <Switch
                             inputProps={{ 'aria-label': 'Share location checkbox' }}
                             checked={true}
@@ -76,65 +75,9 @@ export default function Settings() {
                             color={`primary`}
                         />
                     </Grid>
-                    <Grid item xs={7}>
-                        <Typography variant={`body1`}>
-                            Share your location?
-                        </Typography>
-                    </Grid>
-                </Grid>
-
-                <Grid container>
-                    <Grid item xs={3}>
-                        <Switch
-                            inputProps={{ 'aria-label': 'Sounds checkbox' }}
-                            checked={true}
-                            onChange={() => { }}
-                            value={`sounds`}
-                            color={`primary`}
-                        />
-                    </Grid>
-                    <Grid item xs={7}>
-                        <Typography variant={`body1`}>
-                            Sounds
-                        </Typography>
-                    </Grid>
-                </Grid>
-
-
-                <Grid container>
-
-                    <Grid item xs={3}>
-                        <FormControl component="fieldset" className={classes.formControl}>
-                            <RadioGroup
-                                aria-label={`Dark Mode`}
-                                name={`dark-mode`}
-                                value={`auto`}
-                                onChange={() => { }}
-                            >
-                                <FormControlLabel
-                                    value="on"
-                                    control={
-                                        <Radio color={`primary`} />
-                                    }
-                                    label="On" />
-                                <FormControlLabel
-                                    value="off"
-                                    control={
-                                        <Radio color={`primary`} />
-                                    }
-                                    label="Off" />
-                                <FormControlLabel
-                                    value="auto"
-                                    control={
-                                        <Radio color={`primary`} />
-                                    }
-                                    label="Auto" />
-                            </RadioGroup>
-                        </FormControl>
-                    </Grid>
-                    <Grid item xs={8}>
-                        <Typography variant={`body1`}>
-                            Dark Mode
+                    <Grid item xs={10}>
+                        <Typography variant={`body1`} className={classes.switchLabel}>
+                            Easily Turn Off 'n Onable
                         </Typography>
                     </Grid>
                 </Grid>

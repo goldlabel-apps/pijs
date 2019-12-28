@@ -27,7 +27,7 @@ class EnviroPhat extends Component {
                 <ScreenHeader title={`Enviro pHAT`} icon={`enviro`} />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} md={6}>
                             <CardMedia
                                 className={cn(classes.media)}
                                 title={`What is a Raspberry Pi?`}
@@ -47,7 +47,7 @@ class EnviroPhat extends Component {
                                     pimoroni.com</span>
                             </Button>
                         </Grid>
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={6}>
                             <Nav isHome={true} />
                         </Grid>
                     </Grid>
