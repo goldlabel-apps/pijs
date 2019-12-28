@@ -1,7 +1,6 @@
 
 # Current Photo
 node/build/jpg/current-photo.jpg
-node/build/data/envirophat.json
 node/build/data/pijs.json
 
 # Node Modules

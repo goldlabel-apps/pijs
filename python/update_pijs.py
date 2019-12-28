@@ -2,13 +2,13 @@ import json
 from datetime import datetime
 from time import mktime
 from envirophat import light, motion, weather, leds
+from picamera import PiCamera, Color
 
 dt = datetime.now()
 sec_since_epoch = mktime(dt.timetuple()) + dt.microsecond/1000000.0
 unix_epoch = sec_since_epoch * 1000
 
 data = {}
-
 
 data['url'] = "https://pi.listingslab.io/data/pijs.json"
 data['updated'] = round(unix_epoch)
@@ -26,5 +26,14 @@ data['envirophat'] = envirophatData
 
 with open('./node/build/data/pijs.json', 'w') as outfile:
     json.dump(data, outfile)
+
+camera = PiCamera()
+
+camera.resolution = (800, 450)
+camera.image_effect = 'colorswap'
+camera.annotate_background = Color('blue')
+camera.annotate_text = round(unix_epoch)
+camera.annotate_text_size = 50
+camera.capture('~/Desktop/node/pi-firmware/node/build/jpg/current-photo.jpg')
 
 print("pijs updated https://pi.listingslab.io/data/pijs.json")
