@@ -10,7 +10,7 @@ data['people'].append({
     'name': 'Scott',
     'time': datetime.datetime.now().isoformat()
 })
-os.chdir(r'~/Desktop/node/pi-firmware/node/build/data/')
+os.chdir(r'../node/pi-firmware/node/build/data/')
 
 with open('envirophat.json', 'w') as outfile:
     json.dump(data, outfile)
