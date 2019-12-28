@@ -4,7 +4,7 @@ import commonStyles from "./commonStyles";
 export const styles = theme => ({
     ...commonStyles(theme),
     appShell: {
-        maxWidth: 1000,
+        maxWidth: 1200,
         margin: 'auto',
     },
     mapBtn: {
