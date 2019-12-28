@@ -12,7 +12,6 @@ import {
     ListItemText
 } from '@material-ui/core/';
 import { Icon } from './';
-// import { PiJSSVG } from '../graphics';
 import { getStore } from "../";
 
 class Nav extends Component {
@@ -34,7 +33,6 @@ class Nav extends Component {
     render() {
         const {
             classes,
-            isHome
         } = this.props;
         return (
             <List className={cn(classes.navList)}>
