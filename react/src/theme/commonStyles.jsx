@@ -10,16 +10,15 @@ export default theme => ({
     },
     media: {
         height: 0,
-        paddingTop: '30%', // 16:9
+        paddingTop: '50%',
         marginBottom: theme.spacing(),
     },
-
     mediaSq: {
         height: 0,
         paddingTop: '100%', // 16:9
         marginBottom: theme.spacing(),
     },
-    
+
     white: {
         color: 'white',
     },

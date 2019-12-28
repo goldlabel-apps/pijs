@@ -1,6 +1,5 @@
-import CurlyBrace from "./jsx/CurlyBrace";
 import GithubSVG from "./jsx/GithubSVG";
 import PiJSSVG from "./jsx/PiJSSVG";
-import TimeSVG from "./jsx/TimeSVG";
+import SpadeSVG from "./jsx/SpadeSVG";
 
-export { CurlyBrace, GithubSVG, PiJSSVG, TimeSVG };
+export { GithubSVG, PiJSSVG, SpadeSVG };

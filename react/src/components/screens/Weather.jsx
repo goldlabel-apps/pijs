@@ -7,12 +7,14 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
+    CardContent,
     Avatar,
     Grid,
     Typography,
 } from '@material-ui/core/';
 import {
-    ScreenHeader
+    ScreenHeader,
+    Nav,
 } from '../';
 
 class Weather extends Component {
@@ -50,59 +52,69 @@ class Weather extends Component {
 
             <React.Fragment>
                 <ScreenHeader title={`Weather`} icon={`weather`} />
-                <div className={classes.weather}>
-
+                <CardContent>
                     <Grid container>
                         <Grid item xs={12} md={8}>
-                            <Typography variant={`h6`}>
+
+                            <Typography variant={`h6`} gutterBottom>
                                 In Scarborough, Queensland, Australia it is now
                             </Typography>
+                            <div className={classes.weather}>
 
-                            <Grid container>
-                                <Grid item>
-                                    <Avatar
-                                        style={{
-                                            width: 75,
-                                            height: 75,
-                                        }}
-                                        src={outlookIcon} alt={`outlook`}
-                                    />
+                                <Grid container>
+                                    <Grid item xs={12} md={8}>
+
+                                        <Grid container>
+                                            <Grid item>
+                                                <Avatar
+                                                    style={{
+                                                        width: 75,
+                                                        height: 75,
+                                                    }}
+                                                    src={outlookIcon} alt={`outlook`}
+                                                />
+                                            </Grid>
+                                            <Grid item>
+                                                <Typography variant={`h3`}
+                                                    style={{
+                                                        paddingLeft: 8,
+                                                        paddingTop: 8
+                                                    }}>
+                                                    {temperature}
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
+
+                                    </Grid>
+
+                                    <Grid item xs={12} md={4}>
+                                        <Typography variant={`body1`}>
+                                            {overview}
+                                        </Typography>
+                                        <Typography variant={`body1`}>
+                                            Humidity {humidity}
+                                        </Typography>
+
+                                        <Typography variant={`body1`}>
+                                            Pressure {pressure}
+                                        </Typography>
+
+                                        <Typography variant={`body1`}>
+                                            Wind {windSpeed}, from {windDirection}
+                                        </Typography>
+                                    </Grid>
                                 </Grid>
-                                <Grid item>
-                                    <Typography variant={`h3`}
-                                        style={{
-                                            paddingLeft: 8,
-                                            paddingTop: 8
-                                        }}>
-                                        {temperature}
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-
-
+                            </div>
 
 
 
                         </Grid>
-
                         <Grid item xs={12} md={4}>
-                            <Typography variant={`body1`}>
-                                {overview}
-                            </Typography>
-                            <Typography variant={`body1`}>
-                                Humidity {humidity}
-                            </Typography>
-
-                            <Typography variant={`body1`}>
-                                Pressure {pressure}
-                            </Typography>
-
-                            <Typography variant={`body1`}>
-                                Wind {windSpeed}, from {windDirection}
-                            </Typography>
+                            <Nav isHome={true} />
                         </Grid>
                     </Grid>
-                </div>
+                </CardContent>
+
 
             </React.Fragment>
         );

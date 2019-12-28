@@ -27,7 +27,7 @@ class Nav extends Component {
         } else {
             history.push(path);
         }
-        
+
         store.dispatch({ type: "SYSTEM/NAV/CLOSE" });
     }
 
@@ -38,7 +38,6 @@ class Nav extends Component {
         } = this.props;
         return (
             <List className={cn(classes.navList)}>
-
                 {!isHome ?
                     <ListItem button
                         onClick={(e) => {
@@ -50,16 +49,6 @@ class Nav extends Component {
                         <ListItemText primary={`Home`} />
                     </ListItem>
                     : null}
-
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/about`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`docs`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`About`} />
-                </ListItem>
 
                 <ListItem button
                     onClick={(e) => {
@@ -100,18 +89,20 @@ class Nav extends Component {
                     </ListItemIcon>
                     <ListItemText primary={`Enviro pHAT`} />
                 </ListItem>
-                
-                <Divider />    
+
 
                 <ListItem button
                     onClick={(e) => {
-                        this.navClick(`https://listingslab.com`, `_blank`)
+                        this.navClick(`/about`)
                     }}>
                     <ListItemIcon>
-                        <Icon icon={`listingslab`} color={`primary`} />
+                        <Icon icon={`docs`} color={`primary`} />
                     </ListItemIcon>
-                    <ListItemText primary={`listingslab`} />
+                    <ListItemText primary={`About PiJS`} />
                 </ListItem>
+
+                <Divider />
+
                 <ListItem button
                     onClick={(e) => {
                         this.navClick(`https://github.com/listingslab-hardware/pijs`, `_blank`)
@@ -122,12 +113,19 @@ class Nav extends Component {
                     <ListItemText primary={`github`} />
                 </ListItem>
 
-                <Divider /> 
-                
+                <ListItem button
+                    onClick={(e) => {
+                        this.navClick(`https://listingslab.com`, `_blank`)
+                    }}>
+                    <ListItemIcon>
+                        <Icon icon={`listingslab`} color={`#333333`} />
+                    </ListItemIcon>
+                    <ListItemText primary={`by listingslab`} />
+                </ListItem>
             </List>
         );
     }
-}   
+}
 
 
 const mapStateToProps = (store) => {

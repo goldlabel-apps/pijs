@@ -21,12 +21,12 @@ export default function Listingslab() {
     return (
         <React.Fragment>
             <Button
-                variant={`outlined`}
+                variant={`contained`}
                 color={`primary`}
                 onClick={() => {
                     window.open(`https://listingslab.com`, `_blank`)
                 }}>
-                <Icon icon={`link`} color={`primary`} />
+                <Icon icon={`listingslab`} color={`#F1DD3F`} />
                 <span className={classes.btnIconPadRight}>
                     listingslab</span>
             </Button>

@@ -2,7 +2,6 @@
 import ClockWork from "./ClockWork";
 import Icon from "./Icon";
 import Nav from "./Nav";
-import PiPlayer from "./PiPlayer";
 import BottomAppBar from "./BottomAppBar";
 import Settings from "./Settings";
 // Buttons
@@ -35,7 +34,6 @@ export {
   NotFound,
   OpenSource,
   PiJS,
-  PiPlayer,
   ScreenHeader,
   Settings,
   Weather,

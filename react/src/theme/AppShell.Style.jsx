@@ -17,11 +17,6 @@ export const styles = theme => ({
     tooltipStyle: {
         background: 'red',
     },
-    piPlayerImg: {
-        // marginTop: theme.spacing(),
-        // borderRadius: theme.spacing(0.5),
-        maxWidth: '100%',
-    },
     screenCard: {
         boxShadow: 'none',
         marginBottom: 100,
