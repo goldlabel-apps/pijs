@@ -11,7 +11,7 @@ data['people'].append({
     'time': datetime.datetime.now().isoformat()
 })
 
-print(os.path.dirname(os.path.abspath(sys.argv[0])))
+print(os.path.dirname(os.path.abspath()))
 
 # os.chdir(r'../node/pi-firmware/node/build/data/')
 
