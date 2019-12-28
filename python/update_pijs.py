@@ -34,6 +34,6 @@ camera.image_effect = 'colorswap'
 camera.annotate_background = Color('#333333')
 camera.annotate_text = "Current Photo"
 camera.annotate_text_size = 50
-camera.capture('~/Desktop/node/pi-firmware/node/build/jpg/current-photo.jpg')
+camera.capture('./node/build/jpg/current-photo.jpg')
 
 print("update success https://pi.listingslab.io/data/pijs.json")
