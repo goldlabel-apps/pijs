@@ -10,3 +10,5 @@ react/node_modules
 react/.env.development
 
 react/.env.production
+
+.vscode/settings.json

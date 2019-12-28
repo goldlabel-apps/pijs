@@ -11,26 +11,10 @@
     "email": "listingslab@gmail.com"
   },
   "scripts": {
-    "setup": "clear && yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && clear && ls -la",
     "start": "clear && cd ./react && yarn start",
     "build": "clear && cd ./react && yarn build",
     "serve": "clear && cd ./node && node server.js",
     "serve:dev": "clear && cd ./node && node server.dev.js"
-  },
-  "devDependencies": {
-    "@types/nightwatch": "^0.9.8",
-    "@types/react": "^16.7.6",
-    "@types/react-dom": "^16.0.9",
-    "chromedriver": "2.43.1",
-    "cucumber": "5.0.2",
-    "cucumber-pretty": "^1.5.0",
-    "gulp": "^4.0.2",
-    "gulp-color": "^0.0.2",
-    "gulp-rename": "^1.4.0",
-    "nightwatch": "1.0.11",
-    "nightwatch-api": "latest",
-    "selenium-server": "^3.141.0",
-    "start-server-and-test": "1.7.9"
   },
   "license": "MIT",
   "keywords": [
