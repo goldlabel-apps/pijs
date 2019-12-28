@@ -24,7 +24,7 @@ class Home extends Component {
         return (
 
             <React.Fragment>
-                <ScreenHeader title={`PiJS.app`} icon={`home`} isHome={true} />
+                <ScreenHeader title={`PiJS.app`} icon={`pi`} isHome={true} />
                 <CardContent>
                     <Grid container>
                         <Grid item xs={12} md={6}>

@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 export default function ScreenHeader(props) {
     const classes = useStyles();
     const history = useHistory();
-    const { title, icon, isHome } = props;
+    const { title, icon } = props;
 
 
     return (
@@ -51,23 +51,23 @@ export default function ScreenHeader(props) {
                     <SystemClock />
                 </Grid>
 
-                {!isHome ?
-                    <Grid item>
 
-                        <Tooltip title={`PiJS Home`}>
-                            <IconButton
-                                className={classes.homeBtn}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    history.push(`/`);
-                                }}>
-                                <Icon
-                                    icon={`home`}
-                                    color={`primary`} />
-                            </IconButton>
-                        </Tooltip>
-                    </Grid>
-                    : null}
+                <Grid item>
+
+                    <Tooltip title={`PiJS Home`}>
+                        <IconButton
+                            className={classes.homeBtn}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                history.push(`/`);
+                            }}>
+                            <Icon
+                                icon={`home`}
+                                color={`primary`} />
+                        </IconButton>
+                    </Tooltip>
+                </Grid>
+
             </Grid>
         </div>
     );
