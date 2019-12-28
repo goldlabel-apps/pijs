@@ -8,9 +8,10 @@ data = {}
 data['people'] = []
 data['people'].append({'time': datetime.datetime.now().isoformat()})
 
-print(data)
-
+# print(data)
 # os.chdir(r'../node/pi-firmware/node/build/data/')
 
-# with open('envirophat.json', 'w') as outfile:
-#     json.dump(data, outfile)
+with open('envirophat.json', 'w') as outfile:
+    json.dump(data, outfile)
+
+print("saved ok")
