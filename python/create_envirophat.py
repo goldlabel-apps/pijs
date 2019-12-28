@@ -4,7 +4,6 @@ from envirophat import light, motion, weather, leds
 out = open('enviro.log', 'w')
 out.write('light\trgb\tmotion\theading\ttemp\tpress\n')
 
-
 try:
     while True:
         lux = light.light()

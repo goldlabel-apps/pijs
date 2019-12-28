@@ -1,3 +1,10 @@
+# Python
+
+We've never actually used python, but that's about to change.
+This section of the repo is for that process
+
+## Roadmap
+
 Write a new python script to take the picture
 
 It should save the image as current-photo but also as a file with unixepoch as its name
