@@ -1,5 +1,6 @@
 # Save JSON
 
+import os
 import json
 import datetime
 
@@ -9,7 +10,7 @@ data['people'].append({
     'name': 'Scott',
     'time': datetime.datetime.now().isoformat()
 })
+os.chdir(r'~/Desktop/node/pi-firmware/node/build/data/')
 
-with open('~/Desktop/node/pi-firmware/node/build/data/envirophat.txt',
-          'w') as outfile:
+with open('envirophat.json', 'w') as outfile:
     json.dump(data, outfile)
