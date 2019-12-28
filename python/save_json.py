@@ -1,17 +1,14 @@
 # Save JSON
 
-import os
+# import os
 import json
 import datetime
 
 data = {}
 data['people'] = []
-data['people'].append({
-    'name': 'Scott',
-    'time': datetime.datetime.now().isoformat()
-})
+data['people'].append({'time': datetime.datetime.now().isoformat()})
 
-print(json.dump(data))
+print(data)
 
 # os.chdir(r'../node/pi-firmware/node/build/data/')
 
