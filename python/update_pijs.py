@@ -30,10 +30,9 @@ with open('./node/build/data/pijs.json', 'w') as outfile:
 camera = PiCamera()
 
 camera.resolution = (800, 450)
-camera.image_effect = 'colorswap'
-camera.annotate_background = Color('#333333')
-camera.annotate_text = "Current Photo"
-camera.annotate_text_size = 50
+camera.annotate_background = Color('rgba(0,0,0,0.5)')
+camera.annotate_text = str(round(unix_epoch))
+camera.annotate_text_size = 35
 camera.capture('./node/build/jpg/current-photo.jpg')
 
 print("update success https://pi.listingslab.io/data/pijs.json")
