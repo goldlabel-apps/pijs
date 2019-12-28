@@ -16,6 +16,10 @@ export const systemSlice = {
     data: null,
     fetching: false
   },
+  touchyFeely: {
+    open: true,
+    message: `Default touchyFeely message`
+  },
   settings: {
     open: false
   },

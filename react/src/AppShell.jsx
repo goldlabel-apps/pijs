@@ -22,6 +22,7 @@ import {
     Weather,
     Webcam,
     Settings,
+    TouchyFeely,
 } from './components';
 
 class AppShell extends Component {
@@ -38,6 +39,7 @@ class AppShell extends Component {
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <div className={cn(classes.appShell)}>
                     <CssBaseline />
+                    <TouchyFeely />
                     <main>
                         <Router>
                             <nav className={cn(classes.navDrawer)} aria-label="Nav">
