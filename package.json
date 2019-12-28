@@ -13,7 +13,7 @@
   "scripts": {
     "setup": "clear && yarn && cd ./node && yarn && cd ../react && yarn && cd ../ && clear && ls -la",
     "start": "clear && cd ./react && yarn start",
-    "build": "clear && cd ./react && yarn build && rm -rf ../node/build",
+    "build": "clear && cd ./react && yarn build",
     "serve": "clear && cd ./node && node server.js",
     "serve:dev": "clear && cd ./node && node server.dev.js"
   },
