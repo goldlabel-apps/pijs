@@ -25,14 +25,13 @@ const credentials = {
 };
 
 const app = express();
+app.use(cors);
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.use(express.static(path.join(__dirname + "/build")));
 
-app.use(cors);
-
-app.all("*", function(req, res) {
+app.all("*", cors({ origin: "*" }), function(req, res) {
   if (req.secure) {
     res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
