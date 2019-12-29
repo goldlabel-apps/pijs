@@ -44,7 +44,7 @@ const system = createReducer(systemSlice, {
   },
 
   [systemPijsSave]: (state, action) => {
-    // console.log("reduce SYSTEM/PIJS/SAVE", action);
+    console.log("reduce SYSTEM/PIJS/SAVE", action);
     state.pijs.data = action.data;
     state.pijs.status = `connected`;
     return state;

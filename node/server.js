@@ -24,7 +24,6 @@ const credentials = {
 };
 
 const app = express();
-const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.use(express.static(path.join(__dirname + "/build")));
@@ -39,15 +38,16 @@ app.use(function(req, res, next) {
 });
 
 app.all("*", function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   if (req.secure) {
     res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
     res.redirect("https://" + req.headers.host + req.url);
   }
-});
-
-httpServer.listen(1337, () => {
-  console.log("HTTP Server port 1337");
 });
 
 httpsServer.listen(443, () => {

@@ -23,6 +23,7 @@ export default function ConnectionStatus() {
     if (pijs.status === `connected`) {
         icon = `connected`
     }
+    // console.log(pijs)
     return (
         <IconButton disabled>
             <Icon icon={icon} color={`primary`} />

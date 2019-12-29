@@ -2,6 +2,7 @@
   "name": "pijs",
   "version": "0.5.1",
   "description": "PiJS is an Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
+  "proxy": "http://localhost:4000",
   "repository": {
     "type": "git",
     "url": "https://github.com/listingslab-hardware/pijs.git"
