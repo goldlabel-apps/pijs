@@ -32,7 +32,6 @@ export const systemSlice = {
 
 const system = createReducer(systemSlice, {
   [systemPijsError]: (state, action) => {
-    console.log("reduce SYSTEM/PIJS/ERROR", action.error);
     state.pijs.error = action.error;
     state.pijs.status = `disconnected`;
     return state;
@@ -45,7 +44,7 @@ const system = createReducer(systemSlice, {
   },
 
   [systemPijsSave]: (state, action) => {
-    console.log("reduce SYSTEM/PIJS/SAVE", action);
+    // console.log("reduce SYSTEM/PIJS/SAVE", action);
     state.pijs.data = action.data;
     state.pijs.status = `connected`;
     return state;

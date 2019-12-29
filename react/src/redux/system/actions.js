@@ -25,14 +25,12 @@ export const pingPi = () => {
   axios
     .get(`https://pi.listingslab.io/data/pijs.json`)
     .then(function(response) {
-      console.log("response", response);
       store.dispatch({
         type: "SYSTEM/PIJS/SAVE",
         data: response.data
       });
     })
     .catch(function(error) {
-      // console.log("error", error);
       store.dispatch({
         type: "SYSTEM/PIJS/ERROR",
         error
