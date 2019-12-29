@@ -39,8 +39,18 @@ app.use(function(req, res, next) {
 
 app.all("*", function(req, res) {
   if (req.secure) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
     res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
     res.redirect("https://" + req.headers.host + req.url);
   }
 });
