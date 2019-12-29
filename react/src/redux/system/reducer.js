@@ -32,13 +32,14 @@ export const systemSlice = {
 
 const system = createReducer(systemSlice, {
   [systemPijsError]: (state, action) => {
+    console.log("reduce SYSTEM/PIJS/ERROR", action.error);
     state.pijs.error = action.error;
     state.pijs.status = `disconnected`;
     return state;
   },
 
   [systemPijsToggleFetching]: (state, action) => {
-    // console.log("reduce SYSTEM/PIJS/TOGGLE_FETCH", action);
+    console.log("reduce SYSTEM/PIJS/TOGGLE_FETCH", action);
     state.pijs.fetching = action.bool;
     return state;
   },

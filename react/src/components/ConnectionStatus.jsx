@@ -7,23 +7,15 @@ import {
 import {
     Icon,
 } from './';
-// import { pingPi } from '../redux/system/actions'
-
-// const useStyles = makeStyles(theme => ({
-//     connectionStatus: {
-//         // paddingTop: theme.spacing(1.5),
-//     },
-// }));
 
 export default function ConnectionStatus() {
     // const classes = useStyles();
-    // const dispatch = useDispatch();
     const { pijs } = useSelector(state => state.system);
     let icon = `disconnected`;
     if (pijs.status === `connected`) {
         icon = `connected`
     }
-    // console.log(pijs)
+    // console.log(pijs.data)
     return (
         <IconButton disabled>
             <Icon icon={icon} color={`primary`} />

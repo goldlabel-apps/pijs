@@ -23,7 +23,7 @@ export const pingPi = () => {
     bool: true
   });
   axios
-    .get(`https://pijs.app/data/pijs.json`)
+    .get(`/data/pijs.json`)
     .then(function(response) {
       store.dispatch({
         type: "SYSTEM/PIJS/SAVE",
