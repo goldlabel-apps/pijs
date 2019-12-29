@@ -1,9 +1,9 @@
 const packageJSON = require("./package.json");
 const fs = require("fs");
 const path = require("path");
-const http = require("http");
 const https = require("https");
 const express = require("express");
+const cors = require("cors");
 
 const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pijs.app/privkey.pem",
@@ -24,33 +24,16 @@ const credentials = {
 };
 
 const app = express();
+app.use(cors());
+
 const httpsServer = https.createServer(credentials, app);
 
 app.use(express.static(path.join(__dirname + "/build")));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
 app.all("*", function(req, res) {
   if (req.secure) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
     res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
     res.redirect("https://" + req.headers.host + req.url);
   }
 });
