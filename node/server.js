@@ -50,9 +50,9 @@ app.all("*", function(req, res) {
 });
 
 httpServer.listen(1337, () => {
-  console.log("HTTP Server running on port 1337");
+  console.log("HTTP Server port 1337");
 });
 
 httpsServer.listen(443, () => {
-  console.log("HTTPS Server running on port 443");
+  console.log("HTTPS Server port 443");
 });
