@@ -1,9 +1,9 @@
 const packageJSON = require("./package.json");
 const fs = require("fs");
 const path = require("path");
+const http = require("http");
 const https = require("https");
 const express = require("express");
-const cors = require("cors");
 
 const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pijs.app/privkey.pem",
@@ -24,11 +24,19 @@ const credentials = {
 };
 
 const app = express();
-app.use(cors());
-
+const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.use(express.static(path.join(__dirname + "/build")));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.all("*", function(req, res) {
   if (req.secure) {
@@ -38,6 +46,10 @@ app.all("*", function(req, res) {
   }
 });
 
+httpServer.listen(1337, () => {
+  console.log("HTTP Server running on port 1337");
+});
+
 httpsServer.listen(443, () => {
-  console.log("HTTPS Server port 443");
+  console.log("HTTPS Server running on port 443");
 });
