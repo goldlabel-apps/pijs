@@ -17,7 +17,7 @@ unix_epoch = sec_since_epoch * 1000
 
 data = {}
 
-data['url'] = "https://pi.listingslab.io/data/pijs.json"
+data['url'] = "https://pijs.app/data/pijs.json"
 data['updated'] = round(unix_epoch)
 
 envirophatData = {}
@@ -34,4 +34,4 @@ data['envirophat'] = envirophatData
 with open('./node/build/data/pijs.json', 'w') as outfile:
     json.dump(data, outfile)
 
-print("update success https://pi.listingslab.io/data/pijs.json")
+print("update success https://pijs.app/data/pijs.json")
