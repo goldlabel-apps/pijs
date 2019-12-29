@@ -38,11 +38,6 @@ app.use(function(req, res, next) {
 });
 
 app.all("*", function(req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
   if (req.secure) {
     res.sendFile(path.join(__dirname + "/build/index.html"));
   } else {
