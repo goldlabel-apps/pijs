@@ -10,13 +10,13 @@ export const closeSettings = createAction("SYSTEM/SETTINGS/CLOSE");
 
 export const updateClock = createAction("SYSTEM/UPDATE/CLOCK");
 
+export const systemPijsError = createAction("SYSTEM/PIJS/ERROR");
 export const systemPijsSave = createAction("SYSTEM/PIJS/SAVE");
 export const systemPijsToggleFetching = createAction(
   "SYSTEM/PIJS/TOGGLE_FETCH"
 );
 
 export const pingPi = () => {
-  console.log("Pinging the pi...");
   const store = getStore();
   store.dispatch({
     type: "SYSTEM/PIJS/TOGGLE_FETCH",
@@ -32,7 +32,7 @@ export const pingPi = () => {
       });
     })
     .catch(function(error) {
-      console.log("error", error);
+      // console.log("error", error);
       store.dispatch({
         type: "SYSTEM/PIJS/ERROR",
         error

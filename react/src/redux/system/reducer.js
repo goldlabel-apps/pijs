@@ -6,13 +6,15 @@ import {
   closeSettings,
   updateClock,
   systemPijsToggleFetching,
-  systemPijsSave
+  systemPijsSave,
+  systemPijsError
 } from "./actions";
 
 export const systemSlice = {
   pijs: {
     data: null,
-    fetching: false
+    fetching: false,
+    status: `disconnected`
   },
   settings: {
     updated: Date.now(),
@@ -29,8 +31,15 @@ export const systemSlice = {
 };
 
 const system = createReducer(systemSlice, {
+  [systemPijsError]: (state, action) => {
+    console.log("reduce SYSTEM/PIJS/ERROR", action.error);
+    state.pijs.error = action.error;
+    state.pijs.status = `disconnected`;
+    return state;
+  },
+
   [systemPijsToggleFetching]: (state, action) => {
-    console.log("reduce SYSTEM/PIJS/TOGGLE_FETCH", action);
+    // console.log("reduce SYSTEM/PIJS/TOGGLE_FETCH", action);
     state.pijs.fetching = action.bool;
     return state;
   },
@@ -38,6 +47,7 @@ const system = createReducer(systemSlice, {
   [systemPijsSave]: (state, action) => {
     console.log("reduce SYSTEM/PIJS/SAVE", action);
     state.pijs.data = action.data;
+    state.pijs.status = `connected`;
     return state;
   },
 

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getStore } from "../";
+import { pingPi } from '../redux/system/actions'
 
 class ClockWork extends Component {
 
@@ -11,6 +12,7 @@ class ClockWork extends Component {
 
     componentDidMount() {
         this.startTimer();
+        pingPi();
     }
 
     componentWillUnmount() {

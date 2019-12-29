@@ -1,6 +1,6 @@
 import React from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
     IconButton,
 } from '@material-ui/core/';
@@ -18,11 +18,14 @@ import {
 export default function ConnectionStatus() {
     // const classes = useStyles();
     // const dispatch = useDispatch();
-    // const { pijs } = useSelector(state => state.system);
-
+    const { pijs } = useSelector(state => state.system);
+    let icon = `disconnected`;
+    if (pijs.status === `connected`) {
+        icon = `connected`
+    }
     return (
         <IconButton disabled>
-            <Icon icon={`connected`} color={`primary`} />
+            <Icon icon={icon} color={`primary`} />
         </IconButton>
     );
 }
