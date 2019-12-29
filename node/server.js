@@ -6,19 +6,16 @@ const https = require("https");
 const express = require("express");
 
 const privateKey = fs.readFileSync(
-  "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
+  "/etc/letsencrypt/live/pijs.app/privkey.pem",
   "utf8"
 );
 
 const certificate = fs.readFileSync(
-  "/etc/letsencrypt/live/pi.listingslab.io/cert.pem",
+  "/etc/letsencrypt/live/pijs.app/cert.pem",
   "utf8"
 );
 
-const ca = fs.readFileSync(
-  "/etc/letsencrypt/live/pi.listingslab.io/chain.pem",
-  "utf8"
-);
+const ca = fs.readFileSync("/etc/letsencrypt/live/pijs.app/chain.pem", "utf8");
 
 const credentials = {
   key: privateKey,
