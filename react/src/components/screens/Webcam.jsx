@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     },
     webcamBoxZoomedOut: {
         marginTop: theme.spacing(),
-        background: 'url(https://pi.listingslab.io/jpg/current-photo.jpg?' + Date.now() + ')',
+        background: 'url(https://pijs.app/jpg/current-photo.jpg?' + Date.now() + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%',
         backgroundPosition: 'right 0px bottom 0px',
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     },
     webcamBoxZoomedIn: {
         marginTop: theme.spacing(),
-        background: 'url(https://pi.listingslab.io/jpg/current-photo.jpg?' + Date.now() + ')',
+        background: 'url(https://pijs.app/jpg/current-photo.jpg?' + Date.now() + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '150% 150%',
         backgroundPosition: 'left -200px bottom 10px',
@@ -71,7 +71,7 @@ export default function Webcam() {
                 <CardMedia
                     className={classes.media}
                     title={`What is a Raspberry Pi?`}
-                    image={`https://pi.listingslab.io/jpg/current-photo.jpg`}
+                    image={`https://pijs.app/jpg/current-photo.jpg`}
                 />
 
             </div>

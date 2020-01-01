@@ -31,7 +31,7 @@ class Home extends Component {
                             <CardMedia
                                 className={cn(classes.media)}
                                 title={`What is a Raspberry Pi?`}
-                                image={`https://pi.listingslab.io/jpg/current-photo.jpg`}
+                                image={`https://pijs.app/jpg/current-photo.jpg`}
                             />
                             <Typography variant={`body1`} gutterBottom>
                                 Open Source React PWA by Listingslab with Secure SSL Node/Express server running on a Raspberry Pi 4
