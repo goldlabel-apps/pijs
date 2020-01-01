@@ -47,6 +47,13 @@ class Map extends Component {
                 this.zoomIn(defaultLocation)
             }
         });
+
+
+        map.on('styleimagemissing', (e) => {
+            return null;
+        });
+
+
         this.setState({ map })
     }
 
