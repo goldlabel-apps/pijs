@@ -28,6 +28,7 @@ import IconMap from '@material-ui/icons/Explore';
 import IconTime from '@material-ui/icons/Restore';
 import IconEnvironment from '@material-ui/icons/AcUnit';
 import IconWifi from '@material-ui/icons/Wifi';
+import IconWifiOff from '@material-ui/icons/WifiOff';
 import IconInstall from '@material-ui/icons/CloudDownload';
 
 import {
@@ -69,7 +70,10 @@ class Icon extends Component {
             case `environment`:
                 return (<IconEnvironment color={iconColor} />);
 
-            case `wifi`:
+            case `disconnected`:
+                return (<IconWifiOff color={iconColor} />);
+
+            case `connected`:
                 return (<IconWifi color={iconColor} />);
 
             case `time`:

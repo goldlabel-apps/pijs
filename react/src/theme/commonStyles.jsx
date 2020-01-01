@@ -5,24 +5,28 @@ export default theme => ({
         margin: theme.spacing(0.5),
         padding: theme.spacing(0.5),
     },
-    btnIconPadRight: {
-        marginLeft: theme.spacing(),
-        paddingRight: theme.spacing(),
+    map: {
+        height: 183,
+        outline: 'none',
     },
-    inPageBtn: {
-        paddingRight: theme.spacing(),
-        marginRight: theme.spacing(),
+    cardStuff: {
+        height: 185,
+        overflow: 'hidden'
     },
     media: {
         height: 0,
         paddingTop: '56.25%',
-        marginBottom: theme.spacing(),
     },
-    mediaSq: {
-        height: 0,
-        paddingTop: '100%', // 16:9
-        marginBottom: theme.spacing(),
+    btnIconPadRight: {
+        marginLeft: theme.spacing(),
+        paddingRight: theme.spacing(),
     },
+
+    inPageBtn: {
+        paddingRight: theme.spacing(),
+        marginRight: theme.spacing(),
+    },
+
     white: {
         color: 'white',
     },

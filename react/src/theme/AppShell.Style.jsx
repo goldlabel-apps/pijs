@@ -25,12 +25,6 @@ export const styles = theme => ({
         // background: theme.palette.primary.main,
         // color: theme.palette.secondary.main
     },
-    mapFullSize: {
-        // height: 'calc(100vh - 75px)',
-        height: 250,
-        outline: 'none',
-    },
-
     navList: {
         padding: theme.spacing(),
     },

@@ -30,8 +30,9 @@ class Home extends Component {
                 <ScreenHeader title={`PiJS.app`} icon={`pi`} isHome={true} />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={4}>
-                            <Card className={cn(classes.card)}>
+
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Card className={classes.card}>
                                 <CardHeader
                                     title={`Webcam`}
                                     avatar={<Icon
@@ -39,15 +40,18 @@ class Home extends Component {
                                         color={`primary`}
                                     />}
                                 />
-                                <CardMedia
-                                    className={cn(classes.media)}
-                                    title={`What is a Raspberry Pi?`}
-                                    image={`https://pijs.app/jpg/current-photo.jpg`}
-                                />
+                                <div className={classes.cardStuff}>
+                                    <CardMedia
+                                        className={classes.media}
+                                        title={`What is a Raspberry Pi?`}
+                                        image={`https://pijs.app/jpg/current-photo.jpg`}
+                                    />
+                                </div>
+
                             </Card>
                         </Grid>
 
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card className={cn(classes.card)}>
                                 <CardHeader
                                     title={`Map`}
@@ -56,21 +60,15 @@ class Home extends Component {
                                         color={`primary`}
                                     />}
                                 />
-                                <Map />
+                                <div className={classes.cardStuff}>
+                                    <Map />
+                                </div>
                             </Card>
                         </Grid>
 
-                        <Grid item xs={12} md={4}>
-                            <Card className={cn(classes.card)}>
-                                <CardHeader
-                                    title={`Environment`}
-                                    avatar={<Icon
-                                        icon={`environment`}
-                                        color={`primary`}
-                                    />}
-                                />
-                                <Environment />
-                            </Card>
+
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Environment />
                         </Grid>
 
                     </Grid>

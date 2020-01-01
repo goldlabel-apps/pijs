@@ -4,12 +4,12 @@ import { withRouter } from "react-router";
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
-import {
-    IconButton,
-} from '@material-ui/core/';
-import {
-    Icon,
-} from '../';
+// import {
+//     IconButton,
+// } from '@material-ui/core/';
+// import {
+//     Icon,
+// } from '../';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
@@ -81,13 +81,10 @@ class Map extends Component {
 
                 <div
                     ref={el => this.mapContainer = el}
-                    className={cn(classes.mapFullSize)}
+                    className={cn(classes.map)}
                 />
 
-
-
-
-                <IconButton
+                {/* <IconButton
                     className={classes.mapBtn}
                     variant={`contained`}
                     color={`primary`}
@@ -95,7 +92,6 @@ class Map extends Component {
                         e.preventDefault();
                     }}>
                     <Icon icon={`zoomin`} color={`primary`} />
-
                 </IconButton>
 
                 <IconButton
@@ -106,8 +102,7 @@ class Map extends Component {
                         e.preventDefault();
                     }}>
                     <Icon icon={`zoomout`} color={`primary`} />
-
-                </IconButton>
+                </IconButton> */}
 
 
 

@@ -26,7 +26,7 @@ export const pingPi = () => {
   const baseURL = process.env.REACT_APP_BASEURL;
 
   axios
-    .get(`${baseURL}/data/pijs.json`)
+    .get(`${baseURL}/data/pijs.json?cb=${Date.now()}`)
     .then(function(response) {
       store.dispatch({
         type: "SYSTEM/PIJS/SAVE",

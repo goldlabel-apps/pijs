@@ -18,7 +18,7 @@ export default function ConnectionStatus() {
     // console.log(pijs.data)
     return (
         <IconButton>
-            <Icon icon={`wifi`} color={`primary`} />
+            <Icon icon={`disconnected`} color={`primary`} />
         </IconButton>
     );
 }
