@@ -18,13 +18,15 @@ export const systemSlice = {
   },
   clockwork: {
     updated: Date.now(),
-    started: Date.now()
+    started: Date.now(),
+    ticks: 0
   }
 };
 
 const system = createReducer(systemSlice, {
   [updateClock]: state => {
     state.clockwork.updated = Date.now();
+    state.clockwork.ticks = state.clockwork.ticks + 1;
     return state;
   },
   [openSettings]: state => {

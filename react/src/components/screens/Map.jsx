@@ -5,7 +5,8 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    Button,
+    //  Button,
+    IconButton,
 } from '@material-ui/core/';
 import {
     Icon,
@@ -83,7 +84,7 @@ class Map extends Component {
                 <div className={cn(classes.piPlayer)} >
 
 
-                    <Button
+                    <IconButton
                         className={classes.mapBtn}
                         variant={`contained`}
                         color={`primary`}
@@ -91,21 +92,19 @@ class Map extends Component {
                             e.preventDefault();
                         }}>
                         <Icon icon={`zoomin`} color={`secondary`} />
-                        <span className={cn(classes.btnIconPadRight)}>
-                            Zoom In</span>
-                    </Button>
 
-                    <Button
+                    </IconButton>
+
+                    <IconButton
                         className={classes.mapBtn}
                         variant={`contained`}
                         color={`primary`}
                         onClick={(e) => {
                             e.preventDefault();
                         }}>
-                        <Icon icon={`zoomout`} color={`secondary`} />
-                        <span className={cn(classes.btnIconPadRight)}>
-                            Zoom Out</span>
-                    </Button>
+                        <Icon icon={`zoomout`} color={`primary`} />
+
+                    </IconButton>
 
                 </div >
                 <div

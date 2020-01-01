@@ -11,6 +11,7 @@ class ClockWork extends Component {
     }
 
     componentDidMount() {
+
         this.startTimer();
     }
 
@@ -43,6 +44,8 @@ class ClockWork extends Component {
     }
 
     update = () => {
+        // const { ticks } = this.props.store.system.clockwork;
+        // console.log('ticks', ticks)
         const store = getStore();
         store.dispatch({ type: `SYSTEM/UPDATE/CLOCK` })
     }

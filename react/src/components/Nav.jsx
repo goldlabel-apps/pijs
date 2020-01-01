@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import cn from 'classnames';
 import {
-    Divider,
     List,
     ListItem,
     ListItemIcon,
@@ -88,9 +87,9 @@ class Nav extends Component {
                     <ListItemText primary={`About PiJS`} />
                 </ListItem>
 
-                <Divider />
 
-                <ListItem button
+
+                {/* <ListItem button
                     onClick={(e) => {
                         this.navClick(`https://github.com/listingslab-hardware/pijs`, `_blank`)
                     }}>
@@ -108,7 +107,7 @@ class Nav extends Component {
                         <Icon icon={`listingslab`} color={`#333333`} />
                     </ListItemIcon>
                     <ListItemText primary={`by listingslab`} />
-                </ListItem>
+                </ListItem> */}
             </List>
         );
     }
