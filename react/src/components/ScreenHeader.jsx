@@ -2,15 +2,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
+// import { useSelector } from 'react-redux';
 import {
     ConnectionStatus,
     Icon,
-    SystemClock,
 } from './';
 import {
     Grid,
     IconButton,
-    Tooltip,
     Typography,
 } from '@material-ui/core/';
 
@@ -31,7 +30,8 @@ export default function ScreenHeader(props) {
     const classes = useStyles();
     const history = useHistory();
     const { title, icon } = props;
-
+    // const { system } = useSelector(state => state);
+    // console.log(system.pijs.status)
 
     return (
         <div className={classes.screenHeader}>
@@ -48,9 +48,9 @@ export default function ScreenHeader(props) {
                     </Typography>
                 </Grid>
 
-                <Grid item>
+                {/* <Grid item>
                     <SystemClock />
-                </Grid>
+                </Grid> */}
 
                 <Grid item>
                     <ConnectionStatus />
@@ -58,19 +58,17 @@ export default function ScreenHeader(props) {
 
 
                 <Grid item>
-
-                    <Tooltip title={`PiJS Home`}>
-                        <IconButton
-                            className={classes.homeBtn}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                history.push(`/`);
-                            }}>
-                            <Icon
-                                icon={`home`}
-                                color={`primary`} />
-                        </IconButton>
-                    </Tooltip>
+                    <IconButton
+                        disabled
+                        className={classes.homeBtn}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            history.push(`/`);
+                        }}>
+                        <Icon
+                            icon={`menu`}
+                            color={`primary`} />
+                    </IconButton>
                 </Grid>
 
             </Grid>

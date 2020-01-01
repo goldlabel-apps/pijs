@@ -29,7 +29,7 @@ import IconTime from '@material-ui/icons/Restore';
 import IconEnvironment from '@material-ui/icons/AcUnit';
 import IconWifi from '@material-ui/icons/Wifi';
 import IconWifiOff from '@material-ui/icons/WifiOff';
-import IconInstall from '@material-ui/icons/CloudDownload';
+import IconInstall from '@material-ui/icons/SaveAlt';
 
 import {
     GithubSVG,

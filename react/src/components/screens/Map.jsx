@@ -24,7 +24,7 @@ class Map extends Component {
             lat: -27.211579,
             lng: 153.107658,
             zoom: 15,
-            flySpeed: 0.35,
+            flySpeed: 0.75,
         }
     }
 
@@ -58,32 +58,31 @@ class Map extends Component {
             speed: location.flySpeed,
             essential: true
         });
+        map.once('moveend', () => {
+            console.log('ENDE.')
+        })
     }
 
     zoomOut = () => {
-        const location = {
-            lat: 0,
-            lng: 0,
-            zoom: 1,
-        }
-        console.log('zoomIn', location)
+        // const location = {
+        //     lat: 0,
+        //     lng: 0,
+        //     zoom: 1,
+        // }
+        // console.log('zoomIn', location)
     }
 
     render() {
         const {
             classes,
-            // history,
-            // mapbox,
         } = this.props;
-        // console.log('mapbox', mapbox)
+        // console.log ()
         return (
             <React.Fragment>
-
                 <div
                     ref={el => this.mapContainer = el}
                     className={cn(classes.map)}
                 />
-
                 {/* <IconButton
                     className={classes.mapBtn}
                     variant={`contained`}
@@ -103,9 +102,6 @@ class Map extends Component {
                     }}>
                     <Icon icon={`zoomout`} color={`primary`} />
                 </IconButton> */}
-
-
-
             </React.Fragment>
         );
     }
@@ -115,8 +111,6 @@ class Map extends Component {
 const mapStateToProps = (store) => {
     return {
         mapbox: store.mapbox,
-        weather: store.weather,
-        pijs: store.system.pijs,
     };
 };
 
