@@ -23,6 +23,8 @@ data['updated'] = round(unix_epoch)
 envirophatData = {}
 
 envirophatData['lux'] = light.light()
+
+# Only do this during the day. what time does the pi say it is?
 # leds.on()
 envirophatData['rgb'] = str(light.rgb())[1:-1].replace(' ', '')
 # leds.off()

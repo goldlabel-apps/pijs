@@ -5,7 +5,6 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
-    //  Button,
     IconButton,
 } from '@material-ui/core/';
 import {
