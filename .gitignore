@@ -1,4 +1,7 @@
 
+node/build/.well-known/acme-challenge/
+
+
 # Current Photo
 node/build/jpg/current-photo.jpg
 node/build/data/pijs.json

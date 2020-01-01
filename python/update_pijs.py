@@ -23,9 +23,9 @@ data['updated'] = round(unix_epoch)
 envirophatData = {}
 
 envirophatData['lux'] = light.light()
-leds.on()
+#leds.on()
 envirophatData['rgb'] = str(light.rgb())[1:-1].replace(' ', '')
-leds.off()
+#leds.off()
 envirophatData['temperature'] = weather.temperature()
 envirophatData['pressure'] = weather.pressure(unit='hPa')
 
