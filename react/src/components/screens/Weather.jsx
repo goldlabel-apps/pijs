@@ -56,7 +56,7 @@ class Weather extends Component {
                     <Grid container>
                         <Grid item xs={12} md={6}>
 
-                            <Typography variant={`h6`} gutterBottom>
+                            <Typography variant={`h5`} gutterBottom>
                                 In Scarborough, Queensland, Australia it is now
                             </Typography>
                             <div className={classes.weather}>

@@ -8,11 +8,15 @@ import {
     useTheme
 } from '@material-ui/core/styles';
 import {
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
     Button,
     Dialog,
     DialogActions,
     DialogContent,
-    DialogTitle,
+    CardHeader,
     Grid,
     Switch,
     Typography,
@@ -53,7 +57,7 @@ export default function Settings() {
                 dispatch({ type: 'SYSTEM/SETTINGS/CLOSE' });
             }}
             aria-labelledby="pijs-settings">
-            <DialogTitle id="pijs-settings-title">
+            {/* <DialogTitle id="pijs-settings-title">
                 <Grid container>
                     {`PiJS Settings`}
                     <div className={classes.grow} />
@@ -61,7 +65,15 @@ export default function Settings() {
                         icon={`settings`}
                         color={`primary`} />
                 </Grid>
-            </DialogTitle>
+            </DialogTitle> */}
+
+            <CardHeader
+                title={`Settings`}
+                avatar={<Icon
+                    icon={`settings`}
+                    color={`primary`}
+                />}
+            />
 
             <DialogContent className={classes.myStyle}>
 
@@ -76,9 +88,36 @@ export default function Settings() {
                         />
                     </Grid>
                     <Grid item xs={10}>
+
+
+
+
                         <Typography variant={`body1`} className={classes.switchLabel}>
                             Easily Turn Off 'n Onable
                         </Typography>
+
+                        <List className={classes.navList}>
+
+                            <ListItem button
+                                onClick={(e) => {
+                                    this.navClick(`https://github.com/listingslab-hardware/pijs`, `_blank`)
+                                }}>
+                                <ListItemIcon>
+                                    <Icon icon={`github`} color={`primary`} />
+                                </ListItemIcon>
+                                <ListItemText primary={`github`} />
+                            </ListItem>
+
+                            <ListItem button
+                                onClick={(e) => {
+                                    this.navClick(`https://listingslab.com`, `_blank`)
+                                }}>
+                                <ListItemIcon>
+                                    <Icon icon={`listingslab`} color={`#333333`} />
+                                </ListItemIcon>
+                                <ListItemText primary={`by listingslab`} />
+                            </ListItem>
+                        </List>
                     </Grid>
                 </Grid>
 

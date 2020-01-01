@@ -8,7 +8,7 @@ export const styles = theme => ({
         margin: 'auto',
     },
     mapBtn: {
-        margin: theme.spacing(),
+        // margin: theme.spacing(),
     },
     weather: {
         // border: '1px solid white',
@@ -27,7 +27,7 @@ export const styles = theme => ({
     },
     mapFullSize: {
         // height: 'calc(100vh - 75px)',
-        height: 400,
+        height: 250,
         outline: 'none',
     },
 

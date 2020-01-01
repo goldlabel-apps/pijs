@@ -38,8 +38,14 @@ const useStyles = makeStyles(theme => ({
     media: {
         height: 0,
         paddingTop: '56.25%',
-        marginBottom: theme.spacing(),
+        maxHeight: 100,
     },
+    mediaWrap: {
+        maxHeight: 450,
+        border: '1px solid red',
+        overflow: 'hidden',
+
+    }
 }));
 
 export default function Webcam() {
@@ -67,12 +73,14 @@ export default function Webcam() {
                         icon={zoomed === `out` ? `zoomin` : `zoomout`}
                         color={`primary`} />
                 </IconButton>
+                <div className={classes.mediaWrap}>
+                    <CardMedia
+                        className={classes.media}
+                        title={`What is a Raspberry Pi?`}
+                        image={`https://pijs.app/jpg/current-photo.jpg`}
+                    />
+                </div>
 
-                <CardMedia
-                    className={classes.media}
-                    title={`What is a Raspberry Pi?`}
-                    image={`https://pijs.app/jpg/current-photo.jpg`}
-                />
 
             </div>
         </React.Fragment>

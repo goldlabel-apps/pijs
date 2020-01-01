@@ -14,7 +14,7 @@ import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
 import IconLink from '@material-ui/icons/Link';
-import IconWebcam from '@material-ui/icons/CameraAlt';
+import IconWebcam from '@material-ui/icons/BurstMode';
 import IconTemperature from '@material-ui/icons/AcUnit';
 import IconAirQuality from '@material-ui/icons/ErrorOutline';
 import IconPressure from '@material-ui/icons/FormatLineSpacing';
@@ -26,7 +26,9 @@ import IconClose from '@material-ui/icons/Close';
 import IconWeather from '@material-ui/icons/AcUnit';
 import IconMap from '@material-ui/icons/Explore';
 import IconTime from '@material-ui/icons/Restore';
-import IconEnviro from '@material-ui/icons/InsertChart';
+import IconEnvironment from '@material-ui/icons/AcUnit';
+import IconWifi from '@material-ui/icons/Wifi';
+import IconInstall from '@material-ui/icons/CloudDownload';
 
 import {
     GithubSVG,
@@ -61,8 +63,14 @@ class Icon extends Component {
         }
         switch (icon) {
 
-            case `enviro`:
-                return (<IconEnviro color={iconColor} />);
+            case `install`:
+                return (<IconInstall color={iconColor} />);
+
+            case `environment`:
+                return (<IconEnvironment color={iconColor} />);
+
+            case `wifi`:
+                return (<IconWifi color={iconColor} />);
 
             case `time`:
                 return (<IconTime color={iconColor} />);

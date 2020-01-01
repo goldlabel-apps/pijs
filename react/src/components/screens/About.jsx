@@ -38,7 +38,11 @@ export default function About() {
                             image={`/png/open-graph.png`}
                         />
                         <Typography variant={`body1`} gutterBottom>
-                            PiJS is a Open Source, meaning that everything you see here is available to download and use for free from github.
+                            PiJS is an Open Source, meaning that everything you see here is available to download and use for free from github.
+                        </Typography>
+
+                        <Typography variant={`body1`} gutterBottom>
+                            It is a React PWA by Listingslab with Secure SSL Node/Express server running on a Raspberry Pi 4
                         </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>

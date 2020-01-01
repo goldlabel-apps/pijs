@@ -1,5 +1,10 @@
 
 export default theme => ({
+    card: {
+        // border: '1px solid black',
+        margin: theme.spacing(0.5),
+        padding: theme.spacing(0.5),
+    },
     btnIconPadRight: {
         marginLeft: theme.spacing(),
         paddingRight: theme.spacing(),

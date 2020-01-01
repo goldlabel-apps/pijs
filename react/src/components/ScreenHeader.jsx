@@ -3,6 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 import {
+    ConnectionStatus,
     Icon,
     SystemClock,
 } from './';
@@ -42,13 +43,17 @@ export default function ScreenHeader(props) {
                     /></IconButton>
                 </Grid>
                 <Grid item className={classes.gridItemTitle}>
-                    <Typography variant={`h6`}>
+                    <Typography variant={`h5`}>
                         {title || `Title prop missing`}
                     </Typography>
                 </Grid>
 
                 <Grid item>
                     <SystemClock />
+                </Grid>
+
+                <Grid item>
+                    <ConnectionStatus />
                 </Grid>
 
 

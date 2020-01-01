@@ -5,13 +5,16 @@ import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
+    Card,
     CardContent,
     CardMedia,
+    CardHeader,
     Grid,
-    Typography,
 } from '@material-ui/core/';
 import {
-    Nav,
+    Icon,
+    Map,
+    Environment,
     ScreenHeader,
 } from '../';
 
@@ -27,19 +30,49 @@ class Home extends Component {
                 <ScreenHeader title={`PiJS.app`} icon={`pi`} isHome={true} />
                 <CardContent>
                     <Grid container>
-                        <Grid item xs={12} md={6}>
-                            <CardMedia
-                                className={cn(classes.media)}
-                                title={`What is a Raspberry Pi?`}
-                                image={`https://pijs.app/jpg/current-photo.jpg`}
-                            />
-                            <Typography variant={`body1`} gutterBottom>
-                                Open Source React PWA by Listingslab with Secure SSL Node/Express server running on a Raspberry Pi 4
-                            </Typography>
+                        <Grid item xs={12} md={4}>
+                            <Card className={cn(classes.card)}>
+                                <CardHeader
+                                    title={`Webcam`}
+                                    avatar={<Icon
+                                        icon={`webcam`}
+                                        color={`primary`}
+                                    />}
+                                />
+                                <CardMedia
+                                    className={cn(classes.media)}
+                                    title={`What is a Raspberry Pi?`}
+                                    image={`https://pijs.app/jpg/current-photo.jpg`}
+                                />
+                            </Card>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Nav />
+
+                        <Grid item xs={12} md={4}>
+                            <Card className={cn(classes.card)}>
+                                <CardHeader
+                                    title={`Map`}
+                                    avatar={<Icon
+                                        icon={`map`}
+                                        color={`primary`}
+                                    />}
+                                />
+                                <Map />
+                            </Card>
                         </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Card className={cn(classes.card)}>
+                                <CardHeader
+                                    title={`Environment`}
+                                    avatar={<Icon
+                                        icon={`environment`}
+                                        color={`primary`}
+                                    />}
+                                />
+                                <Environment />
+                            </Card>
+                        </Grid>
+
                     </Grid>
                 </CardContent>
             </React.Fragment>

@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
+// import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import { getStore } from "../";
 import { Icon } from './';
@@ -37,19 +37,19 @@ export default function BottomAppBar() {
             className={classes.appBar}>
             <Toolbar>
                 <Fab
-                    color={`primary`}
+                    color={`secondary`}
                     aria-label="Navigation"
                     className={classes.fabButton}
                     onClick={(e) => {
                         e.preventDefault();
                         store.dispatch({ type: "SYSTEM/NAV/OPEN" });
                     }}>
-                    <Icon icon={`pi`}
-                        color={`secondary`}
+                    <Icon icon={`install`}
+                        color={`primary`}
                     />
                 </Fab>
                 <div className={classes.grow} />
-                <IconButton
+                {/* <IconButton
                     edge="end"
                     color="inherit"
                     onClick={(e) => {
@@ -61,7 +61,7 @@ export default function BottomAppBar() {
                         icon={`settings`}
                         color={`secondary`}
                     />
-                </IconButton>
+                </IconButton> */}
             </Toolbar>
         </AppBar>
     );

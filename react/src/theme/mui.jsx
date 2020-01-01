@@ -14,7 +14,7 @@ const theme = {
         },
         background: {
             default: "none",
-            paper: "#F1DD3F", // 212121
+            paper: "rgba(255,255,255,1)", // 212121
             appBar: "#F1DD3F",
             contentFrame: "#F1DD3F"
         },

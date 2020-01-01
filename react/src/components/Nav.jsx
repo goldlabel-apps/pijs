@@ -8,7 +8,8 @@ import {
     List,
     ListItem,
     ListItemIcon,
-    ListItemText
+    ListItemText,
+    CardHeader
 } from '@material-ui/core/';
 import { Icon } from './';
 import { getStore } from "../";
@@ -34,81 +35,73 @@ class Nav extends Component {
             classes,
         } = this.props;
         return (
-            <List className={cn(classes.navList)}>
+            <React.Fragment>
 
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/webcam`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`webcam`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`Webcam`} />
-                </ListItem>
-
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/map`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`map`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`Map`} />
-                </ListItem>
-
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/weather`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`weather`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`Weather`} />
-                </ListItem>
-
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/envirophat`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`enviro`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`Enviro pHAT`} />
-                </ListItem>
+                <CardHeader
+                    title={`Nav`}
+                    avatar={<Icon
+                        icon={`home`}
+                        color={`primary`}
+                    />}
+                />
 
 
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`/about`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`docs`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`About PiJS`} />
-                </ListItem>
+                <List className={cn(classes.navList)}>
+
+                    <ListItem button
+                        onClick={(e) => {
+                            this.navClick(`/webcam`)
+                        }}>
+                        <ListItemIcon>
+                            <Icon icon={`webcam`} color={`primary`} />
+                        </ListItemIcon>
+                        <ListItemText primary={`Webcam`} />
+                    </ListItem>
+
+                    <ListItem button
+                        onClick={(e) => {
+                            this.navClick(`/map`)
+                        }}>
+                        <ListItemIcon>
+                            <Icon icon={`map`} color={`primary`} />
+                        </ListItemIcon>
+                        <ListItemText primary={`Map`} />
+                    </ListItem>
+
+                    <ListItem button
+                        onClick={(e) => {
+                            this.navClick(`/weather`)
+                        }}>
+                        <ListItemIcon>
+                            <Icon icon={`weather`} color={`primary`} />
+                        </ListItemIcon>
+                        <ListItemText primary={`Weather`} />
+                    </ListItem>
+
+                    <ListItem button
+                        onClick={(e) => {
+                            this.navClick(`/envirophat`)
+                        }}>
+                        <ListItemIcon>
+                            <Icon icon={`enviro`} color={`primary`} />
+                        </ListItemIcon>
+                        <ListItemText primary={`Enviro pHAT`} />
+                    </ListItem>
 
 
+                    <ListItem button
+                        onClick={(e) => {
+                            this.navClick(`/about`)
+                        }}>
+                        <ListItemIcon>
+                            <Icon icon={`docs`} color={`primary`} />
+                        </ListItemIcon>
+                        <ListItemText primary={`About PiJS`} />
+                    </ListItem>
 
-                {/* <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`https://github.com/listingslab-hardware/pijs`, `_blank`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`github`} color={`primary`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`github`} />
-                </ListItem>
+                </List>
+            </React.Fragment>
 
-                <ListItem button
-                    onClick={(e) => {
-                        this.navClick(`https://listingslab.com`, `_blank`)
-                    }}>
-                    <ListItemIcon>
-                        <Icon icon={`listingslab`} color={`#333333`} />
-                    </ListItemIcon>
-                    <ListItemText primary={`by listingslab`} />
-                </ListItem> */}
-            </List>
         );
     }
 }

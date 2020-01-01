@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core/';
 import {
     Icon,
-    ScreenHeader,
 } from '../';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
@@ -37,7 +36,7 @@ class Map extends Component {
         const { defaultLocation } = this.state;
         const map = new mapboxgl.Map({
             container: this.mapContainer,
-            style: 'mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563',
+            style: 'mapbox://styles/listingslab/ck4uugpxf13y11cqp72z8snc4',
             center: [lng, lat],
             zoom,
             interactive: false,
@@ -79,37 +78,39 @@ class Map extends Component {
         // console.log('mapbox', mapbox)
         return (
             <React.Fragment>
-                <ScreenHeader icon={`map`} title={`Map`} />
-                <div className={cn(classes.piPlayer)} >
 
-
-                    <IconButton
-                        className={classes.mapBtn}
-                        variant={`contained`}
-                        color={`primary`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                        }}>
-                        <Icon icon={`zoomin`} color={`secondary`} />
-
-                    </IconButton>
-
-                    <IconButton
-                        className={classes.mapBtn}
-                        variant={`contained`}
-                        color={`primary`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                        }}>
-                        <Icon icon={`zoomout`} color={`primary`} />
-
-                    </IconButton>
-
-                </div >
                 <div
                     ref={el => this.mapContainer = el}
                     className={cn(classes.mapFullSize)}
                 />
+
+
+
+
+                <IconButton
+                    className={classes.mapBtn}
+                    variant={`contained`}
+                    color={`primary`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                    }}>
+                    <Icon icon={`zoomin`} color={`primary`} />
+
+                </IconButton>
+
+                <IconButton
+                    className={classes.mapBtn}
+                    variant={`contained`}
+                    color={`primary`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                    }}>
+                    <Icon icon={`zoomout`} color={`primary`} />
+
+                </IconButton>
+
+
+
             </React.Fragment>
         );
     }

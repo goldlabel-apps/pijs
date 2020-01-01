@@ -1,10 +1,14 @@
 // Classes
 import ClockWork from "./ClockWork";
+import ConnectionStatus from "./ConnectionStatus";
+import Environment from "./Environment";
+
 import Icon from "./Icon";
 import Nav from "./Nav";
 import BottomAppBar from "./BottomAppBar";
 import Settings from "./Settings";
 import SystemClock from "./SystemClock";
+
 // Buttons
 import Listingslab from "./buttons/Listingslab";
 // Screens
@@ -25,6 +29,8 @@ export {
   About,
   BottomAppBar,
   ClockWork,
+  ConnectionStatus,
+  Environment,
   EnviroPhat,
   Home,
   Icon,
