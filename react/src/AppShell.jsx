@@ -22,7 +22,6 @@ import {
     NotFound,
     Weather,
     Webcam,
-    Settings,
 } from './components';
 
 class AppShell extends Component {
@@ -42,7 +41,6 @@ class AppShell extends Component {
                     <CssBaseline />
                     <main>
                         <Router>
-                            <Settings />
                             <nav className={cn(classes.navDrawer)} aria-label="Nav">
                                 <Drawer
                                     className={cn(classes.navDrawerWidth)}

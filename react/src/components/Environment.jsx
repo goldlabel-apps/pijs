@@ -37,7 +37,7 @@ class Environment extends Component {
             return null;
         }
         // const { updated } = pijs.data;
-        const { lux, pressure, rgb, temperature } = pijs.data.envirophat;
+        const { lux, pressure, temperature } = pijs.data.envirophat;
         // console.log(pijs.data.envirophat)
         return (
             <React.Fragment>
@@ -51,16 +51,16 @@ class Environment extends Component {
                     />
                     <div className={classes.cardStuff}>
                         <CardContent>
-                            <div style={{
+                            {/* <div style={{
                                 float: 'right',
                                 background: `rgba(${rgb}, 1)`,
                                 height: 16,
                                 width: 16,
                                 borderRadius: 4
-                            }} />
+                            }} /> */}
 
                             <Typography variant={`body1`}>
-                                Temperature in Celsius <strong>{Math.round(temperature)} &deg; C</strong>
+                                Temperature in Celsius <strong>{Math.round(temperature) - 18} &deg; C</strong>
                             </Typography>
 
                             <Typography variant={`body1`}>
