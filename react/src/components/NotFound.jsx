@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../../theme/AppShell.Style';
+import { styles } from '../theme/AppShell.Style';
 import {
     Button,
     CardActions,
@@ -13,7 +13,7 @@ import {
 import {
     Icon,
     ScreenHeader,
-} from '../';
+} from './';
 
 class NotFound extends Component {
     render() {

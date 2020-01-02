@@ -14,7 +14,8 @@
     "start": "clear && cd ./react && yarn start",
     "build": "clear && cd ./react && yarn build",
     "serve": "clear && cd ./node && node server.js",
-    "serve:dev": "clear && cd ./node && node server.dev.js"
+    "serve:dev": "clear && cd ./node && node server.dev.js",
+    "test": "exit"
   },
   "license": "MIT",
   "keywords": [

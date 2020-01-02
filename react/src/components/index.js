@@ -2,8 +2,10 @@
 import ClockWork from "./ClockWork";
 import ConnectionStatus from "./ConnectionStatus";
 import Environment from "./Environment";
+import Home from "./Home";
 import Icon from "./Icon";
 import Nav from "./Nav";
+import NotFound from "./NotFound";
 import BottomAppBar from "./BottomAppBar";
 import SystemClock from "./SystemClock";
 // Buttons
@@ -11,10 +13,8 @@ import Listingslab from "./buttons/Listingslab";
 // Screens
 import ScreenHeader from "./ScreenHeader";
 import About from "./screens/About";
-import Home from "./screens/Home";
 import EnviroPhat from "./screens/EnviroPhat";
 import Map from "./screens/Map";
-import NotFound from "./screens/NotFound";
 import Weather from "./screens/Weather";
 import Webcam from "./screens/Webcam";
 // Info

@@ -13,7 +13,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './theme/mui';
 import {
     About,
-    BottomAppBar,
+    // BottomAppBar,
     ClockWork,
     EnviroPhat,
     Home,
@@ -76,7 +76,7 @@ class AppShell extends Component {
                             </Switch>
                         </Router>
                     </main>
-                    <BottomAppBar />
+                    {/* <BottomAppBar /> */}
                 </div>
             </MuiThemeProvider>
         );

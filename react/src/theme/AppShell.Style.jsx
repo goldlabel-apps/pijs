@@ -4,8 +4,23 @@ import commonStyles from "./commonStyles";
 export const styles = theme => ({
     ...commonStyles(theme),
     appShell: {
-        maxWidth: 1200,
-        margin: 'auto',
+        // maxWidth: 1200,
+        // margin: 'auto',
+    },
+    mainImage: {
+        // border: '1px solid green',
+        position: 'absolute',
+    },
+    environment: {
+        position: 'relative',
+        top: theme.spacing(),
+        left: theme.spacing(),
+        // padding: theme.spacing(),
+        // borderRadius: theme.spacing(0.5),
+        // background: 'rgba(255,255,255,0.65)',
+    },
+    environmentBtn: {
+        marginRight: theme.spacing(),
     },
     mapBtn: {
         // margin: theme.spacing(),
