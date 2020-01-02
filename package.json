@@ -1,6 +1,6 @@
 {
   "name": "pijs",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "PiJS is an Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
   "repository": {
     "type": "git",
@@ -18,14 +18,11 @@
   },
   "license": "MIT",
   "keywords": [
+    "PiJS",
     "Raspberry Pi",
     "JavaScript",
     "Node",
     "React",
-    "PWA",
-    "Firebase"
-  ],
-  "dependencies": {
-    "react-map-gl": "^5.1.3"
-  }
+    "PWA"
+  ]
 }

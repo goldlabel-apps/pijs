@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../../theme/AppShell.Style';
 import {
@@ -52,7 +51,7 @@ class Home extends Component {
                         </Grid>
 
                         <Grid item xs={12} sm={6} md={4}>
-                            <Card className={cn(classes.card)}>
+                            <Card className={classes.card}>
                                 <CardHeader
                                     title={`Map`}
                                     avatar={<Icon

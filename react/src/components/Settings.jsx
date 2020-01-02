@@ -16,6 +16,7 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
+    DialogTitle,
     CardHeader,
     Grid,
     Switch,
@@ -57,7 +58,7 @@ export default function Settings() {
                 dispatch({ type: 'SYSTEM/SETTINGS/CLOSE' });
             }}
             aria-labelledby="pijs-settings">
-            {/* <DialogTitle id="pijs-settings-title">
+            <DialogTitle id="pijs-settings-title">
                 <Grid container>
                     {`PiJS Settings`}
                     <div className={classes.grow} />
@@ -65,7 +66,7 @@ export default function Settings() {
                         icon={`settings`}
                         color={`primary`} />
                 </Grid>
-            </DialogTitle> */}
+            </DialogTitle>
 
             <CardHeader
                 title={`Settings`}
@@ -88,9 +89,6 @@ export default function Settings() {
                         />
                     </Grid>
                     <Grid item xs={10}>
-
-
-
 
                         <Typography variant={`body1`} className={classes.switchLabel}>
                             Easily Turn Off 'n Onable

@@ -2,9 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-// import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
-// import { getStore } from "../";
+import { getStore } from "../";
 import { Icon } from './';
 
 const useStyles = makeStyles(theme => ({
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function BottomAppBar() {
     const classes = useStyles();
-    // const store = getStore();
+    const store = getStore();
     return (
         <AppBar
             position="fixed"
@@ -49,7 +49,7 @@ export default function BottomAppBar() {
                     />
                 </Fab>
                 <div className={classes.grow} />
-                {/* <IconButton
+                <IconButton
                     edge="end"
                     color="inherit"
                     onClick={(e) => {
@@ -58,10 +58,10 @@ export default function BottomAppBar() {
                     }}
                 >
                     <Icon
-                        icon={`settings`}
+                        icon={`privacy`}
                         color={`secondary`}
                     />
-                </IconButton> */}
+                </IconButton>
             </Toolbar>
         </AppBar>
     );

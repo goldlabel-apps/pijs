@@ -8,6 +8,7 @@ import { weather, weatherSlice } from "./weather/reducer";
 import { mapbox, mapboxSlice } from "./mapbox/reducer";
 import { webcam, webcamSlice } from "./webcam/reducer";
 import { environment, environmentSlice } from "./environment/reducer";
+import { userEntity, userEntitySlice } from "./userEntity/reducer";
 
 const initRedux = () => {
   const persistConfig = {
@@ -20,7 +21,8 @@ const initRedux = () => {
     system,
     weather,
     webcam,
-    environment
+    environment,
+    userEntity
   });
 
   const persistedReducer = persistReducer(persistConfig, reducers);
@@ -36,7 +38,8 @@ const initRedux = () => {
     weather: weatherSlice,
     mapbox: mapboxSlice,
     webcam: webcamSlice,
-    environment: environmentSlice
+    environment: environmentSlice,
+    userEntity: userEntitySlice
   };
 
   const store = configureStore({

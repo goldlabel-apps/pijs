@@ -42,6 +42,7 @@ class AppShell extends Component {
                     <CssBaseline />
                     <main>
                         <Router>
+                            <Settings />
                             <nav className={cn(classes.navDrawer)} aria-label="Nav">
                                 <Drawer
                                     className={cn(classes.navDrawerWidth)}
@@ -53,7 +54,7 @@ class AppShell extends Component {
                                     <Nav />
                                 </Drawer >
                             </nav >
-                            <Settings />
+
                             <Switch>
                                 <Route exact path="/" render={props => {
                                     return (<Home />);

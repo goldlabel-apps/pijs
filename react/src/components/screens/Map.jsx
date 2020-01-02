@@ -66,7 +66,7 @@ class Map extends Component {
             essential: true
         });
         map.once('moveend', () => {
-            console.log('ENDE.')
+            // console.log('ENDE.')
         })
     }
 

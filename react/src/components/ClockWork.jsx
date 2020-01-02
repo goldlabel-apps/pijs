@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getStore } from "../";
 import { pingPi } from '../redux/system/actions'
-
+import { createFingerprint } from '../redux/userEntity/actions';
 
 class ClockWork extends Component {
 
@@ -12,7 +12,12 @@ class ClockWork extends Component {
     }
 
     componentDidMount() {
-
+        // const store = getStore();
+        // store.dispatch({ type: `DO/SHIT` });
+        const { fingerprint } = this.props;
+        if (!fingerprint) {
+            createFingerprint()
+        }
         this.startTimer();
     }
 
@@ -61,6 +66,7 @@ class ClockWork extends Component {
 const mapStateToProps = (store) => {
     return {
         store,
+        fingerprint: store.userEntity.fingerprint,
     };
 };
 
