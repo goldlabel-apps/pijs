@@ -21,19 +21,19 @@ class Home extends Component {
         return (
             <React.Fragment>
                 <CardHeader
-                    title={`PiJS.app`}
+                    // title={`PiJS.app`}
                     avatar={<Icon
-                        icon={`pi`}
+                        icon={``}
                         color={`primary`}
                     />}
                 />
                 <CardContent>
                     <div className={classes.mainImage}>
                         <img
-                            src={`/jpg/twin-towers.jpg`}
-                            alt={`What's bred in the bone?`} />
+                            alt={`What's bred in the bone?`}
+                            src={`/television/default.jpg`}
+                        />
                     </div>
-
                     <Environment />
                 </CardContent>
             </React.Fragment>

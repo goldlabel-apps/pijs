@@ -41,7 +41,7 @@ class Environment extends Component {
                     <Button
                         className={classes.environmentBtn}
                         variant={`contained`}
-                        color={`secondary`}>
+                        color={`primary`}>
                         {Math.round(temperature) - 18} &deg; C
                     </Button>
                 </Tooltip>
@@ -49,7 +49,7 @@ class Environment extends Component {
                     <Button
                         className={classes.environmentBtn}
                         variant={`contained`}
-                        color={`secondary`}>
+                        color={`primary`}>
                         {Math.round(pressure)} hPa
                     </Button>
                 </Tooltip>
@@ -57,7 +57,7 @@ class Environment extends Component {
                     <Button
                         className={classes.environmentBtn}
                         variant={`contained`}
-                        color={`secondary`}>
+                        color={`primary`}>
                         {lux} lux
                     </Button>
                 </Tooltip>
