@@ -1,11 +1,49 @@
-export const styles = theme => ({
-    appShell: {
+import {
+    makeStyles,
+    // useTheme
+} from '@material-ui/core/styles';
+
+const drawerWidth = 320;
+
+const addedStyles = makeStyles(theme => ({
+    root: {
+        display: 'flex',
+    },
+}));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+appShell: {
         border: '1px solid white',
         margin: 'auto',
         width: '99%',
         maxWidth: 1200,
         height: '99vh',
-        
+
     },
     navList: {
         padding: theme.spacing(),
@@ -64,4 +102,38 @@ export const styles = theme => ({
         right: 0,
         margin: '0 auto',
     },
-});
+
+
+    root: {
+        display: 'flex',
+    },
+    drawer: {
+        [theme.breakpoints.up('lg')]: {
+            width: drawerWidth,
+            flexShrink: 0,
+        },
+    },
+    appBar: {
+        [theme.breakpoints.up('lg')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+        },
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.up('lg')]: {
+            display: 'none',
+        },
+    },
+    toolbar: theme.mixins.toolbar,
+    drawerPaper: {
+        width: drawerWidth,
+    },
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+    },
+
+
+
+*/

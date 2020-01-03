@@ -13,7 +13,7 @@ import {
     Typography,
 } from '@material-ui/core/';
 
-import { ClockWork, Home, Icon, Menu, NotFound} from "./components/";
+import { ClockWork, Home, Icon, Sidebar, NotFound} from "./components/";
 
 const drawerWidth = 300;
 
@@ -97,7 +97,7 @@ function AppShell(props) {
                             keepMounted: true,
                         }}
                     >
-                        <Menu />
+                            <Sidebar />
                     </Drawer>
                 </Hidden>
                 <Hidden mdDown implementation="css">
@@ -107,7 +107,7 @@ function AppShell(props) {
                         }}
                             variant={`permanent`}
                         open>
-                        <Menu />
+                            <Sidebar />
                     </Drawer>
                 </Hidden>
             </nav>
