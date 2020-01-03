@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "serve": "firebase serve",
     "test": "react-scripts test",
-    "deploy": "clear && firebase deploy"    
+    "deploy": "clear && yarn build && firebase deploy"    
   },
   "eslintConfig": {
     "extends": "react-app"
