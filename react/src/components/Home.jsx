@@ -4,7 +4,8 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import {
- CardHeader,
+    CardHeader,
+    IconButton,
 } from '@material-ui/core/';
 import {
     Icon,
@@ -18,11 +19,19 @@ class Home extends Component {
             <React.Fragment>
                 <CardHeader
                     title={`PiJS.app`}
-                    avatar={<Icon
-                        icon={`pi`}
-                        color={`primary`}
-                    />}
-                />
+                    avatar={
+                        <IconButton
+                            onClick={(e) => {
+                                e.preventDefault();
+                                console.log('dispatch home');
+                            }}>
+                            <Icon
+                                icon={`pi`}
+                                color={`primary`}
+                            />
+                        </IconButton>
+                    }
+                    />
                 <Television />
             </React.Fragment>
         );

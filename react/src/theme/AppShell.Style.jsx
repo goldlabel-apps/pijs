@@ -1,7 +1,11 @@
 export const styles = theme => ({
     appShell: {
-        maxWidth: 800,
+        border: '1px solid white',
         margin: 'auto',
+        width: '99%',
+        maxWidth: 1200,
+        height: '99vh',
+        
     },
     navList: {
         padding: theme.spacing(),

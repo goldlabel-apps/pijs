@@ -4,10 +4,7 @@ import { combineReducers } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { reduxBatch } from "@manaflair/redux-batch";
 import { system, systemSlice } from "./system/reducer";
-import { weather, weatherSlice } from "./weather/reducer";
-import { mapbox, mapboxSlice } from "./mapbox/reducer";
 import { webcam, webcamSlice } from "./webcam/reducer";
-import { environment, environmentSlice } from "./environment/reducer";
 import { userEntity, userEntitySlice } from "./userEntity/reducer";
 
 const initRedux = () => {
@@ -17,11 +14,8 @@ const initRedux = () => {
   };
 
   const reducers = combineReducers({
-    mapbox,
     system,
-    weather,
     webcam,
-    environment,
     userEntity
   });
 
@@ -35,10 +29,7 @@ const initRedux = () => {
 
   const preloadedState = {
     system: systemSlice,
-    weather: weatherSlice,
-    mapbox: mapboxSlice,
     webcam: webcamSlice,
-    environment: environmentSlice,
     userEntity: userEntitySlice
   };
 
