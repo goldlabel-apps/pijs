@@ -1,20 +1,45 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PiJS Admin",
+  "name": "PiJS Admin",
+  "description": "A React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4",
+  "start_url": ".",
+  "theme_color": "#F1DD3F",
+  "background_color": "#333333",
+  "display": "standalone",
+  "lang": "en-US",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "1024x1024",
+      "src": "png/web-app-icon/web-app-icon-masked-1024x1024.png",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "src": "png/web-app-icon/web-app-icon-masked-512x512.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "192x192",
+      "src": "png/web-app-icon/web-app-icon-masked-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "1024x1024",
+      "src": "png/web-app-icon/web-app-icon-maskable-1024x1024.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "png/web-app-icon/web-app-icon-maskable-512x512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "png/web-app-icon/web-app-icon-maskable-192x192.png",
+      "type": "image/png"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
