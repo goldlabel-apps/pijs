@@ -5,7 +5,7 @@ import initRedux from "./redux/initRedux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
-// import AppShell from "./AppShell";
+import AppShell from "./AppShell";
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
@@ -26,7 +26,7 @@ const persistedRedux = initRedux();
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
-      <div>ca,sjdd</div>
+      <AppShell />
     </PersistGate>
   </Provider>,
   document.getElementById("pi")
