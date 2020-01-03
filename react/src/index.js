@@ -21,6 +21,7 @@ if (disablePersitance) {
   purgeStore();
 }
 
+
 const persistedRedux = initRedux();
 const getStore = () => {
   return persistedRedux.store;
