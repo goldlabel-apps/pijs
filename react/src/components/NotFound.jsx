@@ -12,7 +12,6 @@ import {
 } from '@material-ui/core/';
 import {
     Icon,
-    ScreenHeader,
 } from './';
 
 class NotFound extends Component {
@@ -23,7 +22,7 @@ class NotFound extends Component {
         } = this.props;
         return (
             <React.Fragment>
-                <ScreenHeader title={`PiJS 404`} icon={`pi`} />
+                
                 <CardMedia
                     className={cn(classes.media)}
                     title={`Not Found`}
