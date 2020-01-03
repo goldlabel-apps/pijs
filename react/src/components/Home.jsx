@@ -4,20 +4,16 @@ import { withRouter } from "react-router";
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from '../theme/AppShell.Style';
 import {
-    CardContent,
     CardHeader,
 } from '@material-ui/core/';
 import {
     Icon,
-    Environment,
+    Television,
 } from './';
 
 class Home extends Component {
 
     render() {
-        const {
-            classes,
-        } = this.props;
         return (
             <React.Fragment>
                 <CardHeader
@@ -27,15 +23,7 @@ class Home extends Component {
                         color={`primary`}
                     />}
                 />
-                <CardContent>
-                    <div className={classes.mainImage}>
-                        <img
-                            alt={`What's bred in the bone?`}
-                            src={`/television/default.jpg`}
-                        />
-                    </div>
-                    <Environment />
-                </CardContent>
+                <Television />
             </React.Fragment>
         );
     }

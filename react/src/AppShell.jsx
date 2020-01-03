@@ -37,7 +37,7 @@ class AppShell extends Component {
         return (
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
                 <ClockWork />
-                <div className={cn(classes.appShell)}>
+                
                     <CssBaseline />
                     <main>
                         <Router>
@@ -77,7 +77,7 @@ class AppShell extends Component {
                         </Router>
                     </main>
                     {/* <BottomAppBar /> */}
-                </div>
+              
             </MuiThemeProvider>
         );
     }

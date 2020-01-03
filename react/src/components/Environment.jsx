@@ -37,30 +37,9 @@ class Environment extends Component {
         // console.log(pijs.data.envirophat)
         return (
             <div className={classes.environment}>
-                <Tooltip title={`Temperature in Celsius`}>
-                    <Button
-                        className={classes.environmentBtn}
-                        variant={`contained`}
-                        color={`primary`}>
-                        {Math.round(temperature) - 18} &deg; C
-                    </Button>
-                </Tooltip>
-                <Tooltip title={`Atmospheric pressure (hecto pascals)`}>
-                    <Button
-                        className={classes.environmentBtn}
-                        variant={`contained`}
-                        color={`primary`}>
-                        {Math.round(pressure)} hPa
-                    </Button>
-                </Tooltip>
-                <Tooltip title={`Lumens per square meter`}>
-                    <Button
-                        className={classes.environmentBtn}
-                        variant={`contained`}
-                        color={`primary`}>
-                        {lux} lux
-                    </Button>
-                </Tooltip>
+                
+                
+                
             </div>
         );
     }

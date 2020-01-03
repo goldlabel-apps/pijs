@@ -6,10 +6,6 @@ export default theme => ({
         height: 183,
         outline: 'none',
     },
-    media: {
-        height: 0,
-        paddingTop: '56.25%',
-    },
     white: {
         color: 'white',
     },
