@@ -20,7 +20,6 @@ if (disablePersitance) {
   purgeStore();
 }
 
-
 const persistedRedux = initRedux();
 
 ReactDOM.render(
@@ -29,7 +28,7 @@ ReactDOM.render(
       <AppShell />
     </PersistGate>
   </Provider>,
-  document.getElementById("pi")
+  document.getElementById("pijs")
 );
 
 serviceWorker.register();

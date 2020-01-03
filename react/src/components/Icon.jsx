@@ -30,12 +30,9 @@ import IconEnvironment from '@material-ui/icons/AcUnit';
 import IconWifi from '@material-ui/icons/Wifi';
 import IconWifiOff from '@material-ui/icons/WifiOff';
 import IconInstall from '@material-ui/icons/SaveAlt';
-
-import {
-    GithubSVG,
-    PiJSSVG,
-    SpadeSVG,
-} from '../graphics';
+import GithubSVG from '../graphics/jsx/GithubSVG';
+import PiJSSVG from '../graphics/jsx/PiJSSVG';
+import SpadeSVG from '../graphics/jsx/SpadeSVG';
 
 const styles = theme => ({
     navIcon: {
