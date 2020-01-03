@@ -4,70 +4,102 @@ import { useSelector } from 'react-redux';
 import {
     Button,
     Tooltip,
-    // Typography,
 } from '@material-ui/core';
-// import {
-//     Environment,
-// } from './';
+import {
+    Icon,
+} from './';
 
 const useStyles = makeStyles(theme => ({
     television: {
     },
     tvImage: {
         position: 'absolute',
+        opacity: 0.05,
     },
     environment: {
-        maxWidth: 360,
         position: 'relative',
+        display: 'block',
         top: theme.spacing(),
         left: theme.spacing(),
-        padding: theme.spacing(),
-        borderRadius: theme.spacing(0.5),
-        // background: 'rgba(255,255,255,0.65)',
     },
     environmentBtn: {
         marginRight: theme.spacing()
+    },
+    environmentBtnText: {
+        marginLeft: theme.spacing()
     }
 }));
 
 function Television(props) {
     const classes = useStyles();
-    const { currentPhotoURL} = useSelector(state => state.webcam);
-    console.log(currentPhotoURL)
+    const { currentPhotoURL } = useSelector(state => state.webcam);
+    const { data } = useSelector(state => state.system.pijs);
+    let showEnvironment = false;
+    let temperature, pressure, lux = 0;
+    if (data) {
+        showEnvironment = true;
+        temperature = data.envirophat.temperature;
+        pressure = data.envirophat.pressure;
+        lux = data.envirophat.lux;
+    }
     return (
         <div className={classes.television}>
             <div className={classes.tvImage}>
                 <img
                     alt={`What's bred in the bone?`}
-                    src={`/television/default.jpg`}
+                    src={currentPhotoURL}
                 />
             </div>
-            <div className={classes.environment}>
-                <Tooltip title={`Temperature in Celsius`}>
-                    <Button
-                        className={classes.environmentBtn}
-                        variant={`contained`}
-                        color={`primary`}>
-                        {Math.round(55) - 18} &deg; C
-                    </Button>
-                </Tooltip>
-                <Tooltip title={`Atmospheric pressure (hecto pascals)`}>
-                    <Button
-                        className={classes.environmentBtn}
-                        variant={`contained`}
-                        color={`primary`}>
-                        {Math.round(1000)} hPa
-                    </Button>
-                </Tooltip>
-                <Tooltip title={`Lumens per square meter`}>
-                    <Button
-                        className={classes.environmentBtn}
-                        variant={`contained`}
-                        color={`primary`}>
-                        {1000} lux
-                    </Button>
-                </Tooltip>
-            </div>
+            {showEnvironment ? 
+                <div className={classes.environment}>
+                    <Tooltip title={`Temperature in Celsius`}>
+                        <Button
+                            className={classes.environmentBtn}
+                            variant={`contained`}
+                            color={`secondary`}>
+                            <Icon
+                                icon={`temperature`}
+                                color={`primary`}
+                            />
+                            <span className={classes.environmentBtnText}>
+                                {Math.round(temperature) - 18} &deg; C
+                        </span>
+
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={`Atmospheric pressure (hecto pascals)`}>
+                        <Button
+                            className={classes.environmentBtn}
+                            variant={`contained`}
+                            color={`secondary`}>
+
+                            <Icon
+                                icon={`pressure`}
+                                color={`primary`}
+                            />
+                            <span className={classes.environmentBtnText}>
+                                {Math.round(pressure)} hPa
+                        </span>
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={`Lumens per square meter`}>
+                        <Button
+                            className={classes.environmentBtn}
+                            variant={`contained`}
+                            color={`secondary`}>
+                            <Icon
+                                icon={`airquality`}
+                                color={`primary`}
+                            />
+                            <span className={classes.environmentBtnText}>
+                                {lux} lux
+                        </span>
+                        </Button>
+                    </Tooltip>
+                </div>
+            
+            : null}
+            
         </div>
     );
 }

@@ -34,6 +34,10 @@ class ClockWork extends Component {
         if (ticks % 10 === 0) {
             pingPi();
         }
+        if (ticks % 5 === 0) {
+            const store = getStore();
+            store.dispatch({ type: `WEBCAM/UPDATE` })
+        }
     }
 
     startTimer = () => {
