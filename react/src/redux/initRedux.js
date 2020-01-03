@@ -4,8 +4,6 @@ import { combineReducers } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { reduxBatch } from "@manaflair/redux-batch";
 import { system, systemSlice } from "./system/reducer";
-import { webcam, webcamSlice } from "./webcam/reducer";
-import { userEntity, userEntitySlice } from "./userEntity/reducer";
 
 const initRedux = () => {
   const persistConfig = {
@@ -15,8 +13,6 @@ const initRedux = () => {
 
   const reducers = combineReducers({
     system,
-    webcam,
-    userEntity
   });
 
   const persistedReducer = persistReducer(persistConfig, reducers);
@@ -29,8 +25,6 @@ const initRedux = () => {
 
   const preloadedState = {
     system: systemSlice,
-    webcam: webcamSlice,
-    userEntity: userEntitySlice
   };
 
   const store = configureStore({

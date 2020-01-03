@@ -5,8 +5,7 @@ import initRedux from "./redux/initRedux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
-import AppShell from "./AppShell";
-import "./theme/mapbox-gl.css";
+// import AppShell from "./AppShell";
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
@@ -23,15 +22,11 @@ if (disablePersitance) {
 
 
 const persistedRedux = initRedux();
-const getStore = () => {
-  return persistedRedux.store;
-};
-export { getStore };
 
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
-      <AppShell />
+      <div>ca,sjdd</div>
     </PersistGate>
   </Provider>,
   document.getElementById("pi")
