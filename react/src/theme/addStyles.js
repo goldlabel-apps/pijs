@@ -5,13 +5,37 @@ import {
 
 const drawerWidth = 320;
 
-const addedStyles = makeStyles(theme => ({
+export default makeStyles(theme => ({
     root: {
         display: 'flex',
     },
+    drawer: {
+        [theme.breakpoints.up('lg')]: {
+            width: drawerWidth,
+            flexShrink: 0,
+        },
+    },
+    appBar: {
+        [theme.breakpoints.up('lg')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+        },
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.up('lg')]: {
+            display: 'none',
+        },
+    },
+    toolbar: theme.mixins.toolbar,
+    drawerPaper: {
+        width: drawerWidth,
+    },
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+    },
 }));
-
-
 
 
 

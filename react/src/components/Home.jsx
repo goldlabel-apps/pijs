@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../theme/AppShell.Style';
 
 class Home extends Component {
 
@@ -26,4 +24,4 @@ const mapStateToProps = (store) => {
 export default (connect(
     mapStateToProps,
     null
-)(withStyles(styles, { withTheme: true })(withRouter(Home))));
+)(withRouter(Home)));

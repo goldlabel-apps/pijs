@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
-import cn from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../theme/AppShell.Style';
 import {
     Button,
     CardActions,
@@ -22,15 +19,14 @@ class NotFound extends Component {
         } = this.props;
         return (
             <React.Fragment>
-                
                 <CardMedia
-                    className={cn(classes.media)}
+                    className={classes.media}
                     title={`Not Found`}
                     image={`/png/open-graph.png`}
                 />
                 <CardContent>
                     <Typography variant={`body1`}>
-                        No content at that endpoint
+                        No content at this endpoint
                     </Typography>
                 </CardContent>
                 <CardActions>
@@ -41,7 +37,7 @@ class NotFound extends Component {
                             history.push(`/`);
                         }}>
                         <Icon icon={`home`} color={`secondary`} />
-                        <span className={cn(classes.btnIconPadRight)}>
+                        <span className={classes.btnIconPadRight}>
                             Home</span>
                     </Button>
                 </CardActions>
@@ -51,5 +47,5 @@ class NotFound extends Component {
 }
 
 export default (
-    withStyles(styles, { withTheme: true })(withRouter(NotFound))
+    withRouter(NotFound)
 );

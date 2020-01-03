@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { makeStyles /*, useTheme*/ } from '@material-ui/core/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './theme/mui';
+// import addedStyles from './theme/addStyles';
 import {
     AppBar,
     CssBaseline,
@@ -77,7 +78,7 @@ function AppShell(props) {
                     >
                             <Icon icon={`pi`} />
                     </IconButton>
-                    <Typography variant="h6" noWrap>
+                        <Typography variant="h6" noWrap className={classes.menuButton}>
                         PiJS.app
                     </Typography>
                 </Toolbar>
