@@ -12,8 +12,6 @@ class ClockWork extends Component {
     }
 
     componentDidMount() {
-        // const store = getStore();
-        // store.dispatch({ type: `DO/SHIT` });
         const { fingerprint } = this.props;
         if (!fingerprint) {
             createFingerprint()
@@ -35,6 +33,10 @@ class ClockWork extends Component {
         store.dispatch({ type: `SYSTEM/UPDATE/CLOCK` })
         if (ticks % 10 === 0) {
             pingPi();
+        }
+        if (ticks % 5 === 0) {
+            const store = getStore();
+            store.dispatch({ type: `WEBCAM/UPDATE` })
         }
     }
 
@@ -71,3 +73,10 @@ const mapStateToProps = (store) => {
 };
 
 export default (connect(mapStateToProps, null)(ClockWork));
+
+
+
+/*
+    // const store = getStore();
+    // store.dispatch({ type: `DO/SHIT` });
+*/

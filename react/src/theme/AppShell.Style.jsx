@@ -1,34 +1,15 @@
-
-import commonStyles from "./commonStyles";
-
 export const styles = theme => ({
-    ...commonStyles(theme),
     appShell: {
-        maxWidth: 1200,
+        border: '1px solid white',
         margin: 'auto',
-    },
-    mapBtn: {
-        // margin: theme.spacing(),
-    },
-    weather: {
-        // border: '1px solid white',
-        padding: theme.spacing(),
-    },
-    tooltipStyle: {
-        background: 'red',
-    },
-    screenCard: {
-        boxShadow: 'none',
-        marginBottom: 100,
-    },
-    screenHeader: {
-        // background: theme.palette.primary.main,
-        // color: theme.palette.secondary.main
+        width: '99%',
+        maxWidth: 1200,
+        height: '99vh',
+        
     },
     navList: {
         padding: theme.spacing(),
     },
-
     menuOpenerBtn: {
         position: 'absolute',
         top: theme.spacing(),
@@ -40,12 +21,6 @@ export const styles = theme => ({
     navDrawerWidth: {
         width: 300,
     },
-    piPlayer: {
-        // border: '1px solid #a89a2c',
-        margin: 'auto',
-        textAlign: 'center',
-    },
-
     text: {
         padding: theme.spacing(2, 2, 0),
     },
@@ -65,6 +40,22 @@ export const styles = theme => ({
     grow: {
         flexGrow: 1,
     },
+    map: {
+        height: 183,
+        outline: 'none',
+    },
+    white: {
+        color: 'white',
+    },
+    padIcon: {
+        padding: theme.spacing(),
+    },
+    primary: {
+        color: theme.palette.primary.main
+    },
+    secondary: {
+        color: theme.palette.secondary.main
+    },
     fabButton: {
         position: 'absolute',
         zIndex: 1,
@@ -72,15 +63,5 @@ export const styles = theme => ({
         left: 0,
         right: 0,
         margin: '0 auto',
-    },
-
-
-    mapPreview: {
-        height: 200,
-        outline: 'none',
-    },
-    piJSLogo: {
-        height: 30,
-        // margin: theme.spacing(0.5),
     },
 });

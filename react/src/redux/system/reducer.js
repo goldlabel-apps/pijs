@@ -2,8 +2,6 @@ import { createReducer } from "@reduxjs/toolkit";
 import {
   openNav,
   closeNav,
-  openSettings,
-  closeSettings,
   updateClock,
   systemPijsToggleFetching,
   systemPijsSave,
@@ -15,10 +13,6 @@ export const systemSlice = {
     data: null,
     fetching: false,
     status: `disconnected`
-  },
-  settings: {
-    updated: Date.now(),
-    open: false
   },
   nav: {
     updated: Date.now(),
@@ -54,16 +48,6 @@ const system = createReducer(systemSlice, {
     state.clockwork.ticks = state.clockwork.ticks + 1;
     return state;
   },
-  [openSettings]: state => {
-    state.settings.open = true;
-    return state;
-  },
-
-  [closeSettings]: state => {
-    state.settings.open = false;
-    return state;
-  },
-
   [openNav]: state => {
     state.nav.open = true;
     return state;
