@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
-import {
-    Button,
-    Tooltip,
-} from '@material-ui/core';
+// import {
+//     Button,
+//     Tooltip,
+// } from '@material-ui/core';
 import {
     Icon,
 } from './';
@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
     },
     tvImage: {
         position: 'absolute',
-        opacity: 0.05,
     },
     environment: {
         position: 'relative',
@@ -32,7 +31,8 @@ const useStyles = makeStyles(theme => ({
 
 function Television(props) {
     const classes = useStyles();
-    const { currentPhotoURL } = useSelector(state => state.webcam);
+    let { currentPhotoURL } = useSelector(state => state.webcam);
+    currentPhotoURL = `/television/twin-towers.jpg`;
     const { data } = useSelector(state => state.system.pijs);
     let showEnvironment = false;
     let temperature, pressure, lux = 0;
@@ -52,11 +52,11 @@ function Television(props) {
             </div>
             {showEnvironment ? 
                 <div className={classes.environment}>
-                    <Tooltip title={`Temperature in Celsius`}>
+                    {/* <Tooltip title={`Temperature in Celsius`}>
                         <Button
                             className={classes.environmentBtn}
                             variant={`contained`}
-                            color={`secondary`}>
+                            color={`secondary`}> */}
                             <Icon
                                 icon={`temperature`}
                                 color={`primary`}
@@ -65,13 +65,13 @@ function Television(props) {
                                 {Math.round(temperature) - 18} &deg; C
                         </span>
 
-                        </Button>
+                        {/* </Button>
                     </Tooltip>
                     <Tooltip title={`Atmospheric pressure (hecto pascals)`}>
                         <Button
                             className={classes.environmentBtn}
                             variant={`contained`}
-                            color={`secondary`}>
+                            color={`secondary`}> */}
 
                             <Icon
                                 icon={`pressure`}
@@ -80,13 +80,13 @@ function Television(props) {
                             <span className={classes.environmentBtnText}>
                                 {Math.round(pressure)} hPa
                         </span>
-                        </Button>
+                        {/* </Button>
                     </Tooltip>
                     <Tooltip title={`Lumens per square meter`}>
                         <Button
                             className={classes.environmentBtn}
                             variant={`contained`}
-                            color={`secondary`}>
+                            color={`secondary`}> */}
                             <Icon
                                 icon={`airquality`}
                                 color={`primary`}
@@ -94,8 +94,8 @@ function Television(props) {
                             <span className={classes.environmentBtnText}>
                                 {lux} lux
                         </span>
-                        </Button>
-                    </Tooltip>
+                        {/* </Button>
+                    </Tooltip> */}
                 </div>
             
             : null}

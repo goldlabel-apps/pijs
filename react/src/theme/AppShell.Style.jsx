@@ -1,12 +1,11 @@
-
-import commonStyles from "./commonStyles";
-
 export const styles = theme => ({
-    ...commonStyles(theme),
+    appShell: {
+        maxWidth: 800,
+        margin: 'auto',
+    },
     navList: {
         padding: theme.spacing(),
     },
-
     menuOpenerBtn: {
         position: 'absolute',
         top: theme.spacing(),
@@ -36,6 +35,22 @@ export const styles = theme => ({
     },
     grow: {
         flexGrow: 1,
+    },
+    map: {
+        height: 183,
+        outline: 'none',
+    },
+    white: {
+        color: 'white',
+    },
+    padIcon: {
+        padding: theme.spacing(),
+    },
+    primary: {
+        color: theme.palette.primary.main
+    },
+    secondary: {
+        color: theme.palette.secondary.main
     },
     fabButton: {
         position: 'absolute',

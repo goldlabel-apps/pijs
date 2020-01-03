@@ -13,7 +13,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import muiTheme from './theme/mui';
 import {
     About,
-    // BottomAppBar,
+    BottomAppBar,
     ClockWork,
     EnviroPhat,
     Home,
@@ -36,10 +36,11 @@ class AppShell extends Component {
 
         return (
             <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
+                <div className={classes.appShell}>
+
+
                 <ClockWork />
-                
-                    <CssBaseline />
-                    <main>
+                <CssBaseline />
                         <Router>
                             <nav className={cn(classes.navDrawer)} aria-label="Nav">
                                 <Drawer
@@ -75,9 +76,8 @@ class AppShell extends Component {
                                 <Route component={NotFound} />
                             </Switch>
                         </Router>
-                    </main>
-                    {/* <BottomAppBar /> */}
-              
+                    <BottomAppBar />
+                </div>
             </MuiThemeProvider>
         );
     }
