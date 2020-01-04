@@ -1,3 +1,4 @@
 import { createAction } from "@reduxjs/toolkit";
 
-export const systemOne = createAction("SYSTEM/ONE");
+export const systemBoot = createAction("SYSTEM/BOOT");
+export const toggleBoot = createAction("SYSTEM/BOOT/TOGGLE");

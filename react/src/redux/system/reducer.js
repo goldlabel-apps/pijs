@@ -1,19 +1,34 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
-  systemOne
+  systemBoot,
+  toggleBoot,
 } from "./actions";
 
 export const systemSlice = {
-  systemOne: {
+  boot: {
     updated: Date.now(),
+    open: true,
+    status: null,
+    booted: false,
+    consoleMessage: `pijs ->`,
+    cursorPosition: 0,
   },
+  userEntity: {
+    updated: Date.now(),
+    fingerprint: null,
+  }
 };
 
 const system = createReducer(systemSlice, {
 
-  [systemOne]: (state, action) => {
-    console.log('systemOne', action)
-    state.one = true
+  [toggleBoot]: (state, action) => {
+    console.log('toggleBoot', action.open)
+    state.open = action.open
+    return state;
+  },
+
+  [systemBoot]: (state, action) => {
+    state.status = 'booting'
     return state;
   },
 

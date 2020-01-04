@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { getStore } from '../';
 
 class ClockWork extends Component {
 
@@ -9,11 +10,19 @@ class ClockWork extends Component {
     }
 
     componentDidMount() {
-        const { fingerprint } = this.props;
-        if (!fingerprint) {
-            //createFingerprint()
-        }
         this.startTimer();
+
+        // const { fingerprint } = this.props;
+        // const store = getStore();
+        // store.dispatch({
+        //     type: `SYSTEM/BOOT`,
+        //     payload: { dahs: 123 }
+        // })
+        // if (!fingerprint) {
+            // console.log('createFingerprint');
+            //createFingerprint()
+            // systemBoot();
+        // }
     }
 
     componentWillUnmount() {
@@ -63,10 +72,10 @@ class ClockWork extends Component {
 
 const mapStateToProps = (store) => {
     return {
-        store,
-        fingerprint: `xyz`,
+        fingerprint: store.system.userEntity.fingerprint,
     };
 };
+
 
 export default (connect(mapStateToProps, null)(ClockWork));
 

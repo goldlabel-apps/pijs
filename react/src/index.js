@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import AppShell from "./AppShell";
 
+import {Boot} from "./components";
+
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
-const disablePersitance = false;
+const disablePersitance = true;
 const purgeStore = () => {
   console.log(`Persitance Disabled.`);
   localStorage.clear();
@@ -19,13 +21,19 @@ const purgeStore = () => {
 if (disablePersitance) {
   purgeStore();
 }
-
 const persistedRedux = initRedux();
+const getStore = () => {
+  return persistedRedux.store;
+};
+export { getStore };
+
+const boot = persistedRedux.store.getState().system.boot.open
+console.log('boot', boot)
 
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
-      <AppShell />
+      {boot ? <Boot /> : <AppShell />}
     </PersistGate>
   </Provider>,
   document.getElementById("pijs")
