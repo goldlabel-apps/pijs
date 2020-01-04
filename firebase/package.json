@@ -1,6 +1,6 @@
 {
   "name": "pijs-admin",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "PiJS is an Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
   "dependencies": {
     "@manaflair/redux-batch": "^1.0.0",
