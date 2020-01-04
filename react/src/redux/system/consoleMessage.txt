@@ -1,0 +1,13 @@
+➜  ~ssh pi@pijs.app
+pi@pijs.app's password: 
+Linux raspberrypi 4.19.75 - v7l + #1270 SMP Tue Sep 24 18: 51: 41 BST 2019 armv7l
+
+The programs included with the Debian GNU / Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share / doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+You have new mail.
+Last login: Fri Jan  3 18:22:02 2020 from 141.168.211.166
+pi@raspberrypi:~ $ 

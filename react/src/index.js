@@ -6,9 +6,10 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import AppShell from "./AppShell";
-
 import {Boot} from "./components";
-
+import {
+  CssBaseline,
+} from '@material-ui/core/';
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
@@ -28,12 +29,14 @@ const getStore = () => {
 export { getStore };
 
 const boot = persistedRedux.store.getState().system.boot.open
-console.log('boot', boot)
 
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
-      {boot ? <Boot /> : <AppShell />}
+      <React.Fragment>
+        <CssBaseline />
+        {boot ? <Boot /> : <AppShell />}
+      </React.Fragment>
     </PersistGate>
   </Provider>,
   document.getElementById("pijs")

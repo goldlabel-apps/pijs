@@ -10,7 +10,7 @@ export const systemSlice = {
     open: true,
     status: null,
     booted: false,
-    consoleMessage: `pijs ->`,
+    consoleMessage: `pi@raspberrypi:~ $`,
     cursorPosition: 0,
   },
   userEntity: {

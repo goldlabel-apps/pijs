@@ -6,7 +6,6 @@ import muiTheme from './theme/mui';
 // import addedStyles from './theme/addStyles';
 import {
     AppBar,
-    CssBaseline,
     Drawer,
     Hidden,
     IconButton,
@@ -72,7 +71,6 @@ function AppShell(props) {
     <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
         <ClockWork />
         <div className={classes.root}>
-            <CssBaseline />
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar>
                     <IconButton
