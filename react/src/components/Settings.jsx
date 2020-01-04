@@ -6,7 +6,6 @@ import {
     ListItemIcon,
     ListItemSecondaryAction,
     ListItemText,
-    ListSubheader,
     Switch,
 } from '@material-ui/core/';
 import {
@@ -16,8 +15,9 @@ import {
 const useStyles = makeStyles(theme => ({
     settings: {
         width: '100%',
-        maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
+        // maxWidth: 360,
+        //backgroundColor: theme.palette.background.paper,
+        //border: '1px solid white',
     },
 }));
 
@@ -39,16 +39,10 @@ export default function Settings() {
     };
 
     return (
-        <List
-            className={classes.settings}
-            subheader={
-                <ListSubheader>
-                    Settings
-                </ListSubheader>
-            }>
+        <List className={classes.settings}>
             <ListItem>
                 <ListItemIcon>
-                    <Icon icon={`home`} />
+                    <Icon icon={`darkmode`} />
                 </ListItemIcon>
                 <ListItemText
                     style={{

@@ -8,6 +8,7 @@ import Settings from "./Settings";
 import Sidebar from "./Sidebar";
 import SidebarHeader from "./SidebarHeader";
 import UserEntity from "./UserEntity";
+import View from "./View";
 
 import {CompositeVid} from "./CompositeVid";
 
@@ -23,4 +24,5 @@ export {
   Sidebar,
   SidebarHeader,
   UserEntity,
+  View,
 };

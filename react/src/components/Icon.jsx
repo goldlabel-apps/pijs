@@ -35,6 +35,8 @@ import PiJSSVG from '../graphics/PiJSSVG';
 import PiJSBackSVG from '../graphics/PiJSBackSVG';
 import SpadeSVG from '../graphics/SpadeSVG';
 
+import IconDarkmode from '@material-ui/icons/Highlight';
+
 const styles = theme => ({
     navIcon: {
         width: 24,
@@ -61,6 +63,9 @@ class Icon extends Component {
             iconColor = color
         }
         switch (icon) {
+
+            case `darkmode`:
+                return (<IconDarkmode color={iconColor} />);
 
             case `pi`:
                 return (<PiJSSVG className={classes.navIcon} />);

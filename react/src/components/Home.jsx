@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 //     ListItemAvatar,
 //     Typography,
 // } from '@material-ui/core/';
-import { CompositeVid } from './';
+// import { CompositeVid } from './';
 
 const useStyles = makeStyles(theme => ({
     home: {
@@ -21,7 +21,7 @@ export default function Home() {
 
     return (
         <div className={classes.home}>
-            <CompositeVid />
+            Home
         </div>
     );
 }

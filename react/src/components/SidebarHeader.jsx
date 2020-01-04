@@ -28,7 +28,7 @@ export default function SidebarHeader() {
                     onClick={(e) => {
                         e.preventDefault();
                     }}>
-                    <Icon icon={`pi-back`} />
+                    <Icon icon={`pi`} />
                 </IconButton>
                 <Typography
                     noWrap

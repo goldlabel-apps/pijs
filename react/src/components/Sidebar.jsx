@@ -12,9 +12,10 @@ export default function Menu() {
         <React.Fragment>
             <SidebarHeader />
             <NavList />
-            <Settings />
             <UserEntity />
             <Messages />
+            <div style={{ flexGrow: 1 }} />
+            <Settings />
         </React.Fragment>
     );
 }

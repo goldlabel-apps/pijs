@@ -47,13 +47,13 @@ export default function NavList() {
                 value: `home`,
                 checked: false
             },
-            {
-                title: `Pressure`,
-                path: `/pressure`,
-                icon: `pressure`,
-                value: `pressure`,
-                checked: false
-            }
+            // {
+            //     title: `Pressure`,
+            //     path: `/pressure`,
+            //     icon: `pressure`,
+            //     value: `pressure`,
+            //     checked: false
+            // }
         ]
     }
 
@@ -69,7 +69,7 @@ export default function NavList() {
                             e.preventDefault();
                         }}>
                         <ListItemAvatar>
-                            <Icon icon={item.icon} />
+                            <Icon icon={item.icon}  />
                         </ListItemAvatar>
                         <ListItemText
                             style={{
