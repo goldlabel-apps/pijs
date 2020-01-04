@@ -9,7 +9,10 @@ import Sidebar from "./Sidebar";
 import SidebarHeader from "./SidebarHeader";
 import UserEntity from "./UserEntity";
 
+import {CompositeVid} from "./CompositeVid";
+
 export {
+  CompositeVid,
   ClockWork,
   Home,
   Icon,

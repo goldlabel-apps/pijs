@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from "react-router";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+// import {
+//     Avatar,
+//     List,
+//     ListItem,
+//     ListItemText,
+//     ListItemAvatar,
+//     Typography,
+// } from '@material-ui/core/';
+import { CompositeVid } from './';
 
-class Home extends Component {
+const useStyles = makeStyles(theme => ({
+    home: {
+        width: '100%',
+    },
+}));
 
-    render() {
-        return (
-            <React.Fragment>
-                home
-            </React.Fragment>
-        );
-    }
+export default function Home() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.home}>
+            <CompositeVid />
+        </div>
+    );
 }
-
-const mapStateToProps = (store) => {
-    return {
-        store,
-        pijs: store.system.pijs,
-        weather: store.weather
-    };
-};
-
-export default (connect(
-    mapStateToProps,
-    null
-)(withRouter(Home)));

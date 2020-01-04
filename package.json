@@ -25,5 +25,9 @@
     "Node",
     "React",
     "PWA"
-  ]
+  ],
+  "dependencies": {
+    "@u-wave/react-vimeo": "^0.8.1",
+    "gsap": "^3.0.4"
+  }
 }

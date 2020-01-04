@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import cn from 'classnames';
 import {
     CssBaseline,
 } from '@material-ui/core/';
@@ -20,8 +19,9 @@ import Vimeo from '@u-wave/react-vimeo';
 const styles = theme => ({
     stage: {
         position: 'relative',
-        height: '100vh',
-        background: 'black',
+        height: 'calc(100vh - 100px)',
+        borderw: '1px solid red',
+        background: 'none',
         overflow: 'hidden',
     },
     logo: {
@@ -29,7 +29,7 @@ const styles = theme => ({
         width: 370,
         height: 86,
         left: 'calc(50vw - 375px)',
-        top: 'calc(50vh + 100px)',
+        top: 255,
     },
     image: {
         width: '100%',
@@ -62,8 +62,8 @@ class CompositeVid extends Component {
         return (
             <React.Fragment>
                 <CssBaseline />
-                <div className={cn(classes.stage)}>
-                    <div className={cn(classes.logo)} >
+                <div className={classes.stage}>
+                    <div className={classes.logo} >
                         <BlueC
                             id={`blue-c`}
                             colors={
