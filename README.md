@@ -1,20 +1,18 @@
-## PiJS
+## PiJS.app
 
-PiJS is fullstack, isomorphic JavaScript for the Raspberry Pi. It's also a React Progressive Web App and Secure SSL Node/Express server.
+PiJS.app is fullstack, isomorphic JavaScript for the Raspberry Pi. 
+It's also a React Progressive Web App and Secure SSL Node/Express server.
+
+![PiJS](react/public/png/twitter-card.png "PiJS")
 
 ### Features
 
 - [x] Isomorphic JavaScript
-- [x] Frontend
-  - [x] React
-    - [x] Material UI
-- [x] Backend
-  - [x] Node
-  - [x] Firebase
-- [x] Hardware
-  - [x] RPi
-
-![PiJS](react/public/png/twitter-card.png "PiJS")
+- [x] React
+- [x] Material UI
+- [x] Node
+- [x] Firebase
+- [x] Raspberry Pi
 
 ### What is a Raspberry Pi?
 
