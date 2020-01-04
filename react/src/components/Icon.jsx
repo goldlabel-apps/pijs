@@ -32,6 +32,7 @@ import IconWifiOff from '@material-ui/icons/WifiOff';
 import IconInstall from '@material-ui/icons/SaveAlt';
 import GithubSVG from '../graphics/GithubSVG';
 import PiJSSVG from '../graphics/PiJSSVG';
+import PiJSBackSVG from '../graphics/PiJSBackSVG';
 import SpadeSVG from '../graphics/SpadeSVG';
 
 const styles = theme => ({
@@ -60,6 +61,12 @@ class Icon extends Component {
             iconColor = color
         }
         switch (icon) {
+
+            case `pi`:
+                return (<PiJSSVG className={classes.navIcon} />);
+            
+            case `pi-back`:
+                return (<PiJSBackSVG className={classes.navIcon} />);
 
             case `install`:
                 return (<IconInstall color={iconColor} />);
@@ -121,8 +128,7 @@ class Icon extends Component {
             case `help`:
                 return (<IconHelp color={iconColor} />);
 
-            case `pi`:
-                return (<PiJSSVG className={classes.navIcon} />);
+            
 
             case `home`:
                 return (<IconHome color={iconColor} />);

@@ -13,8 +13,13 @@ import {
     Toolbar,
     Typography,
 } from '@material-ui/core/';
-
-import { ClockWork, Home, Icon, Sidebar, NotFound} from "./components/";
+import {
+    ClockWork,
+    Home,
+    Icon,
+    Sidebar,
+    NotFound,
+} from "./components/";
 
 const drawerWidth = 300;
 
@@ -46,11 +51,12 @@ const useStyles = makeStyles(theme => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        // padding: theme.spacing(3),
     },
 }));
 
 function AppShell(props) {
+
     const { container } = props;
     const classes = useStyles();
     // const theme = useTheme();
@@ -76,11 +82,15 @@ function AppShell(props) {
                         onClick={handleDrawerToggle}
                         className={classes.menuButton}
                     >
-                            <Icon icon={`pi`} />
+                        <Icon icon={`pi`} />
                     </IconButton>
-                        <Typography variant="h6" noWrap className={classes.menuButton}>
-                        PiJS.app
-                    </Typography>
+                        <Typography
+                            noWrap
+                            className={classes.menuButton}
+                            color={`textSecondary`}
+                            variant={`h6`}>
+                            PiJS.app
+                        </Typography>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="mailbox folders">
