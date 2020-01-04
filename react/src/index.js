@@ -6,7 +6,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import AppShell from "./AppShell";
-import {Boot} from "./components";
+import { Boot } from "./components";
+import ClockWork from "./ClockWork";
 import {
   CssBaseline,
 } from '@material-ui/core/';
@@ -34,6 +35,7 @@ ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
       <React.Fragment>
+        <ClockWork />
         <CssBaseline />
         {boot ? <Boot /> : <AppShell />}
       </React.Fragment>

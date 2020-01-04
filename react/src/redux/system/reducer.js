@@ -1,7 +1,8 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
-  systemBoot,
+  boot,
   toggleBoot,
+  tick,
 } from "./actions";
 
 export const systemSlice = {
@@ -10,8 +11,14 @@ export const systemSlice = {
     open: true,
     status: null,
     booted: false,
-    consoleMessage: `pi@raspberrypi:~ $`,
+    consoleMessage: `ssh pi@pijs.app<br />pi@raspberrypi:~ $`,
     cursorPosition: 0,
+    cursorOn: true,
+  },
+  clockWork: {
+    updated: Date.now(),
+    tickDelay: 0.5,
+    ticks: 0,
   },
   userEntity: {
     updated: Date.now(),
@@ -20,6 +27,18 @@ export const systemSlice = {
 };
 
 const system = createReducer(systemSlice, {
+  
+  [tick]: (state) => {
+    // console.log('tick', action)
+    state.clockWork.ticks++;
+    state.boot.cursorOn = !state.boot.cursorOn;
+    return state;
+  },
+
+  [boot]: (state) => {
+    state.boot.status = 'booting'
+    return state;
+  },
 
   [toggleBoot]: (state, action) => {
     console.log('toggleBoot', action.open)
@@ -27,10 +46,7 @@ const system = createReducer(systemSlice, {
     return state;
   },
 
-  [systemBoot]: (state, action) => {
-    state.status = 'booting'
-    return state;
-  },
+
 
 });
 

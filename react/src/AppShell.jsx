@@ -13,7 +13,6 @@ import {
     Typography,
 } from '@material-ui/core/';
 import {
-    ClockWork,
     Home,
     Icon,
     Sidebar,
@@ -69,7 +68,6 @@ function AppShell(props) {
     return (
         
     <MuiThemeProvider theme={createMuiTheme(muiTheme)}>
-        <ClockWork />
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar>

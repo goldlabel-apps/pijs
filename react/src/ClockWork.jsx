@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { getStore } from '../';
+import { getStore } from './';
 
 class ClockWork extends Component {
 
@@ -11,7 +11,30 @@ class ClockWork extends Component {
 
     componentDidMount() {
         this.startTimer();
+    }
 
+    componentWillUnmount() {
+        this.stopTimer();
+    }
+
+    tick = () => {
+        const store = getStore();
+        
+        store.dispatch({ type: `SYSTEM/TICK` })
+
+        // const { ticks } = this.props;
+        // console.log('tick', ticks);
+
+        // console.log('tick', Date.now())
+        // const { ticks } = this.props.store.system.clockwork;
+        // store.dispatch({ type: `SYSTEM/UPDATE/CLOCK` })
+        // if (ticks % 10 === 0) {
+        //     pingPi();
+        // }
+        // if (ticks % 5 === 0) {
+        //     const store = getStore();
+        //     store.dispatch({ type: `WEBCAM/UPDATE` })
+        // }
         // const { fingerprint } = this.props;
         // const store = getStore();
         // store.dispatch({
@@ -25,33 +48,13 @@ class ClockWork extends Component {
         // }
     }
 
-    componentWillUnmount() {
-        this.stopTimer();
-    }
-
-    shouldComponentUpdate(e) {
-        return true;
-    }
-
-    update = () => {
-        // const { ticks } = this.props.store.system.clockwork;
-        // store.dispatch({ type: `SYSTEM/UPDATE/CLOCK` })
-        // if (ticks % 10 === 0) {
-        //     pingPi();
-        // }
-        // if (ticks % 5 === 0) {
-        //     const store = getStore();
-        //     store.dispatch({ type: `WEBCAM/UPDATE` })
-        // }
-    }
-
     startTimer = () => {
-        const timerDelay = 1;
+        const {tickDelay} = this.props;
         const {
             timer
         } = this.state;
         if (!timer) {
-            this.setState({ timer: setInterval(this.update, timerDelay * 1000) });
+            this.setState({ timer: setInterval(this.tick, tickDelay * 1000) });
         }
     }
 
@@ -72,6 +75,8 @@ class ClockWork extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        tickDelay: store.system.clockWork.tickDelay,
+        ticks: store.system.clockWork.ticks,
         fingerprint: store.system.userEntity.fingerprint,
     };
 };

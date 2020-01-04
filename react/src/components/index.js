@@ -1,5 +1,4 @@
 import Boot from "./Boot";
-import ClockWork from "./ClockWork";
 import Home from "./Home";
 import Icon from "./Icon";
 import Messages from "./Messages";
@@ -16,7 +15,6 @@ import {CompositeVid} from "./CompositeVid";
 export {
   Boot,
   CompositeVid,
-  ClockWork,
   Home,
   Icon,
   Messages,

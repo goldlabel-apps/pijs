@@ -21,14 +21,19 @@ const useStyles = makeStyles(theme => ({
 
 export default function Boot() {
     const classes = useStyles();
-    let { consoleMessage } = useSelector(state => state.system.boot);
-
+    const {
+        boot,
+    } = useSelector(state => state.system);
+    const { consoleMessage } = boot;
+    const { cursorOn } = boot;
+    const createMarkup = () => {
+        return { __html: cursorOn ? `${consoleMessage} _` : consoleMessage};
+    };
     return (
         <div className={classes.boot}>
-            <div className={classes.message}>
-                {consoleMessage}
-            </div>
-            
+            <div
+                className={classes.message}
+                dangerouslySetInnerHTML={createMarkup()} />
         </div>
     );
 }
