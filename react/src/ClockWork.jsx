@@ -21,13 +21,13 @@ class ClockWork extends Component {
         store.dispatch({ type: `SYSTEM/TICK` });
         const {
             booted,
-            // components,
+            components,
             fingerprint,
             ipgeo,
             ticks,
             userShownAtTick,
         } = this.props;
-        // const userAgent = components.find(o => o.key === 'userAgent').value;
+        const userAgent = components.find(o => o.key === 'userAgent').value;
 
         switch (ticks) {
             case 1:
@@ -62,7 +62,6 @@ class ClockWork extends Component {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
-                    // &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
@@ -74,6 +73,7 @@ class ClockWork extends Component {
                             &nbsp;&nbsp;&nbsp;&nbsp;"country_name": "${ipgeo.country_name}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.latitude}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"is_eu": ${ipgeo.is_eu}<br />
                             }<br />`,
                             color: `limegreen`,
