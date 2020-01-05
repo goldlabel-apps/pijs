@@ -61,7 +61,6 @@ const system = createReducer(systemSlice, {
   },
 
   [boot]: (state) => {
-    console.log('boot NOW')
     state.boot.booted = true;
     state.boot.status = 'booted';
     return state;

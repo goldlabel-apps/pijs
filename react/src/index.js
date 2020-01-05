@@ -14,7 +14,7 @@ console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
-const disablePersitance = true;
+const disablePersitance = false;
 const purgeStore = () => {
   console.log(`Persitance Disabled.`);
   localStorage.clear();
@@ -27,9 +27,6 @@ const getStore = () => {
   return persistedRedux.store;
 };
 export { getStore };
-
-const { booted } = persistedRedux.store.getState().system.boot;
-console.log (booted)
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>

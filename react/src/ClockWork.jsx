@@ -20,11 +20,14 @@ class ClockWork extends Component {
         const store = getStore();
         store.dispatch({ type: `SYSTEM/TICK` });
         const {
-            ticks,
+            booted,
+            components,
             fingerprint,
             ipgeo,
+            ticks,
             userShownAtTick,
         } = this.props;
+        const userAgent = components.find(o => o.key === 'userAgent').value;
 
         switch (ticks) {
             case 1:
@@ -45,8 +48,8 @@ class ClockWork extends Component {
                 })
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
-                        message: `userEntity<br />`,
-                        color: `#F1DD3F`,
+                        message: `create userEntity<br />`,
+                        color: `limegreen`,
                     }
                 })
                 break;
@@ -54,26 +57,42 @@ class ClockWork extends Component {
             default:
                 break;            
         }
-        if (ipgeo && fingerprint) {
-            // readyToBoot = false;
-            if (!userShownAtTick) {
-                store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
-            }
-            if (ticks === userShownAtTick + 10) {
-                store.dispatch({ type: `SYSTEM/BOOT` });
+
+        if (!booted && ticks > 2) {
+            if (ipgeo && fingerprint) {
+                if (!userShownAtTick) {
+                    store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
+                    store.dispatch({
+                        type: `SYSTEM/SAYS`, say: {
+                            message: `{<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.ip}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"zipcode": ${ipgeo.zipcode}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.city}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"state_prov": "${ipgeo.state_prov}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"country_name": "${ipgeo.country_name}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.latitude}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"is_eu": ${ipgeo.is_eu}<br />
+                            }<br />`,
+                            color: `#F1DD3F`,
+                        }
+                    })
+                }
+                if (ticks === userShownAtTick + 4) {
+                    store.dispatch({
+                        type: `SYSTEM/SAYS`, say: {
+                            message: `Booting...<br />`,
+                            color: `limegreen`,
+                        }
+                    })
+                }
+                if (ticks === userShownAtTick + 5) {
+                    store.dispatch({ type: `SYSTEM/BOOT` });
+                }
             }
         }
-
-        console.log('this tick', ticks, 'targ ticks', userShownAtTick + 10)
-        
-
-        // store.dispatch({
-        //     type: `SYSTEM/SAYS`, say: {
-        //         message: `SUCCESS<br />
-        //         ip ${ipgeo.ip}`,
-        //         color: `limegreen`,
-        //     }
-        // })
     }
 
     startTimer = () => {
@@ -103,6 +122,7 @@ class ClockWork extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        booted: store.system.boot.booted,
         tickDelay: store.system.clockWork.tickDelay,
         ticks: store.system.clockWork.ticks,
         fingerprint: store.system.userEntity.fingerprint,
