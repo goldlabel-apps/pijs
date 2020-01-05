@@ -24,8 +24,10 @@ export const systemSlice = {
   },
   userEntity: {
     updated: Date.now(),
-    fingerprint: null,
-    components: null,
+    fingerprint: {
+      value: null,
+      components: null,
+    },
     ipgeo: null,
   }
 };
@@ -44,8 +46,10 @@ const system = createReducer(systemSlice, {
   },
   
   [setFingerprint]: (state, action) => {
-    state.userEntity.fingerprint = action.fingerprint;
-    state.userEntity.components = action.components;
+    state.userEntity.fingerprint = {
+      value: action.fingerprint,
+      components: action.components,
+    };
     return state;
   },
 

@@ -80,7 +80,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 6) {
+                if (ticks === userShownAtTick + 100) {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
@@ -88,7 +88,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 7) {
+                if (ticks === userShownAtTick + 101) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
@@ -122,13 +122,16 @@ class ClockWork extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        userShownAtTick: store.system.boot.userShownAtTick,
         booted: store.system.boot.booted,
+
         tickDelay: store.system.clockWork.tickDelay,
         ticks: store.system.clockWork.ticks,
-        fingerprint: store.system.userEntity.fingerprint,
-        components: store.system.userEntity.components,
+        
+        fingerprint: store.system.userEntity.fingerprint.value,
+        components: store.system.userEntity.fingerprint.components,
         ipgeo: store.system.userEntity.ipgeo,
-        userShownAtTick: store.system.boot.userShownAtTick,
+        
     };
 };
 
