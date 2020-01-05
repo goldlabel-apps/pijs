@@ -49,7 +49,7 @@ class ClockWork extends Component {
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
                         message: `create userEntity<br />`,
-                        color: `limegreen`,
+                        color: `#F1DD3F`,
                     }
                 })
                 break;
@@ -76,7 +76,7 @@ class ClockWork extends Component {
                             &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"is_eu": ${ipgeo.is_eu}<br />
                             }<br />`,
-                            color: `#F1DD3F`,
+                            color: `limegreen`,
                         }
                     })
                 }
@@ -84,7 +84,7 @@ class ClockWork extends Component {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
-                            color: `limegreen`,
+                            color: `#F1DD3F`,
                         }
                     })
                 }
