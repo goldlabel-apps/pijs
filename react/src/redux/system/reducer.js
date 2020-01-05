@@ -24,6 +24,8 @@ export const systemSlice = {
   },
   userEntity: {
     updated: Date.now(),
+    created: null,
+    lastVisit: null,
     fingerprint: {
       value: null,
       components: null,
@@ -35,7 +37,6 @@ export const systemSlice = {
 const system = createReducer(systemSlice, {
 
   [showUserAtTick]: (state, action) => {
-    // console.log('showUserAtTick', action.ticks)
     state.boot.userShownAtTick = action.ticks;
     return state;
   },
@@ -46,6 +47,11 @@ const system = createReducer(systemSlice, {
   },
   
   [setFingerprint]: (state, action) => {
+
+    console.log('showUserAtTick', action)
+
+    
+
     state.userEntity.fingerprint = {
       value: action.fingerprint,
       components: action.components,
