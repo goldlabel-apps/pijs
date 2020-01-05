@@ -1,3 +1,4 @@
+import AppShell from "./AppShell";
 import Boot from "./Boot";
 import Home from "./Home";
 import Icon from "./Icon";
@@ -13,6 +14,7 @@ import View from "./View";
 import {CompositeVid} from "./CompositeVid";
 
 export {
+  AppShell,
   Boot,
   CompositeVid,
   Home,

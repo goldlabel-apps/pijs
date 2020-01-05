@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { makeStyles /*, useTheme*/ } from '@material-ui/core/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import muiTheme from './theme/mui';
+import muiTheme from '../theme/mui';
 // import addedStyles from './theme/addStyles';
 import {
     AppBar,
@@ -17,7 +17,7 @@ import {
     Icon,
     Sidebar,
     NotFound,
-} from "./components/";
+} from "./";
 
 const drawerWidth = 300;
 

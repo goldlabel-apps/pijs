@@ -1,18 +1,20 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
   boot,
-  toggleBoot,
   tick,
+  setFingerprint,
+  systemSays,
+  setIpgeo,
+  showUserAtTick,
 } from "./actions";
 
 export const systemSlice = {
   boot: {
     updated: Date.now(),
     open: true,
-    status: null,
     booted: false,
-    consoleMessage: `ssh pi@pijs.app<br />pi@raspberrypi:~ $`,
-    cursorPosition: 0,
+    userShownAtTick: null,
+    consoleMessage: ``,
     cursorOn: true,
   },
   clockWork: {
@@ -23,30 +25,47 @@ export const systemSlice = {
   userEntity: {
     updated: Date.now(),
     fingerprint: null,
+    components: null,
+    ipgeo: null,
   }
 };
 
 const system = createReducer(systemSlice, {
+
+  [showUserAtTick]: (state, action) => {
+    // console.log('showUserAtTick', action.ticks)
+    state.boot.userShownAtTick = action.ticks;
+    return state;
+  },
+
+  [setIpgeo]: (state, action) => {
+    state.userEntity.ipgeo = action.ipgeo;
+    return state;
+  },
   
+  [setFingerprint]: (state, action) => {
+    state.userEntity.fingerprint = action.fingerprint;
+    state.userEntity.components = action.components;
+    return state;
+  },
+
+  [systemSays]: (state, action) => {
+    state.boot.consoleMessage += ` <span style="color: ${action.say.color};">${action.say.message}</span>`;
+    return state;
+  },
+
   [tick]: (state) => {
-    // console.log('tick', action)
     state.clockWork.ticks++;
     state.boot.cursorOn = !state.boot.cursorOn;
     return state;
   },
 
   [boot]: (state) => {
-    state.boot.status = 'booting'
+    console.log('boot NOW')
+    state.boot.booted = true;
+    state.boot.status = 'booted';
     return state;
   },
-
-  [toggleBoot]: (state, action) => {
-    console.log('toggleBoot', action.open)
-    state.open = action.open
-    return state;
-  },
-
-
 
 });
 

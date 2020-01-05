@@ -5,8 +5,7 @@ import initRedux from "./redux/initRedux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
-import AppShell from "./AppShell";
-import { Boot } from "./components";
+import Switcher from "./Switcher";
 import ClockWork from "./ClockWork";
 import {
   CssBaseline,
@@ -29,15 +28,15 @@ const getStore = () => {
 };
 export { getStore };
 
-const boot = persistedRedux.store.getState().system.boot.open
-
+const { booted } = persistedRedux.store.getState().system.boot;
+console.log (booted)
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
       <React.Fragment>
         <ClockWork />
         <CssBaseline />
-        {boot ? <Boot /> : <AppShell />}
+        <Switcher />
       </React.Fragment>
     </PersistGate>
   </Provider>,

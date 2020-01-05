@@ -12,10 +12,13 @@ const useStyles = makeStyles(theme => ({
         height: '100vh',
     },
     message: {
-        margin: theme.spacing(2),
+        margin: theme.spacing(1),
         fontFamily: 'Monaco, monospace',
-        fontSize: 30,
+        fontSize: 24,
         color: 'white',
+    },
+    cyan: {
+        color: 'cyan'
     }
 }));
 
@@ -25,9 +28,15 @@ export default function Boot() {
         boot,
     } = useSelector(state => state.system);
     const { consoleMessage } = boot;
-    const { cursorOn } = boot;
+    const {
+        cursorOn,
+        // command,
+    } = boot;
     const createMarkup = () => {
-        return { __html: cursorOn ? `${consoleMessage} _` : consoleMessage};
+        let message = consoleMessage;
+        // message = command ? `${message} ${command}` : message;
+        message = cursorOn ? `${message} _` : message;
+        return { __html: message};
     };
     return (
         <div className={classes.boot}>
