@@ -21,13 +21,13 @@ class ClockWork extends Component {
         store.dispatch({ type: `SYSTEM/TICK` });
         const {
             booted,
-            components,
+            // components,
             fingerprint,
             ipgeo,
             ticks,
             userShownAtTick,
         } = this.props;
-        const userAgent = components.find(o => o.key === 'userAgent').value;
+        // const userAgent = components.find(o => o.key === 'userAgent').value;
 
         switch (ticks) {
             case 1:
@@ -48,7 +48,7 @@ class ClockWork extends Component {
                 })
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
-                        message: `create userEntity<br />`,
+                        message: `<br />create userEntity<br />`,
                         color: `#F1DD3F`,
                     }
                 })
@@ -62,10 +62,10 @@ class ClockWork extends Component {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
+                    // &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.ip}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"zipcode": ${ipgeo.zipcode}<br />

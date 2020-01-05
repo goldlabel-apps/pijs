@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     message: {
         margin: theme.spacing(1),
         fontFamily: 'Monaco, monospace',
-        fontSize: 20,
+        fontSize: 18,
         color: 'white',
     },
     cyan: {

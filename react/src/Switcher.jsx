@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Boot, AppShell } from './components';
+import { Boot, SkipIntro } from './components';
 
 export default function Settings() {
     const {
@@ -10,5 +10,5 @@ export default function Settings() {
     if (!boot.booted) {
         return <Boot />
     }
-    return <AppShell />;
+    return <SkipIntro />;
 }

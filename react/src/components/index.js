@@ -8,6 +8,7 @@ import NotFound from "./NotFound";
 import Settings from "./Settings";
 import Sidebar from "./Sidebar";
 import SidebarHeader from "./SidebarHeader";
+import SkipIntro from "./SkipIntro";
 import UserEntity from "./UserEntity";
 import View from "./View";
 
@@ -25,6 +26,7 @@ export {
   Settings,
   Sidebar,
   SidebarHeader,
+  SkipIntro,
   UserEntity,
   View,
 };
