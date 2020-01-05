@@ -1,9 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
-// import {
-//     Typography,
-// } from '@material-ui/core/';
 
 const useStyles = makeStyles(theme => ({
     boot: {
@@ -13,13 +10,9 @@ const useStyles = makeStyles(theme => ({
     },
     message: {
         margin: theme.spacing(1),
-        fontFamily: 'Monaco, monospace',
-        fontSize: 18,
+        fontSize: '1rem',
         color: 'white',
     },
-    cyan: {
-        color: 'cyan'
-    }
 }));
 
 export default function Boot() {

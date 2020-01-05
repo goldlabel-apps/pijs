@@ -24,33 +24,36 @@
       content="PiJS is a React PWA and Secure SSL Node/Express server running on a Raspberry Pi 4"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#F1DD3F" />
+
     <meta name="geo.region" content="AU-QLD" />
     <meta name="geo.placename" content="Scarborough" />
     <meta name="geo.position" content="-27.211579;153.107658" />
     <meta name="ICBM" content="-27.211579, 153.107658" />
+
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="PiJS" />
     <meta name="apple-mobile-web-app-title" content="PiJS" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="msapplication-TileColor" content="#212121" />
+    
+    <meta name="msapplication-config" content="browserconfig.xml" />
     <meta
       name="msapplication-TileImage"
       content="png/windows-tile/windows-tile-300x300.png"
     />
-    <meta name="msapplication-config" content="browserconfig.xml" />
-    <link rel="manifest" href="site.webmanifest" />
+    
+    
     <link
       rel="apple-touch-icon"
       href="png/apple-touch/apple-touch-icon-180x180.png"
     />
-    <meta property="og:title" content="PiJS" />
-    <meta property="al:android:app_name" content="PiJS" />
-    <meta property="al:ios:app_name" content="PiJS" />
-    <meta property="al:windows:app_name" content="PiJS" />
-    <meta property="og:type" content="website" />
+
     <meta property="og:locale" content="en_pi" />
+    <meta property="og:title" content="PiJS" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pijs.app" />
     <meta property="og:site_name" content="PiJS" />
     <meta property="og:image" content="png/open-graph.png" />
@@ -58,10 +61,16 @@
     <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="450" />
     <meta property="og:image:alt" content="PiJS" />
+
+    <meta property="al:android:app_name" content="PiJS" />
+    <meta property="al:ios:app_name" content="PiJS" />
+    <meta property="al:windows:app_name" content="PiJS" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="PiJS" />
     <meta name="twitter:image" content="png/twitter-card.png" />
     <meta name="twitter:image:alt" content="PiJS" />
+
     <link
       rel="apple-touch-startup-image"
       href="png/apple-touch/apple-touch-startup-2048x1536r2.png"
@@ -166,15 +175,10 @@
     <style>
       body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-          sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
           monospace;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
     </style>
   </head>

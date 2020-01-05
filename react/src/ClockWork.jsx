@@ -33,7 +33,7 @@ class ClockWork extends Component {
             case 1:
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
-                        message: `Debian GNU/Linux Linux raspberrypi 4.19.75 armv7l`,
+                        message: `Debian GNU/Linux 4.19.75`,
                         color: `white`,
                     }
                 })
@@ -67,20 +67,20 @@ class ClockWork extends Component {
                             message: `{<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.ip}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.latitude}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"zipcode": ${ipgeo.zipcode}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.city}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"state_prov": "${ipgeo.state_prov}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"country_name": "${ipgeo.country_name}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.latitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"is_eu": ${ipgeo.is_eu}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                             }<br />`,
                             color: `limegreen`,
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 4) {
+                if (ticks === userShownAtTick + 6) {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
@@ -88,7 +88,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 5) {
+                if (ticks === userShownAtTick + 7) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
