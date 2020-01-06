@@ -1,0 +1,15 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "clear && echo 'Gotta start somewhere\n\n'",
+    "make": "clear && node makeIndexes.js"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:listingslab-software/docs.git",
+  "author": "listingslab <listingslab@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "firstline": "^2.0.2"
+  }
+}
