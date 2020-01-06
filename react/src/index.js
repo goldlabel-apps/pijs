@@ -10,6 +10,7 @@ import ClockWork from "./ClockWork";
 import {
   CssBaseline,
 } from '@material-ui/core/';
+
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );

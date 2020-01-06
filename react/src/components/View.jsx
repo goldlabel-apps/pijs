@@ -1,34 +1,54 @@
-// View
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import {
-//     List,
-//     ListItem,
-//     ListItemIcon,
-//     ListItemSecondaryAction,
-//     ListItemText,
-//     Switch,
-// } from '@material-ui/core/';
-// import {
-//     Icon,
-// } from './';
+import {
+    IconButton,
+    Typography
+} from '@material-ui/core/';
+
+import {
+    Icon,
+    // Message,
+} from './';
 
 const useStyles = makeStyles(theme => ({
-    view: {
-        width: '100%',
-        // maxWidth: 360,
-        //backgroundColor: theme.palette.background.paper,
-        border: '1px solid white',
+    stage: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        backgroundColor: '#212121',
+        
     },
+    logo: {
+        display: 'flex',
+    },
+    logoText: {
+        color: '#F1DD3F',
+        marginTop: theme.spacing(0.65)
+    }
 }));
 
 export default function View() {
     const classes = useStyles();
 
     return (
-        <div className={classes.view}>
-            view
+        <div className={classes.stage}>
+
+            <div
+                id={`logo`}
+                className={classes.logo}>
+                <IconButton
+                    onClick={(e) => { 
+                        e.preventDefault();
+                    }}>
+                    <Icon icon={`pi`} />
+                </IconButton>
+                <Typography
+                    className={classes.logoText}
+                    variant={`h4`}>
+                    PiJS.app
+                </Typography>
+            </div>
         </div>
     );
 }

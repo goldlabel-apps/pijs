@@ -70,7 +70,6 @@ class ClockWork extends Component {
             default:
                 break;            
         }
-        // &nbsp;&nbsp;&nbsp;&nbsp;"visits": ${visits}<br />
         if (!booted && ticks > 2) {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
@@ -79,7 +78,6 @@ class ClockWork extends Component {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
-                            
                             &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"created": "${userEntityCreatedAgo}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.ip}"<br />

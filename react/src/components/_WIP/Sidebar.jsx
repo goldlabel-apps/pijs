@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Messages,
+    Message,
     NavList,
     Settings,
     SidebarHeader,
@@ -13,7 +13,7 @@ export default function Menu() {
             <SidebarHeader />
             <NavList />
             <UserEntity />
-            <Messages />
+            <Message />
             <div style={{ flexGrow: 1 }} />
             <Settings />
         </React.Fragment>

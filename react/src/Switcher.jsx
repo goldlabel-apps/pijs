@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import {
     Boot,
-    SkipIntro
+    View
 } from './components';
 
 export default function Settings() {
@@ -13,5 +13,5 @@ export default function Settings() {
     if (!boot.booted) {
         return <Boot />
     }
-    return <SkipIntro />;
+    return <View />;
 }

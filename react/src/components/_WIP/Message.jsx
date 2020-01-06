@@ -10,9 +10,7 @@ import {
 } from '@material-ui/core/';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        width: '100%',
-        maxWidth: 360,
+    message: {
         backgroundColor: theme.palette.background.paper,
     },
     inline: {
@@ -20,19 +18,16 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function Messages() {
+export default function Message() {
     const classes = useStyles();
 
     return (
-        <List className={classes.root}>
+        <List className={classes.message}>
             <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="/png/avatars/be-more-steve.png" />
+                    <Avatar alt="Steve" src="/png/avatars/anon.png" />
                 </ListItemAvatar>
                 <ListItemText
-                    style={{
-                        color: 'white'
-                    }}
                     primary="Brunch this weekend?"
                     secondary={
                         <React.Fragment>
@@ -41,9 +36,9 @@ export default function Messages() {
                                 variant="body2"
                                 className={classes.inline}
                                 color={`inherit`}>
-                                Ali Connors
+                                Steve
                             </Typography>
-                            {" — I'll be in your neighborhood doing errands this…"}
+                            {` > I'll be in your neighborhood doing errands this…`}
                         </React.Fragment>
                     }
                 />
