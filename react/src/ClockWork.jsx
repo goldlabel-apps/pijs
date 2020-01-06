@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { getStore } from './';
 import {
     createFingerprint,
@@ -9,11 +10,15 @@ import {
 
 class ClockWork extends Component {
     state = { timer: null }
+
     componentDidMount() {
+        const store = getStore();
+        store.dispatch({ type: `SYSTEM/NEW/VISIT` });
+        this.startTimer();
         createFingerprint();
         ipgeolocation();
-        this.startTimer();
     }
+
     componentWillUnmount() { this.stopTimer() }
 
     tick = () => {
@@ -25,10 +30,14 @@ class ClockWork extends Component {
             fingerprint,
             ipgeo,
             ticks,
+            userEntityCreated,
             userShownAtTick,
+            visits,
         } = this.props;
         const userAgent = components.find(o => o.key === 'userAgent').value;
-
+        const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
+        
+        
         switch (ticks) {
             case 1:
                 store.dispatch({
@@ -57,19 +66,22 @@ class ClockWork extends Component {
             default:
                 break;            
         }
-
+        // &nbsp;&nbsp;&nbsp;&nbsp;"visits": ${visits}<br />
         if (!booted && ticks > 2) {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
+                    console.log('visits', visits)
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
+                            
                             &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"created": "${userEntityCreatedAgo}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.ip}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.latitude}<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"zipcode": ${ipgeo.zipcode}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"postcode": "${ipgeo.zipcode}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.city}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"state_prov": "${ipgeo.state_prov}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"country_name": "${ipgeo.country_name}"<br />
@@ -131,6 +143,8 @@ const mapStateToProps = (store) => {
         fingerprint: store.system.userEntity.fingerprint.value,
         components: store.system.userEntity.fingerprint.components,
         ipgeo: store.system.userEntity.ipgeo,
+        userEntityCreated: store.system.userEntity.created,
+        visits: store.system.userEntity.visits,
         
     };
 };
