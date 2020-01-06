@@ -33,8 +33,13 @@ class ClockWork extends Component {
             userEntityCreated,
             userShownAtTick,
         } = this.props;
+        let userAgent = `unknown`;
+        if (components) {
+            if (components.find(o => o.key === 'userAgent')) { 
+                userAgent = components.find(o => o.key === 'userAgent').value;
+            }   
+        }
         
-        const userAgent = components.find(o => o.key === 'userAgent').value;
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
         
         switch (ticks) {
@@ -99,7 +104,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 6) {
+                if (ticks === userShownAtTick + 5) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
