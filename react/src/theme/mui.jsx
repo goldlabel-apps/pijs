@@ -1,8 +1,3 @@
-
-// light yellow #fff1bb
-// javascript yellow #F1DD3F
-// javascript grey #333333
-
 const theme = {
     palette: {
         type: 'dark',
