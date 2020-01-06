@@ -1,6 +1,6 @@
 {
   "name": "pijs",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "description": "PiJS is an Open Source React PWA with Secure SSL Node/Express server running on a Raspberry Pi 4",
   "repository": {
     "type": "git",
@@ -25,9 +25,5 @@
     "Node",
     "React",
     "PWA"
-  ],
-  "dependencies": {
-    "@u-wave/react-vimeo": "^0.8.1",
-    "gsap": "^3.0.4"
-  }
+  ]
 }

@@ -10,7 +10,7 @@ export const setFingerprint = createAction("SYSTEM/SET/FINGERPRINT");
 export const setIpgeo = createAction("SYSTEM/SET/IPGEO");
 export const ipgeoError = createAction("SYSTEM/IPGEO/ERROR");
 export const showUserAtTick = createAction("SYSTEM/BOOT/SHOWUSERATTICK");
-
+export const newVisit = createAction("SYSTEM/NEW/VISIT");
 
 export const createFingerprint = () => {
     const store = getStore();

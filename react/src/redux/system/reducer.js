@@ -1,11 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
   boot,
-  tick,
+  newVisit,
   setFingerprint,
   systemSays,
   setIpgeo,
   showUserAtTick,
+  tick,
 } from "./actions";
 
 export const systemSlice = {
@@ -24,17 +25,24 @@ export const systemSlice = {
   },
   userEntity: {
     updated: Date.now(),
+    visits: 0,
     created: null,
     lastVisit: null,
     fingerprint: {
       value: null,
-      components: null,
+      components: [],
     },
     ipgeo: null,
   }
 };
 
 const system = createReducer(systemSlice, {
+
+  [newVisit]: (state) => {
+    // console.log('newVisit', state.userEntity.visits)
+    state.userEntity.visits = state.userEntity.visits + 1;
+    return state;
+  }, 
 
   [showUserAtTick]: (state, action) => {
     state.boot.userShownAtTick = action.ticks;
@@ -45,19 +53,43 @@ const system = createReducer(systemSlice, {
     state.userEntity.ipgeo = action.ipgeo;
     return state;
   },
+
+
+
   
   [setFingerprint]: (state, action) => {
-
-    console.log('showUserAtTick', action)
-
-    
-
-    state.userEntity.fingerprint = {
+    const oldFingerprint = state.userEntity.fingerprint.value
+    let newFingerprint = {
+      updated: Date.now(),
       value: action.fingerprint,
+      oldFingerprint,
       components: action.components,
-    };
+    }
+    if (!oldFingerprint) {
+      state.userEntity.created = Date.now();
+    }
+
+    // console.log('newFingerprint', action.fingerprint);
+    // console.log('oldFingerprint', oldFingerprint);
+    // if (oldFingerprint) {
+    // }
+    state.userEntity.fingerprint = newFingerprint;
     return state;
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   [systemSays]: (state, action) => {
     state.boot.consoleMessage += ` <span style="color: ${action.say.color};">${action.say.message}</span>`;

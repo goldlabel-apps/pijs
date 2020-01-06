@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Boot, SkipIntro } from './components';
+import {
+    Boot,
+    SkipIntro
+} from './components';
 
 export default function Settings() {
     const {

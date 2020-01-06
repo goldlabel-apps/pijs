@@ -15,7 +15,7 @@ const theme = {
         },
         background: {
             default: "#F1DD3F",
-            paper: "#212121", // 212121
+            paper: "#212121",
             appBar: "#F1DD3F",
             contentFrame: "#F1DD3F"
         },
