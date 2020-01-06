@@ -36,7 +36,7 @@ function SkipIntro(props) {
         const div = document.getElementById(divId);
         const timeline = new TimelineMax();
         timeline.to(div, baseDuration * 1, {
-            // opacity: '1',
+            opacity: '1',
             rotationY: -180,
             ease: Power2.easeOut,
             onComplete: callback,

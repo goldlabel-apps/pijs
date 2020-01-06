@@ -30,7 +30,7 @@ export const systemSlice = {
     lastVisit: null,
     fingerprint: {
       value: null,
-      components: null,
+      components: [],
     },
     ipgeo: null,
   }

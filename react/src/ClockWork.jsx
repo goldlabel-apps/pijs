@@ -32,11 +32,10 @@ class ClockWork extends Component {
             ticks,
             userEntityCreated,
             userShownAtTick,
-            visits,
         } = this.props;
+        
         const userAgent = components.find(o => o.key === 'userAgent').value;
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
-        
         
         switch (ticks) {
             case 1:
@@ -71,7 +70,7 @@ class ClockWork extends Component {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
-                    console.log('visits', visits)
+                    // console.log('visits', visits)
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
@@ -92,7 +91,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 100) {
+                if (ticks === userShownAtTick + 4) {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
@@ -100,7 +99,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 101) {
+                if (ticks === userShownAtTick + 6) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
