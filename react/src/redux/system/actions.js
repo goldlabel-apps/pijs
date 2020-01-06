@@ -25,18 +25,22 @@ export const createFingerprint = () => {
 
 export const ipgeolocation = () => {
   const store = getStore();
-  axios
-    .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`)
-    .then(function(response) {
-      store.dispatch({
-        type: "SYSTEM/SET/IPGEO",
-        ipgeo: response.data
+  const { ipgeo, ipgeoUpdated} = store.getState().system.userEntity;
+  if (!ipgeo || Date.now() - ipgeoUpdated > 10000) {
+    console.log('IPGEOLOCATION !!@!!')
+    axios
+      .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`)
+      .then(function (response) {
+        store.dispatch({
+          type: "SYSTEM/SET/IPGEO",
+          ipgeo: response.data
+        });
+      })
+      .catch(function (error) {
+        store.dispatch({
+          type: "SYSTEM/IPGEO/ERROR",
+          error
+        });
       });
-    })
-    .catch(function(error) {
-      store.dispatch({
-        type: "SYSTEM/IPGEO/ERROR",
-        error
-      });
-    });
+  }
 };

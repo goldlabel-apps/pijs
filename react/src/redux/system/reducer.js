@@ -33,6 +33,7 @@ export const systemSlice = {
       components: [],
     },
     ipgeo: null,
+    ipgeoUpdated: null,
   }
 };
 
@@ -51,12 +52,10 @@ const system = createReducer(systemSlice, {
 
   [setIpgeo]: (state, action) => {
     state.userEntity.ipgeo = action.ipgeo;
+    state.userEntity.ipgeoUpdated = Date.now();
     return state;
   },
 
-
-
-  
   [setFingerprint]: (state, action) => {
     const oldFingerprint = state.userEntity.fingerprint.value
     let newFingerprint = {

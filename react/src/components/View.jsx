@@ -1,18 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+// import {
+//     IconButton,
+//     Typography
+// } from '@material-ui/core/';
 import {
-    IconButton,
-    Typography
-} from '@material-ui/core/';
-
-import {
-    Icon,
-    // Message,
+    // Icon,
+    UserEntity,
 } from './';
 
 const useStyles = makeStyles(theme => ({
     stage: {
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
@@ -21,6 +21,8 @@ const useStyles = makeStyles(theme => ({
     },
     logo: {
         display: 'flex',
+        marginRight: theme.spacing(),
+        marginBottom: theme.spacing(),
     },
     logoText: {
         color: '#F1DD3F',
@@ -34,7 +36,7 @@ export default function View() {
     return (
         <div className={classes.stage}>
 
-            <div
+            {/* <div
                 id={`logo`}
                 className={classes.logo}>
                 <IconButton
@@ -48,7 +50,9 @@ export default function View() {
                     variant={`h4`}>
                     PiJS.app
                 </Typography>
-            </div>
+            </div> */}
+
+            <UserEntity />
         </div>
     );
 }
