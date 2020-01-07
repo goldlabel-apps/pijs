@@ -4,6 +4,7 @@ import { createAction } from "@reduxjs/toolkit";
 import { getStore } from "../../";
 
 export const boot = createAction("SYSTEM/BOOT");
+export const reset = createAction("SYSTEM/RESET");
 export const tick = createAction("SYSTEM/TICK");
 export const systemSays = createAction("SYSTEM/SAYS");
 export const setFingerprint = createAction("SYSTEM/SET/FINGERPRINT");
@@ -24,9 +25,14 @@ export const createFingerprint = () => {
 };
 
 export const ipgeolocation = () => {
+  
   const store = getStore();
-  const { ipgeo, ipgeoUpdated} = store.getState().system.userEntity;
-  if (!ipgeo || Date.now() - ipgeoUpdated > 10000) {
+  const { ipgeo, ipgeoUpdated } = store.getState().system.userEntity;
+  let updateRequired = false;
+  if (!ipgeo) { updateRequired = true }
+
+  console.log('ipgeoUpdated', ipgeoUpdated)
+  if (updateRequired) {
     console.log('IPGEOLOCATION !!@!!')
     axios
       .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`)

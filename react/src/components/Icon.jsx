@@ -34,7 +34,6 @@ import GithubSVG from '../graphics/GithubSVG';
 import PiJSSVG from '../graphics/PiJSSVG';
 import PiJSBackSVG from '../graphics/PiJSBackSVG';
 import SpadeSVG from '../graphics/SpadeSVG';
-
 import IconDarkmode from '@material-ui/icons/Highlight';
 
 const styles = theme => ({

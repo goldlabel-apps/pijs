@@ -26,19 +26,18 @@ class ClockWork extends Component {
         store.dispatch({ type: `SYSTEM/TICK` });
         const {
             booted,
-            components,
             fingerprint,
             ipgeo,
             ticks,
             userEntityCreated,
             userShownAtTick,
         } = this.props;
-        let userAgent = `unknown`;
-        if (components) {
-            if (components.find(o => o.key === 'userAgent')) { 
-                userAgent = components.find(o => o.key === 'userAgent').value;
-            }   
-        }
+        // let userAgent = `unknown`;
+        // if (components) {
+        //     if (components.find(o => o.key === 'userAgent')) { 
+        //         userAgent = components.find(o => o.key === 'userAgent').value;
+        //     }   
+        // }
         
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
         
@@ -87,8 +86,6 @@ class ClockWork extends Component {
                             &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.city}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"state_prov": "${ipgeo.state_prov}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"country_name": "${ipgeo.country_name}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"is_eu": ${ipgeo.is_eu}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"userAgent": ${userAgent}<br />
                             }<br />`,
                             color: `limegreen`,
                         }

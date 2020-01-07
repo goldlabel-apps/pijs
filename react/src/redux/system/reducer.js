@@ -1,6 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
   boot,
+  reset,
   newVisit,
   setFingerprint,
   systemSays,
@@ -19,7 +20,6 @@ export const systemSlice = {
     cursorOn: true,
   },
   clockWork: {
-    updated: Date.now(),
     tickDelay: 0.5,
     ticks: 0,
   },
@@ -32,12 +32,18 @@ export const systemSlice = {
       value: null,
       components: [],
     },
-    ipgeo: null,
-    ipgeoUpdated: null,
+    ipgeo: {
+      lastFetch: null,
+      fetching: false,
+    }
   }
 };
 
 const system = createReducer(systemSlice, {
+
+  [reset]: () => {
+    return systemSlice;
+  }, 
 
   [newVisit]: (state) => {
     // console.log('newVisit', state.userEntity.visits)

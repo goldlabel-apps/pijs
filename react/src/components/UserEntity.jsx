@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
+import { getStore } from '../';
 import {
     Avatar,
     Button,
@@ -23,13 +24,14 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing()
     },
     content: {
-        border: '1px solid skyblue',
+        // border: '1px solid skyblue',
         width: 350,
     }
 }));
 
 function UserEntity(props) {
     const classes = useStyles();
+    const store = getStore();
     const {
         created,
         visits,
@@ -51,15 +53,13 @@ function UserEntity(props) {
                         <IconButton>
                             <Icon icon={`menu`} color={`primary`} />
                         </IconButton>
-                    }
-                />
+                    }/>
                 <CardContent>
                     <div className={classes.content}>
 
                         <p>Created {moment(created).fromNow()}</p>
                         <p>Visits {visits}</p>
                         <p>Fingerprint {fingerprint.value}</p>
-
 
                         {content.map((item, i) => {
                             // console.log(item, i)
@@ -75,8 +75,6 @@ function UserEntity(props) {
                             );
                         })}
                     </div>
-
-                    
                 </CardContent>
                 <CardActions>
                     <Button
@@ -84,9 +82,10 @@ function UserEntity(props) {
                         color={`primary`}
                         onClick={(e) => {
                             e.preventDefault();
-                        }}
-                    >
-                        Forget me
+                            store.dispatch({ type: "SYSTEM/RESET" });
+                            window.location.assign(`/`)
+                        }}>
+                        Reset
                     </Button>
                 </CardActions>
             </Card>
