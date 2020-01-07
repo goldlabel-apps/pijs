@@ -33,17 +33,13 @@ export const systemSlice = {
       components: [],
     },
     ipgeo: {
-      lastFetch: null,
-      fetching: false,
+      lastFetch: 0,
+      data: {},
     }
   }
 };
 
 const system = createReducer(systemSlice, {
-
-  [reset]: () => {
-    return systemSlice;
-  }, 
 
   [newVisit]: (state) => {
     // console.log('newVisit', state.userEntity.visits)
@@ -57,8 +53,8 @@ const system = createReducer(systemSlice, {
   },
 
   [setIpgeo]: (state, action) => {
-    state.userEntity.ipgeo = action.ipgeo;
-    state.userEntity.ipgeoUpdated = Date.now();
+    state.userEntity.ipgeo.data = action.ipgeo;
+    state.userEntity.ipgeo.lastFetch = Date.now();
     return state;
   },
 
@@ -69,32 +65,14 @@ const system = createReducer(systemSlice, {
       value: action.fingerprint,
       oldFingerprint,
       components: action.components,
+      userAgent: action.userAgent,
     }
     if (!oldFingerprint) {
       state.userEntity.created = Date.now();
     }
-
-    // console.log('newFingerprint', action.fingerprint);
-    // console.log('oldFingerprint', oldFingerprint);
-    // if (oldFingerprint) {
-    // }
     state.userEntity.fingerprint = newFingerprint;
     return state;
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   [systemSays]: (state, action) => {
     state.boot.consoleMessage += ` <span style="color: ${action.say.color};">${action.say.message}</span>`;
@@ -112,6 +90,10 @@ const system = createReducer(systemSlice, {
     state.boot.status = 'booted';
     return state;
   },
+  
+  [reset]: () => {
+    return systemSlice;
+  }, 
 
 });
 

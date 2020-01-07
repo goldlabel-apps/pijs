@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing()
     },
     content: {
-        // border: '1px solid skyblue',
         width: 350,
     }
 }));
@@ -37,10 +36,7 @@ function UserEntity(props) {
         visits,
         fingerprint,
     } = useSelector(state => state.system.userEntity);
-    // console.log('visits', visits)
-
-    const content = [
-    ];
+    const content = [];
 
     return (
         <div className={classes.userEntity}>
@@ -62,7 +58,6 @@ function UserEntity(props) {
                         <p>Fingerprint {fingerprint.value}</p>
 
                         {content.map((item, i) => {
-                            // console.log(item, i)
                             return (
                                 <React.Fragment key={`content_item_${i}`}>
                                     <Typography variant={`body1`}>

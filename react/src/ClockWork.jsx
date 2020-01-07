@@ -32,12 +32,6 @@ class ClockWork extends Component {
             userEntityCreated,
             userShownAtTick,
         } = this.props;
-        // let userAgent = `unknown`;
-        // if (components) {
-        //     if (components.find(o => o.key === 'userAgent')) { 
-        //         userAgent = components.find(o => o.key === 'userAgent').value;
-        //     }   
-        // }
         
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
         
@@ -77,15 +71,15 @@ class ClockWork extends Component {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"created": "${userEntityCreatedAgo}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.ip}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.latitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.longitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"postcode": "${ipgeo.zipcode}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.city}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"state_prov": "${ipgeo.state_prov}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"country_name": "${ipgeo.country_name}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.data.ip}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.data.latitude}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.data.longitude}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"postcode": "${ipgeo.data.zipcode}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.data.city}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"state": "${ipgeo.data.state_prov}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"country": "${ipgeo.data.country_name}"<br />
                             }<br />`,
                             color: `limegreen`,
                         }

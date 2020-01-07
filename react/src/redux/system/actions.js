@@ -2,6 +2,7 @@ import axios from "axios";
 import Fingerprint2 from "fingerprintjs2";
 import { createAction } from "@reduxjs/toolkit";
 import { getStore } from "../../";
+import userAgentParser from 'ua-parser-js';
 
 export const boot = createAction("SYSTEM/BOOT");
 export const reset = createAction("SYSTEM/RESET");
@@ -19,21 +20,26 @@ export const createFingerprint = () => {
         const values = components.map(function (component) {
             return component.value;
         });
-        const fingerprint = Fingerprint2.x64hash128(values.join(""), 31);
-        store.dispatch({ type: "SYSTEM/SET/FINGERPRINT", fingerprint, components });
+      const fingerprint = Fingerprint2.x64hash128(values.join(""), 31);
+      let userAgent = userAgentParser(components.find(o => o.key === 'userAgent').value);
+      store.dispatch({ type: "SYSTEM/SET/FINGERPRINT", fingerprint, components, userAgent });
     });
 };
 
 export const ipgeolocation = () => {
   
   const store = getStore();
-  const { ipgeo, ipgeoUpdated } = store.getState().system.userEntity;
+  const { ipgeo } = store.getState().system.userEntity;
   let updateRequired = false;
-  if (!ipgeo) { updateRequired = true }
-
-  console.log('ipgeoUpdated', ipgeoUpdated)
+  if (!ipgeo.data) { updateRequired = true }
+  if (!ipgeo.lastFetch) { updateRequired = true }
+  if (ipgeo.lastFetch !== null && ipgeo.data !== null) {
+    if (Date.now() - ipgeo.lastFetch > 10000) {
+      updateRequired = true;
+    }
+  }
   if (updateRequired) {
-    console.log('IPGEOLOCATION !!@!!')
+    // console.log('Fetch IPGEO')
     axios
       .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`)
       .then(function (response) {
