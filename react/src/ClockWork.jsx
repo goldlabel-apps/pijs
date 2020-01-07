@@ -81,7 +81,7 @@ class ClockWork extends Component {
                             &nbsp;&nbsp;&nbsp;&nbsp;"state": "${ipgeo.data.state_prov}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"country": "${ipgeo.data.country_name}"<br />
                             }<br />`,
-                            color: `limegreen`,
+                            color: `#eee`,
                         }
                     })
                 }
