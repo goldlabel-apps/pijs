@@ -85,7 +85,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 4) {
+                if (ticks === userShownAtTick + 10) {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
@@ -93,7 +93,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 5) {
+                if (ticks === userShownAtTick + 11) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
