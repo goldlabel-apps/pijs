@@ -7,11 +7,12 @@ import {
     // Avatar,
     //Button,
     Card,
-    CardActions,
+    // CardActions,
     CardContent,
     CardHeader,
     Typography,
     IconButton,
+    Tooltip,
 } from '@material-ui/core/';
 import {
     Icon,
@@ -21,6 +22,7 @@ import {
 const useStyles = makeStyles(theme => ({
     userEntity: {
         maxWidth: '95%',
+        margin: theme.spacing(),
     },
     card: {
         // padding: theme.spacing()
@@ -41,7 +43,6 @@ function UserEntity(props) {
         visits,
         // fingerprint,
     } = useSelector(state => state.system.userEntity);
-    const content = [];
 
     return (
         <div className={classes.userEntity}>
@@ -49,18 +50,27 @@ function UserEntity(props) {
                 <CardHeader
                     title={`User Entity`}
                     subheader={<span style={{ color: 'white' }}>{visits} visits</span>}
-                    avatar={<Icon icon={`userentity`} color={`primary`} />}
+                    avatar={
+                            <Icon
+                                icon={`userentity`}
+                                color={`primary`}
+                            />}
                     action={
-                        <IconButton
-                            variant={`contained`}
-                            color={`primary`}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                store.dispatch({ type: "SYSTEM/RESET" });
-                                window.location.assign(`/`)
-                            }}>
-                            <Icon icon={`refresh`} color={`primary`} />
-                        </IconButton>
+                        <Tooltip title={`Reset your User Entity`}>
+                            <IconButton
+                                variant={`contained`}
+                                color={`primary`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    store.dispatch({ type: "SYSTEM/RESET" });
+                                    window.location.assign(`/`)
+                                }}>
+                                <Icon
+                                    icon={`trash`}
+                                    color={`primary`}
+                                />
+                            </IconButton>
+                        </Tooltip>
                     }/>
                 <CardContent>
                     <div className={classes.content}>
@@ -70,24 +80,11 @@ function UserEntity(props) {
                             {/* Fingerprint {fingerprint.value} */}
                         </Typography>
 
-                        {content.map((item, i) => {
-                            return (
-                                <React.Fragment key={`content_item_${i}`}>
-                                    <Typography variant={`body1`}>
-                                        {item.title}
-                                    </Typography>
-                                    <Typography variant={`body2`}>
-                                        {item.short}
-                                    </Typography>
-                                </React.Fragment>
-                            );
-                        })}
                     </div>
                 </CardContent>
-                <CardActions>
+                {/* <CardActions>
                     <div className={classes.grow} />
-                    
-                </CardActions>
+                </CardActions> */}
             </Card>
         </div>
     );

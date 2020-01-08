@@ -36,6 +36,7 @@ import PiJSSVG from '../graphics/PiJSSVG';
 import PiJSBackSVG from '../graphics/PiJSBackSVG';
 import SpadeSVG from '../graphics/SpadeSVG';
 import IconDarkmode from '@material-ui/icons/Highlight';
+import IconTrash from '@material-ui/icons/DeleteForeverOutlined';
 
 const styles = theme => ({
     navIcon: {
@@ -63,6 +64,9 @@ class Icon extends Component {
             iconColor = color
         }
         switch (icon) {
+
+            case `trash`:
+                return (<IconTrash color={iconColor} />);
             
             case `userentity`:
                 return (<IconUserEntity color={iconColor} />);
@@ -124,7 +128,7 @@ class Icon extends Component {
             case `temperature`:
                 return (<IconTemperature color={iconColor} />);
 
-            case `webcam`:
+            case `camera`:
                 return (<IconWebcam color={iconColor} />);
 
             case `map`:

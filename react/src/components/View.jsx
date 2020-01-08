@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 //     Typography
 // } from '@material-ui/core/';
 import {
-    // Icon,
+    Camera,
+    Logo,
     UserEntity,
 } from './';
 
@@ -17,16 +18,6 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         height: '100vh',
         backgroundColor: '#212121',
-        
-    },
-    logo: {
-        display: 'flex',
-        marginRight: theme.spacing(),
-        marginBottom: theme.spacing(),
-    },
-    logoText: {
-        color: '#F1DD3F',
-        marginTop: theme.spacing(0.65)
     }
 }));
 
@@ -35,23 +26,8 @@ export default function View() {
 
     return (
         <div className={classes.stage}>
-
-            {/* <div
-                id={`logo`}
-                className={classes.logo}>
-                <IconButton
-                    onClick={(e) => { 
-                        e.preventDefault();
-                    }}>
-                    <Icon icon={`pi`} />
-                </IconButton>
-                <Typography
-                    className={classes.logoText}
-                    variant={`h4`}>
-                    PiJS.app
-                </Typography>
-            </div> */}
-
+            <Logo />
+            <Camera />
             <UserEntity />
         </div>
     );

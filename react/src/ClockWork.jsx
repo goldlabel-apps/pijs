@@ -54,7 +54,7 @@ class ClockWork extends Component {
                 })
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
-                        message: `<br />create userEntity<br />`,
+                        message: `<br />creating userEntity<br />`,
                         color: `#F1DD3F`,
                     }
                 })
@@ -85,7 +85,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 10) {
+                if (ticks === userShownAtTick + 6) {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
@@ -93,7 +93,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 11) {
+                if (ticks === userShownAtTick + 7) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
