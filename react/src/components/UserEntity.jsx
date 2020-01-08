@@ -4,27 +4,32 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
-    Avatar,
-    Button,
+    // Avatar,
+    //Button,
     Card,
     CardActions,
     CardContent,
     CardHeader,
-    IconButton,
     Typography,
+    IconButton,
 } from '@material-ui/core/';
 import {
     Icon,
 } from './';
+// import PiJSSVG from '../graphics/PiJSSVG'
 
 const useStyles = makeStyles(theme => ({
     userEntity: {
+        maxWidth: '95%',
     },
     card: {
-        padding: theme.spacing()
+        // padding: theme.spacing()
     },
     content: {
         width: 350,
+    },
+    grow: {
+        flexGrow: 1,
     }
 }));
 
@@ -34,7 +39,7 @@ function UserEntity(props) {
     const {
         created,
         visits,
-        fingerprint,
+        // fingerprint,
     } = useSelector(state => state.system.userEntity);
     const content = [];
 
@@ -42,20 +47,28 @@ function UserEntity(props) {
         <div className={classes.userEntity}>
             <Card className={classes.card}>
                 <CardHeader
-                    title={`User Entity`}
-                    subheader={`Your privacy is important`}
-                    avatar={<Avatar src={`/png/avatars/anon.png`} />}
+                    title={`PiJS.app`}
+                    subheader={<span style={{ color: 'white' }}>{visits} visits</span>}
+                    avatar={<Icon icon={`pi`} />}
                     action={
-                        <IconButton>
-                            <Icon icon={`menu`} color={`primary`} />
+                        <IconButton
+                            variant={`contained`}
+                            color={`primary`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                store.dispatch({ type: "SYSTEM/RESET" });
+                                window.location.assign(`/`)
+                            }}>
+                            <Icon icon={`refresh`} color={`primary`} />
                         </IconButton>
                     }/>
                 <CardContent>
                     <div className={classes.content}>
 
-                        <p>Created {moment(created).fromNow()}</p>
-                        <p>Visits {visits}</p>
-                        <p>Fingerprint {fingerprint.value}</p>
+                        <Typography variant={`body2`}>
+                            user since {moment(created).fromNow()}
+                            {/* Fingerprint {fingerprint.value} */}
+                        </Typography>
 
                         {content.map((item, i) => {
                             return (
@@ -72,16 +85,8 @@ function UserEntity(props) {
                     </div>
                 </CardContent>
                 <CardActions>
-                    <Button
-                        variant={`contained`}
-                        color={`primary`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/RESET" });
-                            window.location.assign(`/`)
-                        }}>
-                        Reset
-                    </Button>
+                    <div className={classes.grow} />
+                    
                 </CardActions>
             </Card>
         </div>

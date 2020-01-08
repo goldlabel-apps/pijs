@@ -1,22 +1,21 @@
 const theme = {
     palette: {
         type: 'dark',
-        direction: 'rtl',
         primary: {
-            main: '#212121',
-        },
-        secondary: {
             main: '#F1DD3F',
         },
-        background: {
-            default: "#F1DD3F",
-            paper: "#212121",
-            appBar: "#F1DD3F",
-            contentFrame: "#F1DD3F"
+        secondary: {
+            main: '#212121',
         },
+        // background: {
+        //     default: "#F1DD3F",
+        //     paper: "#212121",
+        //     appBar: "#F1DD3F",
+        //     contentFrame: "#F1DD3F"
+        // },
         text: {
-            primary: "#212121",
-            secondary: "#F1DD3F",
+            primary: "#F1DD3F",
+            secondary: "#212121",
         },
     }
 }
