@@ -47,9 +47,9 @@ function UserEntity(props) {
         <div className={classes.userEntity}>
             <Card className={classes.card}>
                 <CardHeader
-                    title={`PiJS.app`}
+                    title={`User Entity`}
                     subheader={<span style={{ color: 'white' }}>{visits} visits</span>}
-                    avatar={<Icon icon={`pi`} />}
+                    avatar={<Icon icon={`userentity`} color={`primary`} />}
                     action={
                         <IconButton
                             variant={`contained`}
@@ -66,7 +66,7 @@ function UserEntity(props) {
                     <div className={classes.content}>
 
                         <Typography variant={`body2`}>
-                            user since {moment(created).fromNow()}
+                            User for {moment(created).fromNow().replace(` ago`, ``) }
                             {/* Fingerprint {fingerprint.value} */}
                         </Typography>
 

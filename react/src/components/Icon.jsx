@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import IconPrivacy from '@material-ui/icons/Accessibility';
+import IconUserEntity from '@material-ui/icons/AccountCircle';
 import IconHome from '@material-ui/icons/Home';
 import IconGo from '@material-ui/icons/PlayCircleOutline';
 import IconSettings from '@material-ui/icons/Settings';
@@ -62,6 +63,9 @@ class Icon extends Component {
             iconColor = color
         }
         switch (icon) {
+            
+            case `userentity`:
+                return (<IconUserEntity color={iconColor} />);
 
             case `darkmode`:
                 return (<IconDarkmode color={iconColor} />);
@@ -131,8 +135,6 @@ class Icon extends Component {
 
             case `help`:
                 return (<IconHelp color={iconColor} />);
-
-            
 
             case `home`:
                 return (<IconHome color={iconColor} />);
