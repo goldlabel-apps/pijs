@@ -8,9 +8,14 @@ import {
   setIpgeo,
   showUserAtTick,
   tick,
+  updateCamera,
 } from "./actions";
 
 export const systemSlice = {
+  camera: {
+    updated: Date.now(),
+    currentPhoto: null,
+  },
   boot: {
     updated: Date.now(),
     open: true,
@@ -41,9 +46,16 @@ export const systemSlice = {
 
 const system = createReducer(systemSlice, {
 
+  
   [newVisit]: (state) => {
-    // console.log('newVisit', state.userEntity.visits)
     state.userEntity.visits = state.userEntity.visits + 1;
+    return state;
+  }, 
+    
+  [updateCamera]: (state) => {
+    // console.log('updateCamera', state.camera)
+    state.camera.updated = Date.now();
+    state.camera.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;
     return state;
   }, 
 

@@ -32,7 +32,6 @@ class ClockWork extends Component {
             userEntityCreated,
             userShownAtTick,
         } = this.props;
-        
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
         
         switch (ticks) {
@@ -63,6 +62,15 @@ class ClockWork extends Component {
             default:
                 break;            
         }
+
+        // if (ticks % 10 === 0) {
+        //     pingPi();
+        // }
+        if (ticks % 5 === 0) {
+            store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
+        }
+
+
         if (!booted && ticks > 2) {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
@@ -96,6 +104,7 @@ class ClockWork extends Component {
                 if (ticks === userShownAtTick + 7) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
+                
             }
         }
     }

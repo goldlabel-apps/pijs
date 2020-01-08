@@ -13,7 +13,6 @@ export default function Settings() {
     } = useSelector(state => state.system);
 
     let screen = null;
-
     if (!boot.booted) {
         screen = <Boot />;
     } else {

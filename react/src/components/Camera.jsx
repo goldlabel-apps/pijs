@@ -1,29 +1,28 @@
 import React from 'react';
-// import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
-    // Button,
+    Button,
     Card,
-    // CardActions,
+    CardActions,
     CardContent,
     CardHeader,
-    // Typography,
     IconButton,
 } from '@material-ui/core/';
 import {
     Icon,
 } from './';
-// import PiJSSVG from '../graphics/PiJSSVG'
 
 const useStyles = makeStyles(theme => ({
-    userEntity: {
+    camera: {
         maxWidth: '95%',
         margin: theme.spacing(),
     },
-    card: {
-        // padding: theme.spacing()
+    cameraImage: {
+        border: '1px solid rgba(0,0,0,0.5)',
+        width: '100%',
+        borderRadius: theme.spacing(0.5),
     },
     content: {
         width: 350,
@@ -37,15 +36,16 @@ function Camera(props) {
     
     const classes = useStyles();
     const store = getStore();
-    // const {
-    //     created,
-    // } = useSelector(state => state.system.userEntity);
+    const {
+        currentPhoto,
+    } = useSelector(state => state.system.camera);
+    // console.log(currentPhoto);
     const title = `Camera`;
     const subheader = <span style={{ color: 'white' }}>{`Taken 5 seconds ago`}</span>;
     
     return (
-        <div className={classes.userEntity}>
-            <Card className={classes.card}>
+        <div className={classes.camera}>
+            <Card>
                 <CardHeader
                     title={title}
                     subheader={subheader}
@@ -58,8 +58,7 @@ function Camera(props) {
                             color={`primary`}
                             onClick={(e) => {
                                 e.preventDefault();
-                                store.dispatch({ type: "SYSTEM/RESET" });
-                                window.location.assign(`/`)
+                                store.dispatch({ type: "SYSTEM/CAMERA/UPDATE" });
                             }}>
                             <Icon
                                 icon={`refresh`}
@@ -68,10 +67,14 @@ function Camera(props) {
                     }/>
                 <CardContent>
                     <div className={classes.content}>
-                        show image
+                        <img
+                            className={classes.cameraImage}
+                            alt={subheader}
+                            src={`/jpg/current-photo.jpg`} />
+                        {currentPhoto}
                     </div>
                 </CardContent>
-                {/* <CardActions>
+                <CardActions>
                     <div className={classes.grow} />
                     <Button
                         variant={`contained`}
@@ -79,7 +82,7 @@ function Camera(props) {
                     >
                         A Button
                     </Button>
-                </CardActions> */}
+                </CardActions>
             </Card>
         </div>
     );
@@ -89,11 +92,7 @@ const MemodFuncComponent = React.memo(Camera);
 export default MemodFuncComponent;
 
 
-
-
-
-
-
+// export default Camera;
 
 /* content
 
