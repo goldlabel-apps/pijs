@@ -1,17 +1,10 @@
-
 node/build/.well-known/acme-challenge/
-
-
-# Current Photo
+.firebase
 node/build/jpg/current-photo.jpg
 node/build/data/pijs.json
-
-# Node Modules
-
 node_modules
 node/node_modules
 react/node_modules
 react/.env.development
 react/.env.production
-
 .vscode/settings.json
