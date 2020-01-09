@@ -58,7 +58,12 @@ export default function MenuAppBar() {
                     </IconButton>
                     <FormGroup>
                         <FormControlLabel
-                            control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
+                            control={<Switch
+                                color={`primary`}
+                                checked={auth}
+                                onChange={handleChange}
+                                aria-label="login switch"
+                            />}
                             label={auth ? 'Logout' : 'Login'}
                         />
                     </FormGroup>
