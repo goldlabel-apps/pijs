@@ -3,7 +3,7 @@ const theme = {
         type: 'dark',
         primary: {
             // main: '#F1DD3F',
-            main: '#000',
+            main: '#F1DD3F',
         },
         secondary: {
             main: '#212121',

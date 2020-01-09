@@ -4,10 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
-    // Avatar,
-    //Button,
     Card,
-    // CardActions,
     CardContent,
     CardHeader,
     Typography,
@@ -21,14 +18,11 @@ import {
 
 const useStyles = makeStyles(theme => ({
     userEntity: {
-        maxWidth: '95%',
         margin: theme.spacing(),
     },
     card: {
-        // padding: theme.spacing()
     },
     content: {
-        width: 350,
     },
     grow: {
         flexGrow: 1,
@@ -36,20 +30,23 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function UserEntity(props) {
+
     const classes = useStyles();
     const store = getStore();
     const {
         created,
         visits,
-        // fingerprint,
     } = useSelector(state => state.system.userEntity);
+
+    const title = `User Entity`;
+    const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
 
     return (
         <div className={classes.userEntity}>
             <Card className={classes.card}>
                 <CardHeader
-                    title={`User Entity`}
-                    subheader={<span style={{ color: 'white' }}>{visits} visits</span>}
+                    title={title}
+                    subheader={subheader}
                     avatar={
                             <Icon
                                 icon={`userentity`}

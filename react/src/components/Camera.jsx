@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
-    Button,
+    // Button,
     Card,
-    CardActions,
+    // CardActions,
     CardContent,
     CardHeader,
     IconButton,
@@ -16,7 +16,6 @@ import {
 
 const useStyles = makeStyles(theme => ({
     camera: {
-        maxWidth: '95%',
         margin: theme.spacing(),
     },
     cameraImage: {
@@ -25,7 +24,7 @@ const useStyles = makeStyles(theme => ({
         borderRadius: theme.spacing(0.5),
     },
     content: {
-        width: 350,
+        
     },
     grow: {
         flexGrow: 1,
@@ -36,9 +35,10 @@ function Camera(props) {
     
     const classes = useStyles();
     const store = getStore();
-    const {
-        currentPhoto,
-    } = useSelector(state => state.system.camera);
+    // const {
+    //     currentPhoto,
+    // } = useSelector(state => state.system.camera);
+    const staticCurrentPhoto = `/jpg/current-photo.jpg`;
     // console.log(currentPhoto);
     const title = `Camera`;
     const subheader = <span style={{ color: 'white' }}>{`5 seconds ago`}</span>;
@@ -70,18 +70,18 @@ function Camera(props) {
                         <img
                             className={classes.cameraImage}
                             alt={subheader}
-                            src={currentPhoto} />
+                            src={staticCurrentPhoto} />
                     </div>
                 </CardContent>
-                <CardActions>
+                {/* <CardActions>
                     <div className={classes.grow} />
                     <Button
                         variant={`contained`}
-                        color={`secondary`}
+                        color={`primary`}
                     >
                         A Button
                     </Button>
-                </CardActions>
+                </CardActions> */}
             </Card>
         </div>
     );
