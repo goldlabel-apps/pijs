@@ -4,8 +4,8 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
-    BottomAppBar,
-    MenuAppBar,
+    // BottomAppBar,
+    // MenuAppBar,
     Camera,
     UserEntity,
 } from './';
@@ -16,9 +16,9 @@ const useStyles = makeStyles(theme => ({
         minHeight: '100vh',
     },
     content: {
-        backgroundColor: '#333',
-        paddingTop: 65,
-        paddingBottom: 65,
+        // backgroundColor: '#333',
+        // paddingTop: 65,
+        // paddingBottom: 65,
     }
 }));
 
@@ -27,28 +27,25 @@ export default function View() {
 
     return (
         <React.Fragment>
-
-            <MenuAppBar />
+            {/* <MenuAppBar /> */}
             <div className={classes.view}>
-                
                 {/* <SpeedDialMenu /> */}
                 <div className={classes.content}>
                     
                     <Grid container>
+
+                        <Grid item xs={12} sm={6}>
+                            <UserEntity />
+                        </Grid>
+
                         <Grid item xs={12} sm={6}>
                             <Camera />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <UserEntity />
-                            <UserEntity />
                         </Grid>
                         
                     </Grid>
                 </div>
-                
-                
             </div>
-            <BottomAppBar />
+            {/* <BottomAppBar /> */}
         </React.Fragment>
     );
 }

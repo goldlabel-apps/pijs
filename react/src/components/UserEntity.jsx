@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+// import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { getStore } from '../';
@@ -34,13 +34,35 @@ function UserEntity(props) {
     const classes = useStyles();
     const store = getStore();
     const {
-        created,
+        userEntity,
+    } = useSelector(state => state.system);
+    const {
+        ipgeo,
+        // fingerprint,
         visits,
-    } = useSelector(state => state.system.userEntity);
+    } = userEntity;
+    // console.log(fingerprint)
+    const {
+        ip,
+        city,
+        country_flag,
+        country_name,
+        state_prov,
+        // latitude,
+        // longitude,
+    } = ipgeo.data;
+    
+
+    //  User for {moment(created).fromNow().replace(` ago`, ``) }
+    /* Fingerprint {fingerprint.value} */
+    let you = `Hello! This is what we currently know about you. Firstly and most 
+    importantly, the IP address that came with your request for the app is ${ip}. 
+    Using ipgeolocation.io we have matched it to to... ${city}, ${state_prov}, ${country_name} `;
 
     const title = `User Entity`;
     const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
 
+    
     return (
         <div className={classes.userEntity}>
             <Card className={classes.card}>
@@ -71,14 +93,14 @@ function UserEntity(props) {
                     }/>
                 <CardContent>
                     <div className={classes.content}>
-
                         <Typography variant={`body2`}>
-                            User for {moment(created).fromNow().replace(` ago`, ``) }
-                            {/* Fingerprint {fingerprint.value} */}
+                            {you}
                         </Typography>
 
+                        <img src={country_flag} alt={`flag`} />
                     </div>
                 </CardContent>
+
                 {/* <CardActions>
                     <div className={classes.grow} />
                 </CardActions> */}

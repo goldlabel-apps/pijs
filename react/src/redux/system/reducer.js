@@ -12,6 +12,20 @@ import {
 } from "./actions";
 
 export const systemSlice = {
+  userEntity: {
+    updated: Date.now(),
+    visits: 0,
+    created: null,
+    lastVisit: null,
+    fingerprint: {
+      value: null,
+      components: [],
+    },
+    ipgeo: {
+      lastFetch: 0,
+      data: {},
+    }
+  },
   camera: {
     updated: Date.now(),
     currentPhoto: null,
@@ -28,20 +42,6 @@ export const systemSlice = {
     tickDelay: 0.5,
     ticks: 0,
   },
-  userEntity: {
-    updated: Date.now(),
-    visits: 0,
-    created: null,
-    lastVisit: null,
-    fingerprint: {
-      value: null,
-      components: [],
-    },
-    ipgeo: {
-      lastFetch: 0,
-      data: {},
-    }
-  }
 };
 
 const system = createReducer(systemSlice, {
@@ -54,8 +54,11 @@ const system = createReducer(systemSlice, {
     
   [updateCamera]: (state) => {
     // console.log('updateCamera', state.camera)
-    state.camera.updated = Date.now();
-    state.camera.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;
+    if (state.camera) {
+      state.camera.updated = Date.now();
+      state.camera.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;
+    }
+    
     return state;
   }, 
 
