@@ -53,7 +53,7 @@ class ClockWork extends Component {
                 })
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
-                        message: `<br />creating userEntity<br />`,
+                        message: `<br />creating new userEntity<br />`,
                         color: `#F1DD3F`,
                     }
                 })

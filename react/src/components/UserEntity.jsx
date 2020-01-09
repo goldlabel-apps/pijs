@@ -5,14 +5,17 @@ import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
     Card,
+    CardActions,
     CardContent,
     CardHeader,
+    Grid,
     Typography,
     IconButton,
     Tooltip,
 } from '@material-ui/core/';
 import {
     Icon,
+    Mapbox,
 } from './';
 // import PiJSSVG from '../graphics/PiJSSVG'
 
@@ -55,12 +58,14 @@ function UserEntity(props) {
 
     //  User for {moment(created).fromNow().replace(` ago`, ``) }
     /* Fingerprint {fingerprint.value} */
-    let you = `Hello! This is what we currently know about you. Firstly and most 
+    let ipgeolocation = `Hello! This is what we currently know about you. Firstly and most 
     importantly, the IP address that came with your request for the app is ${ip}. 
-    Using ipgeolocation.io we have matched it to to... ${city}, ${state_prov}, ${country_name} `;
+    Using ipgeolocation.io we have matched it to ${city}, ${state_prov}, ${country_name}.`;
 
     const title = `User Entity`;
     const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
+
+    // process.env.REACT_APP_MAPBOX
 
     
     return (
@@ -74,36 +79,42 @@ function UserEntity(props) {
                                 icon={`userentity`}
                                 color={`primary`}
                             />}
-                    action={
-                        <Tooltip title={`Reset your User Entity`}>
-                            <IconButton
-                                variant={`contained`}
-                                color={`primary`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    store.dispatch({ type: "SYSTEM/RESET" });
-                                    window.location.assign(`/`)
-                                }}>
-                                <Icon
-                                    icon={`trash`}
-                                    color={`primary`}
-                                />
-                            </IconButton>
-                        </Tooltip>
-                    }/>
+                    // action={}
+                />
                 <CardContent>
                     <div className={classes.content}>
-                        <Typography variant={`body2`}>
-                            {you}
-                        </Typography>
-
-                        <img src={country_flag} alt={`flag`} />
+                        <Grid container>
+                            <Grid item xs={2}>
+                                <img src={country_flag} alt={`flag`} />
+                            </Grid>
+                            <Grid item xs={10}>
+                                <Typography variant={`body1`}>
+                                    {ipgeolocation}
+                                </Typography>
+                            </Grid>
+                        </Grid>    
+                        <Mapbox />
                     </div>
                 </CardContent>
 
-                {/* <CardActions>
+                <CardActions>
                     <div className={classes.grow} />
-                </CardActions> */}
+                    <Tooltip title={`Reset your User Entity`}>
+                        <IconButton
+                            variant={`contained`}
+                            color={`primary`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                store.dispatch({ type: "SYSTEM/RESET" });
+                                window.location.assign(`/`)
+                            }}>
+                            <Icon
+                                icon={`trash`}
+                                color={`primary`}
+                            />
+                        </IconButton>
+                    </Tooltip>
+                </CardActions>
             </Card>
         </div>
     );

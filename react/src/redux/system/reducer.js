@@ -12,6 +12,15 @@ import {
 } from "./actions";
 
 export const systemSlice = {
+  mapbox: {
+    updated: Date.now(),
+    mapboxStyle: `mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5`,
+    lat: 0,
+    lng: 0,
+    zoom: 1,
+    flySpeed: 0.5,
+    hasZoomed: false
+  },
   userEntity: {
     updated: Date.now(),
     visits: 0,
