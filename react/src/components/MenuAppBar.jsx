@@ -12,6 +12,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
 const useStyles = makeStyles(theme => ({
+    appBar: {
+        border: 'none',
+        boxShadow: 'none',
+    },
     menuAppBar: {
         flexGrow: 1,
     },
@@ -47,7 +51,7 @@ export default function MenuAppBar() {
     return (
         <div className={classes.menuAppBar}>
            
-            <AppBar position={`fixed`} color={`secondary`}>
+            <AppBar position={`fixed`} color={`secondary`} className={classes.appBar}>
                 <Toolbar >
                     <IconButton
                         edge="start"
