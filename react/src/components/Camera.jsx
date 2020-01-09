@@ -41,7 +41,7 @@ function Camera(props) {
     } = useSelector(state => state.system.camera);
     // console.log(currentPhoto);
     const title = `Camera`;
-    const subheader = <span style={{ color: 'white' }}>{`Taken 5 seconds ago`}</span>;
+    const subheader = <span style={{ color: 'white' }}>{`5 seconds ago`}</span>;
     
     return (
         <div className={classes.camera}>
@@ -70,8 +70,7 @@ function Camera(props) {
                         <img
                             className={classes.cameraImage}
                             alt={subheader}
-                            src={`/jpg/current-photo.jpg`} />
-                        {currentPhoto}
+                            src={currentPhoto} />
                     </div>
                 </CardContent>
                 <CardActions>

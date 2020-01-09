@@ -5,19 +5,15 @@ import { makeStyles } from '@material-ui/core/styles';
 //     Typography
 // } from '@material-ui/core/';
 import {
-    Camera,
-    Logo,
-    UserEntity,
+    BottomAppBar,
+    MenuAppBar,
+    SpeedDialMenu,
 } from './';
 
 const useStyles = makeStyles(theme => ({
-    stage: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
+    view: {
         backgroundColor: '#212121',
+        minHeight: '100vh',
     }
 }));
 
@@ -25,10 +21,29 @@ export default function View() {
     const classes = useStyles();
 
     return (
+        <React.Fragment>
+            
+            <div className={classes.view}>
+                <MenuAppBar />
+                <SpeedDialMenu />
+                <BottomAppBar />
+            </div>
+        </React.Fragment>
+    );
+}
+
+
+
+
+
+
+
+
+
+/*
         <div className={classes.stage}>
             <Logo />
             <Camera />
             <UserEntity />
         </div>
-    );
-}
+*/
