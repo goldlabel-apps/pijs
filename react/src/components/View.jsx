@@ -12,13 +12,13 @@ import {
 
 const useStyles = makeStyles(theme => ({
     view: {
-        backgroundColor: '#F1DD3F',
+        backgroundColor: '#333',
         minHeight: '100vh',
     },
     content: {
-        // backgroundColor: '#212121',
-        backgroundColor: '#F1DD3F',
+        backgroundColor: '#333',
         paddingTop: 65,
+        paddingBottom: 65,
     }
 }));
 
@@ -39,6 +39,7 @@ export default function View() {
                             <Camera />
                         </Grid>
                         <Grid item xs={12} sm={6}>
+                            <UserEntity />
                             <UserEntity />
                         </Grid>
                         

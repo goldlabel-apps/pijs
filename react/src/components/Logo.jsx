@@ -17,15 +17,15 @@ import {
 const useStyles = makeStyles(theme => ({
     logo: {
         display: 'flex',
-        marginRight: theme.spacing(),
-        marginBottom: theme.spacing(),
+        // marginRight: theme.spacing(),
+        // marginBottom: theme.spacing(),
     },
     logoText: {
-        color: '#F1DD3F',
-        marginTop: theme.spacing(0.65)
+        // color: '#F1DD3F',
+        marginTop: theme.spacing()
     },
     content: {
-        width: 350,
+        // width: 350,
     },
     grow: {
         flexGrow: 1,
@@ -42,22 +42,21 @@ function Logo(props) {
     // } = useSelector(state => state.system.userEntity);
 
     return (
-        
-            <div
-                id={`logo`}
-                className={classes.logo}>
-                <IconButton
-                    onClick={(e) => {
-                        e.preventDefault();
-                    }}>
-                    <Icon icon={`pi`} />
-                </IconButton>
-                <Typography
-                    className={classes.logoText}
-                    variant={`h4`}>
-                    PiJS.app
-                </Typography>
-            </div>
+        <div
+            id={`logo`}
+            className={classes.logo}>
+            <IconButton
+                onClick={(e) => {
+                    e.preventDefault();
+                }}>
+                <Icon icon={`pi`} />
+            </IconButton>
+            <Typography
+                className={classes.logoText}
+                variant={`h6`}>
+                PiJS.app
+            </Typography>
+        </div>
     );
 }
 

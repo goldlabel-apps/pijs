@@ -46,7 +46,7 @@ export default function BottomAppBar() {
             <AppBar
                 className={classes.appBar}
                 position={`fixed`}
-                color={`secondary`} >
+                color={`primary`} >
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="open drawer">
                         <MenuIcon />
