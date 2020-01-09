@@ -16,15 +16,12 @@ import {
 
 const useStyles = makeStyles(theme => ({
     camera: {
-        margin: theme.spacing(),
+        margin: theme.spacing(0.5),
     },
     cameraImage: {
         border: '1px solid rgba(0,0,0,0.5)',
         width: '100%',
         borderRadius: theme.spacing(0.5),
-    },
-    content: {
-        
     },
     grow: {
         flexGrow: 1,
@@ -66,12 +63,10 @@ function Camera(props) {
                         </IconButton>
                     }/>
                 <CardContent>
-                    <div className={classes.content}>
-                        <img
-                            className={classes.cameraImage}
-                            alt={subheader}
-                            src={staticCurrentPhoto} />
-                    </div>
+                    <img
+                        className={classes.cameraImage}
+                        alt={subheader}
+                        src={staticCurrentPhoto} />
                 </CardContent>
                 {/* <CardActions>
                     <div className={classes.grow} />

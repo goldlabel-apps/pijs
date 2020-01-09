@@ -12,12 +12,13 @@ import {
 
 const useStyles = makeStyles(theme => ({
     view: {
-        // backgroundColor: '#212121',
+        backgroundColor: '#F1DD3F',
         minHeight: '100vh',
     },
     content: {
         // backgroundColor: '#212121',
-        marginTop: 75,
+        backgroundColor: '#F1DD3F',
+        paddingTop: 65,
     }
 }));
 
@@ -26,10 +27,13 @@ export default function View() {
 
     return (
         <React.Fragment>
+
+            <MenuAppBar />
             <div className={classes.view}>
-                <MenuAppBar />
+                
                 {/* <SpeedDialMenu /> */}
                 <div className={classes.content}>
+                    
                     <Grid container>
                         <Grid item xs={12} sm={6}>
                             <Camera />
@@ -41,8 +45,9 @@ export default function View() {
                     </Grid>
                 </div>
                 
-                <BottomAppBar />
+                
             </div>
+            <BottomAppBar />
         </React.Fragment>
     );
 }

@@ -18,7 +18,7 @@ import {
 
 const useStyles = makeStyles(theme => ({
     userEntity: {
-        margin: theme.spacing(),
+        margin: theme.spacing(0.5),
     },
     card: {
     },
