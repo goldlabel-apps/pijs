@@ -9,6 +9,8 @@ import {
   showUserAtTick,
   tick,
   updateCamera,
+  openUserEntity,
+  closeUserEntity,
 } from "./actions";
 
 export const systemSlice = {
@@ -27,6 +29,7 @@ export const systemSlice = {
   },
   userEntity: {
     updated: Date.now(),
+    open: false,
     visits: 0,
     created: null,
     lastVisit: null,
@@ -55,7 +58,16 @@ export const systemSlice = {
 
 const system = createReducer(systemSlice, {
 
-  
+  [openUserEntity]: (state) => {
+    state.userEntity.open = true;
+    return state;
+  }, 
+
+  [closeUserEntity]: (state) => {
+    state.userEntity.open = false;
+    return state;
+  }, 
+
   [newVisit]: (state) => {
     state.userEntity.visits = state.userEntity.visits + 1;
     return state;

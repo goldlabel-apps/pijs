@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import { styles } from '../theme/MUI.Style';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
+
+const styles = theme => ({
+    map: {
+        border: '1px solid rgba(0,0,0,0.5)',
+        borderRadius: theme.spacing(0.5),
+        height: 200,
+    }
+});
 
 class Mapbox extends Component {
 
@@ -22,15 +29,14 @@ class Mapbox extends Component {
 
     componentDidMount() {
         const {
+            lat,
+            lng,
             mapbox
         } = this.props;
         const {
-            lng,
-            lat,
             mapboxStyle,
             zoom,
         } = mapbox;
-        const { defaultLocation } = this.state;
         const map = new mapboxgl.Map({
             container: this.mapContainer,
             style: mapboxStyle,
@@ -38,10 +44,17 @@ class Mapbox extends Component {
             zoom,
             interactive: false,
         });
+        const flyHere = {
+            lat,
+            lng,
+            zoom: 10,
+            flySpeed: 0.75,
+        }
+
         map.on('load', () => {
             const { hasZoomed } = this.props.mapbox;
             if (!hasZoomed) {
-                this.zoomIn(defaultLocation)
+                this.zoomIn(flyHere)
             }
         });
         map.on('styleimagemissing', (e) => {
@@ -69,16 +82,18 @@ class Mapbox extends Component {
         } = this.props;
         return (
             <React.Fragment>
-                <div
-                    ref={el => this.mapContainer = el}
-                    className={ classes.map }
-                />
+                <div ref={el => this.mapContainer = el} className={ classes.map } />
             </React.Fragment>
         );
     }
 }
 
-
-const mapStateToProps = (store) => { return { mapbox: store.system.mapbox } };
+const mapStateToProps = (store) => {
+    return {
+        mapbox: store.system.mapbox,
+        lat: store.system.userEntity.ipgeo.data.latitude,
+        lng: store.system.userEntity.ipgeo.data.longitude,
+    }
+};
 
 export default (connect( mapStateToProps, null )(withStyles(styles, { withTheme: true })(Mapbox)));

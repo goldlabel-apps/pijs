@@ -15,6 +15,9 @@ export const showUserAtTick = createAction("SYSTEM/BOOT/SHOWUSERATTICK");
 export const newVisit = createAction("SYSTEM/NEW/VISIT");
 export const updateCamera = createAction("SYSTEM/CAMERA/UPDATE");
 
+export const openUserEntity = createAction("SYSTEM/USERENTITY/OPEN");
+export const closeUserEntity = createAction("SYSTEM/USERENTITY/CLOSE");
+
 export const createFingerprint = () => {
     const store = getStore();
     Fingerprint2.getPromise().then(function (components) {

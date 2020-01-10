@@ -6,13 +6,14 @@ import {
 import {
     // BottomAppBar,
     // MenuAppBar,
-    Logo,
+    // Logo,
+    SpeedDialMenu,
     UserEntity,
 } from './';
 
 const useStyles = makeStyles(theme => ({
     view: {
-        backgroundColor: '#212121',
+        backgroundColor: '#000', // '#212121'
         minHeight: '100vh',
     },
 }));
@@ -24,10 +25,9 @@ export default function View() {
         <React.Fragment>
             {/* <MenuAppBar /> */}
             <div className={classes.view}>
-                {/* <SpeedDialMenu /> */}
+                <SpeedDialMenu />
                     <Grid container>
-                    <Grid item xs={12} sm={4}>
-                        <Logo />
+                        <Grid item xs={12} sm={6}>
                             <UserEntity />
                         </Grid>
                         {/* <Grid item xs={12} sm={6}>
@@ -39,19 +39,3 @@ export default function View() {
         </React.Fragment>
     );
 }
-
-
-
-
-
-
-
-
-
-/*
-        <div className={classes.stage}>
-            
-            <Camera />
-            <UserEntity />
-        </div>
-*/
