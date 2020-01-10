@@ -7,7 +7,7 @@ import {
     createFingerprint,
     ipgeolocation,
 } from './redux/system/actions'
-import { doAsyncThing } from './redux/firebase/actions'
+import { checkFingerprint } from './redux/firebase/actions'
 
 class ClockWork extends Component {
     state = { timer: null }
@@ -32,6 +32,7 @@ class ClockWork extends Component {
             ticks,
             userEntityCreated,
             userShownAtTick,
+            fingerprintChecked,
         } = this.props;
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
         
@@ -64,14 +65,17 @@ class ClockWork extends Component {
                 break;            
         }
 
+        if (booted && !fingerprintChecked) {
+            checkFingerprint(fingerprint);
+        }
+
         // if (ticks % 10 === 0) {
         //     pingPi();
         // }
+        
         if (ticks % 5 === 0) {
             store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
         }
-
-
         if (!booted && ticks > 2) {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
@@ -103,10 +107,8 @@ class ClockWork extends Component {
                     })
                 }
                 if (ticks === userShownAtTick + 5) {
-                    doAsyncThing();
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
-                
             }
         }
     }
@@ -149,6 +151,8 @@ const mapStateToProps = (store) => {
         ipgeo: store.system.userEntity.ipgeo,
         userEntityCreated: store.system.userEntity.created,
         visits: store.system.userEntity.visits,
+
+        fingerprintChecked: store.firebase.fingerprint.checked,
         
     };
 };

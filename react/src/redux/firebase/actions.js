@@ -3,19 +3,24 @@ import { getStore } from "../../";
 import { db } from '../../fire';
 
 export const reset = createAction("FIREBASE/RESET");
-export const callbackOne = createAction("FIREBASE/ASYNCTHING/COMPLETE");
+export const setChecked = createAction("FIREBASE/FINGERPRINT/SET");
 
-export const doAsyncThing = () => {
-
-  console.log('Read a firestore table');
-
-  db.collection("userEntities").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-    });
-  });
-
-  const store = getStore();
-  store.dispatch({ type: "FIREBASE/ASYNCTHING/COMPLETE" });
+export const checkFingerprint = (fingerprint) => {
   
+  const store = getStore();
+  
+  db.collection(`userEntities`).where(`fingerprint`, "==", `loremipsumd`)
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        console.log(doc.id, " => ", doc.data());
+      });
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    })
+    .finally(function () {
+      store.dispatch({ type: "FIREBASE/FINGERPRINT/SET", checked: true });
+    })
+
 };
