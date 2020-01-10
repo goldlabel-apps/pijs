@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Grid,
@@ -18,18 +19,22 @@ const useStyles = makeStyles(theme => ({
 
 export default function View() {
     const classes = useStyles();
-
+    const {
+        camera,
+        userEntity,
+    } = useSelector(state => state.system);
+    const cameraOpen = camera.open;
+    const userEntityOpen = userEntity.open;
     return (
         <React.Fragment>
-            {/* <MenuAppBar /> */}
             <div className={classes.view}>
                 <Grid container>
-                    <Grid item xs={12} sm={6} md={4}>
+                    {userEntityOpen ? <Grid item xs={12} sm={6} md={4}>
                         <UserEntity />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </Grid>: null }
+                    {cameraOpen ? <Grid item xs={12} sm={6} md={4}>
                         <Camera />
-                    </Grid>
+                    </Grid>: null }
                 </Grid>
                 <Dock />
             </div>

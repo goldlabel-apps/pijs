@@ -12,6 +12,8 @@ import {
   openUserEntity,
   closeUserEntity,
   mapComplete,
+  openCamera,
+  closeCamera,
 } from "./actions";
 
 export const systemSlice = {
@@ -132,6 +134,18 @@ const system = createReducer(systemSlice, {
   [mapComplete]: (state, action) => {
     state.mapbox.updated = Date.now();
     state.mapbox.userLocation = action.userLocation;
+    return state;
+  },
+
+  [openCamera]: (state) => {
+    state.camera.updated = Date.now();
+    state.camera.open = true;
+    return state;
+  },
+
+  [closeCamera]: (state) => {
+    state.camera.updated = Date.now();
+    state.camera.open = false;
     return state;
   },
   

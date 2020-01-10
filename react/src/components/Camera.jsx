@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
     Card,
@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
     cameraImage: {
         border: '1px solid rgba(0,0,0,0.5)',
         width: '100%',
-        borderRadius: theme.spacing(0.5),
     },
     grow: {
         flexGrow: 1,
@@ -31,13 +30,18 @@ function Camera(props) {
     
     const classes = useStyles();
     const store = getStore();
-    // const {
-    //     currentPhoto,
-    // } = useSelector(state => state.system.camera);
+    const {
+        open,
+    } = useSelector(state => state.system.camera);
+
+    if (!open) {
+        return null;
+    }
+
     const staticCurrentPhoto = `/jpg/current-photo.jpg`;
     // console.log(currentPhoto);
     const title = `Camera`;
-    const subheader = <span style={{ color: 'white' }}>{`5 seconds ago`}</span>;
+    const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland, Australia</span>;
     
     return (
             <Card className={classes.camera}>
@@ -49,15 +53,14 @@ function Camera(props) {
                                 color={`primary`} />}
                     action={
                         <IconButton
-                            variant={`contained`}
-                            color={`primary`}
                             onClick={(e) => {
                                 e.preventDefault();
-                                store.dispatch({ type: "SYSTEM/CAMERA/UPDATE" });
+                                store.dispatch({ type: "SYSTEM/CAMERA/CLOSE" });
                             }}>
                             <Icon
-                                icon={`refresh`}
-                                color={`primary`} />
+                                icon={`close`}
+                                color={`primary`}
+                            />
                         </IconButton>
                     }/>
                 <CardContent>
