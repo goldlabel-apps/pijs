@@ -7,6 +7,7 @@ import {
     createFingerprint,
     ipgeolocation,
 } from './redux/system/actions'
+import { doAsyncThing } from './redux/firebase/actions'
 
 class ClockWork extends Component {
     state = { timer: null }
@@ -102,6 +103,7 @@ class ClockWork extends Component {
                     })
                 }
                 if (ticks === userShownAtTick + 5) {
+                    doAsyncThing();
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
                 
