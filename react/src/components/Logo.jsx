@@ -12,20 +12,14 @@ import {
 import {
     Icon,
 } from './';
-// import PiJSSVG from '../graphics/PiJSSVG'
 
 const useStyles = makeStyles(theme => ({
     logo: {
         display: 'flex',
-        // marginRight: theme.spacing(),
-        // marginBottom: theme.spacing(),
     },
     logoText: {
-        // color: '#F1DD3F',
+        color: '#F1DD3F',
         marginTop: theme.spacing()
-    },
-    content: {
-        // width: 350,
     },
     grow: {
         flexGrow: 1,
@@ -40,7 +34,6 @@ function Logo(props) {
     //     visits,
     //     // fingerprint,
     // } = useSelector(state => state.system.userEntity);
-
     return (
         <div
             id={`logo`}

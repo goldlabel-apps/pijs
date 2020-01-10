@@ -18,7 +18,7 @@ export const systemSlice = {
   },
   mapbox: {
     updated: Date.now(),
-    mapboxStyle: `mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5`,
+    mapboxStyle: `mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563`,
     lat: 0,
     lng: 0,
     zoom: 1,

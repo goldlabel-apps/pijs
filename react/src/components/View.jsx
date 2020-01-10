@@ -6,20 +6,15 @@ import {
 import {
     // BottomAppBar,
     // MenuAppBar,
-    // Camera,
+    Logo,
     UserEntity,
 } from './';
 
 const useStyles = makeStyles(theme => ({
     view: {
-        backgroundColor: '#333',
+        backgroundColor: '#212121',
         minHeight: '100vh',
     },
-    content: {
-        // backgroundColor: '#333',
-        // paddingTop: 65,
-        // paddingBottom: 65,
-    }
 }));
 
 export default function View() {
@@ -30,20 +25,15 @@ export default function View() {
             {/* <MenuAppBar /> */}
             <div className={classes.view}>
                 {/* <SpeedDialMenu /> */}
-                <div className={classes.content}>
-                    
                     <Grid container>
-
-                        <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={4}>
+                        <Logo />
                             <UserEntity />
                         </Grid>
-
                         {/* <Grid item xs={12} sm={6}>
                             <Camera />
                         </Grid> */}
-                        
                     </Grid>
-                </div>
             </div>
             {/* <BottomAppBar /> */}
         </React.Fragment>
@@ -60,7 +50,7 @@ export default function View() {
 
 /*
         <div className={classes.stage}>
-            <Logo />
+            
             <Camera />
             <UserEntity />
         </div>

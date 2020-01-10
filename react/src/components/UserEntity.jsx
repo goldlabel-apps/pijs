@@ -1,18 +1,12 @@
 import React from 'react';
-// import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
-import { getStore } from '../';
 import {
-    Button,
     Card,
-    CardActions,
     CardContent,
     CardHeader,
     Grid,
     Typography,
-    // IconButton,
-    Tooltip,
 } from '@material-ui/core/';
 import {
     Icon,
@@ -27,6 +21,7 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing()
     },
     aGrid: {
+        margin: theme.spacing(),
         padding: theme.spacing()
     },
     grow: {
@@ -40,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 function UserEntity(props) {
 
     const classes = useStyles();
-    const store = getStore();
+    // const store = getStore();
     const {
         userEntity,
     } = useSelector(state => state.system);
@@ -65,14 +60,10 @@ function UserEntity(props) {
     importantly) the IP address that came with your request for the app is ${ip}. 
     Using a free service from ipgeolocation.io, that ip's location is `;
 
-    let ipgeolocation = `${city}, ${state_prov}, ${country_name}.`;
-
-    
+    let ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
 
     const title = `User Entity`;
     const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
-
-    // process.env.REACT_APP_MAPBOX
 
     
     return (
@@ -81,12 +72,11 @@ function UserEntity(props) {
                 <CardHeader
                     title={title}
                     subheader={subheader}
-                    avatar={
-                            <Icon
-                                icon={`userentity`}
-                                color={`primary`}
-                            />}
-                    // action={}
+                    // avatar={}
+                    action={<Icon
+                        icon={`userentity`}
+                        color={`primary`}
+                    />}
                 />
                 <CardContent>
                     <Grid container className={classes.aGrid}>
@@ -96,9 +86,11 @@ function UserEntity(props) {
                             </Typography>
                         </Grid>
                     </Grid> 
+
+                    <Mapbox />
                     
                     <Grid container className={classes.aGrid}>
-                        <Grid item xs={4} md={2} className={classes.ipgeoGrid}>
+                        <Grid item xs={4} className={classes.ipgeoGrid}>
                             <img src={country_flag} alt={`flag`} />
                         </Grid>
 
@@ -108,11 +100,10 @@ function UserEntity(props) {
                             </Typography>
                         </Grid>
                     </Grid> 
-
-                    <Mapbox />
+                    
                 </CardContent>
 
-                <CardActions>
+                {/* <CardActions>
                     <div className={classes.grow} />
                     <Tooltip title={`Reset User Entity`}>
                         <Button
@@ -129,7 +120,7 @@ function UserEntity(props) {
                             /><span className={classes.btnIcon}>Reset</span>
                         </Button>
                     </Tooltip>
-                </CardActions>
+                </CardActions> */}
             </Card>
         </div>
     );
