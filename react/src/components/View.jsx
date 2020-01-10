@@ -4,6 +4,7 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
+    Camera,
     Dock,
     UserEntity,
 } from './';
@@ -23,12 +24,12 @@ export default function View() {
             {/* <MenuAppBar /> */}
             <div className={classes.view}>
                 <Grid container>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <UserEntity />
                     </Grid>
-                    {/* <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Camera />
-                    </Grid> */}
+                    </Grid>
                 </Grid>
                 <Dock />
             </div>

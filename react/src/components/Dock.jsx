@@ -29,7 +29,9 @@ function Dock(props) {
     const {
         system,
     } = useSelector(state => state);
-    const { open } = system.userEntity;
+
+    const userEntityOpen = system.userEntity.open;
+    const cameraOpen = system.camera.open;
 
     return (
         <AppBar
@@ -38,9 +40,11 @@ function Dock(props) {
             position={`fixed`}>
             <Toolbar>
                 <div className={classes.grow} />
+                
                 <Logo />
+
                 <IconButton
-                    disabled={open}
+                    disabled={userEntityOpen}
                     edge={`start`}
                     color={`inherit`}
                     aria-label={`User Entity`}
@@ -52,6 +56,21 @@ function Dock(props) {
                         icon={`userentity`}
                         color={`inherit`} />
                 </IconButton>
+
+                <IconButton
+                    disabled={cameraOpen}
+                    edge={`start`}
+                    color={`inherit`}
+                    aria-label={`Camera`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        store.dispatch({ type: `SYSTEM/CAMERA/OPEN` });
+                    }}>
+                    <Icon
+                        icon={`camera`}
+                        color={`inherit`} />
+                </IconButton>
+                
                 <div className={classes.grow} />
             </Toolbar>
         </AppBar>

@@ -23,9 +23,21 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles(theme => ({
     userEntity: {
         margin: theme.spacing(),
+        minHeight: 450,
     },
-    ipgeoGrid: {
-        padding: theme.spacing()
+    white: {
+        color: 'white',
+    },
+    moreInfoPanel: {
+        marginTop: theme.spacing(1.5),
+        boxShadow: 'none',
+      border: 'none',  
+    },
+    ipgeoFlag: {
+        paddingTop: theme.spacing(2)
+    },
+    ipgeoText: {
+        paddingTop: theme.spacing(2.5)
     },
     grow: {
         flexGrow: 1,
@@ -59,16 +71,16 @@ function UserEntity(props) {
     } = ipgeo.data;
     
     const title = `User Entity`;
-    const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
     const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
+    const subheader = <span style={{ color: 'white' }}>{ipgeolocation}</span>;
     const moreInfo = `What do we currently know about you? Most 
     importantly is the IP address that came with your request; ${ip}. 
     Using the free service from ipgeolocation.io, we can tell that ip's location is ${ipgeolocation}`;
     
     
     return (
-        <div className={classes.userEntity}>
-            <Card className={classes.card}>
+        
+            <Card className={classes.userEntity}>
                 <CardHeader
                     title={title}
                     subheader={subheader}
@@ -89,28 +101,28 @@ function UserEntity(props) {
                         </IconButton>
                 } />
                 <CardContent>
-                    <Grid container className={classes.aGrid}>
-                        <Grid item xs={4} sm={3} md={2} className={classes.ipgeoGrid}>
+                    <Mapbox />
+                    <Grid container>
+                    <Grid item xs={4} sm={3} className={classes.ipgeoFlag}>
                             <img src={country_flag} alt={`flag`} />
                         </Grid>
-                        <Grid item xs={8} sm={9} md={10} className={classes.ipgeoGrid}>
-                            <Typography variant={`body1`}>
-                                {ipgeolocation}
+                    <Grid item xs={8} sm={9} className={classes.ipgeoText}>
+                            <Typography variant={`body1`} className={classes.white}>
+                                {visits} visits
                             </Typography>
                         </Grid>
-                    </Grid> 
-                    <Mapbox />
-                    <ExpansionPanel>
-                        <ExpansionPanelSummary
+                    </Grid>
+                    <ExpansionPanel className={classes.moreInfoPanel} >
+                    <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="More info"
                             id={`more-info`}>
-                            <Typography className={classes.heading}>
+                            <Typography className={classes.white}>
                                 More Info
                             </Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
-                            <Typography variant={`body2`}>
+                            <Typography variant={`body2`} className={classes.white}>
                                 {moreInfo}
                             </Typography>
                         </ExpansionPanelDetails>
@@ -126,7 +138,6 @@ function UserEntity(props) {
                     </ExpansionPanel>
                 </CardContent>
             </Card>
-        </div>
     );
 }
 

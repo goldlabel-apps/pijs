@@ -15,7 +15,7 @@ import IconMenu from '@material-ui/icons/Menu';
 import IconShare from '@material-ui/icons/Share';
 import IconHelp from '@material-ui/icons/Help';
 import IconLink from '@material-ui/icons/Link';
-import IconWebcam from '@material-ui/icons/BurstMode';
+import IconWebcam from '@material-ui/icons/FlipCameraIos';
 import IconTemperature from '@material-ui/icons/AcUnit';
 import IconAirQuality from '@material-ui/icons/ErrorOutline';
 import IconPressure from '@material-ui/icons/FormatLineSpacing';

@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
-    // Button,
     Card,
-    // CardActions,
     CardContent,
     CardHeader,
     IconButton,
@@ -16,7 +14,8 @@ import {
 
 const useStyles = makeStyles(theme => ({
     camera: {
-        margin: theme.spacing(0.5),
+        margin: theme.spacing(),
+        minHeight: 450,
     },
     cameraImage: {
         border: '1px solid rgba(0,0,0,0.5)',
@@ -41,8 +40,7 @@ function Camera(props) {
     const subheader = <span style={{ color: 'white' }}>{`5 seconds ago`}</span>;
     
     return (
-        <div className={classes.camera}>
-            <Card>
+            <Card className={classes.camera}>
                 <CardHeader
                     title={title}
                     subheader={subheader}
@@ -78,7 +76,6 @@ function Camera(props) {
                     </Button>
                 </CardActions> */}
             </Card>
-        </div>
     );
 }
 

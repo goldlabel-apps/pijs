@@ -45,6 +45,7 @@ export const systemSlice = {
   },
   camera: {
     updated: Date.now(),
+    open: false,
     currentPhoto: null,
   },
   boot: {
