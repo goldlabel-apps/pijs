@@ -12,6 +12,10 @@ import {
 } from "./actions";
 
 export const systemSlice = {
+  clockWork: {
+    tickDelay: 0.5,
+    ticks: 0,
+  },
   mapbox: {
     updated: Date.now(),
     mapboxStyle: `mapbox://styles/listingslab/ck453ks7712qe1cpj00eseqn5`,
@@ -46,10 +50,6 @@ export const systemSlice = {
     userShownAtTick: null,
     consoleMessage: ``,
     cursorOn: true,
-  },
-  clockWork: {
-    tickDelay: 0.5,
-    ticks: 0,
   },
 };
 

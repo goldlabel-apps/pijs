@@ -6,7 +6,7 @@ import {
 import {
     // BottomAppBar,
     // MenuAppBar,
-    Camera,
+    // Camera,
     UserEntity,
 } from './';
 
@@ -38,9 +38,9 @@ export default function View() {
                             <UserEntity />
                         </Grid>
 
-                        <Grid item xs={12} sm={6}>
+                        {/* <Grid item xs={12} sm={6}>
                             <Camera />
-                        </Grid>
+                        </Grid> */}
                         
                     </Grid>
                 </div>

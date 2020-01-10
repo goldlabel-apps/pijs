@@ -4,31 +4,36 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
+    Button,
     Card,
     CardActions,
     CardContent,
     CardHeader,
     Grid,
     Typography,
-    IconButton,
+    // IconButton,
     Tooltip,
 } from '@material-ui/core/';
 import {
     Icon,
     Mapbox,
 } from './';
-// import PiJSSVG from '../graphics/PiJSSVG'
 
 const useStyles = makeStyles(theme => ({
     userEntity: {
-        margin: theme.spacing(0.5),
+        margin: theme.spacing(),
     },
-    card: {
+    ipgeoGrid: {
+        padding: theme.spacing()
     },
-    content: {
+    aGrid: {
+        padding: theme.spacing()
     },
     grow: {
         flexGrow: 1,
+    },
+    btnIcon: {
+        marginLeft: theme.spacing()
     }
 }));
 
@@ -55,12 +60,14 @@ function UserEntity(props) {
         // longitude,
     } = ipgeo.data;
     
+    
+    let ip_address = `Hello! What do we currently know about you? Firstly (and most 
+    importantly) the IP address that came with your request for the app is ${ip}. 
+    Using a free service from ipgeolocation.io, that ip's location is `;
 
-    //  User for {moment(created).fromNow().replace(` ago`, ``) }
-    /* Fingerprint {fingerprint.value} */
-    let ipgeolocation = `Hello! This is what we currently know about you. Firstly and most 
-    importantly, the IP address that came with your request for the app is ${ip}. 
-    Using ipgeolocation.io we have matched it to ${city}, ${state_prov}, ${country_name}.`;
+    let ipgeolocation = `${city}, ${state_prov}, ${country_name}.`;
+
+    
 
     const title = `User Entity`;
     const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
@@ -82,26 +89,34 @@ function UserEntity(props) {
                     // action={}
                 />
                 <CardContent>
-                    <div className={classes.content}>
-                        <Grid container>
-                            <Grid item xs={2}>
-                                <img src={country_flag} alt={`flag`} />
-                            </Grid>
-                            <Grid item xs={10}>
-                                <Typography variant={`body1`}>
-                                    {ipgeolocation}
-                                </Typography>
-                            </Grid>
-                        </Grid>    
-                        <Mapbox />
-                    </div>
+                    <Grid container className={classes.aGrid}>
+                        <Grid item xs={12} >
+                            <Typography variant={`body1`}>
+                                {ip_address}
+                            </Typography>
+                        </Grid>
+                    </Grid> 
+                    
+                    <Grid container className={classes.aGrid}>
+                        <Grid item xs={4} md={2} className={classes.ipgeoGrid}>
+                            <img src={country_flag} alt={`flag`} />
+                        </Grid>
+
+                        <Grid item xs={8} className={classes.ipgeoGrid}>
+                            <Typography variant={`body1`}>
+                                {ipgeolocation}
+                            </Typography>
+                        </Grid>
+                    </Grid> 
+
+                    <Mapbox />
                 </CardContent>
 
                 <CardActions>
                     <div className={classes.grow} />
-                    <Tooltip title={`Reset your User Entity`}>
-                        <IconButton
-                            variant={`contained`}
+                    <Tooltip title={`Reset User Entity`}>
+                        <Button
+                            variant={`outlined`}
                             color={`primary`}
                             onClick={(e) => {
                                 e.preventDefault();
@@ -111,8 +126,8 @@ function UserEntity(props) {
                             <Icon
                                 icon={`trash`}
                                 color={`primary`}
-                            />
-                        </IconButton>
+                            /><span className={classes.btnIcon}>Reset</span>
+                        </Button>
                     </Tooltip>
                 </CardActions>
             </Card>

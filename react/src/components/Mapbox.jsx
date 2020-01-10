@@ -1,37 +1,42 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from 'react-redux';
-// import { getStore } from '../';
-// import {
-//     // Button,
-//     Card,
-//     // CardActions,
-//     CardContent,
-//     CardHeader,
-//     IconButton,
-// } from '@material-ui/core/';
-// import {
-//     Icon,
-// } from './';
+// import { useSelector } from 'react-redux';
+import mapboxgl from 'mapbox-gl';
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
 const useStyles = makeStyles(theme => ({
     mapbox: {
-        border: '1px solid orange',
+        border: '1px solid green',
     },
 }));
 
 function Mapbox(props) {
     
     const classes = useStyles();
-    // const store = getStore();
-    const {
-        currentPhoto,
-    } = useSelector(state => state.system.camera);
-    // const staticCurrentPhoto = `/jpg/current-photo.jpg`;
+    // const {
+    //     mapbox,
+    // } = useSelector(state => state.system);
+
+    // const {
+    //     mapboxStyle,
+    //     lat,
+    //     lng,
+    //     zoom,
+    // } = mapbox;
+    // const map = new mapboxgl.Map({
+    //     container: this.mapContainer,
+    //     style: mapboxStyle,
+    //     center: [lng, lat],
+    //     zoom,
+    //     interactive: false,
+    // });
     
     return (
         <div className={classes.mapbox}>
-            Mapbox
+            {/* <div
+                className={classes.map}
+                ref={el => this.mapContainer = el}
+            /> */}
         </div>
     );
 }
