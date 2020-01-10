@@ -16,7 +16,7 @@ import {
 const useStyles = makeStyles(theme => ({
     logo: {
         display: 'flex',
-        marginRight: theme.spacing(2),
+        marginRight: theme.spacing(4),
     },
     logoText: {
         color: '#F1DD3F',

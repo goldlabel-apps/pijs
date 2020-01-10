@@ -17,7 +17,7 @@ import {
 export const systemSlice = {
   userEntity: {
     updated: Date.now(),
-    open: false,
+    open: true,
     visits: 0,
     created: null,
     lastVisit: null,

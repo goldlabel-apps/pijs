@@ -40,31 +40,36 @@ class Mapbox extends Component {
             zoom,
         } = mapbox;
         
-        console.log('userLocation', userLocation)
-
-        const map = new mapboxgl.Map({
+        let mapOptions = {
             container: this.mapContainer,
             style: mapboxStyle,
             center: [lng, lat],
             zoom,
             interactive: false,
-        });
-        const flyHere = {
-            lat,
-            lng,
-            zoom: 10,
-            flySpeed: 0.75,
         }
 
+        if (userLocation) {
+            mapOptions.center = [userLocation.lng, userLocation.lat];
+            mapOptions.zoom = userLocation.zoom;
+        }
+
+        const map = new mapboxgl.Map(mapOptions);
+
         map.on('load', () => {
-            const { hasZoomed } = this.props.mapbox;
-            if (!hasZoomed) {
-                this.zoomIn(flyHere)
+            const {
+                hasZoomed,
+                userLocation
+            } = this.props.mapbox;
+            if (!hasZoomed && !userLocation) {
+                this.zoomIn({
+                    lat,
+                    lng,
+                    zoom: 11,
+                    flySpeed: 0.5,
+                })
             }
         });
-        map.on('styleimagemissing', (e) => {
-            return null;
-        });
+
         this.setState({ map })
     }
 
@@ -77,7 +82,6 @@ class Mapbox extends Component {
             essential: true
         });
         map.once('moveend', () => {
-            console.log('ENDE.')
             const store = getStore();
             store.dispatch({ type: `SYSTEM/USERENTITY/MAP_COMPLETE`, userLocation: location })
         })

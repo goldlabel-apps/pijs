@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import {
+    Button,
     Card,
     CardContent,
     CardHeader,
@@ -59,10 +60,11 @@ function UserEntity(props) {
     
     const title = `User Entity`;
     const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
-    const moreInfo = `Hello! What do we currently know about you? Firstly (and most 
-    importantly) the IP address that came with your request is ${ip}. 
-    Using the free service from ipgeolocation.io, we can tell that ip's location is`;
     const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
+    const moreInfo = `What do we currently know about you? Most 
+    importantly is the IP address that came with your request; ${ip}. 
+    Using the free service from ipgeolocation.io, we can tell that ip's location is ${ipgeolocation}`;
+    
     
     return (
         <div className={classes.userEntity}>
@@ -88,10 +90,10 @@ function UserEntity(props) {
                 } />
                 <CardContent>
                     <Grid container className={classes.aGrid}>
-                        <Grid item xs={4} sm={3} className={classes.ipgeoGrid}>
+                        <Grid item xs={4} sm={3} md={2} className={classes.ipgeoGrid}>
                             <img src={country_flag} alt={`flag`} />
                         </Grid>
-                        <Grid item xs={8} sm={9} className={classes.ipgeoGrid}>
+                        <Grid item xs={8} sm={9} md={10} className={classes.ipgeoGrid}>
                             <Typography variant={`body1`}>
                                 {ipgeolocation}
                             </Typography>
@@ -108,10 +110,19 @@ function UserEntity(props) {
                             </Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
-                            <Typography variant={`body1`}>
+                            <Typography variant={`body2`}>
                                 {moreInfo}
                             </Typography>
                         </ExpansionPanelDetails>
+                        <Button
+                            fullWidth
+                            variant={`outlined`}
+                            color={`primary`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                            }}>
+                                Reset User Entity
+                        </Button>
                     </ExpansionPanel>
                 </CardContent>
             </Card>

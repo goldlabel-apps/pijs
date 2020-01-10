@@ -50,7 +50,7 @@ function Dock(props) {
                     }}>
                     <Icon
                         icon={`userentity`}
-                        color={`primary`} />
+                        color={`inherit`} />
                 </IconButton>
                 <div className={classes.grow} />
             </Toolbar>
