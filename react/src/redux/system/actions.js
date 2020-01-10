@@ -17,6 +17,7 @@ export const updateCamera = createAction("SYSTEM/CAMERA/UPDATE");
 
 export const openUserEntity = createAction("SYSTEM/USERENTITY/OPEN");
 export const closeUserEntity = createAction("SYSTEM/USERENTITY/CLOSE");
+export const mapComplete = createAction("SYSTEM/USERENTITY/MAP_COMPLETE");
 
 export const createFingerprint = () => {
     const store = getStore();

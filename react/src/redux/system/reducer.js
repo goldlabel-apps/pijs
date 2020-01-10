@@ -11,22 +11,10 @@ import {
   updateCamera,
   openUserEntity,
   closeUserEntity,
+  mapComplete,
 } from "./actions";
 
 export const systemSlice = {
-  clockWork: {
-    tickDelay: 0.5,
-    ticks: 0,
-  },
-  mapbox: {
-    updated: Date.now(),
-    mapboxStyle: `mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563`,
-    lat: 0,
-    lng: 0,
-    zoom: 1,
-    flySpeed: 0.5,
-    hasZoomed: false
-  },
   userEntity: {
     updated: Date.now(),
     open: false,
@@ -34,13 +22,26 @@ export const systemSlice = {
     created: null,
     lastVisit: null,
     fingerprint: {
-      value: null,
-      components: [],
+      data: {},
     },
     ipgeo: {
       lastFetch: 0,
       data: {},
     }
+  },
+  clockWork: {
+    tickDelay: 0.5,
+    ticks: 0,
+  },
+  mapbox: {
+    updated: Date.now(),
+    userLocation: null,
+    mapboxStyle: `mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563`,
+    lat: 0,
+    lng: 0,
+    zoom: 1,
+    flySpeed: 0.5,
+    hasZoomed: false
   },
   camera: {
     updated: Date.now(),
@@ -124,6 +125,12 @@ const system = createReducer(systemSlice, {
   [boot]: (state) => {
     state.boot.booted = true;
     state.boot.status = 'booted';
+    return state;
+  },
+  
+  [mapComplete]: (state, action) => {
+    state.mapbox.updated = Date.now();
+    state.mapbox.userLocation = action.userLocation;
     return state;
   },
   

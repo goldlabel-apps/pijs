@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getStore } from '../';
 import { withStyles } from '@material-ui/core/styles';
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
@@ -31,12 +32,16 @@ class Mapbox extends Component {
         const {
             lat,
             lng,
-            mapbox
+            mapbox,
+            userLocation,
         } = this.props;
         const {
             mapboxStyle,
             zoom,
         } = mapbox;
+        
+        console.log('userLocation', userLocation)
+
         const map = new mapboxgl.Map({
             container: this.mapContainer,
             style: mapboxStyle,
@@ -73,6 +78,8 @@ class Mapbox extends Component {
         });
         map.once('moveend', () => {
             console.log('ENDE.')
+            const store = getStore();
+            store.dispatch({ type: `SYSTEM/USERENTITY/MAP_COMPLETE`, userLocation: location })
         })
     }
 
@@ -90,6 +97,7 @@ class Mapbox extends Component {
 
 const mapStateToProps = (store) => {
     return {
+        userLocation: store.system.mapbox.userLocation,
         mapbox: store.system.mapbox,
         lat: store.system.userEntity.ipgeo.data.latitude,
         lng: store.system.userEntity.ipgeo.data.longitude,

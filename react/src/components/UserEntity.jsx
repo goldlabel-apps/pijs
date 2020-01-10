@@ -11,7 +11,6 @@ import {
     ExpansionPanelSummary,
     ExpansionPanelDetails,
     IconButton,
-    Avatar,  
 } from '@material-ui/core/';
 import { getStore } from '../';
 import {
@@ -61,8 +60,8 @@ function UserEntity(props) {
     const title = `User Entity`;
     const subheader = <span style={{ color: 'white' }}>{visits} visits</span>;
     const moreInfo = `Hello! What do we currently know about you? Firstly (and most 
-    importantly) the IP address that came with your request for the app is ${ip}. 
-    Using a free service from ipgeolocation.io, that ip's location is `;
+    importantly) the IP address that came with your request is ${ip}. 
+    Using the free service from ipgeolocation.io, we can tell that ip's location is`;
     const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
     
     return (
@@ -71,7 +70,10 @@ function UserEntity(props) {
                 <CardHeader
                     title={title}
                     subheader={subheader}
-                    avatar={<Avatar src={`png/avatars/chix.png`}/>}
+                    avatar={<Icon
+                        icon={`userentity`}
+                        color={`primary`}
+                    />}
                     action={
                         <IconButton
                             onClick={(e) => {
@@ -96,13 +98,11 @@ function UserEntity(props) {
                         </Grid>
                     </Grid> 
                     <Mapbox />
-
                     <ExpansionPanel>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="More info"
-                            id={`more-info`}
-                        >
+                            id={`more-info`}>
                             <Typography className={classes.heading}>
                                 More Info
                             </Typography>
@@ -113,27 +113,7 @@ function UserEntity(props) {
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
-                    
                 </CardContent>
-
-                {/* <CardActions>
-                    <div className={classes.grow} />
-                    <Tooltip title={`Reset User Entity`}>
-                        <Button
-                            variant={`outlined`}
-                            color={`primary`}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                store.dispatch({ type: "SYSTEM/RESET" });
-                                window.location.assign(`/`)
-                            }}>
-                            <Icon
-                                icon={`trash`}
-                                color={`primary`}
-                            /><span className={classes.btnIcon}>Reset</span>
-                        </Button>
-                    </Tooltip>
-                </CardActions> */}
             </Card>
         </div>
     );

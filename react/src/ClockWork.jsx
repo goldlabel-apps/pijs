@@ -35,6 +35,14 @@ class ClockWork extends Component {
             fingerprintChecked,
         } = this.props;
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
+
+        if (booted && !fingerprintChecked) {
+            checkFingerprint(fingerprint);
+        }
+
+        if (ticks % 5 === 0) {
+            store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
+        }
         
         switch (ticks) {
             case 1:
@@ -65,22 +73,10 @@ class ClockWork extends Component {
                 break;            
         }
 
-        if (booted && !fingerprintChecked) {
-            checkFingerprint(fingerprint);
-        }
-
-        // if (ticks % 10 === 0) {
-        //     pingPi();
-        // }
-        
-        if (ticks % 5 === 0) {
-            store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
-        }
         if (!booted && ticks > 2) {
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });
-                    // console.log('visits', visits)
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `{<br />
@@ -98,7 +94,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 4) {
+                if (ticks === userShownAtTick + 1) {
                     store.dispatch({
                         type: `SYSTEM/SAYS`, say: {
                             message: `Booting...<br />`,
@@ -106,7 +102,7 @@ class ClockWork extends Component {
                         }
                     })
                 }
-                if (ticks === userShownAtTick + 5) {
+                if (ticks === userShownAtTick + 2) {
                     store.dispatch({ type: `SYSTEM/BOOT` });
                 }
             }
