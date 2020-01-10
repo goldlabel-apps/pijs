@@ -4,10 +4,7 @@ import {
     Grid,
 } from '@material-ui/core/';
 import {
-    // BottomAppBar,
-    // MenuAppBar,
-    // Logo,
-    SpeedDialMenu,
+    Dock,
     UserEntity,
 } from './';
 
@@ -25,17 +22,16 @@ export default function View() {
         <React.Fragment>
             {/* <MenuAppBar /> */}
             <div className={classes.view}>
-                <SpeedDialMenu />
-                    <Grid container>
-                        <Grid item xs={12} sm={6}>
-                            <UserEntity />
-                        </Grid>
-                        {/* <Grid item xs={12} sm={6}>
-                            <Camera />
-                        </Grid> */}
+                <Grid container>
+                    <Grid item xs={12} sm={6}>
+                        <UserEntity />
                     </Grid>
+                    {/* <Grid item xs={12} sm={6}>
+                        <Camera />
+                    </Grid> */}
+                </Grid>
+                <Dock />
             </div>
-            {/* <BottomAppBar /> */}
         </React.Fragment>
     );
 }

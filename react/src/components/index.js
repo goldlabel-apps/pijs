@@ -1,6 +1,6 @@
 import Boot from "./Boot";
-import BottomAppBar from "./BottomAppBar";
 import Camera from "./Camera";
+import Dock from "./Dock";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import Mapbox from "./Mapbox";
@@ -11,8 +11,8 @@ import View from "./View";
 
 export {
   Boot,
-  BottomAppBar,
   Camera,
+  Dock,
   Icon,
   Logo,
   Mapbox,

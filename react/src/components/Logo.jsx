@@ -16,24 +16,16 @@ import {
 const useStyles = makeStyles(theme => ({
     logo: {
         display: 'flex',
+        marginRight: theme.spacing(2),
     },
     logoText: {
         color: '#F1DD3F',
         marginTop: theme.spacing()
     },
-    grow: {
-        flexGrow: 1,
-    }
 }));
 
 function Logo(props) {
     const classes = useStyles();
-    // const store = getStore();
-    // const {
-    //     created,
-    //     visits,
-    //     // fingerprint,
-    // } = useSelector(state => state.system.userEntity);
     return (
         <div
             id={`logo`}
