@@ -2,7 +2,7 @@ const theme = {
     palette: {
         type: 'dark',
         primary: {
-            main: 'rgba(255,255,255,0.25)',
+            main: 'rgba(241,221,63,0.9)',
             // main: '#F1DD3F',
         },
         secondary: {

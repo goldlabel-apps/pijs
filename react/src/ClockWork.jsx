@@ -6,9 +6,9 @@ import { getStore } from './';
 import {
     createFingerprint,
     ipgeolocation,
-} from './redux/system/actions'
-import { checkFingerprint } from './redux/firebase/actions'
-
+} from './redux/system/actions';
+import { fetchWeather } from './redux/weather/actions';
+import { checkFingerprint } from './redux/firebase/actions';
 class ClockWork extends Component {
     state = { timer: null }
 
@@ -17,6 +17,7 @@ class ClockWork extends Component {
         store.dispatch({ type: `SYSTEM/NEW/VISIT` });
         this.startTimer();
         createFingerprint();
+        fetchWeather();
         ipgeolocation();
     }
 
@@ -75,6 +76,7 @@ class ClockWork extends Component {
 
         if (!booted && ticks > 2) {
             store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
+            // store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });

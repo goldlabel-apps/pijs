@@ -38,8 +38,10 @@ function Weather() {
     const store = getStore();
     const {
         open,
+        errors,
     } = useSelector(state => state.weather);
 
+    console.log('weather errors', errors)
     if (!open) {
         return null;
     }

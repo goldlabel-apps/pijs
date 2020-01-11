@@ -1,7 +1,9 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
-  toggleFetching,
+  error,
   reset,
+  save,
+  toggleFetching,
 } from "./actions";
 
 export const weatherSlice = {
@@ -14,10 +16,24 @@ export const weatherSlice = {
 
 const weather = createReducer(weatherSlice, {
 
-  [toggleFetching]: (state, action) => {
-    console.log('fetching', action.fetching);
+  [error]: (state, action) => {
+    console.log('error', action.error);
     state.updated = Date.now();
-    state.fetching = action.fetching;
+    state.errors.push(action.error);
+    return state;
+  }, 
+
+  [save]: (state, action) => {
+    console.log('save', action.data);
+    state.updated = Date.now();
+    state.data = action.data;
+    return state;
+  }, 
+
+  [toggleFetching]: (state, action) => {
+    console.log('fetching', action.bool);
+    state.updated = Date.now();
+    state.fetching = action.bool;
     return state;
   }, 
   
