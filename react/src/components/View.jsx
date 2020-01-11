@@ -29,12 +29,15 @@ export default function View() {
         <React.Fragment>
             <div className={classes.view}>
                 <Grid container>
-                    {userEntityOpen ? <Grid item xs={12} sm={6} md={4}>
+
+                    {cameraOpen ? <Grid item xs={12} sm={6} md={6}>
+                        <Camera />
+                    </Grid> : null}
+                    
+                    {userEntityOpen ? <Grid item xs={12} sm={6} md={6}>
                         <UserEntity />
                     </Grid>: null }
-                    {cameraOpen ? <Grid item xs={12} sm={6} md={4}>
-                        <Camera />
-                    </Grid>: null }
+                    
                 </Grid>
                 <Dock />
             </div>

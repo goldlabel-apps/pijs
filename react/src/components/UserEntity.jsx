@@ -124,6 +124,8 @@ function UserEntity() {
                         color={`primary`}
                         onClick={(e) => {
                             e.preventDefault();
+                            store.dispatch({ type: "SYSTEM/RESET" });
+                            window.location.assign(`/?reset=${Date.now()}`)
                         }}>
                             Reset your User Entity
                     </Button>

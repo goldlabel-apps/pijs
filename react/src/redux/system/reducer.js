@@ -17,9 +17,14 @@ import {
 } from "./actions";
 
 export const systemSlice = {
-  userEntity: {
+  camera: {
     updated: Date.now(),
     open: true,
+    currentPhoto: null,
+  },
+  userEntity: {
+    updated: Date.now(),
+    open: false,
     visits: 0,
     created: null,
     lastVisit: null,
@@ -44,11 +49,6 @@ export const systemSlice = {
     zoom: 1,
     flySpeed: 0.5,
     hasZoomed: false
-  },
-  camera: {
-    updated: Date.now(),
-    open: false,
-    currentPhoto: null,
   },
   boot: {
     updated: Date.now(),
