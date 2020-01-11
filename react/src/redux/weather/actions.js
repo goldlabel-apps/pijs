@@ -15,13 +15,13 @@ export const fetchWeather = () => {
   if (!weather.data) { updateRequired = true }
 
   if (updateRequired) {
-    console.log('ETCH');
+    console.log('FETCH');
     store.dispatch({
       type: `WEATHER/TOGGLE_FETCH`,
       bool: true,
     });
     axios
-      .get(`https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139?APPID=${process.env.REACT_APP_OPEN_WEATHER}`)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${process.env.REACT_APP_OPEN_WEATHER}`)
       .then(function (response) {
         store.dispatch({
           type: `WEATHER/SAVE`,
