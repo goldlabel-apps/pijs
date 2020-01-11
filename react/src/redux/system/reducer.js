@@ -14,9 +14,6 @@ import {
   mapComplete,
   openCamera,
   closeCamera,
-  updateWeather,
-  openWeather,
-  closeWeather,
 } from "./actions";
 
 export const systemSlice = {
@@ -154,24 +151,6 @@ const system = createReducer(systemSlice, {
     state.camera.open = false;
     return state;
   },
-
-  [openWeather]: (state) => {
-    state.weather.updated = Date.now();
-    state.weather.open = true;
-    return state;
-  },
-
-  [closeWeather]: (state) => {
-    state.weather.updated = Date.now();
-    state.weather.open = false;
-    return state;
-  },
-
-  [updateWeather]: (state) => {
-    state.weather.updated = Date.now();
-    return state;
-  }, 
-
   
   [reset]: () => {
     return systemSlice;

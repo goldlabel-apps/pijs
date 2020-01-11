@@ -45,13 +45,13 @@ function Weather() {
     }
 
     const title = `Weather`;
-    const subheader = <span style={{ color: 'white' }}>what's the weather like?</span>;
+    // const subheader = <span style={{ color: 'white' }}>what's the weather like?</span>;
     
     return (
         <Card className={classes.camera}>
             <CardHeader
                 title={title}
-                subheader={subheader}
+                // subheader={subheader}
                 avatar={<Icon
                             icon={`weather`}
                             color={`primary`} />}

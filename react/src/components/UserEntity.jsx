@@ -50,7 +50,7 @@ function UserEntity() {
     const {
         open,
         // ipgeo,
-        visits,
+        // visits,
     } = userEntity;
 
     if (!open) {
@@ -67,13 +67,13 @@ function UserEntity() {
     // const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
     
     const title = `User Entity`;
-    const subheader = <span style={{ color: 'white' }}>{visits} visit{ visits > 1 ? `s` : null}</span>;
+    // const subheader = <span style={{ color: 'white' }}>{visits} visit{ visits > 1 ? `s` : null}</span>;
     
     return (
         <Card className={classes.userEntity}>
             <CardHeader
                 title={title}
-                subheader={subheader}
+                // subheader={subheader}
                 avatar={<Icon
                     icon={`userentity`}
                     color={`primary`}

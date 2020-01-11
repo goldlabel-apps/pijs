@@ -28,3 +28,22 @@ const weather = createReducer(weatherSlice, {
 });
 
 export { weather };
+
+/*
+  [openWeather]: (state) => {
+    state.weather.updated = Date.now();
+    state.weather.open = true;
+    return state;
+  },
+
+  [closeWeather]: (state) => {
+    state.weather.updated = Date.now();
+    state.weather.open = false;
+    return state;
+  },
+
+  [updateWeather]: (state) => {
+    state.weather.updated = Date.now();
+    return state;
+  },
+*/

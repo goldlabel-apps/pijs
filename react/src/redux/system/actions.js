@@ -18,11 +18,6 @@ export const updateCamera = createAction("SYSTEM/CAMERA/UPDATE");
 export const openCamera = createAction("SYSTEM/CAMERA/OPEN");
 export const closeCamera = createAction("SYSTEM/CAMERA/CLOSE");
 
-export const updateWeather = createAction("SYSTEM/WEATHER/UPDATE");
-export const openWeather = createAction("SYSTEM/WEATHER/OPEN");
-export const closeWeather = createAction("SYSTEM/WEATHER/CLOSE");
-
-
 export const openUserEntity = createAction("SYSTEM/USERENTITY/OPEN");
 export const closeUserEntity = createAction("SYSTEM/USERENTITY/CLOSE");
 export const mapComplete = createAction("SYSTEM/USERENTITY/MAP_COMPLETE");

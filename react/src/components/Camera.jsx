@@ -58,13 +58,13 @@ function Camera() {
     }
 
     const title = `Camera`;
-    const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland</span>;
+    // const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland</span>;
     
     return (
         <Card className={classes.camera}>
             <CardHeader
                 title={title}
-                subheader={subheader}
+                // subheader={subheader}
                 avatar={<Icon
                             icon={`camera`}
                             color={`primary`} />}
@@ -82,7 +82,7 @@ function Camera() {
                 }/>
                 <img
                     className={classes.cameraImage}
-                    alt={subheader}
+                    alt={`camera`}
                     src={showThis} />
         </Card>
     );
