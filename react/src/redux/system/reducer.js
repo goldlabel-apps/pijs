@@ -28,7 +28,6 @@ export const systemSlice = {
     errors: [],
   },
 
-
   camera: {
     updated: Date.now(),
     open: true,
@@ -37,7 +36,7 @@ export const systemSlice = {
 
   userEntity: {
     updated: Date.now(),
-    open: true,
+    open: false,
     data: null,
     errors: [],
     visits: 0,

@@ -7,7 +7,7 @@ import {
     View
 } from './components';
 
-export default function Settings() {
+export default function ViewSwitcher() {
     const {
         boot,
     } = useSelector(state => state.system);

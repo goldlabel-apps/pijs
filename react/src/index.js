@@ -5,7 +5,7 @@ import initRedux from "./redux/initRedux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
-import Switcher from "./Switcher";
+import ViewSwitcher from "./ViewSwitcher";
 import ClockWork from "./ClockWork";
 import {
   CssBaseline,
@@ -35,7 +35,7 @@ ReactDOM.render(
       <React.Fragment>
         <ClockWork />
         <CssBaseline />
-        <Switcher />
+        <ViewSwitcher />
       </React.Fragment>
     </PersistGate>
   </Provider>,
