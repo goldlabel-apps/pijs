@@ -6,7 +6,6 @@ import {
     Card,
     CardContent,
     CardHeader,
-    Grid,
     Typography,
     ExpansionPanel,
     ExpansionPanelSummary,
@@ -23,15 +22,16 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles(theme => ({
     userEntity: {
         margin: theme.spacing(),
-        minHeight: 450,
+    },
+    resetBtn: {
+        margin: theme.spacing(),
+        width: '95%',
+    },
+    moreInfoPanel: {
+        background: 'rgba(255,255,255,0.1)',
     },
     white: {
         color: 'white',
-    },
-    moreInfoPanel: {
-        marginTop: theme.spacing(1.5),
-        boxShadow: 'none',
-      border: 'none',  
     },
     ipgeoFlag: {
         paddingTop: theme.spacing(2)
@@ -47,7 +47,8 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function UserEntity(props) {
+function UserEntity() {
+
     const classes = useStyles();
     const store = getStore();
     const {
@@ -56,7 +57,7 @@ function UserEntity(props) {
     const {
         open,
         ipgeo,
-        visits,
+        // visits,
     } = userEntity;
     // console.log(open);
     if (!open) {
@@ -65,7 +66,7 @@ function UserEntity(props) {
     const {
         ip,
         city,
-        country_flag,
+        // country_flag,
         country_name,
         state_prov,
     } = ipgeo.data;
@@ -79,65 +80,58 @@ function UserEntity(props) {
     
     
     return (
-        
-            <Card className={classes.userEntity}>
-                <CardHeader
-                    title={title}
-                    subheader={subheader}
-                    avatar={<Icon
-                        icon={`userentity`}
-                        color={`primary`}
-                    />}
-                    action={
-                        <IconButton
-                            onClick={(e) => {
-                                e.preventDefault();
-                                store.dispatch({ type: "SYSTEM/USERENTITY/CLOSE" });
-                            }}>
-                            <Icon
-                                icon={`close`}
-                                color={`primary`}
-                            />
-                        </IconButton>
-                } />
-                <CardContent>
-                    <Mapbox />
-                    <Grid container>
-                    <Grid item xs={4} sm={3} className={classes.ipgeoFlag}>
-                            <img src={country_flag} alt={`flag`} />
-                        </Grid>
-                    <Grid item xs={8} sm={9} className={classes.ipgeoText}>
-                            <Typography variant={`body1`} className={classes.white}>
-                                {visits} visits
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                    <ExpansionPanel className={classes.moreInfoPanel} >
-                    <ExpansionPanelSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="More info"
-                            id={`more-info`}>
-                            <Typography className={classes.white}>
-                                More Info
-                            </Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <Typography variant={`body2`} className={classes.white}>
-                                {moreInfo}
-                            </Typography>
-                        </ExpansionPanelDetails>
-                        <Button
-                            fullWidth
-                            variant={`outlined`}
+        <Card className={classes.userEntity}>
+            <CardHeader
+                title={title}
+                subheader={subheader}
+                avatar={<Icon
+                    icon={`userentity`}
+                    color={`primary`}
+                />}
+                action={
+                    <IconButton
+                        onClick={(e) => {
+                            e.preventDefault();
+                            store.dispatch({ type: "SYSTEM/USERENTITY/CLOSE" });
+                        }}>
+                        <Icon
+                            icon={`close`}
                             color={`primary`}
-                            onClick={(e) => {
-                                e.preventDefault();
-                            }}>
-                                Reset User Entity
-                        </Button>
-                    </ExpansionPanel>
-                </CardContent>
-            </Card>
+                        />
+                    </IconButton>
+            } />
+            <CardContent>
+                
+                
+                <ExpansionPanel className={classes.moreInfoPanel} >
+                <ExpansionPanelSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="More info"
+                        id={`more-info`}>
+                        <Typography className={classes.white}>
+                            IP {ip}
+                        </Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant={`body2`} className={classes.white}>
+                            {moreInfo}
+                        </Typography>
+                    </ExpansionPanelDetails>
+                    <Button
+                        fullWidth
+                        className={classes.resetBtn}
+                        variant={`outlined`}
+                        color={`primary`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                        }}>
+                            Reset your User Entity
+                    </Button>
+                </ExpansionPanel>
+
+                <Mapbox />
+            </CardContent>
+        </Card>
     );
 }
 

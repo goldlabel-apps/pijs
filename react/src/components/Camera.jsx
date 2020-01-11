@@ -6,16 +6,23 @@ import {
     Card,
     CardContent,
     CardHeader,
+    ExpansionPanel,
+    ExpansionPanelSummary,
+    ExpansionPanelDetails,
     IconButton,
+    Typography,
 } from '@material-ui/core/';
 import {
     Icon,
 } from './';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
     camera: {
         margin: theme.spacing(),
-        minHeight: 450,
+    },
+    moreInfoPanel: {
+        background: 'rgba(255,255,255,0.1)',
     },
     cameraImage: {
         border: '1px solid rgba(0,0,0,0.5)',
@@ -23,86 +30,76 @@ const useStyles = makeStyles(theme => ({
     },
     grow: {
         flexGrow: 1,
-    }
+    },
+    white: {
+        color: 'white',
+    },
 }));
 
-function Camera(props) {
+
+function Camera() {
     
     const classes = useStyles();
     const store = getStore();
     const {
         open,
+        currentPhoto,
     } = useSelector(state => state.system.camera);
 
     if (!open) {
         return null;
     }
 
-    const staticCurrentPhoto = `/jpg/current-photo.jpg`;
-    // console.log(currentPhoto);
     const title = `Camera`;
     const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland, Australia</span>;
+    const moreInfo = currentPhoto;
     
     return (
-            <Card className={classes.camera}>
-                <CardHeader
-                    title={title}
-                    subheader={subheader}
-                    avatar={<Icon
-                                icon={`camera`}
-                                color={`primary`} />}
-                    action={
-                        <IconButton
-                            onClick={(e) => {
-                                e.preventDefault();
-                                store.dispatch({ type: "SYSTEM/CAMERA/CLOSE" });
-                            }}>
-                            <Icon
-                                icon={`close`}
-                                color={`primary`}
-                            />
-                        </IconButton>
-                    }/>
-                <CardContent>
-                    <img
-                        className={classes.cameraImage}
-                        alt={subheader}
-                        src={staticCurrentPhoto} />
-                </CardContent>
-                {/* <CardActions>
-                    <div className={classes.grow} />
-                    <Button
-                        variant={`contained`}
-                        color={`primary`}
-                    >
-                        A Button
-                    </Button>
-                </CardActions> */}
-            </Card>
+        <Card className={classes.camera}>
+            <CardHeader
+                title={title}
+                subheader={subheader}
+                avatar={<Icon
+                            icon={`camera`}
+                            color={`primary`} />}
+                action={
+                    <IconButton
+                        onClick={(e) => {
+                            e.preventDefault();
+                            store.dispatch({ type: "SYSTEM/CAMERA/CLOSE" });
+                        }}>
+                        <Icon
+                            icon={`close`}
+                            color={`primary`}
+                        />
+                    </IconButton>
+                }/>
+            <CardContent>
+                <ExpansionPanel className={classes.moreInfoPanel} >
+                    <ExpansionPanelSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="More info"
+                        id={`more-info`}>
+                        <Typography className={classes.white}>
+                            Live
+                        </Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant={`body2`} className={classes.white}>
+                            {moreInfo}
+                        </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+
+                <img
+                    className={classes.cameraImage}
+                    alt={subheader}
+                    src={currentPhoto} />
+                
+            </CardContent>
+        </Card>
     );
 }
 
 const MemodFuncComponent = React.memo(Camera);
 export default MemodFuncComponent;
-
-
-// export default Camera;
-
-/* content
-
-const content = [];
-
-{content.map((item, i) => {
-    return (
-        <React.Fragment key={`content_item_${i}`}>
-            <Typography variant={`body1`}>
-                {item.title}
-            </Typography>
-            <Typography variant={`body2`}>
-                {item.short}
-            </Typography>
-        </React.Fragment>
-    );
-})}
-
-*/
