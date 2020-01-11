@@ -21,13 +21,6 @@ import {
 
 export const systemSlice = {
 
-  weather: {
-    updated: Date.now(),
-    open: true,
-    data: null,
-    errors: [],
-  },
-
   camera: {
     updated: Date.now(),
     open: true,

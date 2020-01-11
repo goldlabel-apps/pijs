@@ -5,6 +5,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import { reduxBatch } from "@manaflair/redux-batch";
 import { system, systemSlice } from "./system/reducer";
 import { firebase, firebaseSlice } from "./firebase/reducer";
+import { weather, weatherSlice } from "./weather/reducer";
 
 const initRedux = () => {
   const persistConfig = {
@@ -15,20 +16,22 @@ const initRedux = () => {
   const reducers = combineReducers({
     system,
     firebase,
+    weather,
   });
 
   const persistedReducer = persistReducer(persistConfig, reducers);
+
+  const preloadedState = {
+    system: systemSlice,
+    firebase: firebaseSlice,
+    weather: weatherSlice,
+  };
 
   const middleware = [
     ...getDefaultMiddleware({
       serializableCheck: false
     })
   ];
-
-  const preloadedState = {
-    system: systemSlice,
-    firebase: firebaseSlice,
-  };
 
   const store = configureStore({
     reducer: persistedReducer,

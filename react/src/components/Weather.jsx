@@ -38,7 +38,7 @@ function Weather() {
     const store = getStore();
     const {
         open,
-    } = useSelector(state => state.system.weather);
+    } = useSelector(state => state.weather);
 
     if (!open) {
         return null;

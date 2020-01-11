@@ -1,29 +1,30 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
-  setChecked,
+  toggleFetching,
   reset,
 } from "./actions";
 
-export const firebaseSlice = {
-  fingerprint: {
-    updated: Date.now(),
-    checked: false,
-  },
+export const weatherSlice = {
+  updated: Date.now(),
+  fetching: false,
+  open: true,
+  data: null,
+  errors: [],    
 };
 
-const firebase = createReducer(firebaseSlice, {
+const weather = createReducer(weatherSlice, {
 
-  [setChecked]: (state, action) => {
-    // console.log('check complete');
-    state.fingerprint.updated = Date.now();
-    state.fingerprint.checked = action.checked;
+  [toggleFetching]: (state, action) => {
+    console.log('fetching', action.fetching);
+    state.updated = Date.now();
+    state.fetching = action.fetching;
     return state;
   }, 
   
   [reset]: () => {
-    return firebaseSlice;
+    return weatherSlice;
   }, 
 
 });
 
-export { firebase };
+export { weather };

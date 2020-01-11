@@ -29,10 +29,13 @@ function Dock(props) {
     const {
         system,
     } = useSelector(state => state);
+    const {
+        weather,
+    } = useSelector(state => state);
 
     const userEntityOpen = system.userEntity.open;
     const cameraOpen = system.camera.open;
-    const weatherOpen = system.weather.open;
+    const weatherOpen = weather.open;
 
     return (
         <AppBar

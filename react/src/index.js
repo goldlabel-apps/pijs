@@ -11,11 +11,12 @@ import {
   CssBaseline,
 } from '@material-ui/core/';
 
+const disablePersitance = true;
+
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
 );
 
-const disablePersitance = false;
 const purgeStore = () => {
   console.log(`Persitance Disabled.`);
   localStorage.clear();

@@ -30,8 +30,10 @@ export default function View() {
     const {
         camera,
         userEntity,
-        weather,
     } = useSelector(state => state.system);
+    const {
+        weather,
+    } = useSelector(state => state);
     const cameraOpen = camera.open;
     const userEntityOpen = userEntity.open;
     const weatherOpen = weather.open;
