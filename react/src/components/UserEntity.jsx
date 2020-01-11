@@ -5,18 +5,13 @@ import {
     Button,
     Card,
     CardHeader,
-    Typography,
-    ExpansionPanel,
-    ExpansionPanelSummary,
-    ExpansionPanelDetails,
     IconButton,
 } from '@material-ui/core/';
 import { getStore } from '../';
 import {
     Icon,
-    Mapbox,
+    // Mapbox,
 } from './';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
     userEntity: {
@@ -24,10 +19,6 @@ const useStyles = makeStyles(theme => ({
     },
     iconBtnSpacer: {
         marginLeft: theme.spacing(2),
-    },
-    resetBtn: {
-        margin: theme.spacing(),
-        width: '95%',
     },
     moreInfoPanel: {
         background: 'rgba(255,255,255,0.01)',
@@ -58,26 +49,25 @@ function UserEntity() {
     } = useSelector(state => state.system);
     const {
         open,
-        ipgeo,
-        // visits,
+        // ipgeo,
+        visits,
     } = userEntity;
-    // console.log(open);
+
     if (!open) {
         return null;
     }
-    const {
-        ip,
-        city,
-        // country_flag,
-        country_name,
-        state_prov,
-    } = ipgeo.data;
+    
+    // const {
+    //     ip,
+    //     city,
+    //     country_flag,
+    //     country_name,
+    //     state_prov,
+    // } = ipgeo.data;
+    // const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
     
     const title = `User Entity`;
-    const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
-    const subheader = <span style={{ color: 'white' }}>{ipgeolocation}</span>;
-    const moreInfo = `What do we currently know about you? Only your IP address. 
-    Using a free service from ipgeolocation.io, we know that ip's location is ${ipgeolocation}`;
+    const subheader = <span style={{ color: 'white' }}>{visits} visit{ visits > 1 ? `s` : null}</span>;
     
     return (
         <Card className={classes.userEntity}>
@@ -101,36 +91,18 @@ function UserEntity() {
                     </IconButton>
             } />
             
-            <Mapbox />
+            {/* <Mapbox /> */}
             
-            <ExpansionPanel className={classes.moreInfoPanel} >
-                <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="More info"
-                    id={`more-info`}>
-                    <Typography className={classes.white}>
-                        Reset User Entity
-                    </Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography variant={`body2`} className={classes.white}>
-                        IP {ip}. {moreInfo}
-                    </Typography>
-                </ExpansionPanelDetails>
-                <Button
-                    fullWidth
-                    className={classes.resetBtn}
-                    variant={`text`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        store.dispatch({ type: "SYSTEM/RESET" });
-                        window.location.assign(`/?reset=${Date.now()}`)
-                    }}>
-                    <Icon icon={`reset`} color={`primary`} /><span className={classes.iconBtnSpacer}>Reset</span>
-                        
-                </Button>
-            </ExpansionPanel>
+            <Button
+                variant={`contained`}
+                color={`secondary`}
+                onClick={(e) => {
+                    e.preventDefault();
+                    store.dispatch({ type: "SYSTEM/RESET" });
+                    window.location.assign(`/?reset=${Date.now()}`)
+                }}>
+                <Icon icon={`reset`} color={`primary`} /><span className={classes.iconBtnSpacer}>Reset</span>
+            </Button>
 
         </Card>
     );

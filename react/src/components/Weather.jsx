@@ -3,19 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
-    Button,
     Card,
     CardHeader,
-    ExpansionPanel,
-    ExpansionPanelSummary,
-    ExpansionPanelDetails,
     IconButton,
-    Typography,
 } from '@material-ui/core/';
 import {
     Icon,
 } from './';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
     camera: {
@@ -52,7 +46,6 @@ function Weather() {
 
     const title = `Weather`;
     const subheader = <span style={{ color: 'white' }}>what's the weather like?</span>;
-    const moreInfo = `errr, yeh. gis a sec`;
     
     return (
         <Card className={classes.camera}>
@@ -75,32 +68,7 @@ function Weather() {
                     </IconButton>
                 }/>
 
-                <ExpansionPanel className={classes.moreInfoPanel} >
-                    <ExpansionPanelSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="More info"
-                        id={`more-info`}>
-                        <Typography className={classes.white}>
-                            Weather
-                        </Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                        <Typography variant={`body2`} className={classes.white}>
-                            {moreInfo}
-                        </Typography>
-                </ExpansionPanelDetails>
                 
-                <Button
-                    fullWidth
-                    className={classes.resetBtn}
-                    variant={`text`}
-                    color={`primary`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                    }}>
-                    <Icon icon={`weather`} /><span className={classes.iconBtnSpacer}>Weather Forecast</span>
-                </Button>
-            </ExpansionPanel>
         </Card>
     );
 }

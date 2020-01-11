@@ -4,7 +4,7 @@ import Dock from "./Dock";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import Mapbox from "./Mapbox";
-import MenuAppBar from "./MenuAppBar";
+import MoreInfo from "./MoreInfo";
 import SpeedDialMenu from "./SpeedDialMenu";
 import UserEntity from "./UserEntity";
 import View from "./View";
@@ -17,7 +17,7 @@ export {
   Icon,
   Logo,
   Mapbox,
-  MenuAppBar,
+  MoreInfo,
   SpeedDialMenu,
   UserEntity,
   View,
