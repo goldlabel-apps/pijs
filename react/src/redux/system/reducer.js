@@ -78,7 +78,7 @@ const system = createReducer(systemSlice, {
   }, 
     
   [updateCamera]: (state) => {
-    // console.log('updateCamera', state.camera)
+    console.log('updateCamera', state.camera)
     if (state.camera) {
       state.camera.updated = Date.now();
       state.camera.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;

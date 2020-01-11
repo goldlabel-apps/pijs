@@ -40,7 +40,7 @@ class ClockWork extends Component {
             checkFingerprint(fingerprint);
         }
 
-        if (ticks % 5 === 0) {
+        if (ticks % 20 === 0) {
             store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
         }
         

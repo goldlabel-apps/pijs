@@ -43,19 +43,7 @@ function Dock(props) {
                 
                 <Logo />
 
-                <IconButton
-                    disabled={userEntityOpen}
-                    edge={`start`}
-                    color={`inherit`}
-                    aria-label={`User Entity`}
-                    onClick={(e) => { 
-                        e.preventDefault();
-                        store.dispatch({ type: `SYSTEM/USERENTITY/OPEN` });
-                    }}>
-                    <Icon
-                        icon={`userentity`}
-                        color={`inherit`} />
-                </IconButton>
+                
 
                 <IconButton
                     disabled={cameraOpen}
@@ -68,6 +56,20 @@ function Dock(props) {
                     }}>
                     <Icon
                         icon={`camera`}
+                        color={`inherit`} />
+                </IconButton>
+
+                <IconButton
+                    disabled={userEntityOpen}
+                    edge={`start`}
+                    color={`inherit`}
+                    aria-label={`User Entity`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        store.dispatch({ type: `SYSTEM/USERENTITY/OPEN` });
+                    }}>
+                    <Icon
+                        icon={`userentity`}
                         color={`inherit`} />
                 </IconButton>
                 

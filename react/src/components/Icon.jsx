@@ -99,7 +99,7 @@ class Icon extends Component {
                 return (<SpadeSVG color={iconColor} className={classes.navIcon} />);
 
             case `github`:
-                return (<GithubSVG color={`#000`} className={classes.navIcon} />);
+                return (<GithubSVG color={`#fff`} className={classes.navIcon} />);
 
             case `weather`:
                 return (<IconWeather color={iconColor} />);

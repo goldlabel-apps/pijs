@@ -8,7 +8,7 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 const styles = theme => ({
     map: {
         border: '1px solid rgba(0,0,0,0.5)',
-        height: 215,
+        height: 450,
     }
 });
 

@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import {
     Button,
     Card,
-    CardContent,
     CardHeader,
     Typography,
     ExpansionPanel,
@@ -23,12 +22,15 @@ const useStyles = makeStyles(theme => ({
     userEntity: {
         margin: theme.spacing(),
     },
+    iconBtnSpacer: {
+        marginLeft: theme.spacing(2),
+    },
     resetBtn: {
         margin: theme.spacing(),
         width: '95%',
     },
     moreInfoPanel: {
-        background: 'rgba(255,255,255,0.1)',
+        background: 'rgba(255,255,255,0.01)',
     },
     white: {
         color: 'white',
@@ -74,10 +76,8 @@ function UserEntity() {
     const title = `User Entity`;
     const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
     const subheader = <span style={{ color: 'white' }}>{ipgeolocation}</span>;
-    const moreInfo = `What do we currently know about you? Most 
-    importantly is the IP address that came with your request; ${ip}. 
-    Using the free service from ipgeolocation.io, we can tell that ip's location is ${ipgeolocation}`;
-    
+    const moreInfo = `What do we currently know about you? Only your IP address. 
+    Using a free service from ipgeolocation.io, we know that ip's location is ${ipgeolocation}`;
     
     return (
         <Card className={classes.userEntity}>
@@ -100,39 +100,38 @@ function UserEntity() {
                         />
                     </IconButton>
             } />
-            <CardContent>
-                
-                
-                <ExpansionPanel className={classes.moreInfoPanel} >
+            
+            <Mapbox />
+            
+            <ExpansionPanel className={classes.moreInfoPanel} >
                 <ExpansionPanelSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="More info"
-                        id={`more-info`}>
-                        <Typography className={classes.white}>
-                            IP {ip}
-                        </Typography>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                        <Typography variant={`body2`} className={classes.white}>
-                            {moreInfo}
-                        </Typography>
-                    </ExpansionPanelDetails>
-                    <Button
-                        fullWidth
-                        className={classes.resetBtn}
-                        variant={`outlined`}
-                        color={`primary`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/RESET" });
-                            window.location.assign(`/?reset=${Date.now()}`)
-                        }}>
-                            Reset your User Entity
-                    </Button>
-                </ExpansionPanel>
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="More info"
+                    id={`more-info`}>
+                    <Typography className={classes.white}>
+                        Reset User Entity
+                    </Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography variant={`body2`} className={classes.white}>
+                        IP {ip}. {moreInfo}
+                    </Typography>
+                </ExpansionPanelDetails>
+                <Button
+                    fullWidth
+                    className={classes.resetBtn}
+                    variant={`text`}
+                    color={`primary`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        store.dispatch({ type: "SYSTEM/RESET" });
+                        window.location.assign(`/?reset=${Date.now()}`)
+                    }}>
+                    <Icon icon={`reset`} color={`primary`} /><span className={classes.iconBtnSpacer}>Reset</span>
+                        
+                </Button>
+            </ExpansionPanel>
 
-                <Mapbox />
-            </CardContent>
         </Card>
     );
 }
