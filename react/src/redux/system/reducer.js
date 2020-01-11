@@ -14,17 +14,32 @@ import {
   mapComplete,
   openCamera,
   closeCamera,
+  updateWeather,
+  openWeather,
+  closeWeather,
 } from "./actions";
 
 export const systemSlice = {
+
+  weather: {
+    updated: Date.now(),
+    open: true,
+    data: null,
+    errors: [],
+  },
+
+
   camera: {
     updated: Date.now(),
     open: true,
     currentPhoto: null,
   },
+
   userEntity: {
     updated: Date.now(),
-    open: false,
+    open: true,
+    data: null,
+    errors: [],
     visits: 0,
     created: null,
     lastVisit: null,
@@ -78,7 +93,6 @@ const system = createReducer(systemSlice, {
   }, 
     
   [updateCamera]: (state) => {
-    console.log('updateCamera', state.camera)
     if (state.camera) {
       state.camera.updated = Date.now();
       state.camera.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;
@@ -148,6 +162,24 @@ const system = createReducer(systemSlice, {
     state.camera.open = false;
     return state;
   },
+
+  [openWeather]: (state) => {
+    state.weather.updated = Date.now();
+    state.weather.open = true;
+    return state;
+  },
+
+  [closeWeather]: (state) => {
+    state.weather.updated = Date.now();
+    state.weather.open = false;
+    return state;
+  },
+
+  [updateWeather]: (state) => {
+    state.weather.updated = Date.now();
+    return state;
+  }, 
+
   
   [reset]: () => {
     return systemSlice;

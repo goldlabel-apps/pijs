@@ -8,6 +8,7 @@ import MenuAppBar from "./MenuAppBar";
 import SpeedDialMenu from "./SpeedDialMenu";
 import UserEntity from "./UserEntity";
 import View from "./View";
+import Weather from "./Weather";
 
 export {
   Boot,
@@ -20,4 +21,5 @@ export {
   SpeedDialMenu,
   UserEntity,
   View,
+  Weather,
 };

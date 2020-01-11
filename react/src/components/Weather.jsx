@@ -29,11 +29,6 @@ const useStyles = makeStyles(theme => ({
     moreInfoPanel: {
         background: 'rgba(255,255,255,0.01)',
     },
-    cameraImage: {
-        border: '1px solid rgba(0,0,0,0.5)',
-        maxWidth: '100%',
-        maxHeight: 450,
-    },
     grow: {
         flexGrow: 1,
     },
@@ -43,29 +38,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-function Camera() {
+function Weather() {
     
     const classes = useStyles();
     const store = getStore();
     const {
         open,
-        currentPhoto,
-    } = useSelector(state => state.system.camera);
+    } = useSelector(state => state.system.weather);
 
     if (!open) {
         return null;
     }
 
-    let showThis;
-    if (currentPhoto) {
-        showThis = currentPhoto
-    } else {
-        showThis = `/jpg/pi4.jpg`;
-    }
-
-    const title = `Camera`;
-    const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland, Australia</span>;
-    const moreInfo = `PiJS is an Open Source, meaning that everything you see here is available to download and use for free from github.`;
+    const title = `Weather`;
+    const subheader = <span style={{ color: 'white' }}>what's the weather like?</span>;
+    const moreInfo = `errr, yeh. gis a sec`;
     
     return (
         <Card className={classes.camera}>
@@ -73,13 +60,13 @@ function Camera() {
                 title={title}
                 subheader={subheader}
                 avatar={<Icon
-                            icon={`camera`}
+                            icon={`weather`}
                             color={`primary`} />}
                 action={
                     <IconButton
                         onClick={(e) => {
                             e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/CAMERA/CLOSE" });
+                            store.dispatch({ type: "SYSTEM/WEATHER/CLOSE" });
                         }}>
                         <Icon
                             icon={`close`}
@@ -87,11 +74,6 @@ function Camera() {
                         />
                     </IconButton>
                 }/>
-            
-                <img
-                    className={classes.cameraImage}
-                    alt={subheader}
-                    src={showThis} />
 
                 <ExpansionPanel className={classes.moreInfoPanel} >
                     <ExpansionPanelSummary
@@ -99,7 +81,7 @@ function Camera() {
                         aria-controls="More info"
                         id={`more-info`}>
                         <Typography className={classes.white}>
-                            Open Source
+                            Weather
                         </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
@@ -115,14 +97,13 @@ function Camera() {
                     color={`primary`}
                     onClick={(e) => {
                         e.preventDefault();
-                        window.open(`https://github.com/listingslab-hardware/pijs`, `_blank`)
                     }}>
-                    <Icon icon={`github`} /><span className={classes.iconBtnSpacer}>GitHub</span>
+                    <Icon icon={`weather`} /><span className={classes.iconBtnSpacer}>Weather Forecast</span>
                 </Button>
             </ExpansionPanel>
         </Card>
     );
 }
 
-const MemodFuncComponent = React.memo(Camera);
+const MemodFuncComponent = React.memo(Weather);
 export default MemodFuncComponent;

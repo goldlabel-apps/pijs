@@ -8,6 +8,7 @@ import {
     Camera,
     Dock,
     UserEntity,
+    Weather,
 } from './';
 
 const useStyles = makeStyles(theme => ({
@@ -22,21 +23,29 @@ export default function View() {
     const {
         camera,
         userEntity,
+        weather,
     } = useSelector(state => state.system);
     const cameraOpen = camera.open;
     const userEntityOpen = userEntity.open;
+    const weatherOpen = weather.open;
     return (
         <React.Fragment>
             <div className={classes.view}>
                 <Grid container>
-
-                    {cameraOpen ? <Grid item xs={12} sm={6} md={6}>
+                    
+                    
+                    
+                    {cameraOpen ? <Grid item xs={12} sm={6} md={4}>
                         <Camera />
                     </Grid> : null}
-                    
-                    {userEntityOpen ? <Grid item xs={12} sm={6} md={6}>
+
+                    {weatherOpen ? <Grid item xs={12} sm={6} md={4}>
+                        <Weather />
+                    </Grid> : null}
+
+                    {userEntityOpen ? <Grid item xs={12} sm={6} md={4}>
                         <UserEntity />
-                    </Grid>: null }
+                    </Grid> : null}
                     
                 </Grid>
                 <Dock />

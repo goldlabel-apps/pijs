@@ -32,6 +32,7 @@ function Dock(props) {
 
     const userEntityOpen = system.userEntity.open;
     const cameraOpen = system.camera.open;
+    const weatherOpen = system.weather.open;
 
     return (
         <AppBar
@@ -42,8 +43,6 @@ function Dock(props) {
                 <div className={classes.grow} />
                 
                 <Logo />
-
-                
 
                 <IconButton
                     disabled={cameraOpen}
@@ -56,6 +55,20 @@ function Dock(props) {
                     }}>
                     <Icon
                         icon={`camera`}
+                        color={`inherit`} />
+                </IconButton>
+
+                <IconButton
+                    disabled={weatherOpen}
+                    edge={`start`}
+                    color={`inherit`}
+                    aria-label={`Weather`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        store.dispatch({ type: `SYSTEM/WEATHER/OPEN` });
+                    }}>
+                    <Icon
+                        icon={`weather`}
                         color={`inherit`} />
                 </IconButton>
 
