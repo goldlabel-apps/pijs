@@ -2,10 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { getStore } from '../';
+import moment from 'moment';
 import {
+    Avatar,
     Card,
+    CardContent,
     CardHeader,
     IconButton,
+    Typography,
 } from '@material-ui/core/';
 import {
     Icon,
@@ -31,6 +35,14 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+function degToCompass(num) {
+    while (num < 0) num += 360;
+    while (num >= 360) num -= 360;
+    let val = Math.round((num - 11.25) / 22.5);
+    let arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE",
+        "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    return arr[Math.abs(val)];
+}
 
 function Weather() {
     
@@ -38,40 +50,73 @@ function Weather() {
     const store = getStore();
     const {
         open,
-        // errors,
+        data,
     } = useSelector(state => state.weather);
-
-    // console.log('weather errors', errors)
     
-    if (!open) {
+    if (!open || !data) {
         return null;
     }
 
     const title = `Weather`;
-    // const subheader = <span style={{ color: 'white' }}>what's the weather like?</span>;
-    
+    const windSpeed = `${Math.round((data.wind.speed * 3.6) * 10) / 10} km/h`;
+    const windDirection = `${degToCompass(data.wind.deg)}`;
+    const temperature = `${Math.round((data.main.temp - 273.15) * 10) / 10} °C`;
+    const humidity = `${data.main.humidity} %`;
+    const overview = `${data.weather[0].main} (${data.weather[0].description})`;
+    const outlookIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    const sunrise = moment(data.sys.sunrise * 1000).fromNow();
+    const sunset = moment(data.sys.sunset * 1000).fromNow();
+
     return (
         <Card className={classes.camera}>
             <CardHeader
                 title={title}
-                // subheader={subheader}
-                avatar={<Icon
-                            icon={`weather`}
-                            color={`primary`} />}
+                avatar={<React.Fragment>
+                            {/* 
+                                <Icon
+                                    icon={`weather`}
+                                    color={`primary`} /> 
+                            */}
+                            <Avatar src={outlookIcon} alt={overview} />
+                        </React.Fragment>}
                 action={
                     <IconButton
                         onClick={(e) => {
                             e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/WEATHER/CLOSE" });
+                            store.dispatch({ type: "WEATHER/CLOSE" });
                         }}>
                         <Icon
                             icon={`close`}
                             color={`primary`}
                         />
                     </IconButton>
-                }/>
-
+                } />
+            
+            <CardContent>
                 
+                <Typography variant={`h6`}>
+                    {overview}
+                </Typography>
+                <Typography variant={`h6`}>
+                    temperature {temperature}
+                </Typography>
+                <Typography variant={`body1`}>
+                    humidity {humidity}
+                </Typography>
+                
+                
+                <Typography variant={`body1`}>
+                    Wind {windSpeed}, from {windDirection}
+                </Typography>
+
+                <Typography variant={`body1`}>
+                    Sun rose {sunrise}
+                </Typography>
+
+                <Typography variant={`body1`}>
+                    Sun sets in  {sunset}
+                </Typography>
+            </CardContent>
         </Card>
     );
 }

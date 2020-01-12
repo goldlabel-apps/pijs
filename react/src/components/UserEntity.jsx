@@ -5,6 +5,7 @@ import {
     Button,
     Card,
     CardHeader,
+    CardContent,
     IconButton,
 } from '@material-ui/core/';
 import { getStore } from '../';
@@ -49,25 +50,29 @@ function UserEntity() {
     } = useSelector(state => state.system);
     const {
         open,
-        // ipgeo,
+        ipgeo,
         // visits,
     } = userEntity;
 
     if (!open) {
         return null;
     }
+
+
+    const {
+        ip,
+        city,
+        // country_flag,
+        country_name,
+        state_prov,
+    } = ipgeo.data;
+
+    const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
     
-    // const {
-    //     ip,
-    //     city,
-    //     country_flag,
-    //     country_name,
-    //     state_prov,
-    // } = ipgeo.data;
-    // const ipgeolocation = `${city}, ${state_prov}, ${country_name}`;
-    
-    const title = `User Entity`;
-    // const subheader = <span style={{ color: 'white' }}>{visits} visit{ visits > 1 ? `s` : null}</span>;
+    const title = `Privacy`;
+    const moreInfo = `What do we currently know about you? Only your IP address. 
+    <strong>${ip}</strong>. Using a free service from ipgeolocation.io, 
+    we know that ip's location is <strong>${ipgeolocation}</strong>`;
     
     return (
         <Card className={classes.userEntity}>
@@ -89,20 +94,27 @@ function UserEntity() {
                             color={`primary`}
                         />
                     </IconButton>
-            } />
-            
+                } />
+                <CardContent>
+                <div dangerouslySetInnerHTML={{ __html: moreInfo}} />
+            </CardContent>
             {/* <Mapbox /> */}
-            
+            <CardContent>
             <Button
-                variant={`contained`}
-                color={`secondary`}
+                variant={`outlined`}
+                color={`inherit`}
                 onClick={(e) => {
                     e.preventDefault();
                     store.dispatch({ type: "SYSTEM/RESET" });
-                    window.location.assign(`/?reset=${Date.now()}`)
+                    store.dispatch({ type: "WEATHER/RESET" });
+                    window.localStorage.clear();
+                    window.location.assign(`/?reset=${Date.now()}`);
                 }}>
-                <Icon icon={`reset`} color={`primary`} /><span className={classes.iconBtnSpacer}>Reset</span>
-            </Button>
+                <Icon icon={`reset`} color={`primary`} />
+                <span className={classes.iconBtnSpacer}>Restart</span>
+                </Button>
+                
+            </CardContent>
 
         </Card>
     );

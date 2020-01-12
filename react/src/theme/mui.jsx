@@ -15,7 +15,7 @@ const theme = {
             contentFrame: "#F1DD3F"
         },
         text: {
-            primary: "#F1DD3F",
+            primary: "rgba(241,221,63,0.9)",
             secondary: "#212121",
         },
     }

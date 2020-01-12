@@ -31,7 +31,7 @@ function Logo() {
                 onClick={(e) => {
                     e.preventDefault();
                     store.dispatch({ type: `SYSTEM/CAMERA/OPEN` });
-                    store.dispatch({ type: `SYSTEM/WEATHER/OPEN` });
+                    store.dispatch({ type: `WEATHER/OPEN` });
                     store.dispatch({ type: `SYSTEM/USERENTITY/OPEN` });
                 }}>
                 <Icon icon={`pi`} />

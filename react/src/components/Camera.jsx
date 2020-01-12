@@ -56,7 +56,7 @@ function Camera() {
     } else {
         showThis = `/jpg/pi4.jpg`;
     }
-
+    // showThis = `/jpg/pi4.jpg`;
     const title = `Camera`;
     // const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland</span>;
     

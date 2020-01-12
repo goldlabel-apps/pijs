@@ -11,7 +11,7 @@ import {
   CssBaseline,
 } from '@material-ui/core/';
 
-const disablePersitance = true;
+const disablePersitance = false;
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
