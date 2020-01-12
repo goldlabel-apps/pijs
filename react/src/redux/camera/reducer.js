@@ -1,6 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
   update,
+  broken,
   open,
   close,
   toggle,
@@ -11,7 +12,6 @@ import {
 export const cameraSlice = {
   updated: Date.now(),
   open: true,
-  broken: false,
   currentPhoto: null,
   errors: [],
 };
@@ -19,11 +19,16 @@ export const cameraSlice = {
 const camera = createReducer(cameraSlice, {
 
   [update]: (state) => {
-    console.log('update', update)
     state.updated = Date.now();
     state.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;
     return state;
   }, 
+
+  [broken]: (state) => {
+    state.updated = Date.now();
+    state.currentPhoto = `/jpg/broken.jpg`;
+    return state;
+  },   
 
   [close]: (state) => {
     state.updated = Date.now();

@@ -13,12 +13,6 @@ export const setIpgeo = createAction("SYSTEM/SET/IPGEO");
 export const ipgeoError = createAction("SYSTEM/IPGEO/ERROR");
 export const showUserAtTick = createAction("SYSTEM/BOOT/SHOWUSERATTICK");
 export const newVisit = createAction("SYSTEM/NEW/VISIT");
-
-// export const updateCamera = createAction("SYSTEM/CAMERA/UPDATE");
-// export const openCamera = createAction("SYSTEM/CAMERA/OPEN");
-// export const closeCamera = createAction("SYSTEM/CAMERA/CLOSE");
-// export const toggleCamera = createAction("SYSTEM/CAMERA/TOGGLE");
-
 export const openUserEntity = createAction("SYSTEM/USERENTITY/OPEN");
 export const closeUserEntity = createAction("SYSTEM/USERENTITY/CLOSE");
 export const toggleUserEntity = createAction("SYSTEM/USERENTITY/TOGGLE");
@@ -49,7 +43,6 @@ export const ipgeolocation = () => {
     }
   }
   if (updateRequired) {
-    // console.log('Fetch IPGEO')
     axios
       .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IPGEO}`)
       .then(function (response) {

@@ -76,6 +76,38 @@ function Dock(props) {
             <Toolbar className={classes.constrain}>
                 
                     <div className={classes.grow} />
+
+                    <Tooltip title={`Privacy`}>
+                        <IconButton
+                            // disabled={userEntityOpen}
+                            edge={`start`}
+                            color={`inherit`}
+                            aria-label={`Privacy`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                store.dispatch({ type: `SYSTEM/USERENTITY/TOGGLE` });
+                            }}>
+                            <Icon
+                                icon={`userentity`}
+                                color={iconMap.userEntity.color} />
+                        </IconButton>
+                    </Tooltip>
+
+                    <Tooltip title={`Camera`}>
+                        <IconButton
+                            // disabled={cameraOpen}
+                            edge={`start`}
+                            color={`inherit`}
+                            aria-label={`Camera`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                store.dispatch({ type: `CAMERA/TOGGLE` });
+                            }}>
+                            <Icon
+                                icon={`camera`}
+                                color={iconMap.camera.color} />
+                        </IconButton>
+                    </Tooltip>
                     
                     <Tooltip title={`Weather`}>
                         <IconButton
@@ -90,42 +122,7 @@ function Dock(props) {
                             {weatherIcon}
                         </IconButton>
                     </Tooltip>
-
-                    
-                <Tooltip title={`Camera`}>
-                    <IconButton
-                        // disabled={cameraOpen}
-                        edge={`start`}
-                        color={`inherit`}
-                        aria-label={`Camera`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: `SYSTEM/CAMERA/TOGGLE` });
-                        }}>
-                        <Icon
-                            icon={`camera`}
-                                color={iconMap.camera.color} />
-                    </IconButton>
-                </Tooltip>
-
-                
-                
-                <Tooltip title={`Privacy`}>
-                    <IconButton
-                        // disabled={userEntityOpen}
-                        edge={`start`}
-                        color={`inherit`}
-                        aria-label={`Privacy`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: `SYSTEM/USERENTITY/TOGGLE` });
-                        }}>
-                        <Icon
-                            icon={`userentity`}
-                                color={iconMap.userEntity.color} />
-                    </IconButton>
-                    </Tooltip>
-                    
+    
                     <Logo />
                 
                 </Toolbar>

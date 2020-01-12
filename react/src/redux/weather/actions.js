@@ -17,14 +17,12 @@ export const fetchWeather = () => {
   const { weather } = store.getState();
   if (!weather.data && !weather.fetching) { updateRequired = true }
   const updatedAgo = Date.now() - weather.updated;
-
-  // 1 hour // 3600000
+  // 1 hour : 3600000
   if (updatedAgo > 3600000) {
     updateRequired = true
   }
 
   if (updateRequired) {
-    // console.log('WEATHER/FETCH');
     store.dispatch({
       type: `WEATHER/TOGGLE_FETCH`,
       bool: true,
@@ -52,36 +50,3 @@ export const fetchWeather = () => {
         });
       });
   }
-  
-  
-  //
-  // 
-  // if (!ipgeo.lastFetch) { updateRequired = true }
-  // if (ipgeo.lastFetch !== null && ipgeo.data !== null) {
-  //   if (Date.now() - ipgeo.lastFetch > 10000) {
-  //     updateRequired = true;
-  //   }
-  // }
-  // if (updateRequired) {
-  //   console.log('REACT_APP_OPEN_WEATHER')
-  //   axios
-  //     .get(`https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139?APPID=${process.env.REACT_APP_OPEN_WEATHER}`)
-  //     .then(function (response) {
-  //       store.dispatch({
-  //         type: `WEATHER/SAVE`,
-  //         ipgeo: response.data
-  //       });
-  //     })
-  //     .catch(function (error) {
-  //       store.dispatch({
-  //         type: `WEATHER/ERROR`,
-  //         error
-  //       });
-  //     });
-  // }
-};
-
-// export const checkFingerprint = (fingerprint) => {
-  // console.log(fingerprint)
-  // const store = getStore();
-// };

@@ -42,28 +42,22 @@ function Camera() {
     const store = getStore();
     const {
         open,
-        broken,
         currentPhoto,
     } = useSelector(state => state.camera);
 
     if (!open) { return null }
-
-    console.log('broken', currentPhoto, broken)
-
-    let showThis;
-    if (currentPhoto) {
-        showThis = currentPhoto
-    } else {
-        showThis = `/jpg/pi4.jpg`;
-    }
-    // showThis = `/jpg/pi4.jpg`;
     const title = `Camera`;
+    let imageSrc;
+    if (currentPhoto) {
+        imageSrc = currentPhoto
+    } else {
+        imageSrc = `/jpg/pi4.jpg`;
+    }
 
     return (
         <Card className={classes.camera}>
             <CardHeader
                 title={title}
-                // subheader={subheader}
                 avatar={<Icon
                             icon={`camera`}
                     color={`inherit`} />}
@@ -71,7 +65,7 @@ function Camera() {
                     <IconButton
                         onClick={(e) => {
                             e.preventDefault();
-                            store.dispatch({ type: "SYSTEM/CAMERA/CLOSE" });
+                            store.dispatch({ type: "CAMERA/CLOSE" });
                         }}>
                         <Icon
                             icon={`close`}
@@ -81,12 +75,13 @@ function Camera() {
                 } />
             <CardContent>
                 <img
-                    onError={(e) => { 
-                        alert ('image error', e)
-                    }}
                     className={classes.cameraImage}
                     alt={`camera`}
-                    src={showThis} />
+                    src={imageSrc}
+                    onError={(e) => {
+                        store.dispatch({ type: "CAMERA/BROKEN" });
+                    }}
+                />
             </CardContent>
         </Card>
     );
