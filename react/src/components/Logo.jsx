@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { getStore } from '../';
 import {
-    // Typography,
+    Typography,
     IconButton,
 } from '@material-ui/core/';
 import {
@@ -16,7 +16,8 @@ const useStyles = makeStyles(theme => ({
     },
     logoText: {
         color: '#F1DD3F',
-        marginTop: theme.spacing(1.2)
+        marginTop: theme.spacing(1.2),
+        marginLeft: theme.spacing()
     },
 }));
 
@@ -30,17 +31,17 @@ function Logo() {
             <IconButton
                 onClick={(e) => {
                     e.preventDefault();
-                    store.dispatch({ type: `SYSTEM/CAMERA/OPEN` });
+                    store.dispatch({ type: `CAMERA/OPEN` });
                     store.dispatch({ type: `WEATHER/OPEN` });
                     store.dispatch({ type: `SYSTEM/USERENTITY/OPEN` });
                 }}>
                 <Icon icon={`pi`} />
             </IconButton>
-            {/* <Typography
+            <Typography
                 className={classes.logoText}
                 variant={`h6`}>
                 PiJS.app
-            </Typography> */}
+            </Typography>
         </div>
     );
 }

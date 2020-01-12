@@ -77,6 +77,8 @@ function Dock(props) {
                 
                     <div className={classes.grow} />
 
+                    <Logo />
+
                     <Tooltip title={`Privacy`}>
                         <IconButton
                             // disabled={userEntityOpen}
@@ -123,7 +125,8 @@ function Dock(props) {
                         </IconButton>
                     </Tooltip>
     
-                    <Logo />
+                    
+                    <div className={classes.grow} />
                 
                 </Toolbar>
             </div>
