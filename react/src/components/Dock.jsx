@@ -34,12 +34,14 @@ function Dock(props) {
     
     const classes = useStyles();
     const store = getStore();
-    // const {
-    //     system,
-    // } = useSelector(state => state);
+    const {
+        camera,
+        system,
+    } = useSelector(state => state);
     const {
         data,
     } = useSelector(state => state.weather);
+
 
     let weatherIcon = <Icon
         icon={`weather`}
@@ -49,7 +51,19 @@ function Dock(props) {
     if (outlookIcon) {
         weatherIcon = <Avatar src={outlookIcon} alt={`weather`}/>;
     }
-    // const userEntityOpen = system.userEntity.open;
+    
+    const iconMap = {
+        camera: {
+            color: !camera.open ? `inherit` : `primary`,
+            open: camera.open
+        },
+        userEntity: {
+            color: !system.userEntity.open ? `inherit` : `primary`,
+            open: system.userEntity.open
+        }
+    }
+
+    
     // const cameraOpen = system.camera.open;
     // const weatherOpen = weather.open;
 
@@ -61,7 +75,23 @@ function Dock(props) {
             <div className={classes.center}>
             <Toolbar className={classes.constrain}>
                 
-                <div className={classes.grow} />
+                    <div className={classes.grow} />
+                    
+                    <Tooltip title={`Weather`}>
+                        <IconButton
+                            // disabled={weatherOpen}
+                            edge={`start`}
+                            color={`inherit`}
+                            aria-label={`Weather`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                store.dispatch({ type: `WEATHER/TOGGLE` });
+                            }}>
+                            {weatherIcon}
+                        </IconButton>
+                    </Tooltip>
+
+                    
                 <Tooltip title={`Camera`}>
                     <IconButton
                         // disabled={cameraOpen}
@@ -70,27 +100,15 @@ function Dock(props) {
                         aria-label={`Camera`}
                         onClick={(e) => {
                             e.preventDefault();
-                            store.dispatch({ type: `SYSTEM/CAMERA/OPEN` });
+                            store.dispatch({ type: `SYSTEM/CAMERA/TOGGLE` });
                         }}>
                         <Icon
                             icon={`camera`}
-                            color={`inherit`} />
+                                color={iconMap.camera.color} />
                     </IconButton>
                 </Tooltip>
 
-                <Tooltip title={`Weather`}>
-                    <IconButton
-                        // disabled={weatherOpen}
-                        edge={`start`}
-                        color={`inherit`}
-                        aria-label={`Weather`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            store.dispatch({ type: `WEATHER/OPEN` });
-                        }}>
-                        {weatherIcon}
-                    </IconButton>
-                </Tooltip>
+                
                 
                 <Tooltip title={`Privacy`}>
                     <IconButton
@@ -100,11 +118,11 @@ function Dock(props) {
                         aria-label={`Privacy`}
                         onClick={(e) => {
                             e.preventDefault();
-                            store.dispatch({ type: `SYSTEM/USERENTITY/OPEN` });
+                            store.dispatch({ type: `SYSTEM/USERENTITY/TOGGLE` });
                         }}>
                         <Icon
                             icon={`userentity`}
-                            color={`inherit`} />
+                                color={iconMap.userEntity.color} />
                     </IconButton>
                     </Tooltip>
                     

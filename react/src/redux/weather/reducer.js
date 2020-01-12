@@ -6,6 +6,7 @@ import {
   toggleFetching,
   open,
   close,
+  toggle,
 } from "./actions";
 
 export const weatherSlice = {
@@ -48,6 +49,12 @@ const weather = createReducer(weatherSlice, {
   [open]: (state) => {
     state.updated = Date.now();
     state.open = true;
+    return state;
+  },
+
+  [toggle]: (state) => {
+    state.updated = Date.now();
+    state.open = !state.open;
     return state;
   },
   

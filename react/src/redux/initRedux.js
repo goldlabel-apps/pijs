@@ -3,8 +3,9 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { reduxBatch } from "@manaflair/redux-batch";
-import { system, systemSlice } from "./system/reducer";
+import { camera, cameraSlice } from "./camera/reducer";
 import { firebase, firebaseSlice } from "./firebase/reducer";
+import { system, systemSlice } from "./system/reducer";
 import { weather, weatherSlice } from "./weather/reducer";
 
 const initRedux = () => {
@@ -14,16 +15,18 @@ const initRedux = () => {
   };
 
   const reducers = combineReducers({
-    system,
+    camera,
     firebase,
+    system,
     weather,
   });
 
   const persistedReducer = persistReducer(persistConfig, reducers);
 
   const preloadedState = {
-    system: systemSlice,
+    camera: cameraSlice,
     firebase: firebaseSlice,
+    system: systemSlice,
     weather: weatherSlice,
   };
 

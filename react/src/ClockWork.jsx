@@ -42,11 +42,12 @@ class ClockWork extends Component {
         }
 
         if (ticks % 20 === 0) {
-            store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
+            store.dispatch({ type: `CAMERA/UPDATE` })
         }
         
         switch (ticks) {
             case 1:
+                store.dispatch({ type: `CAMERA/UPDATE` })
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
                         message: `Debian GNU/Linux 4.19.75`,

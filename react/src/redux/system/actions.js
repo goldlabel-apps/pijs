@@ -14,12 +14,14 @@ export const ipgeoError = createAction("SYSTEM/IPGEO/ERROR");
 export const showUserAtTick = createAction("SYSTEM/BOOT/SHOWUSERATTICK");
 export const newVisit = createAction("SYSTEM/NEW/VISIT");
 
-export const updateCamera = createAction("SYSTEM/CAMERA/UPDATE");
-export const openCamera = createAction("SYSTEM/CAMERA/OPEN");
-export const closeCamera = createAction("SYSTEM/CAMERA/CLOSE");
+// export const updateCamera = createAction("SYSTEM/CAMERA/UPDATE");
+// export const openCamera = createAction("SYSTEM/CAMERA/OPEN");
+// export const closeCamera = createAction("SYSTEM/CAMERA/CLOSE");
+// export const toggleCamera = createAction("SYSTEM/CAMERA/TOGGLE");
 
 export const openUserEntity = createAction("SYSTEM/USERENTITY/OPEN");
 export const closeUserEntity = createAction("SYSTEM/USERENTITY/CLOSE");
+export const toggleUserEntity = createAction("SYSTEM/USERENTITY/TOGGLE");
 export const mapComplete = createAction("SYSTEM/USERENTITY/MAP_COMPLETE");
 
 export const createFingerprint = () => {

@@ -8,6 +8,7 @@ export const save = createAction(`WEATHER/SAVE`);
 export const error = createAction(`WEATHER/ERROR`);
 export const open = createAction(`WEATHER/OPEN`);
 export const close = createAction(`WEATHER/CLOSE`);
+export const toggle = createAction(`WEATHER/TOGGLE`);
 
 export const fetchWeather = () => {
   

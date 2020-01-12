@@ -30,9 +30,11 @@ const useStyles = makeStyles(theme => ({
 export default function View() {
     const classes = useStyles();
     const {
-        camera,
         userEntity,
     } = useSelector(state => state.system);
+    const {
+        camera,
+    } = useSelector(state => state);
     const {
         weather,
     } = useSelector(state => state);

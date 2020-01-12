@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft: theme.spacing(2),
     },
     cameraImage: {
-        border: '1px solid rgba(241,221,63,0.75)',
+        border: '1px solid rgba(241,221,63,0.25)',
         borderRadius: theme.spacing(),
         maxWidth: '100%',
         maxHeight: 450,
@@ -42,10 +42,13 @@ function Camera() {
     const store = getStore();
     const {
         open,
+        broken,
         currentPhoto,
-    } = useSelector(state => state.system.camera);
+    } = useSelector(state => state.camera);
 
     if (!open) { return null }
+
+    console.log('broken', currentPhoto, broken)
 
     let showThis;
     if (currentPhoto) {
@@ -55,8 +58,7 @@ function Camera() {
     }
     // showThis = `/jpg/pi4.jpg`;
     const title = `Camera`;
-    // const subheader = <span style={{ color: 'white' }}>Scarborough, Queensland</span>;
-    
+
     return (
         <Card className={classes.camera}>
             <CardHeader
@@ -64,7 +66,7 @@ function Camera() {
                 // subheader={subheader}
                 avatar={<Icon
                             icon={`camera`}
-                            color={`primary`} />}
+                    color={`inherit`} />}
                 action={
                     <IconButton
                         onClick={(e) => {
@@ -73,7 +75,7 @@ function Camera() {
                         }}>
                         <Icon
                             icon={`close`}
-                            color={`primary`}
+                            color={`inherit`}
                         />
                     </IconButton>
                 } />

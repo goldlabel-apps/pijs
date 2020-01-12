@@ -88,7 +88,7 @@ function Weather() {
                         }}>
                         <Icon
                             icon={`close`}
-                            color={`primary`}
+                            color={`inherit`}
                         />
                     </IconButton>
                 } />
@@ -98,11 +98,12 @@ function Weather() {
                 <Typography variant={`h6`}>
                     {overview}
                 </Typography>
-                <Typography variant={`h6`}>
-                    temperature {temperature}
+
+                <Typography variant={`h5`}>
+                    {temperature}
                 </Typography>
                 <Typography variant={`body1`}>
-                    humidity {humidity}
+                    Humidity {humidity}
                 </Typography>
                 
                 
@@ -111,11 +112,11 @@ function Weather() {
                 </Typography>
 
                 <Typography variant={`body1`}>
-                    Sun rose {sunrise}
+                    Sunrise {sunrise}
                 </Typography>
 
                 <Typography variant={`body1`}>
-                    Sun sets in  {sunset}
+                    Sunset  {sunset}
                 </Typography>
             </CardContent>
         </Card>

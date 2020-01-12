@@ -92,7 +92,7 @@ function UserEntity() {
                         }}>
                         <Icon
                             icon={`close`}
-                            color={`primary`}
+                            color={`inherit`}
                         />
                     </IconButton>
                 } />

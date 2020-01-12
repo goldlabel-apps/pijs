@@ -8,21 +8,13 @@ import {
   setIpgeo,
   showUserAtTick,
   tick,
-  updateCamera,
+  mapComplete,
+  toggleUserEntity,
   openUserEntity,
   closeUserEntity,
-  mapComplete,
-  openCamera,
-  closeCamera,
 } from "./actions";
 
 export const systemSlice = {
-
-  camera: {
-    updated: Date.now(),
-    open: true,
-    currentPhoto: null,
-  },
 
   userEntity: {
     updated: Date.now(),
@@ -80,15 +72,6 @@ const system = createReducer(systemSlice, {
     state.userEntity.visits = state.userEntity.visits + 1;
     return state;
   }, 
-    
-  [updateCamera]: (state) => {
-    if (state.camera) {
-      state.camera.updated = Date.now();
-      state.camera.currentPhoto = `https://pijs.app/jpg/current-photo.jpg?cb=${Date.now()}`;
-    }
-    
-    return state;
-  }, 
 
   [showUserAtTick]: (state, action) => {
     state.boot.userShownAtTick = action.ticks;
@@ -140,15 +123,9 @@ const system = createReducer(systemSlice, {
     return state;
   },
 
-  [openCamera]: (state) => {
-    state.camera.updated = Date.now();
-    state.camera.open = true;
-    return state;
-  },
-
-  [closeCamera]: (state) => {
-    state.camera.updated = Date.now();
-    state.camera.open = false;
+  [toggleUserEntity]: (state) => {
+    state.userEntity.updated = Date.now();
+    state.userEntity.open = !state.userEntity.open;
     return state;
   },
   
