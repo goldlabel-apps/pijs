@@ -13,8 +13,16 @@ export const weatherSlice = {
   updated: Date.now(),
   fetching: false,
   open: true,
-  data: null,
-  errors: [],    
+  data: {
+    coord: {},
+    wind: {},
+    main: {},
+    weather: [{
+
+    }],
+    sys: {}
+  },
+  errors: [],
 };
 
 const weather = createReducer(weatherSlice, {

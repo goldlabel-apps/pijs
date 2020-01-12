@@ -42,8 +42,8 @@ export const systemSlice = {
     mapboxStyle: `mapbox://styles/listingslab/ck4c1er100to21co6sd5kl563`,
     lat: 0,
     lng: 0,
-    zoom: 1,
-    flySpeed: 0.5,
+    zoom: 6,
+    flySpeed: 0.4,
     hasZoomed: false
   },
   boot: {

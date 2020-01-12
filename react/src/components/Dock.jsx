@@ -47,6 +47,8 @@ function Dock(props) {
         icon={`weather`}
         color={`inherit`} />;
     
+    
+    
     const outlookIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     if (outlookIcon) {
         weatherIcon = <Avatar src={outlookIcon} alt={`weather`}/>;

@@ -7,21 +7,20 @@ import {
 import {
     Camera,
     Dock,
+    Mapbox,
     UserEntity,
     Weather,
 } from './';
 
 const useStyles = makeStyles(theme => ({
     view: {
-        backgroundColor: '#212121', // '#212121'
-        // border: '1px solid pink', // '#212121'
+        backgroundColor: '#212121',
         minHeight: '100vh',
     },
     topColumn: {
         margin: 'auto',
     },
     top: {
-        // border: '1px solid pink', // '#212121'
         margin: 'auto',
         maxWidth: 800,
     }
@@ -56,8 +55,9 @@ export default function View() {
                     {weatherOpen || userEntityOpen ?
                         <Grid item xs={12} sm={6} md={4}>
                             <div className={classes.none}>
-                                <Weather />
                                 <UserEntity />
+                                <Weather />
+                                <Mapbox />
                             </div>
                         </Grid> : null }
                         

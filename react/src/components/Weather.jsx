@@ -60,10 +60,10 @@ function Weather() {
 
     const title = `Weather`;
     const windSpeed = `${Math.round((data.wind.speed * 3.6) * 10) / 10} km/h`;
-    const windDirection = `${degToCompass(data.wind.deg)}`;
-    const temperature = `${Math.round((data.main.temp - 273.15) * 10) / 10} °C`;
+    const windDirection = `${degToCompass(data.wind.deg) || `` }`;
+    const temperature = `${Math.round((data.main.temp - 273.15) * 10) / 10 || 0} °C`;
     const humidity = `${data.main.humidity} %`;
-    const overview = `${data.weather[0].main} (${data.weather[0].description})`;
+    const overview = `${data.weather[0].main || ``} ${data.weather[0].description || ``}`;
     const outlookIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     const sunrise = moment(data.sys.sunrise * 1000).fromNow();
     const sunset = moment(data.sys.sunset * 1000).fromNow();

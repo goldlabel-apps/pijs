@@ -7,8 +7,9 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
 const styles = theme => ({
     map: {
-        border: '1px solid rgba(0,0,0,0.5)',
-        height: 450,
+        border: '1px solid rgba(241,221,63,0.25)',
+        borderRadius: theme.spacing(),
+        height: 220,
     }
 });
 
@@ -18,12 +19,6 @@ class Mapbox extends Component {
         super(props);
         this.state = {
             map: null,
-            defaultLocation: {
-                lat: 0,
-                lng: 0,
-                zoom: 1,
-                flySpeed: 0.75,
-            }
         }
     }
 
@@ -33,6 +28,8 @@ class Mapbox extends Component {
             lng,
             mapbox,
             userLocation,
+            piLat,
+            piLon,
         } = this.props;
         const {
             mapboxStyle,
@@ -42,7 +39,7 @@ class Mapbox extends Component {
         let mapOptions = {
             container: this.mapContainer,
             style: mapboxStyle,
-            center: [lng, lat],
+            center: [lng || 0, lat || 0],
             zoom,
             interactive: false,
         }
@@ -61,21 +58,20 @@ class Mapbox extends Component {
             } = this.props.mapbox;
             if (!hasZoomed && !userLocation) {
                 this.zoomIn({
-                    lat,
-                    lng,
+                    lat: piLat,
+                    lng: piLon,
                     zoom: 11,
-                    flySpeed: 0.5,
+                    flySpeed: 0.3,
                 })
             }
         });
-
         this.setState({ map })
     }
 
     zoomIn = (location) => {
         const { map } = this.state;
         map.flyTo({
-            center: [location.lng, location.lat],
+            center: [location.lng || 0, location.lat || 0],
             zoom: location.zoom,
             speed: location.flySpeed,
             essential: true
@@ -104,6 +100,8 @@ const mapStateToProps = (store) => {
         mapbox: store.system.mapbox,
         lat: store.system.userEntity.ipgeo.data.latitude,
         lng: store.system.userEntity.ipgeo.data.longitude,
+        piLat: store.weather.data.coord.lat,
+        piLon: store.weather.data.coord.lon,
     }
 };
 

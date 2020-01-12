@@ -86,13 +86,13 @@ class ClockWork extends Component {
                             message: `{<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"created": "${userEntityCreatedAgo}"<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;"fingerprint": "${fingerprint}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.data.ip}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.data.latitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.data.longitude}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"postcode": "${ipgeo.data.zipcode}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.data.city}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"state": "${ipgeo.data.state_prov}"<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;"country": "${ipgeo.data.country_name}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"ip": "${ipgeo.data.ip || ``}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"latitude": ${ipgeo.data.latitude || ``}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"longitude": ${ipgeo.data.longitude || ``}<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"postcode": "${ipgeo.data.zipcode || ``}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"city": "${ipgeo.data.city || ``}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"state": "${ipgeo.data.state_prov || ``}"<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"country": "${ipgeo.data.country_name || ``}"<br />
                             }<br />`,
                             color: `#eee`,
                         }
