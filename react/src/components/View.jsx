@@ -14,12 +14,14 @@ import {
 const useStyles = makeStyles(theme => ({
     view: {
         backgroundColor: '#212121', // '#212121'
+        // border: '1px solid pink', // '#212121'
         minHeight: '100vh',
     },
     topColumn: {
         margin: 'auto',
     },
     top: {
+        // border: '1px solid pink', // '#212121'
         margin: 'auto',
         maxWidth: 800,
     }
@@ -56,9 +58,8 @@ export default function View() {
                                 <UserEntity />
                             </div>
                         </Grid> : null }
+                        
 
-                    
-                    
                 </Grid>
                 <Dock />
             </div>

@@ -17,6 +17,7 @@ import {
 const useStyles = makeStyles(theme => ({
     userEntity: {
         margin: theme.spacing(),
+        maxWidth: 360,
     },
     iconBtnSpacer: {
         marginLeft: theme.spacing(2),

@@ -22,6 +22,12 @@ const useStyles = makeStyles(theme => ({
         top: 'auto',
         bottom: 0,
     },
+    center: {
+    },
+    constrain: {
+        // border: '1px solid yellow',
+        padding: theme.spacing(),
+    }
 }));
 
 function Dock(props) {
@@ -52,11 +58,10 @@ function Dock(props) {
             className={classes.appBar}
             color={`secondary`}
             position={`fixed`}>
-            <Toolbar>
-                <div className={classes.grow} />
+            <div className={classes.center}>
+            <Toolbar className={classes.constrain}>
                 
-                <Logo />
-
+                <div className={classes.grow} />
                 <Tooltip title={`Camera`}>
                     <IconButton
                         // disabled={cameraOpen}
@@ -101,9 +106,12 @@ function Dock(props) {
                             icon={`userentity`}
                             color={`inherit`} />
                     </IconButton>
-                </Tooltip>
-                <div className={classes.grow} />
-            </Toolbar>
+                    </Tooltip>
+                    
+                    <Logo />
+                
+                </Toolbar>
+            </div>
         </AppBar>
     );
 }

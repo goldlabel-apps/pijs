@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { getStore } from '../';
 import {
-    Typography,
+    // Typography,
     IconButton,
 } from '@material-ui/core/';
 import {
@@ -36,11 +36,11 @@ function Logo() {
                 }}>
                 <Icon icon={`pi`} />
             </IconButton>
-            <Typography
+            {/* <Typography
                 className={classes.logoText}
                 variant={`h6`}>
                 PiJS.app
-            </Typography>
+            </Typography> */}
         </div>
     );
 }

@@ -23,7 +23,7 @@ export const fetchWeather = () => {
   }
 
   if (updateRequired) {
-    console.log('WEATHER/FETCH');
+    // console.log('WEATHER/FETCH');
     store.dispatch({
       type: `WEATHER/TOGGLE_FETCH`,
       bool: true,

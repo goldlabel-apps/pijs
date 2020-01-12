@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { getStore } from '../';
 import {
     Card,
+    CardContent,
     CardHeader,
     IconButton,
 } from '@material-ui/core/';
@@ -20,11 +21,9 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(),
         marginLeft: theme.spacing(2),
     },
-    moreInfoPanel: {
-        background: 'rgba(255,255,255,0.01)',
-    },
     cameraImage: {
-        border: '1px solid rgba(0,0,0,0.5)',
+        border: '1px solid rgba(241,221,63,0.75)',
+        borderRadius: theme.spacing(),
         maxWidth: '100%',
         maxHeight: 450,
     },
@@ -46,9 +45,7 @@ function Camera() {
         currentPhoto,
     } = useSelector(state => state.system.camera);
 
-    if (!open) {
-        return null;
-    }
+    if (!open) { return null }
 
     let showThis;
     if (currentPhoto) {
@@ -79,11 +76,16 @@ function Camera() {
                             color={`primary`}
                         />
                     </IconButton>
-                }/>
+                } />
+            <CardContent>
                 <img
+                    onError={(e) => { 
+                        alert ('image error', e)
+                    }}
                     className={classes.cameraImage}
                     alt={`camera`}
                     src={showThis} />
+            </CardContent>
         </Card>
     );
 }
