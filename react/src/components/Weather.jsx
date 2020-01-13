@@ -60,7 +60,7 @@ function Weather() {
 
     const title = `Weather`;
     const windSpeed = `${Math.round((data.wind.speed * 3.6) * 10) / 10} km/h`;
-    const windDirection = `${degToCompass(data.wind.deg) || `` }`;
+    const windDirection = `${degToCompass(data.wind.deg) }`;
     const temperature = `${Math.round((data.main.temp - 273.15) * 10) / 10 || 0} °C`;
     const humidity = `${data.main.humidity} %`;
     const overview = `${data.weather[0].main || ``} ${data.weather[0].description || ``}`;

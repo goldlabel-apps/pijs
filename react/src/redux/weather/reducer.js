@@ -13,15 +13,7 @@ export const weatherSlice = {
   updated: Date.now(),
   fetching: false,
   open: true,
-  data: {
-    coord: {},
-    wind: {},
-    main: {},
-    weather: [{
-
-    }],
-    sys: {}
-  },
+  data: null,
   errors: [],
 };
 

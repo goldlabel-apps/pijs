@@ -45,7 +45,7 @@ class Mapbox extends Component {
         }
 
         if (userLocation) {
-            mapOptions.center = [userLocation.lng, userLocation.lat];
+            mapOptions.center = [userLocation.lng || 0, userLocation.lat || 0];
             mapOptions.zoom = userLocation.zoom;
         }
 
@@ -58,8 +58,8 @@ class Mapbox extends Component {
             } = this.props.mapbox;
             if (!hasZoomed && !userLocation) {
                 this.zoomIn({
-                    lat: piLat,
-                    lng: piLon,
+                    lat: piLat || 0,
+                    lng: piLon || 0,
                     zoom: 11,
                     flySpeed: 0.3,
                 })

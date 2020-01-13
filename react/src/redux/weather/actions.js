@@ -32,12 +32,14 @@ export const fetchWeather = () => {
     axios
       .get(`${baseUrl}${endPoint}&APPID=${process.env.REACT_APP_OPEN_WEATHER}`)
       .then(function (response) {
+        console.log(response.data)
         store.dispatch({
           type: `WEATHER/SAVE`,
           data: response.data
         });
       })
       .catch(function (error) {
+        console.log('error', error)
         store.dispatch({
           type: `WEATHER/ERROR`,
           error
