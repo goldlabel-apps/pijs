@@ -38,6 +38,7 @@ class ClockWork extends Component {
         const userEntityCreatedAgo = moment(userEntityCreated).fromNow();
 
         if (booted && !fingerprintChecked) {
+            console.log('checkFingerprint')
             checkFingerprint(fingerprint);
         }
 

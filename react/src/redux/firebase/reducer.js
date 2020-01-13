@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import {
-  setChecked,
+  checked,
   reset,
 } from "./actions";
 
@@ -13,10 +13,9 @@ export const firebaseSlice = {
 
 const firebase = createReducer(firebaseSlice, {
 
-  [setChecked]: (state, action) => {
-    // console.log('check complete');
+  [checked]: (state) => {
     state.fingerprint.updated = Date.now();
-    state.fingerprint.checked = action.checked;
+    state.fingerprint.checked = true;
     return state;
   }, 
   
