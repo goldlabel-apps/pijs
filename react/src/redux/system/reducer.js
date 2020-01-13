@@ -86,17 +86,16 @@ const system = createReducer(systemSlice, {
 
   [setFingerprint]: (state, action) => {
     const oldFingerprint = state.userEntity.fingerprint.value
-    let newFingerprint = {
-      updated: Date.now(),
-      value: action.fingerprint,
-      oldFingerprint,
-      components: action.components,
-      userAgent: action.userAgent,
-    }
     if (!oldFingerprint) {
       state.userEntity.created = Date.now();
     }
-    state.userEntity.fingerprint = newFingerprint;
+    state.userEntity.data = {
+      updated: Date.now(),
+      fingerprint: action.fingerprint,
+      oldFingerprint,
+      components: action.components,
+      userAgent: action.userAgent,
+    };
     return state;
   },
 

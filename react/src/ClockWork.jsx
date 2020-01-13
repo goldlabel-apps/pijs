@@ -76,8 +76,7 @@ class ClockWork extends Component {
         }
 
         if (!booted && ticks > 2) {
-            store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
-            // store.dispatch({ type: `SYSTEM/CAMERA/UPDATE` })
+            store.dispatch({ type: `CAMERA/UPDATE` })
             if (ipgeo && fingerprint) {
                 if (!userShownAtTick) {
                     store.dispatch({ type: `SYSTEM/BOOT/SHOWUSERATTICK`, ticks });

@@ -3,6 +3,7 @@ import Fingerprint2 from "fingerprintjs2";
 import { createAction } from "@reduxjs/toolkit";
 import { getStore } from "../../";
 import userAgentParser from 'ua-parser-js';
+import { checkFingerprint } from '../firebase/actions';
 
 export const boot = createAction("SYSTEM/BOOT");
 export const reset = createAction("SYSTEM/RESET");
@@ -27,6 +28,7 @@ export const createFingerprint = () => {
       const fingerprint = Fingerprint2.x64hash128(values.join(""), 31);
       let userAgent = userAgentParser(components.find(o => o.key === 'userAgent').value);
       store.dispatch({ type: "SYSTEM/SET/FINGERPRINT", fingerprint, components, userAgent });
+      checkFingerprint(fingerprint);
     });
 };
 
