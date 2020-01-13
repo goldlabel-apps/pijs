@@ -17,9 +17,6 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: '#212121',
         minHeight: '100vh',
     },
-    topColumn: {
-        margin: 'auto',
-    },
     top: {
         margin: 'auto',
         maxWidth: 800,
@@ -32,10 +29,8 @@ export default function View() {
         userEntity,
     } = useSelector(state => state.system);
     const {
-        camera,
-    } = useSelector(state => state);
-    const {
         weather,
+        camera,
     } = useSelector(state => state);
     const cameraOpen = camera.open;
     const userEntityOpen = userEntity.open;
@@ -49,6 +44,7 @@ export default function View() {
                         <Grid item xs={12} sm={6} md={8}>
                             <div className={classes.top}>
                                 <Camera />
+                                <Mapbox />
                             </div>
                         </Grid> : null}
 
@@ -57,11 +53,9 @@ export default function View() {
                             <div className={classes.none}>
                                 <UserEntity />
                                 <Weather />
-                                <Mapbox />
                             </div>
                         </Grid> : null }
                         
-
                 </Grid>
                 <Dock />
             </div>

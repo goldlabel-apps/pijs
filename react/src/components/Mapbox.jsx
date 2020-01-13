@@ -8,8 +8,9 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 const styles = theme => ({
     map: {
         border: '1px solid rgba(241,221,63,0.25)',
-        borderRadius: theme.spacing(),
-        height: 220,
+        height: 200,
+        marginLeft: theme.spacing(2),
+        marginRight: theme.spacing(2),
     }
 });
 

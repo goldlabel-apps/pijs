@@ -14,7 +14,6 @@ import {
 
 const useStyles = makeStyles(theme => ({
     camera: {
-        margin: theme.spacing(),
         maxWidth: 800,
     },
     iconBtnSpacer: {
@@ -23,7 +22,6 @@ const useStyles = makeStyles(theme => ({
     },
     cameraImage: {
         border: '1px solid rgba(241,221,63,0.25)',
-        borderRadius: theme.spacing(),
         maxWidth: '100%',
         maxHeight: 450,
     },
