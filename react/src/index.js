@@ -7,11 +7,9 @@ import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import ViewSwitcher from "./ViewSwitcher";
 import ClockWork from "./ClockWork";
-import {
-  CssBaseline,
-} from '@material-ui/core/';
+import { CssBaseline } from "@material-ui/core/";
 
-const disablePersitance = false;
+const disablePersitance = true;
 
 console.log(
   `${packageJSON.name} ${packageJSON.version} (${process.env.REACT_APP_ENV})`
@@ -29,7 +27,7 @@ const getStore = () => {
   return persistedRedux.store;
 };
 export { getStore };
-  
+
 ReactDOM.render(
   <Provider store={persistedRedux.store}>
     <PersistGate loading={null} persistor={persistedRedux.persistor}>
