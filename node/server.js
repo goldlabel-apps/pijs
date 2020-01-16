@@ -32,7 +32,7 @@ const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.all("/current-photo", function (req, res) {
-  res.sendFile('./current-photo.jpg');
+  res.sendFile(__dirname + '/current-photo.jpg');
 });
 
 app.all("*", function(req, res) {
