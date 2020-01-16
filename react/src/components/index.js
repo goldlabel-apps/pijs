@@ -5,7 +5,6 @@ import Icon from "./Icon";
 import Logo from "./Logo";
 import Mapbox from "./Mapbox";
 import MoreInfo from "./MoreInfo";
-import SpeedDialMenu from "./SpeedDialMenu";
 import UserEntity from "./UserEntity";
 import View from "./View";
 import Weather from "./Weather";
@@ -18,8 +17,7 @@ export {
   Logo,
   Mapbox,
   MoreInfo,
-  SpeedDialMenu,
   UserEntity,
   View,
-  Weather,
+  Weather
 };

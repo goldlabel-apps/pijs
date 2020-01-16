@@ -25,5 +25,8 @@
     "Node",
     "React",
     "PWA"
-  ]
+  ],
+  "dependencies": {
+    "ua-parser-js": "^0.7.21"
+  }
 }

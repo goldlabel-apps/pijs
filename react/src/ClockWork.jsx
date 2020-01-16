@@ -45,7 +45,7 @@ class ClockWork extends Component {
         if (ticks % 20 === 0) {
             store.dispatch({ type: `CAMERA/UPDATE` })
         }
-        
+
         switch (ticks) {
             case 1:
                 store.dispatch({ type: `CAMERA/UPDATE` })
@@ -56,7 +56,7 @@ class ClockWork extends Component {
                     }
                 })
                 break;
-            
+
             case 2:
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
@@ -66,14 +66,14 @@ class ClockWork extends Component {
                 })
                 store.dispatch({
                     type: `SYSTEM/SAYS`, say: {
-                        message: `<br />creating new userEntity<br />`,
+                        message: `<br />pijs.app currently being moved to firebase.<br />`,
                         color: `#F1DD3F`,
                     }
                 })
                 break;
-                        
+
             default:
-                break;            
+                break;
         }
 
         if (!booted && ticks > 2) {
@@ -114,7 +114,7 @@ class ClockWork extends Component {
     }
 
     startTimer = () => {
-        const {tickDelay} = this.props;
+        const { tickDelay } = this.props;
         const {
             timer
         } = this.state;
@@ -145,7 +145,7 @@ const mapStateToProps = (store) => {
 
         tickDelay: store.system.clockWork.tickDelay,
         ticks: store.system.clockWork.ticks,
-        
+
         fingerprint: store.system.userEntity.fingerprint.value,
         components: store.system.userEntity.fingerprint.components,
         ipgeo: store.system.userEntity.ipgeo,
@@ -153,7 +153,7 @@ const mapStateToProps = (store) => {
         visits: store.system.userEntity.visits,
 
         fingerprintChecked: store.firebase.fingerprint.checked,
-        
+
     };
 };
 

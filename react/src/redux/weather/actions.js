@@ -1,4 +1,4 @@
-import { createAction } from '@reduxjs/toolkit';
+import { createAction } from "@reduxjs/toolkit";
 import { getStore } from "../../";
 import axios from "axios";
 
@@ -11,21 +11,22 @@ export const close = createAction(`WEATHER/CLOSE`);
 export const toggle = createAction(`WEATHER/TOGGLE`);
 
 export const fetchWeather = () => {
-  
   let updateRequired = false;
   const store = getStore();
   const { weather } = store.getState();
-  if (!weather.data && !weather.fetching) { updateRequired = true }
+  if (!weather.data && !weather.fetching) {
+    updateRequired = true;
+  }
   const updatedAgo = Date.now() - weather.updated;
   // 1 hour : 3600000
   if (updatedAgo > 3600000) {
-    updateRequired = true
+    updateRequired = true;
   }
-
+  updateRequired = false;
   if (updateRequired) {
     store.dispatch({
       type: `WEATHER/TOGGLE_FETCH`,
-      bool: true,
+      bool: true
     });
     const baseUrl = `https://api.openweathermap.org/data/2.5/`;
     const endPoint = `weather?lat=-27.211579&l&lon=153.107658`;
@@ -45,11 +46,11 @@ export const fetchWeather = () => {
           error
         });
       })
-      .finally(function () {
+      .finally(function() {
         store.dispatch({
           type: `WEATHER/TOGGLE_FETCH`,
-          bool: false,
+          bool: false
         });
       });
   }
-}
+};
