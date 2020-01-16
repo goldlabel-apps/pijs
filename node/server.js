@@ -32,8 +32,7 @@ const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.all("/current-photo", function (req, res) {
-  res.setHeader(`Content-Type`, `application/json`);
-  res.send(JSON.stringify({}, null, 3));
+  res.sendFile('./current-photo.jpg');
 });
 
 app.all("*", function(req, res) {
