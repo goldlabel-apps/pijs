@@ -31,6 +31,11 @@ app.use(cors())
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
+app.all("/current-photo", function (req, res) {
+  res.setHeader(`Content-Type`, `application/json`);
+  res.send(JSON.stringify({}, null, 3)){}
+});
+
 app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
