@@ -38,6 +38,35 @@ app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photo.jpg");
 });
 
+app.all("*", function(req, res) {
+  if (req.secure) {
+    const r = {
+      name: `Proto Pi`,
+      firmware: packageJSON.version,
+      description: `Listinglab's prototype Pi`,
+      time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
+      epoch: Date.now(),
+      location: `Scarborough, QLD`,
+      lat: -27.211579,
+      lng: 153.107658
+    };
+    res.setHeader(`Content-Type`, `application/json`);
+    res.send(JSON.stringify(r, null, 3));
+  } else {
+    res.redirect("https://" + req.headers.host + req.url);
+  }
+});
+
+httpServer.listen(1337, () => {
+  console.log("HTTP Server running on port 1337");
+});
+
+httpsServer.listen(443, () => {
+  console.log("HTTPS Server running on port 443");
+});
+
+/*
+
 const makeData = function() {
   return {
     data: [
@@ -63,25 +92,4 @@ const makeErrors = function() {
   };
 };
 
-app.all("*", function(req, res) {
-  if (req.secure) {
-    const r = {
-      name: packageJSON.name,
-      version: packageJSON.version,
-      description: packageJSON.description,
-      time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`)
-    };
-    res.setHeader(`Content-Type`, `application/json`);
-    res.send(JSON.stringify(r, null, 3));
-  } else {
-    res.redirect("https://" + req.headers.host + req.url);
-  }
-});
-
-httpServer.listen(1337, () => {
-  console.log("HTTP Server running on port 1337");
-});
-
-httpsServer.listen(443, () => {
-  console.log("HTTPS Server running on port 443");
-});
+*/
