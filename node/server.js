@@ -5,7 +5,7 @@ const http = require("http");
 const https = require("https");
 const express = require("express");
 const moment = require("moment");
-const cors = require('cors')
+const cors = require("cors");
 
 const privateKey = fs.readFileSync(
   "/etc/letsencrypt/live/pi.listingslab.io/privkey.pem",
@@ -17,7 +17,10 @@ const certificate = fs.readFileSync(
   "utf8"
 );
 
-const ca = fs.readFileSync("/etc/letsencrypt/live/pi.listingslab.io/chain.pem", "utf8");
+const ca = fs.readFileSync(
+  "/etc/letsencrypt/live/pi.listingslab.io/chain.pem",
+  "utf8"
+);
 
 const credentials = {
   key: privateKey,
@@ -26,14 +29,39 @@ const credentials = {
 };
 
 const app = express();
-app.use(cors())
+app.use(cors());
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-app.all("/current-photo", function (req, res) {
-  res.sendFile(__dirname + '/current-photo.jpg');
+app.all("/current-photo", function(req, res) {
+  res.sendFile(__dirname + "/current-photo.jpg");
 });
+
+const makeData = function() {
+  return {
+    data: [
+      {
+        title: `Node`,
+        type: `paragraph`,
+        body: `Find out about Node JS`,
+        link: `https://nodejs.org/en/about`
+      }
+    ]
+  };
+};
+
+const makeErrors = function() {
+  return {
+    errors: [
+      {
+        code: `e0001`,
+        problem: `Setup required`,
+        action: `do stuff`
+      }
+    ]
+  };
+};
 
 app.all("*", function(req, res) {
   if (req.secure) {
@@ -41,25 +69,10 @@ app.all("*", function(req, res) {
       name: packageJSON.name,
       version: packageJSON.version,
       description: packageJSON.description,
-      time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
-      data: [
-        {
-          title: `Node`,
-          type: `paragraph`,
-          body: `Find out about Node JS`,
-          link: `https://nodejs.org/en/about`
-        },
-      ],
-      errors: [
-        {
-          code: `e0001`,
-          problem: `Setup required`,
-          action: `do stuff`,
-        }
-      ],
-    }
+      time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`)
+    };
     res.setHeader(`Content-Type`, `application/json`);
-    res.send(JSON.stringify(r, null, 3))
+    res.send(JSON.stringify(r, null, 3));
   } else {
     res.redirect("https://" + req.headers.host + req.url);
   }
