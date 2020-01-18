@@ -55,7 +55,7 @@ app.all("*", function(req, res) {
       location: `Scarborough, QLD`,
       lat: -27.211579,
       lng: 153.107658,
-      pi
+      pi: JSON.parse(pi)
     };
     res.setHeader(`Content-Type`, `application/json`);
     res.send(JSON.stringify(r, null, 3));
