@@ -13,7 +13,7 @@ pimoroni['lux'] = light.light()
 pimoroni['rgb'] = str(light.rgb())[1:-1].replace(' ', '')
 pimoroni['temperature'] = weather.temperature()
 pimoroni['pressure'] = weather.pressure(unit='hPa')
-pimoroni['acc'] = str(motion.accelerometer())[1:-1].replace(' ', '')
+pimoroni['acceleration'] = str(motion.accelerometer())[1:-1].replace(' ', '')
 pimoroni['heading'] = motion.heading()
 
 with open('./node/pimoroni.json', 'w') as outfile:

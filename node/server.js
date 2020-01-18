@@ -22,7 +22,10 @@ const ca = fs.readFileSync(
   "utf8"
 );
 
-const pimoroni = fs.readFileSync(__dirname + "/pimoroni.json", "utf8");
+const pimoroni = fs.readFileSync(
+  __dirname + "/pimoroni.json?cb=" + Date.now(),
+  "utf8"
+);
 
 const credentials = {
   key: privateKey,
