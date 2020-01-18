@@ -42,8 +42,8 @@ app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
       name: `Proto Pi`,
-      firmware: packageJSON.version,
-      description: `Listinglab's prototype Pi`,
+      description: `Listinglab's Prototype Pi`,
+      version: packageJSON.version,
       time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
       epoch: Date.now(),
       location: `Scarborough, QLD`,
