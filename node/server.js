@@ -34,6 +34,10 @@ app.use(cors());
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
+app.all("/ping", function(req, res) {
+  res.sendFile(__dirname + "/pi.json");
+});
+
 app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photo.jpg");
 });
