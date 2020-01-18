@@ -22,7 +22,7 @@ const ca = fs.readFileSync(
   "utf8"
 );
 
-const pi = fs.readFileSync(__dirname + "/pi.json", "utf8");
+const pimoroni = fs.readFileSync(__dirname + "/pimoroni.json", "utf8");
 
 const credentials = {
   key: privateKey,
@@ -35,10 +35,6 @@ app.use(cors());
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
-
-app.all("/ping", function(req, res) {
-  res.sendFile(__dirname + "/pi.json");
-});
 
 app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photo.jpg");
@@ -55,7 +51,7 @@ app.all("*", function(req, res) {
       location: `Scarborough, QLD`,
       lat: -27.211579,
       lng: 153.107658,
-      pi: JSON.parse(pi)
+      pimoroni: JSON.parse(pimoroni)
     };
     res.setHeader(`Content-Type`, `application/json`);
     res.send(JSON.stringify(r, null, 3));
