@@ -1,39 +1,27 @@
 import json
 from datetime import datetime
 from time import mktime
-from envirophat import light, weather, leds
-
-# from picamera import PiCamera, Color
+from envirophat import light, motion, weather, leds
 
 dt = datetime.now()
 sec_since_epoch = mktime(dt.timetuple()) + dt.microsecond/1000000.0
 unix_epoch = sec_since_epoch * 1000
 
-# camera = PiCamera()
-# camera.resolution = (800, 450)
-# camera.annotate_text = str(round(unix_epoch/1000))
-# camera.annotate_text_size = 20
-# camera.capture('./node/build/jpg/current-photo.jpg')
+pimoroni = {}
+pimoroni['updated'] = round(unix_epoch)
+pimoroni['lux'] = light.light()
+pimoroni['rgb'] = str(light.rgb())[1:-1].replace(' ', '')
+pimoroni['temperature'] = weather.temperature()
+pimoroni['pressure'] = weather.pressure(unit='hPa')
+pimoroni['acc'] = str(motion.accelerometer())[1:-1].replace(' ', '')
+pimoroni['heading'] = motion.heading()
 
-data = {}
+with open('./node/pimoroni.json', 'w') as outfile:
+    json.dump(pimoroni, outfile)
 
-data['url'] = "https://pijs.app/data/pijs.json"
-data['updated'] = round(unix_epoch)
+print("update successful")
 
-envirophatData = {}
-
-envirophatData['lux'] = light.light()
 
 # Only do this during the day. what time does the pi say it is?
 # leds.on()
-envirophatData['rgb'] = str(light.rgb())[1:-1].replace(' ', '')
 # leds.off()
-envirophatData['temperature'] = weather.temperature()
-envirophatData['pressure'] = weather.pressure(unit='hPa')
-
-data['envirophat'] = envirophatData
-
-with open('./node/build/data/pijs.json', 'w') as outfile:
-    json.dump(data, outfile)
-
-print("update success https://pijs.app/data/pijs.json")

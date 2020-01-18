@@ -22,6 +22,8 @@ const ca = fs.readFileSync(
   "utf8"
 );
 
+const pimoroni = fs.readFileSync(__dirname + "/pimoroni.json", "utf8");
+
 const credentials = {
   key: privateKey,
   cert: certificate,
@@ -42,13 +44,14 @@ app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
       name: `Proto Pi`,
-      firmware: packageJSON.version,
-      description: `Listinglab's prototype Pi`,
+      description: `Listinglab's Prototype Pi`,
+      version: packageJSON.version,
       time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
       epoch: Date.now(),
       location: `Scarborough, QLD`,
       lat: -27.211579,
-      lng: 153.107658
+      lng: 153.107658,
+      pimoroni: JSON.parse(pimoroni)
     };
     res.setHeader(`Content-Type`, `application/json`);
     res.send(JSON.stringify(r, null, 3));
