@@ -1,4 +1,6 @@
-//
+/* 
+    Node/Express Server with letsencrypt SSL
+*/
 const packageJSON = require("./package.json");
 const fs = require("fs");
 const path = require("path");
@@ -46,8 +48,8 @@ app.all("/pimoroni", function(req, res) {
 app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
-      name: `Proto Pi`,
-      description: `Listinglab's Prototype Pi`,
+      name: `PiJS`,
+      description: `Node/Express Server with letsencrypt SSL`,
       firmwareVersion: packageJSON.version,
       piTime: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
       piEpoch: Date.now(),
@@ -73,38 +75,9 @@ app.all("*", function(req, res) {
 });
 
 httpServer.listen(1337, () => {
-  console.log("HTTP Server running on port 1337");
+  console.log("HTTP Server listening on port 1337");
 });
 
 httpsServer.listen(443, () => {
-  console.log("HTTPS Server running on port 443");
+  console.log("HTTPS Server listening on port 443");
 });
-
-/*
-
-const makeData = function() {
-  return {
-    data: [
-      {
-        title: `Node`,
-        type: `paragraph`,
-        body: `Find out about Node JS`,
-        link: `https://nodejs.org/en/about`
-      }
-    ]
-  };
-};
-
-const makeErrors = function() {
-  return {
-    errors: [
-      {
-        code: `e0001`,
-        problem: `Setup required`,
-        action: `do stuff`
-      }
-    ]
-  };
-};
-
-*/
