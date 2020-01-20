@@ -40,6 +40,10 @@ app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photo.jpg");
 });
 
+app.all("/pimoroni", function (req, res) {
+  res.sendFile(__dirname + "/pimoroni.json");
+});
+
 app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
