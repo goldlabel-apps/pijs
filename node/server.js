@@ -22,8 +22,6 @@ const ca = fs.readFileSync(
   "utf8"
 );
 
-const pimoroni = fs.readFileSync(__dirname + "/pimoroni.json", "utf8");
-
 const credentials = {
   key: privateKey,
   cert: certificate,
@@ -40,18 +38,31 @@ app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photo.jpg");
 });
 
+app.all("/pimoroni", function(req, res) {
+  res.sendFile(__dirname + "/pimoroni.json");
+});
+
 app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
       name: `Proto Pi`,
       description: `Listinglab's Prototype Pi`,
-      version: packageJSON.version,
-      time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
-      epoch: Date.now(),
+      firmwareVersion: packageJSON.version,
+      piTime: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
+      piEpoch: Date.now(),
       location: `Scarborough, QLD`,
       lat: -27.211579,
       lng: 153.107658,
-      pimoroni: JSON.parse(pimoroni)
+      endpoints: [
+        {
+          title: `Current Photo`,
+          path: `/current-photo`
+        },
+        {
+          title: `Enviro pHAT`,
+          path: `/pimoroni`
+        }
+      ]
     };
     res.setHeader(`Content-Type`, `application/json`);
     res.send(JSON.stringify(r, null, 3));
