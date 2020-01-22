@@ -1,3 +1,6 @@
+/* 
+    Node/Express Server with letsencrypt SSL
+*/
 const packageJSON = require("./package.json");
 const fs = require("fs");
 const path = require("path");
@@ -22,8 +25,6 @@ const ca = fs.readFileSync(
   "utf8"
 );
 
-const pimoroni = fs.readFileSync(__dirname + "/pimoroni.json", "utf8");
-
 const credentials = {
   key: privateKey,
   cert: certificate,
@@ -40,22 +41,31 @@ app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photo.jpg");
 });
 
-app.all("/pimoroni", function (req, res) {
+app.all("/pimoroni", function(req, res) {
   res.sendFile(__dirname + "/pimoroni.json");
 });
 
 app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
-      name: `Proto Pi`,
-      description: `Listinglab's Prototype Pi`,
-      version: packageJSON.version,
-      time: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
-      epoch: Date.now(),
+      name: `PiJS`,
+      description: `Node/Express Server with letsencrypt SSL`,
+      firmwareVersion: packageJSON.version,
+      piTime: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
+      piEpoch: Date.now(),
       location: `Scarborough, QLD`,
       lat: -27.211579,
       lng: 153.107658,
-      pimoroni: JSON.parse(pimoroni)
+      endpoints: [
+        {
+          title: `Current Photo`,
+          path: `/current-photo`
+        },
+        {
+          title: `Enviro pHAT`,
+          path: `/pimoroni`
+        }
+      ]
     };
     res.setHeader(`Content-Type`, `application/json`);
     res.send(JSON.stringify(r, null, 3));
@@ -65,38 +75,9 @@ app.all("*", function(req, res) {
 });
 
 httpServer.listen(1337, () => {
-  console.log("HTTP Server running on port 1337");
+  console.log("HTTP Server listening on port 1337");
 });
 
 httpsServer.listen(443, () => {
-  console.log("HTTPS Server running on port 443");
+  console.log("HTTPS Server listening on port 443");
 });
-
-/*
-
-const makeData = function() {
-  return {
-    data: [
-      {
-        title: `Node`,
-        type: `paragraph`,
-        body: `Find out about Node JS`,
-        link: `https://nodejs.org/en/about`
-      }
-    ]
-  };
-};
-
-const makeErrors = function() {
-  return {
-    errors: [
-      {
-        code: `e0001`,
-        problem: `Setup required`,
-        action: `do stuff`
-      }
-    ]
-  };
-};
-
-*/
