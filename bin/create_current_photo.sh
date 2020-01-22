@@ -5,4 +5,4 @@
 # --drc high
 # --imxfx  negative
 
-raspistill  --imxfx none --drc high -vf -hf -v -w 800 -h 450 -q 80 -o ~/Desktop/node/pi-firmware/node/current-photo.jpg
+raspistill  --imxfx none --drc high -vf -hf -v -w 1600 -h 900 -q 70 -o ~/Desktop/node/pi-firmware/node/current-photo.jpg
