@@ -49,7 +49,8 @@ app.all("*", function(req, res) {
   if (req.secure) {
     const r = {
       name: `PiJS`,
-      description: `Node/Express Server with letsencrypt SSL`,
+      url: `https://pi.listingslab.io/`,
+      ip: `141.168.211.166`,
       firmwareVersion: packageJSON.version,
       piTime: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
       piEpoch: Date.now(),
