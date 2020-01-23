@@ -14,7 +14,9 @@ raspistill  --imxfx none --drc high -vf -hf -v -w 1600 -h 900 -q 450 -o ~/Deskto
 
 # for a laugh, let's try some effects
 
-raspistill  --imxfx solarise --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_sm_solarise.jpg
+raspistill  --imxfx negative --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_sm_negative.jpg
+
+raspistill  --imxfx blackboard --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_sm_blackboard.jpg
 
 raspistill  --imxfx film --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_sm_film.jpg
 
