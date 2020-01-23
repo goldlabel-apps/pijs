@@ -20,8 +20,3 @@ with open('./node/pimoroni.json', 'w') as outfile:
     json.dump(pimoroni, outfile)
 
 print("update successful")
-
-
-# Only do this during the day. what time does the pi say it is?
-# leds.on()
-# leds.off()
