@@ -38,7 +38,7 @@ const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.all("/current-photo", function(req, res) {
-  res.sendFile(__dirname + "/current-photo.jpg");
+  res.sendFile(__dirname + "/current-photo_sm.jpg");
 });
 
 app.all("/pimoroni", function(req, res) {
