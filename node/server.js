@@ -38,7 +38,31 @@ const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 app.all("/current-photo", function(req, res) {
-  res.sendFile(__dirname + "/current-photo_sm.jpg");
+  res.sendFile(__dirname + "/current-photos/current-photo_sm.jpg");
+});
+
+app.all("/current-photo/sm", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_sm.jpg");
+});
+
+app.all("/current-photo/sm/negative", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_sm_negative.jpg");
+});
+
+app.all("/current-photo/sm/film", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_sm_film.jpg");
+});
+
+app.all("/current-photo/sm/solarise", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_sm_solarise.jpg");
+});
+
+app.all("/current-photo/md/", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_md.jpg");
+});
+
+app.all("/current-photo/lg/", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_lg.jpg");
 });
 
 app.all("/pimoroni", function(req, res) {
