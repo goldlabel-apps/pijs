@@ -41,20 +41,20 @@ app.all("/current-photo", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_sm.jpg");
 });
 
-app.all("/current-photo/sm", function(req, res) {
-  res.sendFile(__dirname + "/current-photos/current-photo_sm.jpg");
-});
-
-app.all("/current-photo/sm/negative", function(req, res) {
+app.all("/current-photo/negative", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_sm_negative.jpg");
 });
 
-app.all("/current-photo/sm/blackboard", function(req, res) {
+app.all("/current-photo/blackboard", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_sm_blackboard.jpg");
 });
 
-app.all("/current-photo/sm/film", function(req, res) {
+app.all("/current-photo/film", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_sm_film.jpg");
+});
+
+app.all("/current-photo/sm", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_sm.jpg");
 });
 
 app.all("/current-photo/md/", function(req, res) {
@@ -76,18 +76,35 @@ app.all("*", function(req, res) {
       url: `https://pi.listingslab.io/`,
       ip: `141.168.211.166`,
       firmwareVersion: packageJSON.version,
+      location: `Scarborough, QLD`,
       piTime: moment(Date.now()).format(`ddd, MMM Do, h:mm a`),
       piEpoch: Date.now(),
-      location: `Scarborough, QLD`,
       lat: -27.211579,
       lng: 153.107658,
       endpoints: [
         {
           title: `Current Photo`,
-          path: `/current-photo`
+          path: `/current-photo`,
+          effects: [
+            {
+              title: `Negative`,
+              description: `Inverts the image colours`,
+              path: `/current-photo/negative`
+            },
+            {
+              title: `Blackboard`,
+              path: `/current-photo/blackboard`
+            },
+            {
+              title: `Film`,
+              description: `Add a film grain`,
+              path: `/current-photo/film`
+            }
+          ]
         },
         {
-          title: `Enviro pHAT`,
+          title: `Pimoroni Enviro pHAT`,
+          description: `Updated every 3 seconds`,
           path: `/pimoroni`
         }
       ]
