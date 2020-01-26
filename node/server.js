@@ -53,6 +53,10 @@ app.all("/current-photo/cartoon", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_cartoon.jpg");
 });
 
+app.all("/current-photo/emboss", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_emboss.jpg");
+});
+
 app.all("/current-photo/film", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_film.jpg");
 });
@@ -98,6 +102,11 @@ app.all("*", function(req, res) {
             }
           ],
           effects: [
+            {
+              title: `Emboss`,
+              description: `Terminator 2 style`,
+              endpoint: `${endpointBase}current-photo/emboss`
+            },
             {
               title: `Negative`,
               description: `Inverts the image colours`,
