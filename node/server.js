@@ -49,6 +49,10 @@ app.all("/current-photo/blackboard", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_blackboard.jpg");
 });
 
+app.all("/current-photo/cartoon", function(req, res) {
+  res.sendFile(__dirname + "/current-photos/current-photo_cartoon.jpg");
+});
+
 app.all("/current-photo/film", function(req, res) {
   res.sendFile(__dirname + "/current-photos/current-photo_film.jpg");
 });
