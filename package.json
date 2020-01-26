@@ -1,6 +1,6 @@
 {
   "name": "pijs",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "description": "Node/Express Server with letsencrypt SSL for Raspberry Pi 4",
   "repository": {
     "type": "git",
