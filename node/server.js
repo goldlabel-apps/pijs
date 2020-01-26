@@ -107,6 +107,11 @@ app.all("*", function(req, res) {
               title: `Film`,
               description: `Add a film grain`,
               endpoint: `${endpointBase}current-photo/film`
+            },
+            {
+              title: `Cartoom`,
+              description: `Not fully implemented`,
+              endpoint: `${endpointBase}current-photo/cartoon`
             }
           ]
         },

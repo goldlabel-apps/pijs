@@ -20,6 +20,8 @@ raspistill  --imxfx blackboard --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/De
 
 raspistill  --imxfx film --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_film.jpg
 
+raspistill  --imxfx cartoon --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_cartoon.jpg
+
 # more effects
 
 # --imxfx  negative
