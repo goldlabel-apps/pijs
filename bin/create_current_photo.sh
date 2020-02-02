@@ -10,19 +10,19 @@ raspistill  --imxfx none --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/
 
 raspistill  --imxfx none --drc high -vf -hf -v -w 800 -h 450 -q 450 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_md.jpg
 
-raspistill  --imxfx none --drc high -vf -hf -v -w 1600 -h 900 -q 450 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_lg.jpg
+# raspistill  --imxfx none --drc high -vf -hf -v -w 1600 -h 900 -q 450 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_lg.jpg
 
 # effects
 
-raspistill  --imxfx negative --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_negative.jpg
+# raspistill  --imxfx negative --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_negative.jpg
 
-raspistill  --imxfx blackboard --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_blackboard.jpg
+# raspistill  --imxfx blackboard --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_blackboard.jpg
 
-raspistill  --imxfx film --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_film.jpg
+# raspistill  --imxfx film --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_film.jpg
 
-raspistill  --imxfx cartoon --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_cartoon.jpg
+# raspistill  --imxfx cartoon --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_cartoon.jpg
 
-raspistill  --imxfx emboss --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_emboss.jpg
+# raspistill  --imxfx emboss --drc high -vf -hf -v -w 400 -h 225 -q 75 -o ~/Desktop/node/pi-firmware/node/current-photos/current-photo_emboss.jpg
 
 
 # more effects
