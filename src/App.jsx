@@ -7,7 +7,6 @@ import commonStyles from './theme/commonStyles'
 import { gsap } from "gsap"
 import {
     ByListingslab,
-    ClockWork,
     SSR,
     Shell,
 } from './components'
@@ -71,7 +70,6 @@ function App() {
     return (
         <MuiThemeProvider theme={createMuiTheme(theme)}>
             <div className={classesCommon.app}>
-                <ClockWork />
                 {onScreen}
             </div>
         </MuiThemeProvider>
