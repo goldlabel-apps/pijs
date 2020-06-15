@@ -15,7 +15,7 @@ export const tinging = createAction(`PUSHTOTALK/TINGING`)
 export const tingSuccess = createAction(`PUSHTOTALK/TING_SUCCESS`)
 
 export const pushToTalkSlice = {
-	app: `pijs`,
+	app: `listingslab`,
 	ticks: 0,
 	error: null,
 	tickInterval: 1,

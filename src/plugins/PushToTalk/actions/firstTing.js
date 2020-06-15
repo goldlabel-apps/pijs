@@ -18,22 +18,22 @@ export const firstTing = () => {
 			.then(function(response) {
 				store.dispatch({ type: `PUSHTOTALK/TING_SUCCESS`, tingSuccess: true })
 				store.dispatch({ type: `PUSHTOTALK/ERROR`, error: null })
-				// store.dispatch({ 
-				// 	type: `APP/SNACKBAR`, 
-				// 	snackbar: {
-				// 		severity: response.data.severity,
-				// 		message: response.data.message,
-				// 	}})
+				store.dispatch({ 
+					type: `APP/SNACKBAR`, 
+					snackbar: {
+						severity: response.data.severity,
+						message: response.data.message,
+					}})
 			})
 			.catch(function(error) {
 				store.dispatch({ type: `PUSHTOTALK/TING_SUCCESS`, tingSuccess: false })
 				store.dispatch({ type: `PUSHTOTALK/ERROR`, error: error.toString() })
-				// store.dispatch({ 
-				// 	type: `APP/SNACKBAR`, 
-				// 	snackbar: {
-				// 		severity: `warning`,
-				// 		message: error.toString()
-				// 	}})
+				store.dispatch({ 
+					type: `APP/SNACKBAR`, 
+					snackbar: {
+						severity: `warning`,
+						message: error.toString()
+					}})
 			})
 			.finally(function() {
 				store.dispatch({ type: `PUSHTOTALK/TINGING`, tinging: false })

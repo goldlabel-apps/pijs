@@ -12,7 +12,6 @@ export const createTing = () => {
 
 	let ready = true
 	let app = state.pushToTalk.app
-	// let version = state.app.pJSON.version
 	let fingerprint = null
 	let browser = null
 	let os = null
@@ -58,7 +57,6 @@ export const createTing = () => {
 	}
 	let ting = {
 		app,
-		// version,
 		pathname,
 		fingerprint,
 		os,
