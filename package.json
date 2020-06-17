@@ -1,6 +1,6 @@
 {
   "name": "pijs",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "PiJS; modern javascript for Rasberry Pi",
   "repository": {
     "type": "git",
@@ -14,7 +14,9 @@
   	"_": "pijs",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "clear && react-scripts build && firebase deploy"
+    "deploy": "clear && react-scripts build && firebase deploy",
+    "serve": "clear && cd ./server && node server.js",
+    "serve:dev": "clear && cd ./server && node server.dev.js"
   },
   "dependencies": {
     "@manaflair/redux-batch": "^1.0.0",
@@ -58,5 +60,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [
+    "PiJS",
+    "Raspberry Pi",
+    "JavaScript",
+    "Node",
+    "Express"
+  ]
 }

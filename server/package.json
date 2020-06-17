@@ -1,0 +1,30 @@
+{
+  "name": "pijs",
+  "version": "0.7.0",
+  "description": "Node/Express server with Secure SSL running on a Raspberry Pi 4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/listingslab-hardware/pijs.git"
+  },
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Raspberry Pi",
+    "Node",
+    "Express",
+    "Isomorphic",
+    "JavaScript"
+  ]
+}
